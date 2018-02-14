@@ -42,56 +42,10 @@ public class PlayerControl : MonoBehaviour
 
     void MovementUpdate()
     {
-        float translation = Input.GetAxis("Vertical") * moveSpeed;
-        float rotation = Input.GetAxis("Horizontal") * moveSpeed;
-        translation *= Time.deltaTime;
-        rotation *= Time.deltaTime;
-        transform.Translate(rotation, 0, translation);
-        //transform.Rotate(0, rotation, 0);
-
-        /*
-        Vector3 dir = new Vector3(0, rb.velocity.y, 0);
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            dir += -CameraRightDirection();
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            dir += CameraRightDirection();
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            dir += -CameraForwardDirection();
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            dir += CameraForwardDirection();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (dir.y <= 0)
-            {
-                dir.y = 1;
-            }
-        }
-
-        if (dir.y > 0 && transform.position.y >= maxHeight)
-        {
-            dir.y = -1;
-        }
-
-        if (dir.y < 0 && transform.position.y <= minHeight)
-        {
-            dir.y = 0;
-        }
-
-        rb.velocity = moveSpeed * dir.normalized;
-        */
+        Vector3 vertical = CameraForwardDirection() * Input.GetAxis("Vertical") * moveSpeed;
+        Vector3 horizontal = CameraRightDirection() * Input.GetAxis("Horizontal") * moveSpeed;
+        Vector3 dir = (vertical + horizontal) * Time.deltaTime;
+        transform.Translate(dir.x, 0, dir.z);
     }
 
     Vector3 CameraForwardDirection()

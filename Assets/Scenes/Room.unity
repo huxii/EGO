@@ -939,7 +939,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -2266,12 +2266,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 899489223}
   distance: 25
-  viewAngle: 45
-  rotationSen: 10
-  rotationAngle: -45
+  angleX: -45
+  angleRangeX: 30
+  angleSensitivityX: 1000
+  angleY: 45
+  angleRangeY: 10
+  angleSensitivityY: 100
   movable: 1
   rotatable: 1
-  zoomable: 1
+  zoomable: 0
 --- !u!1 &1802819485
 GameObject:
   m_ObjectHideFlags: 0
