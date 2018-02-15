@@ -8,6 +8,7 @@ public class PlayerControl : MonoBehaviour
 
     [Header("Attributes")]
     public float moveSpeed = 1f;
+    public float jumpSpeed = 1f;
     public float rotationSpeed = 1f;
     public float minHeight = 1f;
     public float maxHeight = 2f;
@@ -30,6 +31,11 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rb.position.y > minHeight)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y - 0.2f, rb.velocity.z);
+        }
+
         if (!frozen)
         {
             MovementUpdate();
@@ -42,10 +48,40 @@ public class PlayerControl : MonoBehaviour
 
     void MovementUpdate()
     {
+        float jump = Input.GetAxis("Jump");
+        if (jump > 0)
+        {
+            if (transform.position.y < maxHeight)
+            {
+                rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, rb.velocity.z);
+            }
+        }
+        else
+        if (jump == 0)
+        {
+            if (transform.position.y > minHeight)
+            {
+                rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
+            }
+            else
+            {
+                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            }
+        }
+        else
+        {
+            if (transform.position.y > minHeight)
+            {
+                rb.velocity = new Vector3(rb.velocity.x, -jumpSpeed, rb.velocity.z);
+            }
+        }
+
         Vector3 vertical = CameraForwardDirection() * Input.GetAxis("Vertical") * moveSpeed;
         Vector3 horizontal = CameraRightDirection() * Input.GetAxis("Horizontal") * moveSpeed;
-        Vector3 dir = (vertical + horizontal) * Time.deltaTime;
-        transform.Translate(dir.x, 0, dir.z);
+        Vector3 height = new Vector3(0, rb.velocity.y, 0);
+
+        Vector3 dir = (vertical + horizontal + height) * Time.deltaTime;
+        transform.Translate(dir);
     }
 
     Vector3 CameraForwardDirection()
