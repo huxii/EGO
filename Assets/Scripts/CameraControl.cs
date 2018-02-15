@@ -7,83 +7,84 @@ public class CameraControl : MonoBehaviour
 {
     const float PI = 3.1415926f;
 
-    public Transform targetTransform;
+    public GameObject targetObject;
     public float distance = 3f;
-    public float angleX = 45;
-    public float angleRangeX = 30f;
-    public float angleSensitivityX = 1000f;
-    public float angleY = 45f;
-    public float angleRangeY = 30f;
-    public float angleSensitivityY = 100f;
+    public Vector2 angleZero = new Vector2(45f, 45f);
+    public Vector2 angleRange = new Vector2(15f, 15f);
+    public Vector2 angleSensitivity = new Vector2(1000f, 100f);
+    public Vector2 angleSmooth = new Vector2(1f, 1f);
+    public Vector2 dAngle = new Vector2(0, 0);
 
-    public bool movable = true;
-    public bool rotatable = true;
-    public bool zoomable = true;
+    public bool freeze = false;
 
-    float dAngleX;
-    float dAngleY;
+    Vector3 curTargetPos;
+    Vector2 curAngle;
+    float curDistance;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
-        transform.eulerAngles = new Vector3(angleY, 0, 0);
-        dAngleX = 0;
-        dAngleY = 0;
+        transform.eulerAngles = new Vector3(angleZero.y, 0, 0);
+        curTargetPos = targetObject.transform.position;
+        curAngle = angleZero;
+        curDistance = distance;
+
         PositionUpdate();
-        RotationUpdate();
+        RotationUpdate(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (movable)
+        if (targetObject && !freeze)
         {
             PositionUpdate();
-        }
-        if (rotatable)
-        {
             RotationUpdate();
-        }
-        if (zoomable)
-        {
-            ZoomUpdate();
+            //ZoomUpdate();
         }
     }
 
     void PositionUpdate()
     {
-        float curAngleX = angleX + dAngleX;
-        float curAngleY = angleY + dAngleY;
-        float height = distance * Mathf.Sin(curAngleY / 180f * PI);
-        float radius = distance * Mathf.Cos(curAngleY / 180f * PI);
-        float dx = radius * Mathf.Cos(curAngleX / 180f * PI);
-        float dz = radius * Mathf.Sin(curAngleX / 180f * PI);
+        curTargetPos = Vector3.Lerp(curTargetPos, targetObject.transform.position, Time.deltaTime * 5f);
+        curDistance = Mathf.Lerp(curDistance, distance, Time.deltaTime);
 
-        float x = targetTransform.position.x + dx;
-        float z = targetTransform.position.z + dz;
-        float y = height;
+        float targetAngleX = angleZero.x + dAngle.x;
+        float targetAngleY = angleZero.y + dAngle.y;
+        curAngle = new Vector2(
+            Mathf.Lerp(curAngle.x, targetAngleX, Time.deltaTime * angleSmooth.x),
+            Mathf.Lerp(curAngle.y, targetAngleY, Time.deltaTime * angleSmooth.y)
+            );
+        float height = curDistance * Mathf.Sin(curAngle.y / 180f * PI);
+        float radius = curDistance * Mathf.Cos(curAngle.y / 180f * PI);
+        float dx = radius * Mathf.Cos(curAngle.x / 180f * PI);
+        float dz = radius * Mathf.Sin(curAngle.x / 180f * PI);
 
-        //transform.DOMove(new Vector3(x, y, z), Time.deltaTime);
+        float x = curTargetPos.x + dx;
+        float z = curTargetPos.z + dz;
+        float y = curTargetPos.y + height;
+
         transform.position = new Vector3(x, y, z);
     }
 
     void RotationUpdate()
     {
+        float dAngleX = dAngle.x;
+        float dAngleY = dAngle.y;
         if (Input.GetMouseButton(1))
         {
-            dAngleX -= Input.GetAxis("Mouse X") * Time.deltaTime * angleSensitivityX;
-            dAngleY -= Input.GetAxis("Mouse Y") * Time.deltaTime * angleSensitivityY;
+            dAngleX -= Input.GetAxis("Mouse X") * Time.deltaTime * angleSensitivity.x;
+            dAngleY -= Input.GetAxis("Mouse Y") * Time.deltaTime * angleSensitivity.y;
         }
-        dAngleX -= Input.GetAxis("RightJoystick X") * Time.deltaTime * angleSensitivityX;
-        dAngleY -= Input.GetAxis("RightJoystick Y") * Time.deltaTime * angleSensitivityY;
+        dAngleX -= Input.GetAxis("RightJoystick X") * Time.deltaTime * angleSensitivity.x;
+        dAngleY -= Input.GetAxis("RightJoystick Y") * Time.deltaTime * angleSensitivity.y;
 
-        dAngleX = Clamp(dAngleX, -angleRangeX, angleRangeX);
-        dAngleY = Clamp(dAngleY, -angleRangeY, angleRangeY);
+        dAngleX = Clamp(dAngleX, -angleRange.x, angleRange.x);
+        dAngleY = Clamp(dAngleY, -angleRange.y, angleRange.y);
 
-        //transform.RotateAround(targetTransform.position, Vector3.up, Time.deltaTime * 50);
-        //transform.DOLookAt(targetTransform.position - transform.position, 0.1f);
-        transform.LookAt(targetTransform);
-        //transform.RotateAround(targetTransform.position, Vector3.up, Time.deltaTime);
+        dAngle = new Vector2(dAngleX, dAngleY);
+
+        transform.LookAt(curTargetPos);
     }
 
     void ZoomUpdate()
