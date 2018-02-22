@@ -71,7 +71,7 @@ public class CameraControl : MonoBehaviour
     {
         float dAngleX = dAngle.x;
         float dAngleY = dAngle.y;
-        if (Input.GetMouseButton(1))
+        //if (Input.GetMouseButton(1))
         {
             dAngleX -= Input.GetAxis("Mouse X") * Time.deltaTime * angleSensitivity.x;
             dAngleY -= Input.GetAxis("Mouse Y") * Time.deltaTime * angleSensitivity.y;

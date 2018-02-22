@@ -10,8 +10,8 @@ public class PlayerControl : MonoBehaviour
     public float moveSpeed = 1f;
     public float jumpSpeed = 1f;
     public float rotationSpeed = 1f;
-    public float minHeight = 1f;
-    public float maxHeight = 2f;
+    public float heightAxis = 4f;
+    public float heightRange = 2f;
 
     [Header("Debug")]
     //MainControl gameController;
@@ -25,17 +25,23 @@ public class PlayerControl : MonoBehaviour
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody>();
         Vector3 pos = transform.position;
-        transform.position = new Vector3(pos.x, minHeight, pos.z);
+        transform.position = new Vector3(pos.x, heightAxis, pos.z);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (rb.position.y > minHeight)
+        /*
+        if (transform.position.y > heightAxis)
         {
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y - 0.2f, rb.velocity.z);
         }
-
+        else
+        if (transform.position.y < heightAxis)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y + 0.2f, rb.velocity.z);
+        }
+        */
         if (!frozen)
         {
             MovementUpdate();
@@ -51,7 +57,7 @@ public class PlayerControl : MonoBehaviour
         float jump = Input.GetAxis("Jump");
         if (jump > 0)
         {
-            if (transform.position.y < maxHeight)
+            if (transform.position.y < heightAxis + heightRange)
             {
                 rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, rb.velocity.z);
             }
@@ -59,21 +65,33 @@ public class PlayerControl : MonoBehaviour
         else
         if (jump == 0)
         {
-            if (transform.position.y > minHeight)
+            if (Mathf.Abs(transform.position.y - heightAxis) <= 0.01f)
             {
-                rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
+                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            }
+            else
+            if (transform.position.y > heightAxis)
+            {
+                rb.velocity = new Vector3(rb.velocity.x, -jumpSpeed, rb.velocity.z);
             }
             else
             {
-                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+                rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, rb.velocity.z);
             }
         }
         else
         {
-            if (transform.position.y > minHeight)
+            if (transform.position.y > heightAxis - heightRange)
             {
                 rb.velocity = new Vector3(rb.velocity.x, -jumpSpeed, rb.velocity.z);
             }
+        }
+
+        if (jump != 0 && 
+            (transform.position.y > heightAxis + heightRange || transform.position.y < heightAxis - heightRange)
+            )
+        {
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
         }
 
         Vector3 vertical = CameraForwardDirection() * Input.GetAxis("Vertical") * moveSpeed;
