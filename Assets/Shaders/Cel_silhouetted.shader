@@ -5,14 +5,76 @@
 		_MainTex("Diffuse Texture", 2D) = "white" {}
 		_ShadowColor("Shadow Color", Color) = (0.0, 0.0, 0.0, 1.0)
 		_SpecColor("Specular Color", Color) = (1.0, 1.0, 1.0, 1.0)
+		_SilhouettedColor("Silhouetted Color", Color) = (1.0, 1.0, 1.0, 1.0)
 	}
 
 	SubShader
 	{
 		LOD 200
-		Tags { "RenderType" = "Opaque" }
+		Tags 
+		{ 
+			"Queue" = "Transparent"
+			"RenderType" = "Opaque" 
+		}
+
+		Pass 
+		{
+			Name "SILHOUETTED"
+			Tags 
+			{ 
+				"LightMode" = "Always" 
+			}
+			Cull Off
+			ZWrite Off
+			ZTest Always
+			ColorMask RGB // alpha not used
+ 
+			// you can choose what kind of blending mode you want for the outline
+			Blend SrcAlpha OneMinusSrcAlpha // Normal
+			//Blend One One // Additive
+			//Blend One OneMinusDstColor // Soft Additive
+			//Blend DstColor Zero // Multiplicative
+			//Blend DstColor SrcColor // 2x Multiplicative
+ 
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+
+			uniform float4 _SilhouettedColor;
+
+			struct appdata 
+			{
+				float4 vertex : POSITION;
+				float3 normal : NORMAL;
+			};
+ 
+			struct v2f {
+				float4 pos : POSITION;
+				float4 color : COLOR;
+			};
+ 
+ 			v2f vert(appdata v)
+			{
+				v2f o;
+				o.pos = UnityObjectToClipPos(v.vertex);
+
+				return o;	
+			}
+
+			half4 frag(v2f i) : COLOR 
+			{
+				return _SilhouettedColor;
+			}
+			ENDCG
+		}
+
 		Pass
 		{
+			Name "BASE"
+			ZWrite On
+			ZTest LEqual
+			Blend SrcAlpha OneMinusSrcAlpha
+
 			Lighting On
 			Tags {"LightMode" = "ForwardBase"}
 

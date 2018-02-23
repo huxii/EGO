@@ -32,17 +32,20 @@ v2f vert(appdata v) {
 	float3 norm   = mul ((float3x3)UNITY_MATRIX_IT_MV, v.normal);
 	float2 offset = TransformViewToProjection(norm.xy);
  
-	o.pos.xy += offset * o.pos.z * _Outline;
+	//o.pos.xy += offset * o.pos.z * _Outline;
 	o.color = _OutlineColor;
 	return o;
 }
 ENDCG
  
-	SubShader {
+
+	SubShader 
+	{
 		Tags { "Queue" = "Transparent" }
  
 		// note that a vertex shader is specified here but its using the one above
 		Pass {
+
 			Name "OUTLINE"
 			Tags { "LightMode" = "Always" }
 			Cull Off
@@ -57,21 +60,31 @@ ENDCG
 			//Blend DstColor Zero // Multiplicative
 			//Blend DstColor SrcColor // 2x Multiplicative
  
-CGPROGRAM
-#pragma vertex vert
-#pragma fragment frag
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
  
-half4 frag(v2f i) :COLOR {
-	return i.color;
-}
-ENDCG
-		}
- 
+			half4 frag(v2f i) :COLOR {
+				return i.color;
+			}
+			ENDCG
+	}
+	
 		Pass {
 			Name "BASE"
 			ZWrite On
 			ZTest LEqual
 			Blend SrcAlpha OneMinusSrcAlpha
+
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+ 
+			half4 frag(v2f i) :COLOR {
+				return float4(1.0, 1.0, 1.0, 1.0);
+			}
+			ENDCG
+			/*
 			Material {
 				Diffuse [_Color]
 				Ambient [_Color]
@@ -84,9 +97,10 @@ ENDCG
 			SetTexture [_MainTex] {
 				Combine previous * primary DOUBLE
 			}
+			*/
 		}
 	}
- 
+ /*
 	SubShader {
 		Tags { "Queue" = "Transparent" }
  
@@ -131,7 +145,7 @@ ENDCG
 			}
 		}
 	}
- 
+ */
 	Fallback "Diffuse"
 }
 /*
