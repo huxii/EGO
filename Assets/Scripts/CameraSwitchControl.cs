@@ -11,6 +11,9 @@ public class CameraSwitchControl : MonoBehaviour
     public Camera targetCamera;
     public GameObject hideObjects;
     public GameObject showObjects;
+    public float playerHeight = 4f;
+
+    GameObject player;
 
     CameraControl originCameraCon;
     CameraControl targetCameraCon;
@@ -26,6 +29,7 @@ public class CameraSwitchControl : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         originCameraCon = originCamera.GetComponent<CameraControl>();
         targetCameraCon = targetCamera.GetComponent<CameraControl>();
         /*
@@ -62,6 +66,8 @@ public class CameraSwitchControl : MonoBehaviour
             originCameraCon.angleSensitivity = targetCameraCon.angleSensitivity;
             originCameraCon.angleSmooth = targetCameraCon.angleSmooth;
             originCameraCon.dAngle = new Vector2(0, 0);
+
+            player.GetComponent<PlayerControl>().heightAxis = playerHeight;
 
             if (hideObjects)
             {
