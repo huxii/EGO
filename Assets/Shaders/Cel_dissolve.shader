@@ -1,16 +1,17 @@
-﻿Shader "II/Dissolve" 
+﻿Shader "II/Cel_dissolve" 
 {
 
 	// TODO : REFLECTION RIPPLE SPLASH SHADOW   
 	Properties
 	{
 		[Header(Base)]
-		_Color("Base Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_MainTex("Main Texture", 2D) = "white" {}
+		_ShadowColor("Shadow Color", Color) = (0.0, 0.0, 0.0, 1.0)
+		_SpecColor("Specular Color", Color) = (1.0, 1.0, 1.0, 1.0)
 
 		[Header(Dissolve)]
-		_DissolveSpeed("Dissolve Speed", float) = 1.0
-		_EdgeSpeed("Edge Speed", float) = 1.0
+		_DissolveTimer("Dissolve Timer", float) = 0
+		_EdgeSpeedRate("Edge Speed Rate", Range(0, 1.0)) = 0.8
 		_EdgeColor("Edge Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_NoiseTex("Noise Texture", 2D) = "white" {}
 	}
@@ -43,10 +44,11 @@
 
 			sampler2D _CameraDepthTexture;
 
-			uniform float4 _Color;
 			uniform sampler2D _MainTex;
-			uniform float _DissolveSpeed;
-			uniform float _EdgeSpeed;
+			uniform float4 _ShadowColor;
+			uniform float4 _SpecColor;
+			uniform float _DissolveTimer;
+			uniform float _EdgeSpeedRate;
 			uniform float4 _EdgeColor;
 			uniform sampler2D _NoiseTex;
 			uniform float4 _NoiseTex_ST;
@@ -85,13 +87,52 @@
 
 			float4 frag(vertexOutput i) : COLOR
 			{
-				float4 tex = tex2D(_MainTex, i.tex.xy);
-				float noiseSample = tex2Dlod(_NoiseTex, float4(i.tex.xy * _NoiseTex_ST.xy + _NoiseTex_ST.zw, 0, 0));
+				float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
+				float3 normalDirection = i.normalDir;
+				float3 lightDirection;
 				
-				float4 col = tex;
-				float onEdge = step(noiseSample, _Time * _EdgeSpeed);
-				col = onEdge * _EdgeColor + (1 - onEdge) * tex;
-				clip(noiseSample - _Time * _DissolveSpeed);
+				// Directional light
+				if (_WorldSpaceLightPos0.w == 0.0)
+				{
+					lightDirection = normalize(_WorldSpaceLightPos0.xyz);
+				}
+				// Point light
+				else
+				{
+					float3 fragmentToLightSource = _WorldSpaceLightPos0.xyz - i.posWorld.xyz;
+					lightDirection = normalize(fragmentToLightSource);
+				}
+
+				float atten = LIGHT_ATTENUATION(i);
+			
+				float4 lightingColor;
+				float ramp = clamp(dot(normalDirection, lightDirection), 0, 1.0);
+				if (ramp < 0.25)
+				{
+					lightingColor = _ShadowColor;	
+				}
+				else
+				if (ramp < 0.5)
+				{
+					lightingColor = _SpecColor * 0.25 + _ShadowColor * 0.75;
+				}
+				else
+				if (ramp < 0.85)
+				{
+					lightingColor =  _SpecColor * 0.5 + _ShadowColor * 0.5;
+				}
+				else
+				{
+					lightingColor = _SpecColor;
+				}
+
+				float4 tex = tex2D(_MainTex, i.tex.xy);
+				float4 col = tex * lightingColor;
+
+				float noiseSample = tex2Dlod(_NoiseTex, float4(i.tex.xy * _NoiseTex_ST.xy + _NoiseTex_ST.zw, 0, 0));
+				float onEdge = step(noiseSample, _DissolveTimer / _EdgeSpeedRate);
+				col = onEdge * _EdgeColor + (1 - onEdge) * col;
+				clip(noiseSample - _DissolveTimer);
 
 				return col;
 			}

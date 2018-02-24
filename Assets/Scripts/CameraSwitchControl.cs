@@ -26,25 +26,32 @@ public class CameraSwitchControl : MonoBehaviour
     Vector2 angleSmooth0;
     Vector2 dAngle0;
 
+    bool dissolveStart = false;
+    float dissolveTimer = 0;
+    float dissolveSpeed = 0.5f;
+
     // Use this for initialization
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         originCameraCon = originCamera.GetComponent<CameraControl>();
         targetCameraCon = targetCamera.GetComponent<CameraControl>();
-        /*
-        MeshRenderer[] meshes = showObjects.GetComponentsInChildren<MeshRenderer>();
-        foreach (MeshRenderer mesh in meshes)
-        {
-            Material mat = mesh.material;
-            mat.DOFade(0, 0f);
-        }
-        */
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (dissolveStart)
+        {
+            dissolveTimer += Time.deltaTime * dissolveSpeed;
+
+            MeshRenderer[] meshes = hideObjects.GetComponentsInChildren<MeshRenderer>();
+            foreach (MeshRenderer mesh in meshes)
+            {
+                Material mat = mesh.material;
+                mat.SetFloat("_DissolveTimer", dissolveTimer);
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -71,12 +78,7 @@ public class CameraSwitchControl : MonoBehaviour
 
             if (hideObjects)
             {
-                MeshRenderer[] meshes = hideObjects.GetComponentsInChildren<MeshRenderer>();
-                foreach (MeshRenderer mesh in meshes)
-                {
-                    Material mat = mesh.material;
-                    mat.DOFade(0, 1f);
-                }
+                dissolveStart = true;
             }
         }
     }
