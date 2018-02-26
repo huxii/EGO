@@ -19,6 +19,8 @@
 		[KeywordEnum(KEEP, REPLACE, APPEAR, DISAPPEAR)] _ReplacementStyle("Replacement Style", Float) = 0
 		_ReplacementTimer("Replacement Timer", Range(0, 1.0)) = 0
 		_ReplacementTex("Replacement Texture", 2D) = "white" {}
+		_ReShadowColor("Replacement Shadow Color", Color) = (0.0, 0.0, 0.0, 1.0)
+		_ReSpecColor("Replacement Specular Color", Color) = (1.0, 1.0, 1.0, 1.0)
 	}
 
 	SubShader
@@ -62,6 +64,8 @@
 			uniform float _ReplacementTimer;
 			uniform sampler2D _ReplacementTex;
 			uniform float4 _ReplacementTex_ST;
+			uniform float4 _ReShadowColor;
+			uniform float4 _ReSpecColor;
 
 			struct vertexInput
 			{
@@ -116,24 +120,28 @@
 				float atten = LIGHT_ATTENUATION(i);
 			
 				float4 lightingColor;
+				float4 reLightingColor;
 				float ramp = clamp(dot(normalDirection, lightDirection), 0, 1.0);
 				if (ramp < 0.25)
 				{
 					lightingColor = _ShadowColor;	
+					reLightingColor = _ReShadowColor;
 				}
 				else
 				if (ramp < 0.5)
 				{
 					lightingColor = _SpecColor * 0.25 + _ShadowColor * 0.75;
+					reLightingColor = _ReSpecColor * 0.25 + _ReShadowColor * 0.75;
 				}
 				else
 				if (ramp < 0.85)
 				{
 					lightingColor =  _SpecColor * 0.5 + _ShadowColor * 0.5;
+					reLightingColor = _ReSpecColor * 0.5 + _ReShadowColor * 0.5;
 				}
 				else
 				{
-					lightingColor = _SpecColor;
+					reLightingColor = _ReSpecColor;
 				}
 
 				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
@@ -162,7 +170,7 @@
 					}
 					else
 					{
-						col = reTex * lightingColor;
+						col = reTex * reLightingColor;
 					}
 				}
 				else
