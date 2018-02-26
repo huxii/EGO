@@ -10,10 +10,15 @@
 		_SpecColor("Specular Color", Color) = (1.0, 1.0, 1.0, 1.0)
 
 		[Header(Dissolve)]
-		_DissolveTimer("Dissolve Timer", float) = 0
+		_DissolveTimer("Dissolve Timer", Range(0, 1.0)) = 0
 		_EdgeSpeedRate("Edge Speed Rate", Range(0, 1.0)) = 0.8
 		_EdgeColor("Edge Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_NoiseTex("Noise Texture", 2D) = "white" {}
+
+		[Header(Replacement)]
+		[KeywordEnum(KEEP, REPLACE, APPEAR, DISAPPEAR)] _ReplacementStyle("Replacement Style", Float) = 0
+		_ReplacementTimer("Replacement Timer", Range(0, 1.0)) = 0
+		_ReplacementTex("Replacement Texture", 2D) = "white" {}
 	}
 
 	SubShader
@@ -23,8 +28,8 @@
 			LOD 200
 			//Cull Off
 
-			Blend SrcAlpha OneMinusSrcAlpha
-			Lighting On
+			//Blend SrcAlpha OneMinusSrcAlpha
+			//Lighting On
 			Tags 
 			{ 
 				//"Queue" = "AlphaTest"   // Transparent cant receive shadow
@@ -45,6 +50,7 @@
 			sampler2D _CameraDepthTexture;
 
 			uniform sampler2D _MainTex;
+			uniform float4 _MainTex_ST;
 			uniform float4 _ShadowColor;
 			uniform float4 _SpecColor;
 			uniform float _DissolveTimer;
@@ -52,6 +58,10 @@
 			uniform float4 _EdgeColor;
 			uniform sampler2D _NoiseTex;
 			uniform float4 _NoiseTex_ST;
+			uniform float _ReplacementStyle;
+			uniform float _ReplacementTimer;
+			uniform sampler2D _ReplacementTex;
+			uniform float4 _ReplacementTex_ST;
 
 			struct vertexInput
 			{
@@ -80,7 +90,7 @@
 				o.normalDir = normalize( mul(float4(v.normal, 0.0f), unity_WorldToObject).xyz );	
 
 				o.screenPos = ComputeScreenPos(o.pos);
-				TRANSFER_VERTEX_TO_FRAGMENT(o);
+				//TRANSFER_VERTEX_TO_FRAGMENT(o);
 
 				return o;	
 			}
@@ -126,8 +136,58 @@
 					lightingColor = _SpecColor;
 				}
 
-				float4 tex = tex2D(_MainTex, i.tex.xy);
-				float4 col = tex * lightingColor;
+				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
+				float4 reTex = tex2D(_ReplacementTex, i.tex.xy * _ReplacementTex_ST.xy + _ReplacementTex_ST.zw);
+
+				float depthValue = 1 - Linear01Depth(tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenPos / i.screenPos.w))).r;
+
+				// the screen center depth
+				float verticalDepth = abs(depthValue - 0.5f);
+				float horizontalDepth = abs(i.screenPos.x / i.screenPos.w - 0.5);
+				depthValue = pow(pow(verticalDepth, 0.5) + pow(horizontalDepth, 6), 0.5);
+				float4 depth = float4(depthValue, depthValue, depthValue, 1);
+
+				float4 col;
+
+				if (_ReplacementStyle == 0)
+				{
+					col = tex * lightingColor;
+				}
+				else
+				if (_ReplacementStyle == 1)
+				{
+					if (depthValue > _ReplacementTimer)
+					{
+						col = tex * lightingColor;
+					}
+					else
+					{
+						col = reTex * lightingColor;
+					}
+				}
+				else
+				if (_ReplacementStyle == 3)
+				{
+					if (depthValue > _ReplacementTimer)
+					{
+						col = tex * lightingColor;
+					}
+					else
+					{
+						clip(-1);
+					}
+				}
+				else
+				{
+					if (depthValue > _ReplacementTimer)
+					{
+						clip(-1);
+					}
+					else
+					{
+						col = tex * lightingColor;
+					}
+				}
 
 				float noiseSample = tex2Dlod(_NoiseTex, float4(i.tex.xy * _NoiseTex_ST.xy + _NoiseTex_ST.zw, 0, 0));
 				float onEdge = step(noiseSample, _DissolveTimer / _EdgeSpeedRate);
@@ -139,4 +199,5 @@
 			ENDCG
 		}
 	}
+	Fallback "Diffuse"
 }

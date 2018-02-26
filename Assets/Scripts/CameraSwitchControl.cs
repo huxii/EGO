@@ -51,6 +51,12 @@ public class CameraSwitchControl : MonoBehaviour
                 Material mat = mesh.material;
                 mat.SetFloat("_DissolveTimer", dissolveTimer);
             }
+
+            if (dissolveTimer >= 1)
+            {
+                dissolveStart = false;
+                hideObjects.SetActive(false);
+            }
         }
     }
 

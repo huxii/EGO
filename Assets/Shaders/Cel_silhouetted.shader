@@ -13,8 +13,9 @@
 		LOD 200
 		Tags 
 		{ 
-			"Queue" = "Transparent"
-			"RenderType" = "Opaque" 
+			"Queue"="AlphaTest" 
+			"IgnoreProjector"="True" 
+			"RenderType"="Transparent"
 		}
 
 		Pass 
@@ -24,11 +25,10 @@
 			{ 
 				"LightMode" = "Always" 
 			}
-			Cull Off
-			ZWrite Off
+
 			ZTest Always
-			ColorMask RGB // alpha not used
- 
+			ZWrite Off
+
 			// you can choose what kind of blending mode you want for the outline
 			Blend SrcAlpha OneMinusSrcAlpha // Normal
 			//Blend One One // Additive
@@ -66,13 +66,18 @@
 				return _SilhouettedColor;
 			}
 			ENDCG
+
+			Stencil
+			{
+				Ref 1
+				Comp Always
+				Pass Replace
+			}
 		}
 
 		Pass
 		{
 			Name "BASE"
-			ZWrite On
-			ZTest LEqual
 			Blend SrcAlpha OneMinusSrcAlpha
 
 			Lighting On
@@ -179,10 +184,9 @@
 
 			Stencil
 			{
-				Ref 4
-				Comp always
-				Pass replace
-				ZFail keep
+				Ref 0
+				Comp NotEqual
+				Pass keep
 			}
 		}
 	}
