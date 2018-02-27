@@ -5,18 +5,26 @@ using UnityEngine;
 
 public class ScannerControl : MonoBehaviour
 {
+    public GameObject scannerCamera;
     public float scanRange = 1f;
-    [Range(0f, 1f)]
-    public float scanTimer = 0f;
+    public float scanSpeed = 0.2f;
 
     Material scannerMat;
     List<GameObject> ppObjs;
+    [SerializeField]
+    bool startScanner;
+    [SerializeField]
+    float scanTimer;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
-        CameraRenderImage camRender = GetComponent<CameraRenderImage>();
+        startScanner = false;
+        scanTimer = 0f;
+        
+        CameraRenderImage camRender = scannerCamera.GetComponent<CameraRenderImage>();
         scannerMat = camRender.mat;
+        scannerMat.SetFloat("_Timer", 0);
 
         ppObjs = new List<GameObject>();
         var allGameObjects = FindObjectsOfType(typeof(GameObject));
@@ -32,18 +40,64 @@ public class ScannerControl : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        scannerMat.SetFloat("_Timer", scanTimer);
-        foreach (GameObject o in ppObjs)
+        if (startScanner)
         {
-            if (Vector3.Distance(transform.position, o.transform.position) < scanRange)
+            if (scanTimer < 1.0f)
             {
-                MeshRenderer[] meshes = o.GetComponentsInChildren<MeshRenderer>();
-                foreach (MeshRenderer mesh in meshes)
+                scanTimer += Time.deltaTime * scanSpeed;
+                scannerMat.SetFloat("_Timer", scanTimer);
+              
+                foreach (GameObject o in ppObjs)
                 {
-                    Material mat = mesh.material;
-                    mat.SetFloat("_ReplacementTimer", scanTimer);
+                    if (Vector3.Distance(transform.position, o.transform.position) < scanRange)
+                    {
+                        MeshRenderer[] meshes = o.GetComponentsInChildren<MeshRenderer>();
+                        foreach (MeshRenderer mesh in meshes)
+                        {
+                            Material mat = mesh.material;
+                            mat.SetFloat("_ReplacementTimer", scanTimer * scanRange);
+                        }
+                    }
                 }
+            }
+            else
+            {
+                Destroy(gameObject);
             }
         }
 	}
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (!startScanner)
+            {
+                scannerCamera.SetActive(true);
+                startScanner = true;
+                scanTimer = 0;
+                scannerMat.SetFloat("_Timer", 0);
+                scannerMat.SetFloat("_Range", scanRange);
+                scannerMat.SetVector("_Center", transform.position);
+
+                foreach (GameObject o in ppObjs)
+                {
+                    if (Vector3.Distance(transform.position, o.transform.position) < scanRange)
+                    {
+                        MeshRenderer[] meshes = o.GetComponentsInChildren<MeshRenderer>();
+                        foreach (MeshRenderer mesh in meshes)
+                        {
+                            Material mat = mesh.material;
+                            mat.SetVector("_Center", transform.position);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    void OnDestroy()
+    {
+        scannerMat.SetFloat("_Timer", 0);
+    }
 }

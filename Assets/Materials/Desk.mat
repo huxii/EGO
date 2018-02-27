@@ -81,7 +81,7 @@ Material:
     - _PlayMode: 0
     - _ReplacementInv: 1
     - _ReplacementStyle: 1
-    - _ReplacementTimer: 0
+    - _ReplacementTimer: 2.12
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -91,5 +91,7 @@ Material:
     - _Color: {r: 0.5, g: 0.3516227, b: 0.21691176, a: 1}
     - _EdgeColor: {r: 0.8088235, g: 0.8088235, b: 0.8088235, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ReShadowColor: {r: 0.86764705, g: 0.15311417, b: 0.15311417, a: 1}
+    - _ReSpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 0.4852941, g: 0.28054526, b: 0.021410026, a: 1}
     - _SpecColor: {r: 0.71323526, g: 0.55930376, b: 0.41955015, a: 1}

@@ -1,11 +1,12 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "II/Postprocess/Scanner" 
+Shader "II/Postprocess/Scanner_depth" 
 {
 	Properties
 	{
 		_Timer("Timer", Range(0, 1.0)) = 0
 		_Center("Center", Vector) = (0.0, 0.0, 0.0, 0.0)
+		_HorizontalDir("Horizontal Direction", Vector) = (1.0, 0.0, 0.0, 0.0)
 		_MainTex("Main Texture", 2D) = "white" {}
 		_EdgeWidth("Edge Width", float) = 1
 		_EdgeColor("Edge Color", Color) = (1.0, 1.0, 1.0, 1.0)
@@ -30,6 +31,7 @@ Shader "II/Postprocess/Scanner"
 
 			uniform float _Timer;
 			uniform float4 _Center;
+			uniform float4 _HorizontalDir;
 			uniform sampler2D _MainTex;
 			uniform float _EdgeWidth;
 			uniform float4 _EdgeColor;
@@ -77,11 +79,9 @@ Shader "II/Postprocess/Scanner"
 				//return float4(centerDepth, centerDepth, centerDepth,1);
 
 				float verticalDepth = abs(depthValue - 0.5);
-				float horizontalDepth = abs(i.screenPos.x / i.screenPos.w - 0.5);
+				float horizontalDepth = abs((i.screenPos.x * _HorizontalDir.x + i.screenPos.z * _HorizontalDir.z) / i.screenPos.w - 0.5);
 				depthValue = pow(pow(verticalDepth, 0.5) + pow(horizontalDepth, 6), 0.5);
 				float4 depth = float4(depthValue, depthValue, depthValue, 1);
-
-				//return depth;
 
 				if (depthValue > _Timer)
 				{
@@ -106,7 +106,7 @@ Shader "II/Postprocess/Scanner"
 				}
 				else
 				{
-					return color * 1.2f;	
+					return color;	
 				}
 			}
 			ENDCG
