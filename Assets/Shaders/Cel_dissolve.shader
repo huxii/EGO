@@ -27,6 +27,7 @@
 	{	
 		Pass
 		{
+			Name "AmbientLights"
 			LOD 200
 			//Cull Off
 
@@ -123,6 +124,7 @@
 					lightDirection = normalize(fragmentToLightSource);
 				}
 
+				// tone lightings (diffuse only for now)
 				float4 lightingColor;
 				float4 reLightingColor;
 				float ramp = clamp(dot(normalDirection, lightDirection), 0, 1.0) * atten;
@@ -151,6 +153,7 @@
 				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
 				float4 reTex = tex2D(_ReplacementTex, i.tex.xy * _ReplacementTex_ST.xy + _ReplacementTex_ST.zw);
 
+				// replacement
 				float4 col;
 				float3 dir = i.posWorld - _Center.xyz;
 				float dis = length(dir);
@@ -195,6 +198,7 @@
 					}
 				}
 
+				// dissolve
 				float noiseSample = tex2Dlod(_NoiseTex, float4(i.tex.xy * _NoiseTex_ST.xy + _NoiseTex_ST.zw, 0, 0));
 				float onEdge = step(noiseSample, _DissolveTimer / _EdgeSpeedRate);
 				col = onEdge * _EdgeColor + (1 - onEdge) * col;
@@ -204,26 +208,20 @@
 			}
 			ENDCG
 		}
-		/*
+		
 		Pass
-		{
-			//LOD 200
-			//Cull Off
-
-			//Blend SrcAlpha OneMinusSrcAlpha
-			Lighting On
-			Blend One One
+		{			
+			Name "OtherLights"
 			Tags 
 			{ 
-				//"Queue" = "AlphaTest"   // Transparent cant receive shadow
-				//"RenderType" = "Transparent" 
-				//"IgnoreProjector"="True"
 				"LightMode" = "ForwardAdd" 
 			}
+			Blend One One
 
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
+			#pragma multi_compile_fwdadd
 
 			#include "AutoLight.cginc"
 			#include "UnityCG.cginc"
@@ -245,6 +243,8 @@
 			uniform float4 _ReplacementTex_ST;
 			uniform float4 _ReShadowColor;
 			uniform float4 _ReSpecColor;
+
+			float4 _Center;
 
 			struct vertexInput
 			{
@@ -283,11 +283,11 @@
 				float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
 				float3 normalDirection = i.normalDir;
 				float3 lightDirection;
-				float atten;
+				float atten = LIGHT_ATTENUATION(i);
 				// Directional light
 				if (_WorldSpaceLightPos0.w == 0.0)
 				{
-					atten = 1.0;
+					//atten = 1.0;
 					lightDirection = normalize(_WorldSpaceLightPos0.xyz);
 				}
 				// Point light
@@ -296,14 +296,13 @@
 					float3 fragmentToLightSource = _WorldSpaceLightPos0.xyz - i.posWorld.xyz;
 					float distance = length(fragmentToLightSource);
 					//atten = 1.0 / distance;
-					atten = 0.1;
 					lightDirection = normalize(fragmentToLightSource);
-				}atten = LIGHT_ATTENUATION(i);
-				return float4(atten, atten, atten, 0);
-				//float atten = LIGHT_ATTENUATION(i);
+				}
+				
+				// tone lightings (diffuse only for now)
 				float4 lightingColor;
 				float4 reLightingColor;
-				float ramp = clamp(dot(normalDirection, lightDirection), 0, 1.0) * atten;
+				float ramp = clamp(dot(normalDirection, lightDirection), 0, 1.0);
 				
 				if (ramp == 0.0)
 				{
@@ -327,18 +326,16 @@
 					reLightingColor = _ReSpecColor;
 				}
 
+				lightingColor *= atten;
+				reLightingColor *= atten;
+
 				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
 				float4 reTex = tex2D(_ReplacementTex, i.tex.xy * _ReplacementTex_ST.xy + _ReplacementTex_ST.zw);
 
-				float depthValue = 1 - Linear01Depth(tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenPos / i.screenPos.w))).r;
-
-				// the screen center depth
-				float verticalDepth = abs(depthValue - 0.5f);
-				float horizontalDepth = abs(i.screenPos.x / i.screenPos.w - 0.5);
-				depthValue = pow(pow(verticalDepth, 0.5) + pow(horizontalDepth, 6), 0.5);
-				float4 depth = float4(depthValue, depthValue, depthValue, 1);
-
+				// replacement
 				float4 col;
+				float3 dir = i.posWorld - _Center.xyz;
+				float dis = length(dir);
 
 				if (_ReplacementStyle == 0)
 				{
@@ -347,7 +344,7 @@
 				else
 				if (_ReplacementStyle == 1)
 				{
-					if (depthValue > _ReplacementTimer)
+					if (dis > _ReplacementTimer)
 					{
 						col = tex * lightingColor;
 					}
@@ -359,7 +356,7 @@
 				else
 				if (_ReplacementStyle == 3)
 				{
-					if (depthValue > _ReplacementTimer)
+					if (dis > _ReplacementTimer)
 					{
 						col = tex * lightingColor;
 					}
@@ -370,7 +367,7 @@
 				}
 				else
 				{
-					if (depthValue > _ReplacementTimer)
+					if (dis > _ReplacementTimer)
 					{
 						clip(-1);
 					}
@@ -380,6 +377,7 @@
 					}
 				}
 
+				// dissolve
 				float noiseSample = tex2Dlod(_NoiseTex, float4(i.tex.xy * _NoiseTex_ST.xy + _NoiseTex_ST.zw, 0, 0));
 				float onEdge = step(noiseSample, _DissolveTimer / _EdgeSpeedRate);
 				col = onEdge * _EdgeColor + (1 - onEdge) * col;
@@ -389,7 +387,7 @@
 			}
 			ENDCG
 		}
-		*/
+		
 	}
 	Fallback "Diffuse"
 }

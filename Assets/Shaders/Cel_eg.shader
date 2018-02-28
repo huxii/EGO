@@ -1,5 +1,4 @@
-﻿
-Shader "Cell Shading/Team Fortress 2"
+﻿Shader "Cell Shading/Team Fortress 2"
 {
 	Properties
 	{
@@ -102,7 +101,7 @@ Shader "Cell Shading/Team Fortress 2"
  
 				// Lighting
 				float atten = LIGHT_ATTENUATION(i);
- 
+ return float4(0.5, 0.5, 0.5, 1);
 				//// Diffuse
 				float nDotL = dot(normal, i.lightDir);
 				float4 ramp = tex2D(_RampTex, float2(nDotL * 0.5 + 0.5, 0.5));
@@ -126,7 +125,7 @@ Shader "Cell Shading/Team Fortress 2"
  
 			ENDCG
 		}
-		
+ 
 		Pass
 		{
 			Tags { "LightMode" = "ForwardAdd" }
@@ -215,12 +214,12 @@ Shader "Cell Shading/Team Fortress 2"
  
 				// Lighting
 				float atten = LIGHT_ATTENUATION(i);
- 
+ return float4(atten, atten, atten, 1);
 				//// Diffuse
 				float nDotL = dot(normal, i.lightDir);
 				float4 ramp = tex2D(_RampTex, float2(nDotL * 0.5 + 0.5, 0.5));
 				float4 diffuse = atten * _LightColor0 * ramp;				
- 
+				
 				//// Specular
 				float vDotR = max(0.0, dot(i.viewDir, reflLightDir));
 				float4 specular = atten * _LightColor0 * _SpecBoost * pow(vDotR, _SpecExp);
