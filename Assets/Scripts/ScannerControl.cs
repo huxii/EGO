@@ -7,7 +7,10 @@ public class ScannerControl : MonoBehaviour
 {
     public GameObject scannerCamera;
     public float scanRange = 1f;
+    public float scanEdgeWidth = 1f;
     public float scanSpeed = 0.2f;
+    public float scanInnerBlur = 1f;
+    public float scanOutterBlur = 1f;
 
     Material scannerMat;
     List<GameObject> ppObjs;
@@ -79,6 +82,9 @@ public class ScannerControl : MonoBehaviour
                 scannerMat.SetFloat("_Timer", 0);
                 scannerMat.SetFloat("_Range", scanRange);
                 scannerMat.SetVector("_Center", transform.position);
+                scannerMat.SetFloat("_EdgeWidth", scanEdgeWidth);
+                scannerMat.SetFloat("_EdgeInnerBlur", scanInnerBlur);
+                scannerMat.SetFloat("_EdgeOutterBlur", scanOutterBlur);
 
                 foreach (GameObject o in ppObjs)
                 {

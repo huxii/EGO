@@ -135,6 +135,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 7dc13ee2412fce94d84c115df1fbd526, type: 2}
+  clipToWorld:
+    e00: 0
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 0
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 0
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 0
 --- !u!114 &114298270420905556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,8 +176,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scannerCamera: {fileID: 1703272292802384}
   scanTimer: 0
-  scanRange: 3
-  scanEdgeWidth: 0.1
+  scanRange: 15
+  scanEdgeWidth: 5
+  scanInnerBlur: 4
+  scanOutterBlur: 4
 --- !u!114 &114967638492976622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -174,7 +193,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scannerCamera: {fileID: 1703272292802384}
   scanRange: 10
-  scanSpeed: 1
+  scanEdgeWidth: 1
+  scanSpeed: 1.5
+  scanInnerBlur: 4
+  scanOutterBlur: 4
   startScanner: 0
   scanTimer: 0
 --- !u!124 &124789316073258310
