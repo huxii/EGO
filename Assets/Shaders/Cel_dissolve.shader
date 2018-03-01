@@ -9,14 +9,16 @@
          
         [Header(Style Light)]
         _ReplacementTex("Texture", 2D) = "white" {}
+        [KeywordEnum(ALPHA,MULTIPLY, ADD)] _TextureBlendMode("Texture Blend Mode", float) = 0
+        _TextureAlpha("Texture Alpha", Range(0,1)) = 0
         _ReSpecColor("Specular", Color) = (1.0, 1.0, 1.0, 1.0)
         _ReDiffuseColor("Diffuse", Color) = (0.5, 0.5, 0.5, 1.0)
         _ReShadowColor("Shadow", Color) = (0.0, 0.0, 0.0, 1.0)
 
         [Header(Style Dark)]
         _MainTex("Texture", 2D) = "white" {}
-        _SpecColor("Specular", Color) = (1.0, 1.0, 1.0, 1.0)
-        _DiffuseColor("Diffuse", Color) = (0.5, 0.5, 0.5, 1.0)
+        _SpecColor("Specular", Color) = (0.6, 0.6, 0.6, 1.0)
+        _DiffuseColor("Diffuse", Color) = (0.2, 0.2, 0.2, 1.0)
         _ShadowColor("Shadow", Color) = (0.0, 0.0, 0.0, 1.0)
 
         [Header(Threshold)]
@@ -82,6 +84,8 @@
             uniform float _ShadowThreshold;
             uniform float _SpecThreshold;
             uniform float _SoftRange;
+            uniform float _TextureAlpha;
+            uniform float _TextureBlendMode;
 
 			float4 _Center;
 
@@ -187,45 +191,39 @@
 				float4 col;
 				float3 dir = i.posWorld - _Center.xyz;
 				float dis = length(dir);
-
-				if (_ReplacementStyle == 0)
-				{
-					col = tex * reLightingColor;
-				}
-				else
-				if (_ReplacementStyle == 1)
-				{
-					if (dis > _ReplacementTimer)
-					{
-						col = tex * lightingColor;
+                    //by default set reTex
+                if(_TextureBlendMode ==0){
+                    col = reTex*_TextureAlpha + reLightingColor*(1-_TextureAlpha);
+                }else if(_TextureBlendMode ==1){
+                    col = (1-_TextureAlpha)+reTex*_TextureAlpha;
+                    col = col*reLightingColor;
+                    col.a = reLightingColor.a;
+                }else if(_TextureBlendMode ==2){
+                    col = reTex*_TextureAlpha + reLightingColor;
+                }else{
+                    col = reTex*_TextureAlpha + reLightingColor*(1-_TextureAlpha);
+                }
+                    //special cases
+				if (_ReplacementStyle == 1){
+					if (dis > _ReplacementTimer){
+						if(_TextureBlendMode ==0){
+                            col = tex*_TextureAlpha + lightingColor*(1-_TextureAlpha);
+                        }else if(_TextureBlendMode ==1){
+                           col = (1-_TextureAlpha)+tex*_TextureAlpha;
+                           col = col*lightingColor;
+                           col.a = lightingColor.a;
+                        }else if(_TextureBlendMode ==2){
+                            col = tex*_TextureAlpha + lightingColor;
+                        }else{
+                            col = tex*_TextureAlpha + lightingColor*(1-_TextureAlpha);
+                        }
 					}
-					else
-					{
-						col = reTex * reLightingColor;
-					}
-				}
-				else
-				if (_ReplacementStyle == 3)
-				{
-					if (dis > _ReplacementTimer)
-					{
-						col = tex * reLightingColor;
-					}
-					else
-					{
+				}else if (_ReplacementStyle == 3){
+					if (dis <= _ReplacementTimer)
 						clip(-1);
-					}
-				}
-				else
-				{
+				}else{
 					if (dis > _ReplacementTimer)
-					{
 						clip(-1);
-					}
-					else
-					{
-						col = tex * reLightingColor;
-					}
 				}
 
 				// dissolve
@@ -277,6 +275,8 @@
             uniform float _ShadowThreshold;
             uniform float _SpecThreshold;
             uniform float _SoftRange;
+            uniform float _TextureAlpha;
+            uniform float _TextureBlendMode;
 
             sampler2D _CameraDepthTexture;
             
@@ -388,44 +388,38 @@
                 float3 dir = i.posWorld - _Center.xyz;
                 float dis = length(dir);
 
-                if (_ReplacementStyle == 0)
-                {
-                    col = tex * lightingColor;
+                if(_TextureBlendMode ==0){
+                    col = reTex*_TextureAlpha + reLightingColor*(1-_TextureAlpha);
+                }else if(_TextureBlendMode ==1){
+                    col = (1-_TextureAlpha)+reTex*_TextureAlpha;
+                    col = col*reLightingColor;
+                    col.a = reLightingColor.a;
+                }else if(_TextureBlendMode ==2){
+                    col = reTex*_TextureAlpha + reLightingColor;
+                }else{
+                    col = reTex*_TextureAlpha + reLightingColor*(1-_TextureAlpha);
                 }
-                else
-                if (_ReplacementStyle == 1)
-                {
-                    if (dis > _ReplacementTimer)
-                    {
-                        col = tex * lightingColor;
+                    //special cases
+                if (_ReplacementStyle == 1){
+                    if (dis > _ReplacementTimer){
+                        if(_TextureBlendMode ==0){
+                            col = tex*_TextureAlpha + lightingColor*(1-_TextureAlpha);
+                        }else if(_TextureBlendMode ==1){
+                           col = (1-_TextureAlpha)+tex*_TextureAlpha;
+                           col = col*lightingColor;
+                           col.a = lightingColor.a;
+                        }else if(_TextureBlendMode ==2){
+                            col = tex*_TextureAlpha + lightingColor;
+                        }else{
+                            col = tex*_TextureAlpha + lightingColor*(1-_TextureAlpha);
+                        }
                     }
-                    else
-                    {
-                        col = reTex * reLightingColor;
-                    }
-                }
-                else
-                if (_ReplacementStyle == 3)
-                {
-                    if (dis > _ReplacementTimer)
-                    {
-                        col = tex * reLightingColor;
-                    }
-                    else
-                    {
+                }else if (_ReplacementStyle == 3){
+                    if (dis <= _ReplacementTimer)
                         clip(-1);
-                    }
-                }
-                else
-                {
+                }else{
                     if (dis > _ReplacementTimer)
-                    {
                         clip(-1);
-                    }
-                    else
-                    {
-                        col = tex * reLightingColor;
-                    }
                 }
 
                 // dissolve
