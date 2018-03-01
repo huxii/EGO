@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Mountain
   m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON
+  m_ShaderKeywords: _ALPHATEST_ON _REPLACEMENTSTYLE_KEEP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -58,6 +58,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ReplacementTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -72,14 +76,23 @@ Material:
     - _Mode: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _ReplacementStyle: 0
+    - _ReplacementTimer: 0
+    - _ShadowThreshold: 0.3
     - _SmoothnessTextureChannel: 0
+    - _SoftRange: 0.05
+    - _SpecThreshold: 0.85
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.18052554, g: 0.3897059, b: 0.26852554, a: 1}
+    - _DiffuseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ReDiffuseColor: {r: 0.5386328, g: 0.6985294, b: 0.50848836, a: 1}
+    - _ReShadowColor: {r: 0.26486808, g: 0.52205884, b: 0.3624232, a: 1}
+    - _ReSpecColor: {r: 0.8571575, g: 0.9705882, b: 0.75648785, a: 1}
     - _ShadowColor: {r: 0.08390409, g: 0.2352941, b: 0.055363316, a: 1}
     - _SpecColor: {r: 0.8308824, g: 1, b: 0.9230223, a: 1}

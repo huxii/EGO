@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Desk
   m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _PLAYMODE_OUT _REPLACEMENTINV_ON _REPLACEMENTSTYLE_REPLACE
+  m_ShaderKeywords: _PLAYMODE_OUT _REPLACEMENTINV_ON _REPLACEMENTSTYLE_REPLACE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -75,22 +75,27 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
-    - _Mode: 1
+    - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PlayMode: 0
     - _ReplacementInv: 1
     - _ReplacementStyle: 1
     - _ReplacementTimer: 2.12
+    - _ShadowThreshold: 0.3
     - _SmoothnessTextureChannel: 0
+    - _SoftRange: 0.05
+    - _SpecThreshold: 0.85
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.5, g: 0.3516227, b: 0.21691176, a: 1}
+    - _DiffuseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EdgeColor: {r: 0.8088235, g: 0.8088235, b: 0.8088235, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ReDiffuseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _ReShadowColor: {r: 0.86764705, g: 0.15311417, b: 0.15311417, a: 1}
     - _ReSpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 0.4852941, g: 0.28054526, b: 0.021410026, a: 1}
