@@ -9,6 +9,7 @@ Material:
   m_Name: Wall
   m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
   m_ShaderKeywords: _PLAYMODE_OUT _REPLACEMENTSTYLE_KEEP _REPLACEMENTSTYLE_TEXTURE
+    _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -98,7 +99,7 @@ Material:
     - _ReplacementInv: 0
     - _ReplacementInvert: 0
     - _ReplacementStyle: 0
-    - _ReplacementTimer: 0
+    - _ReplacementTimer: 10
     - _RimBoost: 2
     - _RimExp: 4
     - _ShadowThreshold: 0.3
@@ -109,6 +110,8 @@ Material:
     - _SpecThreshold: 0.85
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _TextureAlpha: 0
+    - _TextureBlendMode: 0
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:

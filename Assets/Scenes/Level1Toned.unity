@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.444234, g: 0.49368143, b: 0.5730659, a: 1}
+  m_IndirectSpecularColor: {r: 0.44423422, g: 0.49368167, b: 0.57306653, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1425,7 +1425,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scannerCamera: {fileID: 0}
   scanRange: 20
+  scanEdgeWidth: 1
   scanSpeed: 0.2
+  scanInnerBlur: 1
+  scanOutterBlur: 1
   startScanner: 0
   scanTimer: 0
 --- !u!114 &327762763
@@ -1583,7 +1586,7 @@ Transform:
   - {fileID: 1533471479}
   - {fileID: 111792403}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &433978116 stripped
 GameObject:
@@ -2274,7 +2277,7 @@ Transform:
   - {fileID: 433978117}
   - {fileID: 675820481}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &649263410
 GameObject:
@@ -2488,7 +2491,7 @@ Transform:
   - {fileID: 1142328783}
   - {fileID: 1567477503}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &742984694
 GameObject:
@@ -2598,7 +2601,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4134932438039974, guid: d96ce42bd7e6fbc4fa1c202785395d77, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1036303249889478, guid: d96ce42bd7e6fbc4fa1c202785395d77, type: 2}
       propertyPath: m_Name
@@ -2644,7 +2647,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scannerCamera: {fileID: 1240891311}
   scanRange: 20
+  scanEdgeWidth: 1
   scanSpeed: 0.008
+  scanInnerBlur: 1
+  scanOutterBlur: 1
   startScanner: 0
   scanTimer: 0
 --- !u!65 &755787064
@@ -2749,6 +2755,53 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 776149103}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &804620241
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4250286950006370, guid: 6ebb5ba7b53513d4abe7b68c543b6df3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.9972816
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250286950006370, guid: 6ebb5ba7b53513d4abe7b68c543b6df3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -4.563528
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250286950006370, guid: 6ebb5ba7b53513d4abe7b68c543b6df3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 46.520752
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250286950006370, guid: 6ebb5ba7b53513d4abe7b68c543b6df3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250286950006370, guid: 6ebb5ba7b53513d4abe7b68c543b6df3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250286950006370, guid: 6ebb5ba7b53513d4abe7b68c543b6df3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250286950006370, guid: 6ebb5ba7b53513d4abe7b68c543b6df3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250286950006370, guid: 6ebb5ba7b53513d4abe7b68c543b6df3, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114317304601402542, guid: 6ebb5ba7b53513d4abe7b68c543b6df3,
+        type: 2}
+      propertyPath: originCamera
+      value: 
+      objectReference: {fileID: 1735417155}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6ebb5ba7b53513d4abe7b68c543b6df3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &815491264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2875,7 +2928,7 @@ MonoBehaviour:
   angleSensitivity: {x: 60, y: 60}
   angleSmooth: {x: 1, y: 1}
   dAngle: {x: 0, y: 0}
-  freeze: 1
+  frozen: 0
 --- !u!81 &835786850
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3349,7 +3402,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1050264101
 GameObject:
@@ -3450,7 +3503,7 @@ Transform:
   - {fileID: 835786853}
   - {fileID: 1273498690}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1074800849
 GameObject:
@@ -3749,7 +3802,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scannerCamera: {fileID: 0}
   scanRange: 20
+  scanEdgeWidth: 1
   scanSpeed: 0.2
+  scanInnerBlur: 1
+  scanOutterBlur: 1
   startScanner: 0
   scanTimer: 0
 --- !u!114 &1240891315
@@ -3855,12 +3911,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997e75d1fe4958f4c8a261e91adc12b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchBack: 0
   originCamera: {fileID: 1735417155}
   targetCamera: {fileID: 835786852}
+  playerHeight: 2
   hideObjects: {fileID: 675820480}
   showObjects: {fileID: 433978116}
-  playerHeight: 2
 --- !u!65 &1273498689
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3930,12 +3985,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997e75d1fe4958f4c8a261e91adc12b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchBack: 1
   originCamera: {fileID: 1735417155}
   targetCamera: {fileID: 1595175814}
+  playerHeight: 4
   hideObjects: {fileID: 0}
   showObjects: {fileID: 0}
-  playerHeight: 4
 --- !u!65 &1347534406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4603,7 +4657,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scannerCamera: {fileID: 327762759}
   scanRange: 20
+  scanEdgeWidth: 1
   scanSpeed: 0.008
+  scanInnerBlur: 1
+  scanOutterBlur: 1
   startScanner: 1
   scanTimer: 0
 --- !u!65 &1575137751
@@ -4695,7 +4752,7 @@ MonoBehaviour:
   angleSensitivity: {x: 1000, y: 100}
   angleSmooth: {x: 1, y: 1}
   dAngle: {x: 0, y: 0}
-  freeze: 1
+  frozen: 0
 --- !u!81 &1595175816
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5401,7 +5458,7 @@ Transform:
   m_Children:
   - {fileID: 1699298322}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 15.000001, y: 0, z: 0}
 --- !u!114 &1735417157
 MonoBehaviour:
@@ -5421,7 +5478,7 @@ MonoBehaviour:
   angleSensitivity: {x: 500, y: 200}
   angleSmooth: {x: 3, y: 3}
   dAngle: {x: 0, y: 0}
-  freeze: 0
+  frozen: 0
 --- !u!114 &1735417158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5466,7 +5523,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scannerCamera: {fileID: 1784435751}
   scanRange: 20
+  scanEdgeWidth: 1
   scanSpeed: 0.008
+  scanInnerBlur: 1
+  scanOutterBlur: 1
   startScanner: 0
   scanTimer: 0
 --- !u!65 &1769493186
@@ -5614,7 +5674,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scannerCamera: {fileID: 0}
   scanRange: 20
+  scanEdgeWidth: 1
   scanSpeed: 0.2
+  scanInnerBlur: 1
+  scanOutterBlur: 1
   startScanner: 0
   scanTimer: 0
 --- !u!114 &1784435755

@@ -36,6 +36,12 @@ public class ScannerControl : MonoBehaviour
             if (o.layer == 8)
             {
                 ppObjs.Add(o);
+                MeshRenderer[] meshes = o.GetComponentsInChildren<MeshRenderer>();
+                foreach (MeshRenderer mesh in meshes)
+                {
+                    Material mat = mesh.material;
+                    mat.SetFloat("_ReplacementTimer", 0);
+                }
             }
         }
     }
