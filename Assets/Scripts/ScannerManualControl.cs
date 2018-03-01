@@ -10,6 +10,8 @@ public class ScannerManualControl : MonoBehaviour
     public float scanTimer = 0f;
     public float scanRange = 1f;
     public float scanEdgeWidth = 0.1f;
+    public float scanInnerBlur = 1f;
+    public float scanOutterBlur = 1f;
 
     Material scannerMat;
     List<GameObject> ppObjs;
@@ -17,8 +19,12 @@ public class ScannerManualControl : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        scannerCamera.SetActive(true);
         CameraRenderImage camRender = scannerCamera.GetComponent<CameraRenderImage>();
         scannerMat = camRender.mat;
+        scannerMat.SetFloat("_Timer", 0);
+        scannerMat.SetFloat("_EdgeInnerBlur", scanInnerBlur);
+        scannerMat.SetFloat("_EdgeOutterBlur", scanOutterBlur);
 
         ppObjs = new List<GameObject>();
         var allGameObjects = FindObjectsOfType(typeof(GameObject));
@@ -38,6 +44,7 @@ public class ScannerManualControl : MonoBehaviour
         scannerMat.SetFloat("_EdgeWidth", scanEdgeWidth);
         scannerMat.SetFloat("_Range", scanRange);
         scannerMat.SetVector("_Center", transform.position);
+
         foreach (GameObject o in ppObjs)
         {
             if (Vector3.Distance(transform.position, o.transform.position) < scanRange)
@@ -46,7 +53,8 @@ public class ScannerManualControl : MonoBehaviour
                 foreach (MeshRenderer mesh in meshes)
                 {
                     Material mat = mesh.material;
-                    mat.SetFloat("_ReplacementTimer", scanTimer);
+                    mat.SetFloat("_ReplacementTimer", scanTimer * scanRange);
+                    mat.SetVector("_Center", transform.position);
                 }
             }
         }

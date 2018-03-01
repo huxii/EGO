@@ -15,7 +15,7 @@ public class CameraControl : MonoBehaviour
     public Vector2 angleSmooth = new Vector2(1f, 1f);
     public Vector2 dAngle = new Vector2(0, 0);
 
-    public bool freeze = false;
+    public bool frozen = false;
 
     Vector3 curTargetPos;
     Vector2 curAngle;
@@ -36,7 +36,7 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (targetObject && !freeze)
+        if (targetObject)
         {
             PositionUpdate();
             RotationUpdate();
@@ -71,13 +71,14 @@ public class CameraControl : MonoBehaviour
     {
         float dAngleX = dAngle.x;
         float dAngleY = dAngle.y;
-        //if (Input.GetMouseButton(1))
+
+        if (!frozen)
         {
             dAngleX -= Input.GetAxis("Mouse X") * Time.deltaTime * angleSensitivity.x;
             dAngleY -= Input.GetAxis("Mouse Y") * Time.deltaTime * angleSensitivity.y;
+            dAngleX -= Input.GetAxis("RightJoystick X") * Time.deltaTime * angleSensitivity.x;
+            dAngleY -= Input.GetAxis("RightJoystick Y") * Time.deltaTime * angleSensitivity.y;
         }
-        dAngleX -= Input.GetAxis("RightJoystick X") * Time.deltaTime * angleSensitivity.x;
-        dAngleY -= Input.GetAxis("RightJoystick Y") * Time.deltaTime * angleSensitivity.y;
 
         dAngleX = Clamp(dAngleX, -angleRange.x, angleRange.x);
         dAngleY = Clamp(dAngleY, -angleRange.y, angleRange.y);

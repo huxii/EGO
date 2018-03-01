@@ -77,5 +77,5 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0.9191176, g: 0.39873484, b: 0.39873484, a: 1}
     - _ShadowColor: {r: 0.97794116, g: 0.6878318, b: 0.6543577, a: 1}
-    - _SilhouettedColor: {r: 0.9705882, g: 0.60509187, b: 0.4067906, a: 1}
+    - _SilhouettedColor: {r: 0.9558824, g: 0.39544064, b: 0.09137108, a: 1}
     - _SpecColor: {r: 1, g: 0.93235296, b: 0.8308824, a: 1}
