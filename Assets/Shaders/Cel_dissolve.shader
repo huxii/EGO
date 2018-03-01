@@ -204,7 +204,9 @@
                     col = reTex*_TextureAlpha + reLightingColor*(1-_TextureAlpha);
                 }
                     //special cases
-				if (_ReplacementStyle == 1){
+                if (_ReplacementStyle == 0){
+                    //pass    
+                }else if (_ReplacementStyle == 1){
 					if (dis > _ReplacementTimer){
 						if(_TextureBlendMode ==0){
                             col = tex*_TextureAlpha + lightingColor*(1-_TextureAlpha);
@@ -400,7 +402,9 @@
                     col = reTex*_TextureAlpha + reLightingColor*(1-_TextureAlpha);
                 }
                     //special cases
-                if (_ReplacementStyle == 1){
+                if (_ReplacementStyle == 0){
+                    //pass    
+                }else if (_ReplacementStyle == 1){
                     if (dis > _ReplacementTimer){
                         if(_TextureBlendMode ==0){
                             col = tex*_TextureAlpha + lightingColor*(1-_TextureAlpha);
