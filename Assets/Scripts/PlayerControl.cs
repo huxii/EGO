@@ -31,17 +31,6 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (transform.position.y > heightAxis)
-        {
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y - 0.2f, rb.velocity.z);
-        }
-        else
-        if (transform.position.y < heightAxis)
-        {
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y + 0.2f, rb.velocity.z);
-        }
-        */
         if (!frozen)
         {
             MovementUpdate();
@@ -114,6 +103,47 @@ public class PlayerControl : MonoBehaviour
         Vector3 v = cam.transform.right;
         v.y = 0;
         return v;
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("SwitchTrigger"))
+        {
+            if (other.gameObject.GetComponent<ViewportControl>().switchByButton)
+            {
+                if (Input.GetButtonDown("Interact"))
+                {
+                    other.gameObject.GetComponent<ViewportControl>().SwitchViewport();
+                }
+                else
+                if (Input.GetButtonDown("Exit"))
+                {
+                    other.gameObject.GetComponent<ViewportControl>().SwitchBackViewport();
+                }
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("SwitchTrigger"))
+        {
+            if (!other.gameObject.GetComponent<ViewportControl>().switchByButton)
+            {
+                other.gameObject.GetComponent<ViewportControl>().SwitchViewport();
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("SwitchTrigger"))
+        {
+            if (!other.gameObject.GetComponent<ViewportControl>().switchByButton)
+            {
+                other.gameObject.GetComponent<ViewportControl>().SwitchBackViewport();
+            }
+        }
     }
 }
 

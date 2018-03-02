@@ -1,7 +1,5 @@
 ﻿Shader "II/Cel_dissolve" 
 {
-
-	// TODO : REFLECTION RIPPLE SPLASH SHADOW   
 	Properties
 	{
         [KeywordEnum(KEEP, REPLACE, APPEAR, DISAPPEAR)] _ReplacementStyle("Replacement Style", Float) = 1
@@ -26,6 +24,11 @@
         _SpecThreshold("Specular Threshold", Range(0.5,1)) = 0.85
         _SoftRange("Soft Range", Range(0,0.5)) = 0.05
 
+		[Header(Outline)]
+		[Toggle] _ColoredOutline("Colored Outline", Float) = 0 
+		_OutlineColor("Outline Color", Color) = (0.0, 0.0, 0.0, 1.0)
+		_OutlineThickness("Outline Thickness", Range(0, 0.5)) = 0
+
         [Header(Dissolve)]
         _DissolveTimer("Dissolve Timer", Range(0, 1.0)) = 0
         _EdgeSpeedRate("Edge Speed Rate", Range(0, 1.0)) = 0.8
@@ -35,7 +38,7 @@
 
 	SubShader
 	{	
-
+		
 		Pass
 		{
 			Name "AmbientLights"
@@ -64,7 +67,7 @@
 
 			sampler2D _CameraDepthTexture;
 
-                        sampler2D _MainTex;
+            sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _ShadowColor;
             float4 _DiffuseColor;
@@ -237,6 +240,14 @@
 				return col;
 			}
 			ENDCG
+
+			Stencil
+			{
+				Ref 4
+				Comp always
+				Pass replace
+				ZFail keep
+			}
 		}
 		
         Pass
@@ -437,6 +448,80 @@
             ENDCG
         }
 		
+		/*
+		Pass
+		{
+			Name "Outline"
+			Tags {"LightMode" = "ForwardBase"}
+
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			#pragma exclude_renderers flash
+
+			uniform sampler2D _MainTex;
+			uniform float4 _MainTex_ST;
+			uniform bool _ColoredOutline;
+			uniform float4 _OutlineColor;
+			uniform float _OutlineThickness;
+
+			struct vertexInput
+			{
+				float4 vertex : POSITION;
+				float3 normal : NORMAL;
+				float4 texcoord : TEXCOORD0;
+			};
+
+			struct vertexOutput
+			{
+				float4 pos : SV_POSITION;
+				float4 texColor : TEXCOORD0;
+			};
+
+			vertexOutput vert(vertexInput v)
+			{
+				vertexOutput o;
+
+				// scale up the whole mesh
+				float4 newPos = v.vertex;
+				float3 normal = normalize(v.vertex);
+				newPos += float4(normal, 0.0) * _OutlineThickness;
+
+				o.pos = UnityObjectToClipPos(newPos);
+				o.texColor = tex2Dlod(_MainTex, float4(v.texcoord.xy, 0, 0));
+
+				return o;	
+			}
+
+			float4 frag(vertexOutput i) : COLOR
+			{
+				float4 col;
+				if (_ColoredOutline)
+				{
+					col = i.texColor * _OutlineColor;
+				}
+				else
+				{
+					col = _OutlineColor;
+				}
+
+				return col;
+			}
+
+			ENDCG
+
+			//Cull OFF
+			//ZWrite OFF
+			ZTest ON
+			Stencil
+			{
+				Ref 4
+				Comp notequal
+				Fail keep
+				Pass replace
+			}
+		}
+		*/
 	}
 	Fallback "Diffuse"
 }

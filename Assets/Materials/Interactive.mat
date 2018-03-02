@@ -64,10 +64,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
+    - _ColoredOutline: 0
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DissolveSpeed: 0.3
     - _DissolveTimer: 0
+    - _DottedLineFreq: 0.2
+    - _DottedLineThickness: 0.2
     - _DstBlend: 0
     - _EdgeSpeed: 0.2
     - _EdgeSpeedRate: 0.8
@@ -77,18 +80,30 @@ Material:
     - _Metallic: 0
     - _Mode: 1
     - _OcclusionStrength: 1
+    - _OutlineStyle: 0
+    - _OutlineThickness: 0
     - _Parallax: 0.02
     - _PlayMode: 0
     - _ReplacementStyle: 2
     - _ReplacementTimer: 0
+    - _ShadowThreshold: 0.3
     - _SmoothnessTextureChannel: 0
+    - _SoftRange: 0.05
+    - _SpecThreshold: 0.85
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _TextureAlpha: 0
+    - _TextureBlendMode: 0
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 0.6397059, b: 0.6397059, a: 1}
+    - _DiffuseColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _EdgeColor: {r: 0.8088235, g: 0.8088235, b: 0.8088235, a: 1}
     - _EmissionColor: {r: 0.5808823, g: 0.03844074, b: 0.03844074, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ReDiffuseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _ReShadowColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ReSpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 0.6691177, g: 0.13283955, b: 0.13283955, a: 1}
     - _SpecColor: {r: 1, g: 0.7394572, b: 0.7394572, a: 1}

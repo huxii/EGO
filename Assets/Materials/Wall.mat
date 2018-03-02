@@ -81,6 +81,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
+    - _ColoredOutline: 0
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DissolveSpeed: 0.3
@@ -94,6 +95,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _OutlineThickness: 0
     - _Parallax: 0.02
     - _PlayMode: 0
     - _ReplacementInv: 0
@@ -119,6 +121,7 @@ Material:
     - _DiffuseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EdgeColor: {r: 0.8088235, g: 0.8088235, b: 0.8088235, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReDiffuseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _ReShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReSpecColor: {r: 1, g: 1, b: 1, a: 1}

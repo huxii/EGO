@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 114317304601402542}
   m_Layer: 8
   m_Name: LighthouseSwitchTrigger
-  m_TagString: Untagged
+  m_TagString: SwitchTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,10 +379,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e56028129f4ae345ba145db9dbacfdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originCamera: {fileID: 0}
   targetCamera: {fileID: 20702739258871130}
   playerHeight: 4
-  switchBack: 1
+  switchByButton: 1
   switchCon: 1
   switchedConObj: {fileID: 1859198236068770}
 --- !u!114 &114432318347119436
