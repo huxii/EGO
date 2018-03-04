@@ -121,7 +121,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1449758597508822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.53, z: 47.28}
+  m_LocalPosition: {x: -1.9972816, y: -4.563528, z: 46.520752}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4994455487631094}
@@ -380,10 +380,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 20702739258871130}
-  playerHeight: 4
+  playerHeight: 6
   switchByButton: 1
-  switchCon: 1
-  switchedConObj: {fileID: 1859198236068770}
+  switchControl: 1
+  targetControl: {fileID: 1859198236068770}
 --- !u!114 &114432318347119436
 MonoBehaviour:
   m_ObjectHideFlags: 1
