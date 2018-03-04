@@ -3,21 +3,21 @@
 	Properties
 	{
         [KeywordEnum(KEEP, REPLACE, APPEAR, DISAPPEAR)] _ReplacementStyle("Replacement Style", Float) = 1
-        _ReplacementTimer("Replacement Timer", Range(0,10.0)) = 0
+        _ReplacementTimer("Replacement Timer", Range(0,20.0)) = 0
          
         [Header(Style Light)]
         _ReplacementTex("Texture", 2D) = "white" {}
         [KeywordEnum(ALPHA,MULTIPLY, ADD)] _TextureBlendMode("Texture Blend Mode", float) = 0
         _TextureAlpha("Texture Alpha", Range(0,1)) = 0
-        _ReSpecColor("Specular", Color) = (1.0, 1.0, 1.0, 1.0)
-        _ReDiffuseColor("Diffuse", Color) = (0.5, 0.5, 0.5, 1.0)
-        _ReShadowColor("Shadow", Color) = (0.0, 0.0, 0.0, 1.0)
+        [HDR]_ReSpecColor("Specular", Color) = (1.0, 1.0, 1.0, 1.0)
+        [HDR]_ReDiffuseColor("Diffuse", Color) = (0.5, 0.5, 0.5, 1.0)
+        [HDR]_ReShadowColor("Shadow", Color) = (0.0, 0.0, 0.0, 1.0)
 
         [Header(Style Dark)]
         _MainTex("Texture", 2D) = "white" {}
-        _SpecColor("Specular", Color) = (0.6, 0.6, 0.6, 1.0)
-        _DiffuseColor("Diffuse", Color) = (0.2, 0.2, 0.2, 1.0)
-        _ShadowColor("Shadow", Color) = (0.0, 0.0, 0.0, 1.0)
+        [HDR]_SpecColor("Specular", Color) = (0.6, 0.6, 0.6, 1.0)
+        [HDR]_DiffuseColor("Diffuse", Color) = (0.2, 0.2, 0.2, 1.0)
+        [HDR]_ShadowColor("Shadow", Color) = (0.0, 0.0, 0.0, 1.0)
 
         [Header(Threshold)]
         _ShadowThreshold("Shadow Threshold", Range(0,0.5)) = 0.3
@@ -224,8 +224,13 @@
                         }
 					}
 				}else if (_ReplacementStyle == 3){
-					if (dis <= _ReplacementTimer)
-						clip(-1);
+					if (dis <= _ReplacementTimer){
+                        clip(-1);
+                    }else{
+                        col = (1-_TextureAlpha)+tex*_TextureAlpha;
+                        col = col*lightingColor;
+                        col.a = lightingColor.a;
+                    }	
 				}else{
 					if (dis > _ReplacementTimer)
 						clip(-1);
@@ -430,8 +435,13 @@
                         }
                     }
                 }else if (_ReplacementStyle == 3){
-                    if (dis <= _ReplacementTimer)
+                    if (dis <= _ReplacementTimer){
                         clip(-1);
+                     }else{
+                        col = (1-_TextureAlpha)+tex*_TextureAlpha;
+                        col = col*lightingColor;
+                        col.a = lightingColor.a;
+                    }
                 }else{
                     if (dis > _ReplacementTimer)
                         clip(-1);
