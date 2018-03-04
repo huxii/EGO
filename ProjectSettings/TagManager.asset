@@ -8,6 +8,7 @@ TagManager:
   - ZoomTarget
   - NextTarget
   - SwitchTrigger
+  - Terrain
   layers:
   - Default
   - TransparentFX

@@ -10,13 +10,16 @@ public class PlayerControl : MonoBehaviour
     public float moveSpeed = 1f;
     public float jumpSpeed = 1f;
     public float rotationSpeed = 1f;
-    public float heightAxis = 4f;
+    public float heightStandard = 4f;
     public float heightRange = 2f;
+    public float heightTol = 0.1f;
 
     [Header("Debug")]
     //MainControl gameController;
     Camera cam;
     Rigidbody rb;
+    [SerializeField]
+    float heightAxis;
 
     // Use this for initialization
     void Start()
@@ -43,6 +46,8 @@ public class PlayerControl : MonoBehaviour
 
     void MovementUpdate()
     {
+        heightAxis = heightStandard + GetHeightOnGround();
+
         float jump = Input.GetAxis("Jump");
         if (jump > 0)
         {
@@ -89,6 +94,28 @@ public class PlayerControl : MonoBehaviour
 
         Vector3 dir = (vertical + horizontal + height) * Time.deltaTime;
         transform.Translate(dir);
+    }
+
+    float GetHeightOnGround()
+    {
+        float y = heightAxis - heightStandard;
+        float distance = 50f;
+        RaycastHit[] hits;
+        hits = Physics.RaycastAll(transform.position, -transform.up, 50f);
+
+        foreach (RaycastHit hit in hits)
+        {
+            if (hit.collider.gameObject.CompareTag("Terrain"))
+            {
+                if (hit.distance < distance)
+                {
+                    distance = hit.distance;
+                    y = hit.point.y;
+                }
+            }
+        }
+
+        return y;
     }
 
     Vector3 CameraForwardDirection()

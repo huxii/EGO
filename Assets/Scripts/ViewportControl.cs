@@ -50,7 +50,7 @@ public class ViewportControl : MonoBehaviour
         }
         switched = true;
 
-        playerHeight0 = player.GetComponent<PlayerControl>().heightAxis;
+        playerHeight0 = player.GetComponent<PlayerControl>().heightStandard;
         targetObject0 = originCameraCon.targetObject;
         distance0 = originCameraCon.distance;
         angleZero0 = originCameraCon.angleZero;
@@ -67,7 +67,7 @@ public class ViewportControl : MonoBehaviour
         originCameraCon.angleSmooth = targetCameraCon.angleSmooth;
         originCameraCon.dAngle = new Vector2(0, 0);
 
-        player.GetComponent<PlayerControl>().heightAxis = playerHeight;
+        player.GetComponent<PlayerControl>().heightStandard = playerHeight;
 
 
     }
@@ -87,7 +87,7 @@ public class ViewportControl : MonoBehaviour
         originCameraCon.angleSensitivity = angleSensitivity0;
         originCameraCon.angleSmooth = angleSmooth0;
         originCameraCon.dAngle = dAngle0;
-        player.GetComponent<PlayerControl>().heightAxis = playerHeight0;
+        player.GetComponent<PlayerControl>().heightStandard = playerHeight0;
     }
 
     public virtual void SwitchViewport()
