@@ -39,8 +39,10 @@ public class ScannerControl : MonoBehaviour
                 MeshRenderer[] meshes = o.GetComponentsInChildren<MeshRenderer>();
                 foreach (MeshRenderer mesh in meshes)
                 {
-                    Material mat = mesh.material;
-                    mat.SetFloat("_ReplacementTimer", 0);
+                    foreach (Material mat in mesh.materials)
+                    {
+                        mat.SetFloat("_ReplacementTimer", 0);
+                    }
                 }
             }
         }
@@ -63,8 +65,10 @@ public class ScannerControl : MonoBehaviour
                         MeshRenderer[] meshes = o.GetComponentsInChildren<MeshRenderer>();
                         foreach (MeshRenderer mesh in meshes)
                         {
-                            Material mat = mesh.material;
-                            mat.SetFloat("_ReplacementTimer", scanTimer * scanRange);
+                            foreach (Material mat in mesh.materials)
+                            {
+                                mat.SetFloat("_ReplacementTimer", scanTimer * scanRange);
+                            }              
                         }
                     }
                 }
@@ -99,8 +103,10 @@ public class ScannerControl : MonoBehaviour
                         MeshRenderer[] meshes = o.GetComponentsInChildren<MeshRenderer>();
                         foreach (MeshRenderer mesh in meshes)
                         {
-                            Material mat = mesh.material;
-                            mat.SetVector("_Center", transform.position);
+                            foreach (Material mat in mesh.materials)
+                            {
+                                mat.SetVector("_Center", transform.position);
+                            }                           
                         }
                     }
                 }

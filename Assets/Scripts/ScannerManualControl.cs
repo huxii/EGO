@@ -52,9 +52,11 @@ public class ScannerManualControl : MonoBehaviour
                 MeshRenderer[] meshes = o.GetComponentsInChildren<MeshRenderer>();
                 foreach (MeshRenderer mesh in meshes)
                 {
-                    Material mat = mesh.material;
-                    mat.SetFloat("_ReplacementTimer", scanTimer * scanRange);
-                    mat.SetVector("_Center", transform.position);
+                    foreach (Material mat in mesh.materials)
+                    {
+                        mat.SetFloat("_ReplacementTimer", scanTimer * scanRange);
+                        mat.SetVector("_Center", transform.position);
+                    }
                 }
             }
         }
