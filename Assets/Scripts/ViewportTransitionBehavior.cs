@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class ViewportTransitionBehavior : ViewportControl
 {
+    [Header("Environment Change")]
     public GameObject hideObjects;
     public GameObject showObjects;
 
@@ -43,11 +44,12 @@ public class ViewportTransitionBehavior : ViewportControl
             {
                 dissolveStart = false;
                 hideObjects.SetActive(false);
+                Destroy(gameObject);
             }
         }
     }
 
-    public override void SwitchViewport()
+    public override void BeginInteraction()
     {
         SwitchCamera();
 
@@ -55,5 +57,9 @@ public class ViewportTransitionBehavior : ViewportControl
         {
             dissolveStart = true;
         }
+    }
+
+    public override void EndInteraction()
+    {
     }
 }

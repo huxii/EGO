@@ -134,18 +134,18 @@ public class PlayerControl : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("SwitchTrigger"))
+        if (other.gameObject.CompareTag("Interactable"))
         {
-            if (other.gameObject.GetComponent<ViewportControl>().switchByButton)
+            if (other.gameObject.GetComponent<InteractableControl>().beginInteractionByButton)
             {
                 if (Input.GetButtonDown("Interact"))
                 {
-                    other.gameObject.GetComponent<ViewportControl>().SwitchViewport();
+                    other.gameObject.GetComponent<InteractableControl>().BeginInteraction();
                 }
                 else
                 if (Input.GetButtonDown("Exit"))
                 {
-                    other.gameObject.GetComponent<ViewportControl>().SwitchBackViewport();
+                    other.gameObject.GetComponent<InteractableControl>().EndInteraction();
                 }
             }
         }
@@ -153,22 +153,22 @@ public class PlayerControl : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("SwitchTrigger"))
+        if (other.gameObject.CompareTag("Interactable"))
         {
-            if (!other.gameObject.GetComponent<ViewportControl>().switchByButton)
+            if (!other.gameObject.GetComponent<InteractableControl>().beginInteractionByButton)
             {
-                other.gameObject.GetComponent<ViewportControl>().SwitchViewport();
+                other.gameObject.GetComponent<InteractableControl>().BeginInteraction();
             }
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("SwitchTrigger"))
+        if (other.gameObject.CompareTag("Interactable"))
         {
-            if (!other.gameObject.GetComponent<ViewportControl>().switchByButton)
+            if (!other.gameObject.GetComponent<InteractableControl>().endInteractionByButton)
             {
-                other.gameObject.GetComponent<ViewportControl>().SwitchBackViewport();
+                other.gameObject.GetComponent<InteractableControl>().EndInteraction();
             }
         }
     }

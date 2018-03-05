@@ -5,10 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Camera
-  - ZoomTarget
-  - NextTarget
-  - SwitchTrigger
   - Terrain
+  - Interactable
   layers:
   - Default
   - TransparentFX

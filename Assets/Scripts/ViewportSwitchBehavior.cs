@@ -5,9 +5,6 @@ using DG.Tweening;
 
 public class ViewportSwitchBehavior : ViewportControl
 {
-    public bool switchControl = false;
-    public GameObject targetControl = null;
-
     // Use this for initialization
     void Start()
     {
@@ -19,11 +16,11 @@ public class ViewportSwitchBehavior : ViewportControl
     {
     }
 
-    public override void SwitchViewport()
+    public override void BeginInteraction()
     {
         SwitchCamera();
 
-        if (switchControl)
+        if (changeInteractionControl)
         {
             Camera.main.GetComponent<CameraControl>().frozen = true;
             if (targetControl)
@@ -33,12 +30,12 @@ public class ViewportSwitchBehavior : ViewportControl
         }
     }
 
-    public override void SwitchBackViewport()
+    public override void EndInteraction()
     {
         SwitchBack();
 
         // potential bug
-        if (switchControl)
+        if (changeInteractionControl)
         {
             Camera.main.GetComponent<CameraControl>().frozen = false;
             if (targetControl)

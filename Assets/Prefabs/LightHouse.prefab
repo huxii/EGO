@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 114317304601402542}
   m_Layer: 8
   m_Name: LighthouseSwitchTrigger
-  m_TagString: SwitchTrigger
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1476653723412258
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -121,11 +121,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1449758597508822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9972816, y: -4.563528, z: 46.520752}
+  m_LocalPosition: {x: -1.9972816, y: -1.44, z: 16.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4994455487631094}
-  - {fileID: 4687340210489132}
   - {fileID: 4776127283060120}
   - {fileID: 4567776061507788}
   m_Father: {fileID: 0}
@@ -155,7 +154,7 @@ Transform:
   m_LocalScale: {x: 0.9344221, y: 3.6843114, z: 0.9344219}
   m_Children: []
   m_Father: {fileID: 4250286950006370}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4687340210489132
 Transform:
@@ -164,11 +163,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1476653723412258}
   m_LocalRotation: {x: 0.29511657, y: 0.32805032, z: -0.10868425, w: 0.8907733}
-  m_LocalPosition: {x: -5.97, y: 10.76, z: -1.51}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.94385713, y: 0.45575833, z: -0.23873082}
+  m_LocalScale: {x: 0.15809995, y: 0.10524227, z: 0.12881744}
   m_Children: []
-  m_Father: {fileID: 4250286950006370}
-  m_RootOrder: 1
+  m_Father: {fileID: 4776127283060120}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 36.66, y: 40.435, z: 0}
 --- !u!4 &4776127283060120
 Transform:
@@ -179,9 +178,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 4.76, z: 0}
   m_LocalScale: {x: 6.32511, y: 13.164871, z: 6.325116}
-  m_Children: []
+  m_Children:
+  - {fileID: 4687340210489132}
   m_Father: {fileID: 4250286950006370}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4994455487631094
 Transform:
@@ -379,11 +379,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e56028129f4ae345ba145db9dbacfdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 20702739258871130}
-  playerHeight: 6
-  switchByButton: 1
-  switchControl: 1
+  targetCamera: {fileID: 1476653723412258}
   targetControl: {fileID: 1859198236068770}
+  beginInteractionByButton: 1
+  endInteractionByButton: 1
+  changeInteractionControl: 0
+  nextTargets: []
+  playerHeight: 6
 --- !u!114 &114432318347119436
 MonoBehaviour:
   m_ObjectHideFlags: 1

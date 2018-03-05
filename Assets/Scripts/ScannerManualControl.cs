@@ -5,20 +5,21 @@ using UnityEngine;
 
 public class ScannerManualControl : ScannerControl
 {
+    [Header("Scanner Manual Settings")]
     [Range(0f, 1f)]
-    public float scanTimer = 0f;
+    public float scanManualTimer = 0f;
 
     // Use this for initialization
     void Start()
     {
-        scannerCamera.SetActive(true);
+        targetCamera.SetActive(true);
         Init();
     }
 
     // Update is called once per frame
     void Update()
     {
-        scannerMat.SetFloat("_Timer", scanTimer);
+        scannerMat.SetFloat("_Timer", scanManualTimer);
         scannerMat.SetVector("_Center", transform.position);
 
         foreach (GameObject o in ppObjs)
@@ -30,7 +31,7 @@ public class ScannerManualControl : ScannerControl
                 {
                     foreach (Material mat in mesh.materials)
                     {
-                        mat.SetFloat("_ReplacementTimer", scanTimer * scanRange);
+                        mat.SetFloat("_ReplacementTimer", scanManualTimer * scanRange);
                         mat.SetVector("_Center", transform.position);
                     }
                 }
