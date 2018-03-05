@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: 4687340210489132}
   - component: {fileID: 20702739258871130}
   - component: {fileID: 124162655027149362}
-  - component: {fileID: 81295332999907860}
   - component: {fileID: 114432318347119436}
   m_Layer: 0
   m_Name: LightHouseCamera
@@ -327,13 +326,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!81 &81295332999907860
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1476653723412258}
-  m_Enabled: 1
 --- !u!95 &95750611066985208
 Animator:
   serializedVersion: 3
@@ -383,7 +375,7 @@ MonoBehaviour:
   targetControl: {fileID: 1859198236068770}
   beginInteractionByButton: 1
   endInteractionByButton: 1
-  changeInteractionControl: 0
+  changeInteractionControl: 1
   nextTargets: []
   playerHeight: 6
 --- !u!114 &114432318347119436

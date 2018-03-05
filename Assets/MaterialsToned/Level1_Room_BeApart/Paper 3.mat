@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Can_Alum
+  m_Name: Paper 3
   m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
-  m_ShaderKeywords: _REPLACEMENTSTYLE_DISAPPEAR _TEXTUREBLENDMODE_ALPHA
+  m_ShaderKeywords: _REPLACEMENTSTYLE_APPEAR _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -78,7 +78,7 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineThickness: 0
     - _Parallax: 0.02
-    - _ReplacementStyle: 3
+    - _ReplacementStyle: 2
     - _ReplacementTimer: 0
     - _ShadowThreshold: 0.104
     - _SmoothnessTextureChannel: 0
@@ -92,11 +92,11 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DiffuseColor: {r: 0.4705882, g: 0.46366778, b: 0.46366778, a: 1}
+    - _DiffuseColor: {r: 0.5735294, g: 0.48627847, b: 0.44701558, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReDiffuseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _ReDiffuseColor: {r: 0.5735294, g: 0.40869996, b: 0.3331531, a: 1}
     - _ReShadowColor: {r: 0.39705884, g: 0.31760272, b: 0.27151817, a: 1}
     - _ReSpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 0.11021807, g: 0.060175188, b: 0.1544118, a: 1}
