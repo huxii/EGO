@@ -33,8 +33,10 @@ public class ViewportTransitionBehavior : ViewportControl
             MeshRenderer[] meshes = hideObjects.GetComponentsInChildren<MeshRenderer>();
             foreach (MeshRenderer mesh in meshes)
             {
-                Material mat = mesh.material;
-                mat.SetFloat("_DissolveTimer", dissolveTimer);
+                foreach (Material mat in mesh.materials)
+                {
+                    mat.SetFloat("_DissolveTimer", dissolveTimer);
+                }  
             }
 
             if (dissolveTimer >= 1)
