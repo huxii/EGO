@@ -79,7 +79,7 @@ Material:
     - _OutlineThickness: 0
     - _Parallax: 0.02
     - _ReplacementStyle: 2
-    - _ReplacementTimer: 0
+    - _ReplacementTimer: 20
     - _ShadowThreshold: 0.104
     - _SmoothnessTextureChannel: 0
     - _SoftRange: 0
@@ -92,12 +92,12 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DiffuseColor: {r: 0.28282723, g: 0.26967993, b: 0.31617647, a: 1}
+    - _DiffuseColor: {r: 0.3529412, g: 0.3019608, b: 0.3019608, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReDiffuseColor: {r: 0.5955882, g: 0.5955882, b: 0.5955882, a: 1}
-    - _ReShadowColor: {r: 0.39705884, g: 0.31760272, b: 0.27151817, a: 1}
-    - _ReSpecColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColor: {r: 0.11021807, g: 0.060175188, b: 0.1544118, a: 1}
-    - _SpecColor: {r: 0.7058823, g: 0.5605536, b: 0.5605536, a: 1}
+    - _ReDiffuseColor: {r: 0.35294116, g: 0.30103806, b: 0.30103806, a: 1}
+    - _ReShadowColor: {r: 0.25, g: 0.17454362, b: 0.16176471, a: 1}
+    - _ReSpecColor: {r: 1, g: 0.7629817, b: 0.5808823, a: 1}
+    - _ShadowColor: {r: 0.2509804, g: 0.1764706, b: 0.16078432, a: 1}
+    - _SpecColor: {r: 0.9960785, g: 0.76470596, b: 0.5921569, a: 1}
