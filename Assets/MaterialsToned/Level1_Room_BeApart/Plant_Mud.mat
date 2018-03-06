@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Plant_Mud
   m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
-  m_ShaderKeywords: _REPLACEMENTSTYLE_REPLACE _TEXTUREBLENDMODE_ALPHA
+  m_ShaderKeywords: _REPLACEMENTINVERTED_ON _REPLACEMENTSTYLE_REPLACE _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -78,8 +78,9 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineThickness: 0
     - _Parallax: 0.02
+    - _ReplacementInverted: 1
     - _ReplacementStyle: 1
-    - _ReplacementTimer: 0
+    - _ReplacementTimer: 20
     - _ShadowThreshold: 0.104
     - _SmoothnessTextureChannel: 0
     - _SoftRange: 0.181
@@ -97,7 +98,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReDiffuseColor: {r: 0.19117647, g: 0.15534543, b: 0.14478807, a: 1}
-    - _ReShadowColor: {r: 0.39705884, g: 0.31760272, b: 0.27151817, a: 1}
-    - _ReSpecColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColor: {r: 0.11021807, g: 0.060175188, b: 0.1544118, a: 1}
-    - _SpecColor: {r: 0.6098616, g: 0.61715186, b: 0.6911765, a: 1}
+    - _ReShadowColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ReSpecColor: {r: 0.44117647, g: 0.312761, b: 0.21410035, a: 1}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 0.40000004, g: 0.27450982, b: 0.18823531, a: 1}

@@ -4,7 +4,8 @@
 	{
         [KeywordEnum(KEEP, REPLACE, APPEAR, DISAPPEAR)] _ReplacementStyle("Replacement Style", Float) = 1
         _ReplacementTimer("Replacement Timer", Range(0,20.0)) = 0
-         
+        [Toggle]_ReplacementInverted("Replacement Inverted", float) = 0
+
         [Header(Style Light)]
         _ReplacementTex("Texture", 2D) = "white" {}
         [KeywordEnum(ALPHA,MULTIPLY, ADD)] _TextureBlendMode("Texture Blend Mode", float) = 0
@@ -81,6 +82,7 @@
             uniform float _ReplacementTimer;
             uniform sampler2D _ReplacementTex;
             uniform float4 _ReplacementTex_ST;
+			uniform float _ReplacementInverted;
             uniform float4 _ReShadowColor;
             uniform float4 _ReDiffuseColor;
             uniform float4 _ReSpecColor;
@@ -146,43 +148,69 @@
 					lightDirection = normalize(fragmentToLightSource);
 				}
 
+				float4 specColor;
+				float4 diffuseColor;
+				float4 shadowColor;
+				float4 reSpecColor;
+				float4 reDiffuseColor;
+				float4 reShadowColor;
+
+				if (!_ReplacementInverted)
+				{
+					specColor = _SpecColor;
+					diffuseColor = _DiffuseColor;
+					shadowColor = _ShadowColor;
+					reSpecColor = _ReSpecColor;
+					reDiffuseColor = _ReDiffuseColor;
+					reShadowColor = _ReShadowColor;
+				}
+				else
+				{					
+					specColor = _ReSpecColor;
+					diffuseColor = _ReDiffuseColor;
+					shadowColor = _ReShadowColor;
+					reSpecColor = _SpecColor;
+					reDiffuseColor = _DiffuseColor;
+					reShadowColor = _ShadowColor;
+				}
+
 				// tone lightings (diffuse only for now)
 				float4 lightingColor;
 				float4 reLightingColor;
 				float ramp = clamp(dot(normalDirection, lightDirection), 0, 1.0) * atten;
 				if (ramp < _ShadowThreshold)
 				{   
-                    if(ramp>_ShadowThreshold-_SoftRange){
-                        lightingColor = _ShadowColor*0.75+_DiffuseColor*0.25;
-                        reLightingColor = _ReShadowColor*0.75+_ReDiffuseColor*0.25;;
+                    if(ramp > _ShadowThreshold-_SoftRange){
+                        lightingColor = shadowColor * 0.75 + diffuseColor * 0.25;
+                        reLightingColor = reShadowColor * 0.75 + reDiffuseColor * 0.25;
                     }else{
-                        lightingColor = _ShadowColor;
-                        reLightingColor =_ReShadowColor;
+                        lightingColor = shadowColor;
+                        reLightingColor = reShadowColor;
                     }
 
 				}
 				else
                 if (ramp > _SpecThreshold)
                 {   
-                    if(ramp<_SpecThreshold+_SoftRange){
-                        lightingColor = _SpecColor*0.75+_DiffuseColor*0.25;
-                        reLightingColor =_ReSpecColor*0.75+_ReDiffuseColor*0.25;
+                    if(ramp < _SpecThreshold + _SoftRange){
+                        lightingColor = specColor * 0.75 + diffuseColor * 0.25;
+                        reLightingColor = reSpecColor * 0.75 + reDiffuseColor * 0.25;
                     }else{
-                        lightingColor = _SpecColor;
-                        reLightingColor = _ReSpecColor;
+                        lightingColor = specColor;
+                        reLightingColor = reSpecColor;
                     }
                 }
 				else
 				{   
-                    if(ramp<_ShadowThreshold+_SoftRange){
-                        lightingColor = _ShadowColor*0.25+_DiffuseColor*0.75;
-                        reLightingColor =_ReShadowColor*0.25+_ReDiffuseColor*0.75;
-                    }else if(ramp>_SpecThreshold-_SoftRange){
-                        lightingColor = _SpecColor*0.25+_DiffuseColor*0.75;
-                        reLightingColor =_ReSpecColor*0.25+_ReDiffuseColor*0.75;
+                    if(ramp < _ShadowThreshold + _SoftRange){
+                        lightingColor = shadowColor * 0.25 + diffuseColor * 0.75;
+                        reLightingColor = reShadowColor * 0.25 + reDiffuseColor * 0.75;
+                    }else if(ramp > _SpecThreshold-_SoftRange){
+                        lightingColor = specColor * 0.25 + diffuseColor * 0.75;
+                        reLightingColor = specColor * 0.25 + reDiffuseColor * 0.75;
                     }else{
-                        reLightingColor = _ReDiffuseColor;
-                        lightingColor =  _DiffuseColor;
+                        reLightingColor = reDiffuseColor;
+                        lightingColor =  diffuseColor;
                     }
 
 				}
