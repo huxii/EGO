@@ -46,6 +46,7 @@ public class PlayerControl : MonoBehaviour
 
     void MovementUpdate()
     {
+        Vector3 height = new Vector3(0f, 0f, 0f);
         heightAxis = heightStandard + GetHeightOnGround();
 
         float jump = Input.GetAxis("Jump");
@@ -53,7 +54,7 @@ public class PlayerControl : MonoBehaviour
         {
             if (transform.position.y < heightAxis + heightRange)
             {
-                rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, rb.velocity.z);
+                height.y = jumpSpeed;
             }
         }
         else
@@ -61,23 +62,23 @@ public class PlayerControl : MonoBehaviour
         {
             if (Mathf.Abs(transform.position.y - heightAxis) <= 0.01f)
             {
-                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+                height.y = 0;
             }
             else
             if (transform.position.y > heightAxis)
             {
-                rb.velocity = new Vector3(rb.velocity.x, -jumpSpeed, rb.velocity.z);
+                height.y = -jumpSpeed;
             }
             else
             {
-                rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, rb.velocity.z);
+                height.y = jumpSpeed;
             }
         }
         else
         {
             if (transform.position.y > heightAxis - heightRange)
             {
-                rb.velocity = new Vector3(rb.velocity.x, -jumpSpeed, rb.velocity.z);
+                height.y = -jumpSpeed;
             }
         }
 
@@ -85,15 +86,15 @@ public class PlayerControl : MonoBehaviour
             (transform.position.y > heightAxis + heightRange || transform.position.y < heightAxis - heightRange)
             )
         {
-            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            height.y = 0;
         }
 
         Vector3 vertical = CameraForwardDirection() * Input.GetAxis("Vertical") * moveSpeed;
         Vector3 horizontal = CameraRightDirection() * Input.GetAxis("Horizontal") * moveSpeed;
-        Vector3 height = new Vector3(0, rb.velocity.y, 0);
 
         Vector3 dir = (vertical + horizontal + height) * Time.deltaTime;
-        transform.Translate(dir);
+        //Debug.Log(dir + " " + rb.velocity);
+        rb.MovePosition(transform.position + dir);
     }
 
     float GetHeightOnGround()
@@ -114,7 +115,7 @@ public class PlayerControl : MonoBehaviour
                 }
             }
         }
-
+        //Debug.Log(y);
         return y;
     }
 
@@ -171,6 +172,11 @@ public class PlayerControl : MonoBehaviour
                 other.gameObject.GetComponent<InteractableControl>().EndInteraction();
             }
         }
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        rb.velocity = Vector3.zero;
     }
 }
 

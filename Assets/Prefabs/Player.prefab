@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 33010915309235038}
   - component: {fileID: 135545054566492528}
   - component: {fileID: 23772119520374926}
-  - component: {fileID: 54545137341066218}
+  - component: {fileID: 54741881958161972}
   - component: {fileID: 114491208417923216}
   m_Layer: 0
   m_Name: Player
@@ -247,7 +247,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1191590607650426}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54545137341066218
+--- !u!54 &54741881958161972
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -256,11 +256,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!108 &108549638443306230
 Light:
@@ -270,10 +270,10 @@ Light:
   m_GameObject: {fileID: 1144375046649214}
   m_Enabled: 1
   serializedVersion: 8
-  m_Type: 0
+  m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
-  m_Range: 15.27
+  m_Intensity: 4.94
+  m_Range: 7.35
   m_SpotAngle: 179
   m_CookieSize: 10
   m_Shadows:

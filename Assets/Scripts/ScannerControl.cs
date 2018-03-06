@@ -82,20 +82,23 @@ public class ScannerControl : InteractableControl
         scannerMat.SetFloat("_EdgeInnerBlur", scanInnerBlur);
         scannerMat.SetFloat("_EdgeOutterBlur", scanOutterBlur);
 
-        ppObjs = new List<GameObject>();
-        Transform[] allChildren = scannerTarget.GetComponentsInChildren<Transform>();
-        foreach (Transform child in allChildren)
+        if (scannerTarget)
         {
-            //Debug.Log(child.gameObject);
-            if (child.gameObject.layer == 8)
+            ppObjs = new List<GameObject>();
+            Transform[] allChildren = scannerTarget.GetComponentsInChildren<Transform>();
+            foreach (Transform child in allChildren)
             {
-                ppObjs.Add(child.gameObject);
-                MeshRenderer[] meshes = child.gameObject.GetComponentsInChildren<MeshRenderer>();
-                foreach (MeshRenderer mesh in meshes)
+                //Debug.Log(child.gameObject);
+                if (child.gameObject.layer == 8)
                 {
-                    foreach (Material mat in mesh.materials)
+                    ppObjs.Add(child.gameObject);
+                    MeshRenderer[] meshes = child.gameObject.GetComponentsInChildren<MeshRenderer>();
+                    foreach (MeshRenderer mesh in meshes)
                     {
-                        mat.SetFloat("_ReplacementTimer", 0);
+                        foreach (Material mat in mesh.materials)
+                        {
+                            mat.SetFloat("_ReplacementTimer", 0);
+                        }
                     }
                 }
             }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightballBehavior : MonoBehaviour
+public class LightballBehavior : InteractableControl
 {
 
 	// Use this for initialization
@@ -21,7 +21,12 @@ public class LightballBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            gameObject.SetActive(false);
+            BeginInteraction();
         }
+    }
+
+    public override void BeginInteraction()
+    {
+        gameObject.SetActive(false);
     }
 }
