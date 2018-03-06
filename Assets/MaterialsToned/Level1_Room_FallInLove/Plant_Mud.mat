@@ -99,5 +99,5 @@ Material:
     - _ReDiffuseColor: {r: 0.19117647, g: 0.15534543, b: 0.14478807, a: 1}
     - _ReShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReSpecColor: {r: 0.44117647, g: 0.312761, b: 0.21410035, a: 1}
-    - _ShadowColor: {r: 0.4431373, g: 0.24705884, b: 0.21960786, a: 1}
-    - _SpecColor: {r: 0.9960785, g: 0.76470596, b: 0.5921569, a: 1}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 0.40000004, g: 0.27450982, b: 0.18823531, a: 1}

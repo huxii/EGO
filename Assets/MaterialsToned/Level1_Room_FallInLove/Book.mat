@@ -92,12 +92,12 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DiffuseColor: {r: 0.31617647, g: 0.2802619, b: 0.26967993, a: 1}
+    - _DiffuseColor: {r: 0.2627451, g: 0.29411766, b: 0.28627452, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReDiffuseColor: {r: 0.26384082, g: 0.29411763, b: 0.28785345, a: 1}
     - _ReShadowColor: {r: 0.29411763, g: 0.22753847, b: 0.21626295, a: 1}
     - _ReSpecColor: {r: 1, g: 0.7629817, b: 0.5808823, a: 1}
-    - _ShadowColor: {r: 0.4431373, g: 0.24705884, b: 0.21960786, a: 1}
+    - _ShadowColor: {r: 0.29411766, g: 0.227451, b: 0.21568629, a: 1}
     - _SpecColor: {r: 0.9960785, g: 0.76470596, b: 0.5921569, a: 1}
