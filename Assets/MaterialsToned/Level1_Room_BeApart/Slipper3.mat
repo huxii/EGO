@@ -80,7 +80,7 @@ Material:
     - _Parallax: 0.02
     - _ReplacementInverted: 1
     - _ReplacementStyle: 2
-    - _ReplacementTimer: 0
+    - _ReplacementTimer: 20
     - _ShadowThreshold: 0.104
     - _SmoothnessTextureChannel: 0
     - _SoftRange: 0.181
@@ -100,5 +100,5 @@ Material:
     - _ReDiffuseColor: {r: 0.7352941, g: 0.3784602, b: 0.3784602, a: 1}
     - _ReShadowColor: {r: 0.39705884, g: 0.31760272, b: 0.27151817, a: 1}
     - _ReSpecColor: {r: 1, g: 0.71866125, b: 0.46323532, a: 1}
-    - _ShadowColor: {r: 0.11021807, g: 0.060175188, b: 0.1544118, a: 1}
-    - _SpecColor: {r: 0.9558824, g: 0.83639705, b: 0.83639705, a: 1}
+    - _ShadowColor: {r: 0.22626515, g: 0.24809656, b: 0.33088237, a: 1}
+    - _SpecColor: {r: 0.9117647, g: 0.97809327, b: 1, a: 1}

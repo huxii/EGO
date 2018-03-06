@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Camera_Bag 1
   m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
-  m_ShaderKeywords: _REPLACEMENTINVERTED_ON _REPLACEMENTSTYLE_REPLACE _TEXTUREBLENDMODE_ALPHA
+  m_ShaderKeywords: _REPLACEMENTINVERTED_ON _REPLACEMENTSTYLE_DISAPPEAR _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -79,7 +79,7 @@ Material:
     - _OutlineThickness: 0
     - _Parallax: 0.02
     - _ReplacementInverted: 1
-    - _ReplacementStyle: 1
+    - _ReplacementStyle: 3
     - _ReplacementTimer: 20
     - _ShadowThreshold: 0.104
     - _SmoothnessTextureChannel: 0
@@ -100,5 +100,5 @@ Material:
     - _ReDiffuseColor: {r: 0.18541941, g: 0.1846886, b: 0.20588237, a: 1}
     - _ReShadowColor: {r: 0.2647059, g: 0.21477152, b: 0.20631489, a: 1}
     - _ReSpecColor: {r: 0.7058823, g: 0.60902035, b: 0.53460205, a: 1}
-    - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor: {r: 0.7019608, g: 0.60784316, b: 0.5372549, a: 1}
+    - _ShadowColor: {r: 0.22626515, g: 0.24809656, b: 0.33088237, a: 1}
+    - _SpecColor: {r: 0.9117647, g: 0.97809327, b: 1, a: 1}

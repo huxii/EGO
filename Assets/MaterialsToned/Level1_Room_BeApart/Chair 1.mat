@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Chair 1
   m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
-  m_ShaderKeywords: _REPLACEMENTINVERTED_ON _REPLACEMENTSTYLE_REPLACE _TEXTUREBLENDMODE_ALPHA
+  m_ShaderKeywords: _REPLACEMENTINVERTED_ON _REPLACEMENTSTYLE_DISAPPEAR _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -79,7 +79,7 @@ Material:
     - _OutlineThickness: 0
     - _Parallax: 0.02
     - _ReplacementInverted: 1
-    - _ReplacementStyle: 1
+    - _ReplacementStyle: 3
     - _ReplacementTimer: 20
     - _ShadowThreshold: 0.3
     - _SmoothnessTextureChannel: 0
@@ -93,12 +93,12 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DiffuseColor: {r: 0.5176471, g: 0.21960786, b: 0.22352943, a: 1}
+    - _DiffuseColor: {r: 0.7058823, g: 0.34256053, b: 0.34256053, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReDiffuseColor: {r: 0.52205884, g: 0.21496539, b: 0.21496539, a: 1}
     - _ReShadowColor: {r: 0.19117647, g: 0.11667387, b: 0.11667387, a: 1}
     - _ReSpecColor: {r: 0.89705884, g: 0.5260326, b: 0.4419334, a: 1}
-    - _ShadowColor: {r: 0.19215688, g: 0.11764707, b: 0.11764707, a: 1}
-    - _SpecColor: {r: 0.89019614, g: 0.5254902, b: 0.454902, a: 1}
+    - _ShadowColor: {r: 0.21501012, g: 0.17647058, b: 0.2352941, a: 1}
+    - _SpecColor: {r: 0.9117647, g: 0.97809327, b: 1, a: 1}
