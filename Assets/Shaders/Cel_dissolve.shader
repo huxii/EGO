@@ -288,11 +288,19 @@
 		}
 		
         Pass
-        {           			CGPROGRAM
-			#pragma vertex vert
-			#pragma fragment frag
-			#pragma exclude_renderers flash
-			#pragma multi_compile_fwdbase
+        {           			
+            Name "OtherLights"
+            Tags 
+            { 
+                "LightMode" = "ForwardAdd"
+                "RenderType" = "Opaque"  
+            }
+            Blend One One
+           
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #pragma multi_compile_fwdadd
 			#pragma multi_compile_fog
 
 			#include "AutoLight.cginc"
