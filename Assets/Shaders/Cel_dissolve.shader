@@ -33,7 +33,7 @@
         [Header(Dissolve)]
         _DissolveTimer("Dissolve Timer", Range(0, 1.0)) = 0
         _EdgeSpeedRate("Edge Speed Rate", Range(0, 1.0)) = 0.8
-        _EdgeColor("Edge Color", Color) = (1.0, 1.0, 1.0, 1.0)
+        [HDR]_EdgeColor("Edge Color", Color) = (1.0, 1.0, 1.0, 1.0)
         _NoiseTex("Noise Texture", 2D) = "white" {}
 	}
 
