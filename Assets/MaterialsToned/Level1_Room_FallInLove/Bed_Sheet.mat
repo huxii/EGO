@@ -78,6 +78,7 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineThickness: 0
     - _Parallax: 0.02
+    - _ReplacementInverted: 0
     - _ReplacementStyle: 2
     - _ReplacementTimer: 20
     - _ShadowThreshold: 0.414

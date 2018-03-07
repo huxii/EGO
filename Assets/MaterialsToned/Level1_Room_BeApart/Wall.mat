@@ -80,7 +80,7 @@ Material:
     - _Parallax: 0.02
     - _ReplacementInverted: 1
     - _ReplacementStyle: 1
-    - _ReplacementTimer: 20
+    - _ReplacementTimer: 0
     - _ShadowThreshold: 0.04
     - _SmoothnessTextureChannel: 0
     - _SoftRange: 0.5

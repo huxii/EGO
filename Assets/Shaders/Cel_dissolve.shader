@@ -207,7 +207,7 @@
                         reLightingColor = reShadowColor * 0.25 + reDiffuseColor * 0.75;
                     }else if(ramp > _SpecThreshold-_SoftRange){
                         lightingColor = specColor * 0.25 + diffuseColor * 0.75;
-                        reLightingColor = specColor * 0.25 + reDiffuseColor * 0.75;
+                        reLightingColor = reSpecColor * 0.25 + reDiffuseColor * 0.75;
                     }else{
                         reLightingColor = reDiffuseColor;
                         lightingColor =  diffuseColor;
@@ -442,7 +442,7 @@
                         reLightingColor = reShadowColor * 0.25 + reDiffuseColor * 0.75;
                     }else if(ramp > _SpecThreshold-_SoftRange){
                         lightingColor = specColor * 0.25 + diffuseColor * 0.75;
-                        reLightingColor = specColor * 0.25 + reDiffuseColor * 0.75;
+                        reLightingColor = reSpecColor * 0.25 + reDiffuseColor * 0.75;
                     }else{
                         reLightingColor = reDiffuseColor;
                         lightingColor =  diffuseColor;
