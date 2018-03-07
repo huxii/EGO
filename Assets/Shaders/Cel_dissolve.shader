@@ -62,6 +62,7 @@
 			#pragma fragment frag
 			#pragma exclude_renderers flash
 			#pragma multi_compile_fwdbase
+			#pragma multi_compile_fog
 
 			#include "AutoLight.cginc"
 			#include "UnityCG.cginc"
@@ -108,6 +109,7 @@
 				float4 screenPos : TEXCOORD1;
 				float4 tex : TEXCOORD2;
 				float3 normalDir : TEXCOORD3;
+				UNITY_FOG_COORDS(4)
 				LIGHTING_COORDS(5, 6)
 			};
 
@@ -122,6 +124,7 @@
 
 				o.screenPos = ComputeScreenPos(o.pos);
 				TRANSFER_VERTEX_TO_FRAGMENT(o);
+				UNITY_TRANSFER_FOG(o, o.pos);
 
 				return o;	
 			}
@@ -270,6 +273,7 @@
 				col = onEdge * _EdgeColor + (1 - onEdge) * col;
 				clip(noiseSample - _DissolveTimer);
 
+				UNITY_APPLY_FOG(i.fogCoord, col);
 				return col;
 			}
 			ENDCG
@@ -284,22 +288,17 @@
 		}
 		
         Pass
-        {           
-            Name "OtherLights"
-            Tags 
-            { 
-                "LightMode" = "ForwardAdd"
-                "RenderType" = "Opaque"  
-            }
-            Blend One One
-           
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-            #pragma multi_compile_fwdadd
+        {           			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			#pragma exclude_renderers flash
+			#pragma multi_compile_fwdbase
+			#pragma multi_compile_fog
 
-            #include "AutoLight.cginc"
-            #include "UnityCG.cginc"
+			#include "AutoLight.cginc"
+			#include "UnityCG.cginc"
+
+			sampler2D _CameraDepthTexture;
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
@@ -325,64 +324,64 @@
             uniform float _TextureAlpha;
             uniform float _TextureBlendMode;
 
-            sampler2D _CameraDepthTexture;
-            
+			float4 _Center;
 
-            float4 _Center;
+			struct vertexInput
+			{
+				float4 vertex : POSITION;
+				float3 normal : NORMAL;
+				float4 texcoord : TEXCOORD1;
+			};
 
-            struct vertexInput
-            {
-                float4 vertex : POSITION;
-                float3 normal : NORMAL;
-                float4 texcoord : TEXCOORD1;
-            };
+			struct vertexOutput
+			{
+				float4 pos : SV_POSITION;
+				float4 posWorld : TEXCOORD0;
+				float4 screenPos : TEXCOORD1;
+				float4 tex : TEXCOORD2;
+				float3 normalDir : TEXCOORD3;
+				UNITY_FOG_COORDS(4)
+				LIGHTING_COORDS(5, 6)
+			};
 
-            struct vertexOutput
-            {
-                float4 pos : SV_POSITION;
-                float4 posWorld : TEXCOORD0;
-                float4 screenPos : TEXCOORD1;
-                float4 tex : TEXCOORD2;
-                float3 normalDir : TEXCOORD3;
-                LIGHTING_COORDS(4, 5)
-            };
+			vertexOutput vert(vertexInput v)
+			{
+				vertexOutput o;
 
-            vertexOutput vert(vertexInput v)
-            {
-                vertexOutput o;
+				o.pos = UnityObjectToClipPos(v.vertex);
+				o.tex = v.texcoord;
+				o.normalDir = normalize( mul(float4(v.normal, 0.0f), unity_WorldToObject).xyz );	
+				o.posWorld = mul(unity_ObjectToWorld, v.vertex);
 
-                o.pos = UnityObjectToClipPos(v.vertex);
-                o.posWorld = mul(unity_ObjectToWorld, v.vertex);
-                o.tex = v.texcoord;
-                o.normalDir = normalize( mul(float4(v.normal, 0.0f), unity_WorldToObject).xyz );    
+				o.screenPos = ComputeScreenPos(o.pos);
+				TRANSFER_VERTEX_TO_FRAGMENT(o);
+				UNITY_TRANSFER_FOG(o, o.pos);
 
-                o.screenPos = ComputeScreenPos(o.pos);
-                TRANSFER_VERTEX_TO_FRAGMENT(o);
+				return o;	
+			}
 
-                return o;   
-            }
+			float4 frag(vertexOutput i) : COLOR
+			{
+				float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
+				float3 normalDirection = i.normalDir;
+				float3 lightDirection;
+				float atten;
 
-            float4 frag(vertexOutput i) : COLOR
-            {
-                float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
-                float3 normalDirection = i.normalDir;
-                float3 lightDirection;
-                float atten = LIGHT_ATTENUATION(i);
-                // Directional light
-                if (_WorldSpaceLightPos0.w == 0.0)
-                {
-                    //atten = 1.0;
-                    lightDirection = normalize(_WorldSpaceLightPos0.xyz);
-                }
-                // Point light
-                else
-                {
-                    float3 fragmentToLightSource = _WorldSpaceLightPos0.xyz - i.posWorld.xyz;
-                    float distance = length(fragmentToLightSource);
-                    //atten = 1.0 / distance;
-                    lightDirection = normalize(fragmentToLightSource);
-                }
-                
+				// Directional light
+				if (_WorldSpaceLightPos0.w == 0.0)
+				{
+					atten = 1.0;
+					lightDirection = normalize(_WorldSpaceLightPos0.xyz);
+				}
+				// Point light
+				else
+				{
+					float3 fragmentToLightSource = _WorldSpaceLightPos0.xyz - i.posWorld.xyz;
+					float distance = length(fragmentToLightSource);
+					atten = 1.0 / distance;
+					lightDirection = normalize(fragmentToLightSource);
+				}
+
 				float4 specColor;
 				float4 diffuseColor;
 				float4 shadowColor;
@@ -450,17 +449,17 @@
 
 				}
 
-                lightingColor *= atten;
-                reLightingColor *= atten;
+				lightingColor *= atten;
+				reLightingColor *= atten;
 
-                float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
-                float4 reTex = tex2D(_ReplacementTex, i.tex.xy * _ReplacementTex_ST.xy + _ReplacementTex_ST.zw);
+				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
+				float4 reTex = tex2D(_ReplacementTex, i.tex.xy * _ReplacementTex_ST.xy + _ReplacementTex_ST.zw);
 
-                // replacement
-                float4 col;
-                float3 dir = i.posWorld - _Center.xyz;
-                float dis = length(dir);
-
+				// replacement
+				float4 col;
+				float3 dir = i.posWorld - _Center.xyz;
+				float dis = length(dir);
+                    //by default set reTex
                 if(_TextureBlendMode ==0){
                     col = reTex*_TextureAlpha + reLightingColor*(1-_TextureAlpha);
                 }else if(_TextureBlendMode ==1){
@@ -476,8 +475,8 @@
                 if (_ReplacementStyle == 0){
                     //pass    
                 }else if (_ReplacementStyle == 1){
-                    if (dis > _ReplacementTimer){
-                        if(_TextureBlendMode ==0){
+					if (dis > _ReplacementTimer){
+						if(_TextureBlendMode ==0){
                             col = tex*_TextureAlpha + lightingColor*(1-_TextureAlpha);
                         }else if(_TextureBlendMode ==1){
                            col = (1-_TextureAlpha)+tex*_TextureAlpha;
@@ -488,29 +487,30 @@
                         }else{
                             col = tex*_TextureAlpha + lightingColor*(1-_TextureAlpha);
                         }
-                    }
-                }else if (_ReplacementStyle == 3){
-                    if (dis <= _ReplacementTimer){
+					}
+				}else if (_ReplacementStyle == 3){
+					if (dis <= _ReplacementTimer){
                         clip(-1);
-                     }else{
+                    }else{
                         col = (1-_TextureAlpha)+tex*_TextureAlpha;
                         col = col*lightingColor;
                         col.a = lightingColor.a;
-                    }
-                }else{
-                    if (dis > _ReplacementTimer)
-                        clip(-1);
-                }
+                    }	
+				}else{
+					if (dis > _ReplacementTimer)
+						clip(-1);
+				}
 
-                // dissolve
-                float noiseSample = tex2Dlod(_NoiseTex, float4(i.tex.xy * _NoiseTex_ST.xy + _NoiseTex_ST.zw, 0, 0));
-                float onEdge = step(noiseSample, _DissolveTimer / _EdgeSpeedRate);
-                col = onEdge * _EdgeColor + (1 - onEdge) * col;
-                clip(noiseSample - _DissolveTimer);
+				// dissolve
+				float noiseSample = tex2Dlod(_NoiseTex, float4(i.tex.xy * _NoiseTex_ST.xy + _NoiseTex_ST.zw, 0, 0));
+				float onEdge = step(noiseSample, _DissolveTimer / _EdgeSpeedRate);
+				col = onEdge * _EdgeColor + (1 - onEdge) * col;
+				clip(noiseSample - _DissolveTimer);
 
-                return col;
-            }
-            ENDCG
+				UNITY_APPLY_FOG(i.fogCoord, col);
+				return col;
+			}
+			ENDCG
         }
 		
 		/*
