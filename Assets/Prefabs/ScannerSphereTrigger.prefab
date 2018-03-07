@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 4069526376967994}
   - component: {fileID: 20075560500206452}
   - component: {fileID: 124789316073258310}
+  - component: {fileID: 114857152431832940}
   - component: {fileID: 114240424566542296}
   - component: {fileID: 114298270420905556}
   m_Layer: 0
@@ -189,6 +190,18 @@ MonoBehaviour:
   hideTargetAfterDestroyed: 0
   ppObjs: []
   scanManualTimer: 0
+--- !u!114 &114857152431832940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1703272292802384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 546d251a95b2f7441a235ec7a2b4b573, type: 2}
 --- !u!114 &114967638492976622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -209,7 +222,7 @@ MonoBehaviour:
   scannerTarget: {fileID: 0}
   scanRange: 10
   scanEdgeWidth: 1
-  scanSpeed: 1.5
+  scanSpeed: 1
   scanInnerBlur: 4
   scanOutterBlur: 4
   hideTargetAfterDestroyed: 0

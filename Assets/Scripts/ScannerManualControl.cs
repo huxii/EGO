@@ -12,8 +12,9 @@ public class ScannerManualControl : ScannerControl
     // Use this for initialization
     void Start()
     {
-        targetCamera.SetActive(true);
         Init();
+        bgCam.SetActive(false);
+        targetCamera.SetActive(true);
     }
 
     // Update is called once per frame

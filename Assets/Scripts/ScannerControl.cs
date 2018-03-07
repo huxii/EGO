@@ -14,6 +14,7 @@ public class ScannerControl : InteractableControl
     public float scanOutterBlur = 1f;
     public bool hideTargetAfterDestroyed = false;
 
+    protected GameObject bgCam;
     protected Material scannerMat;
     [SerializeField]
     protected List<GameObject> ppObjs;
@@ -74,6 +75,8 @@ public class ScannerControl : InteractableControl
 
     protected void Init()
     {
+        bgCam = GameObject.FindGameObjectWithTag("ScannerBgCamera");
+
         CameraRenderImage camRender = targetCamera.GetComponent<CameraRenderImage>();
         scannerMat = camRender.mat;
         scannerMat.SetFloat("_Timer", 0);
@@ -109,6 +112,7 @@ public class ScannerControl : InteractableControl
     {
         if (!startScanner)
         {
+            bgCam.SetActive(false);
             targetCamera.SetActive(true);
             startScanner = true;
             scanTimer = 0;
@@ -152,5 +156,7 @@ public class ScannerControl : InteractableControl
         {
             scannerTarget.SetActive(false);
         }
+
+        bgCam.SetActive(true);
     }
 }
