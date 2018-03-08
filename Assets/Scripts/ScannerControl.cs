@@ -108,6 +108,12 @@ public class ScannerControl : InteractableControl
                         foreach (Material mat in mesh.materials)
                         {
                             mat.SetFloat("_ReplacementTimer", 0);
+
+                            float style = mat.GetFloat("_ReplacementStyle");
+                            if (style == 2)
+                            {
+                                child.gameObject.SetActive(false);
+                            }
                         }
                     }
                 }
@@ -131,6 +137,7 @@ public class ScannerControl : InteractableControl
                 if (Vector3.Distance(transform.position, o.transform.position) < scanRange)
                 {
                     MeshRenderer[] meshes = o.GetComponentsInChildren<MeshRenderer>();
+                    o.SetActive(true);
                     foreach (MeshRenderer mesh in meshes)
                     {
                         foreach (Material mat in mesh.materials)
