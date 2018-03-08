@@ -94,6 +94,7 @@
             uniform float _TextureBlendMode;
 
 			float4 _Center;
+			uniform float4 _LightColor0;
 
 			struct vertexInput
 			{
@@ -220,8 +221,8 @@
 
 				}
 
-				lightingColor *= atten;
-				reLightingColor *= atten;
+				lightingColor *= atten * _LightColor0.w;
+				reLightingColor *= atten * _LightColor0.w;
 
 				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
 				float4 reTex = tex2D(_ReplacementTex, i.tex.xy * _ReplacementTex_ST.xy + _ReplacementTex_ST.zw);
@@ -345,6 +346,7 @@
             uniform float _TextureBlendMode;
 
 			float4 _Center;
+			uniform float4 _LightColor0;
 
 			struct vertexInput
 			{
@@ -471,8 +473,8 @@
 
 				}
 
-				lightingColor *= atten;
-				reLightingColor *= atten;
+				lightingColor *= atten * _LightColor0.w;
+				reLightingColor *= atten * _LightColor0.w;
 
 				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
 				float4 reTex = tex2D(_ReplacementTex, i.tex.xy * _ReplacementTex_ST.xy + _ReplacementTex_ST.zw);
