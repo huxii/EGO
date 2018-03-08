@@ -81,10 +81,10 @@ Material:
     - _ReplacementInverted: 1
     - _ReplacementStyle: 1
     - _ReplacementTimer: 0
-    - _ShadowThreshold: 0.104
+    - _ShadowThreshold: 0.098
     - _SmoothnessTextureChannel: 0
     - _SoftRange: 0.181
-    - _SpecThreshold: 0.733
+    - _SpecThreshold: 0.936
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _TextureAlpha: 0
