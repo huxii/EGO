@@ -59,7 +59,14 @@ public class ScannerControl : InteractableControl
                         {
                             foreach (Material mat in mesh.materials)
                             {
-                                mat.SetFloat("_ReplacementTimer", scanTimer * scanRange);
+                                float timer = scanTimer * scanRange;
+                                mat.SetFloat("_ReplacementTimer", timer);
+
+                                float style = mat.GetFloat("_ReplacementStyle");
+                                if (style == 3 && timer >= 30)
+                                {
+                                    o.SetActive(false);
+                                }
                             }
                         }
                     }

@@ -3,7 +3,7 @@
 	Properties
 	{
         [KeywordEnum(KEEP, REPLACE, APPEAR, DISAPPEAR)] _ReplacementStyle("Replacement Style", Float) = 1
-        _ReplacementTimer("Replacement Timer", Range(0,20.0)) = 0
+        _ReplacementTimer("Replacement Timer", Range(0, 30.0)) = 0
         [Toggle]_ReplacementInverted("Replacement Inverted", float) = 0
 
         [Header(Style Light)]
@@ -151,6 +151,8 @@
 					lightDirection = normalize(fragmentToLightSource);
 				}
 
+				atten = LIGHT_ATTENUATION(i);
+
 				float4 specColor;
 				float4 diffuseColor;
 				float4 shadowColor;
@@ -217,6 +219,9 @@
                     }
 
 				}
+
+				lightingColor *= atten;
+				reLightingColor *= atten;
 
 				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
 				float4 reTex = tex2D(_ReplacementTex, i.tex.xy * _ReplacementTex_ST.xy + _ReplacementTex_ST.zw);
@@ -390,6 +395,8 @@
 					lightDirection = normalize(fragmentToLightSource);
 				}
 
+				atten = LIGHT_ATTENUATION(i);
+
 				float4 specColor;
 				float4 diffuseColor;
 				float4 shadowColor;
@@ -516,6 +523,7 @@
 				clip(noiseSample - _DissolveTimer);
 
 				UNITY_APPLY_FOG(i.fogCoord, col);
+
 				return col;
 			}
 			ENDCG
