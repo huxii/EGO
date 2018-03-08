@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -394,8 +394,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322b2ece0f165a94cbf0c29cc84ac590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetCamera: {fileID: 0}
+  targetControl: {fileID: 0}
+  beginInteractionByButton: 0
+  endInteractionByButton: 0
+  changeInteractionControl: 0
+  nextTargets: []
+  scannerTarget: {fileID: 0}
   scanRange: 1
-  scanTimer: 0
+  scanEdgeWidth: 1
+  scanSpeed: 0.2
+  scanInnerBlur: 1
+  scanOutterBlur: 1
+  hideTargetAfterDestroyed: 0
+  ppObjs: []
+  scanManualTimer: 0
 --- !u!114 &1061737097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +421,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: d3d96c3734220d14bb418768438db5a9, type: 2}
+  clipToWorld:
+    e00: 0
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 0
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 0
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 0
 --- !u!81 &1061737098
 AudioListener:
   m_ObjectHideFlags: 0
@@ -657,7 +687,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0ea6af3f0a12ce3439503dccabb5fa61, type: 2}
+  - {fileID: 2100000, guid: 0532febeae9949e4eb4e0737f5e94ada, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
