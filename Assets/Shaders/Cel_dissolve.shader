@@ -2,7 +2,7 @@
 {
 	Properties
 	{
-        [KeywordEnum(KEEP, REPLACE, APPEAR, DISAPPEAR)] _ReplacementStyle("Replacement Style", Float) = 1
+        [KeywordEnum(KEEP, REPLACE, APPEAR, DISAPPEAR, NEVER)] _ReplacementStyle("Replacement Style", Float) = 1
         _ReplacementTimer("Replacement Timer", Range(0, 30.0)) = 0
         [Toggle]_ReplacementInverted("Replacement Inverted", float) = 0
 
@@ -267,9 +267,16 @@
                         col = col*lightingColor;
                         col.a = lightingColor.a;
                     }	
-				}else{
+				}
+				else
+				if (_ReplacementStyle == 2)
+				{
 					if (dis > _ReplacementTimer)
 						clip(-1);
+				}
+				else
+				{
+					clip(-1);
 				}
 
 				// dissolve
@@ -511,9 +518,16 @@
                         col = col*lightingColor;
                         col.a = lightingColor.a;
                     }	
-				}else{
+				}
+				else
+				if (_ReplacementStyle == 2)
+				{
 					if (dis > _ReplacementTimer)
 						clip(-1);
+				}
+				else
+				{
+					clip(-1);
 				}
 
 				// dissolve

@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Firefly
+  m_Name: Firefly_Particle
   m_Shader: {fileID: 4800000, guid: d6be7117350325e4088cabd1bd05b022, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _REPLACEMENTSTYLE_KEEP
   m_LightmapFlags: 1
