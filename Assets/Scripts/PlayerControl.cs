@@ -120,7 +120,7 @@ public class PlayerControl : MonoBehaviour
         if(heightTime <0.1f && heightTime>0f){
             height.y =  jumpSpeed * direction;
         } else if(heightTime>0.1f  && heightTime<0.4f){
-            height.y = 3*jumpSpeed * direction;
+            height.y = 3.5f*jumpSpeed * direction;
         } else if(heightTime > 0.4f && heightTime < 0.5f){
             height.y =  jumpSpeed * direction;
         } else {
@@ -131,6 +131,17 @@ public class PlayerControl : MonoBehaviour
 
         Vector3 dir = (vertical + horizontal + height) * Time.deltaTime;
         rb.MovePosition(transform.position + dir);
+        if(heightTime >0.5f){
+            if(heightState == -1){
+                transform.position = new Vector3(transform.position.x, 3, transform.position.z);
+            } else if (heightState == 0)
+            {
+                transform.position = new Vector3(transform.position.x, 4, transform.position.z);
+            } else if (heightState == 1)
+            {
+                transform.position = new Vector3(transform.position.x, 5, transform.position.z);
+            }
+        }
     }
     float GetHeightOnGround()
     {
