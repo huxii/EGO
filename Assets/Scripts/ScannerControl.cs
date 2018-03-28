@@ -30,10 +30,13 @@ public class ScannerControl : InteractableControl
 
         foreach (GameObject nextTarget in nextTargets)
         {
-            nextTarget.SetActive(false);
-            if (nextTarget.GetComponent<ScannerControl>())
+            if (nextTarget)
             {
-                nextTarget.GetComponent<ScannerControl>().scannerTarget.SetActive(false);
+                nextTarget.SetActive(false);
+                if (nextTarget.GetComponent<ScannerControl>())
+                {
+                    nextTarget.GetComponent<ScannerControl>().scannerTarget.SetActive(false);
+                }
             }
         }
 
