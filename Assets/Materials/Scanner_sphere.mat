@@ -77,15 +77,15 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Range: 10
+    - _Range: 30
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Timer: 0
+    - _Timer: 0.909
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Center: {r: 3.9200013, g: 3.8900003, b: 3.9000008, a: 0}
+    - _Center: {r: -4.080001, g: 4.96, b: 3.7000017, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
