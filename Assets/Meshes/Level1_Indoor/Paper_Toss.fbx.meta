@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: cce4749f170ce478bb2d443f6df70097
-timeCreated: 1520131454
+guid: 5963b000f3eae48d2a72269f1a3f45b1
+timeCreated: 1522183162
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Mug
+    4300000: Paper_Toss
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -41,7 +41,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1.25
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
