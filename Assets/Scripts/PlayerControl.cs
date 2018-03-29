@@ -12,10 +12,9 @@ public class PlayerControl : MonoBehaviour
     public float rotationSpeed = 1f;
     public float heightStandard = 4f;
     public float heightRange = 2f;
-    public float heightTol = 0.1f;
+    public float heightLerpTime = 0.05f;
     private float heightTime = 0;
     private int heightState = 0;
-    private int direction;
 
     [Header("Debug")]
     //MainControl gameController;
@@ -104,44 +103,29 @@ public class PlayerControl : MonoBehaviour
 
     void NewMovementUpdate(){
         Vector3 height = Vector3.zero;
+        Vector3 targetHeight = Vector3.zero;
         heightTime += Time.deltaTime;
         heightAxis = heightStandard + GetHeightOnGround();
-        if(Input.GetKeyDown("z")&& heightTime>0.5f && heightState != 1){
+        if (Input.GetButton("raise") && heightState != 1 && heightTime > 0.5f)
+        {
             heightState = Mathf.Min(++heightState, 1);
-            direction = 1;
             heightTime = 0f;
-            Debug.Log("z  " + direction);
-        }else if(Input.GetKeyDown("x")&& heightTime >0.5f && heightState !=-1){
+        }
+        else if (Input.GetButton("low") && heightState != -1 && heightTime > 0.5f)
+        {
             heightState = Mathf.Max(--heightState, -1);
-            direction = -1;
             heightTime = 0f;
-            Debug.Log("x  " + direction);
         }
-        if(heightTime <0.1f && heightTime>0f){
-            height.y =  jumpSpeed * direction;
-        } else if(heightTime>0.1f  && heightTime<0.4f){
-            height.y = 3.5f*jumpSpeed * direction;
-        } else if(heightTime > 0.4f && heightTime < 0.5f){
-            height.y =  jumpSpeed * direction;
-        } else {
-            height.y = 0;
+        else {
+            
         }
+        targetHeight = new Vector3(transform.position.x, heightStandard + heightState * heightRange, transform.position.z);
         Vector3 vertical = CameraForwardDirection() * Input.GetAxis("Vertical") * moveSpeed;
         Vector3 horizontal = CameraRightDirection() * Input.GetAxis("Horizontal") * moveSpeed;
-
-        Vector3 dir = (vertical + horizontal + height) * Time.deltaTime;
-        rb.MovePosition(transform.position + dir);
-        if(heightTime >0.5f){
-            if(heightState == -1){
-                transform.position = new Vector3(transform.position.x, 3, transform.position.z);
-            } else if (heightState == 0)
-            {
-                transform.position = new Vector3(transform.position.x, 4, transform.position.z);
-            } else if (heightState == 1)
-            {
-                transform.position = new Vector3(transform.position.x, 5, transform.position.z);
-            }
-        }
+        
+        Vector3 dir = (vertical + horizontal) * Time.deltaTime;
+        rb.MovePosition(Vector3.Lerp(transform.position, targetHeight, heightLerpTime) + dir);
+        //Vector3.Lerp(transform.position, targetHeight, 0.05f);
     }
     float GetHeightOnGround()
     {
