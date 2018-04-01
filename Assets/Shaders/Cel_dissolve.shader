@@ -184,42 +184,20 @@
 				float4 lightingColor;
 				float4 reLightingColor;
 				float ramp = clamp(dot(normalDirection, lightDirection), 0, 1.0) * atten;
-				if (ramp < _ShadowThreshold)
-				{   
-                    if(ramp > _ShadowThreshold-_SoftRange){
-                        lightingColor = shadowColor * 0.75 + diffuseColor * 0.25;
-                        reLightingColor = reShadowColor * 0.75 + reDiffuseColor * 0.25;
-                    }else{
-                        lightingColor = shadowColor;
-                        reLightingColor = reShadowColor;
-                    }
-
-				}
-				else
-                if (ramp > _SpecThreshold)
+                if (ramp < 0.5)
                 {   
-                    if(ramp < _SpecThreshold + _SoftRange){
-                        lightingColor = specColor * 0.75 + diffuseColor * 0.25;
-                        reLightingColor = reSpecColor * 0.75 + reDiffuseColor * 0.25;
-                    }else{
-                        lightingColor = specColor;
-                        reLightingColor = reSpecColor;
-                    }
+                    float weight = smoothstep(_ShadowThreshold-_SoftRange, _ShadowThreshold+_SoftRange, ramp);
+                    lightingColor = shadowColor * (1-weight) + diffuseColor * weight;
+                    reLightingColor = reShadowColor *(1-weight) + reDiffuseColor * weight;
+     
                 }
-				else
-				{   
-                    if(ramp < _ShadowThreshold + _SoftRange){
-                        lightingColor = shadowColor * 0.25 + diffuseColor * 0.75;
-                        reLightingColor = reShadowColor * 0.25 + reDiffuseColor * 0.75;
-                    }else if(ramp > _SpecThreshold-_SoftRange){
-                        lightingColor = specColor * 0.25 + diffuseColor * 0.75;
-                        reLightingColor = reSpecColor * 0.25 + reDiffuseColor * 0.75;
-                    }else{
-                        reLightingColor = reDiffuseColor;
-                        lightingColor =  diffuseColor;
-                    }
+                else
+                {   
+                    float weight = smoothstep(_SpecThreshold-_SoftRange, _SpecThreshold+_SoftRange, ramp);
+                    lightingColor = diffuseColor * (1-weight) + specColor * weight;
+                    reLightingColor = reDiffuseColor *(1-weight) + reSpecColor * weight;
 
-				}
+                }
 
 				lightingColor *= atten * _LightColor0.w;
 				reLightingColor *= atten * _LightColor0.w;
@@ -436,42 +414,20 @@
 				float4 lightingColor;
 				float4 reLightingColor;
 				float ramp = clamp(dot(normalDirection, lightDirection), 0, 1.0) * atten;
-				if (ramp < _ShadowThreshold)
-				{   
-                    if(ramp > _ShadowThreshold-_SoftRange){
-                        lightingColor = shadowColor * 0.75 + diffuseColor * 0.25;
-                        reLightingColor = reShadowColor * 0.75 + reDiffuseColor * 0.25;
-                    }else{
-                        lightingColor = shadowColor;
-                        reLightingColor = reShadowColor;
-                    }
-
-				}
-				else
-                if (ramp > _SpecThreshold)
+                if (ramp < 0.5)
                 {   
-                    if(ramp < _SpecThreshold + _SoftRange){
-                        lightingColor = specColor * 0.75 + diffuseColor * 0.25;
-                        reLightingColor = reSpecColor * 0.75 + reDiffuseColor * 0.25;
-                    }else{
-                        lightingColor = specColor;
-                        reLightingColor = reSpecColor;
-                    }
+                    float weight = smoothstep(_ShadowThreshold-_SoftRange, _ShadowThreshold+_SoftRange, ramp);
+                    lightingColor = shadowColor * (1-weight) + diffuseColor * weight;
+                    reLightingColor = reShadowColor *(1-weight) + reDiffuseColor * weight;
+     
                 }
-				else
-				{   
-                    if(ramp < _ShadowThreshold + _SoftRange){
-                        lightingColor = shadowColor * 0.25 + diffuseColor * 0.75;
-                        reLightingColor = reShadowColor * 0.25 + reDiffuseColor * 0.75;
-                    }else if(ramp > _SpecThreshold-_SoftRange){
-                        lightingColor = specColor * 0.25 + diffuseColor * 0.75;
-                        reLightingColor = reSpecColor * 0.25 + reDiffuseColor * 0.75;
-                    }else{
-                        reLightingColor = reDiffuseColor;
-                        lightingColor =  diffuseColor;
-                    }
+                else
+                {   
+                    float weight = smoothstep(_SpecThreshold-_SoftRange, _SpecThreshold+_SoftRange, ramp);
+                    lightingColor = diffuseColor * (1-weight) + specColor * weight;
+                    reLightingColor = reDiffuseColor *(1-weight) + reSpecColor * weight;
 
-				}
+                }
 
 				lightingColor *= atten * _LightColor0.w;
 				reLightingColor *= atten * _LightColor0.w;
