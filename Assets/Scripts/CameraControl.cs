@@ -74,10 +74,29 @@ public class CameraControl : MonoBehaviour
 
         if (!frozen)
         {
-            dAngleX -= Input.GetAxis("Mouse X") * Time.deltaTime * angleSensitivity.x;
-            dAngleY -= Input.GetAxis("Mouse Y") * Time.deltaTime * angleSensitivity.y;
-            dAngleX -= Input.GetAxis("RightJoystick X") * Time.deltaTime * angleSensitivity.x;
-            dAngleY -= Input.GetAxis("RightJoystick Y") * Time.deltaTime * angleSensitivity.y;
+            float inputX = Input.GetAxis("Mouse X");
+            float inputY = Input.GetAxis("Mouse Y");
+            if (inputX > 0.01f)
+            {
+                dAngleX -= (0.5f * Input.GetAxis("Mouse X") * Mathf.Abs(Input.GetAxis("Mouse X")) + 0.5f) * Time.deltaTime * angleSensitivity.x;
+                dAngleX -= (0.5f * Input.GetAxis("RightJoystick X") * Mathf.Abs(Input.GetAxis("RightJoystick X")) + 0.5f) * Time.deltaTime * angleSensitivity.x;
+            } else if(inputX < -0.01f){
+                dAngleX -= (0.5f * Input.GetAxis("Mouse X") * Mathf.Abs(Input.GetAxis("Mouse X")) - 0.5f) * Time.deltaTime * angleSensitivity.x;
+                dAngleX -= (0.5f * Input.GetAxis("RightJoystick X") * Mathf.Abs(Input.GetAxis("RightJoystick X")) - 0.5f) * Time.deltaTime * angleSensitivity.x;    
+            } else{
+                dAngleX -= 0;
+            }
+            if (Mathf.Abs(inputY) > 0.01f)
+            {
+                dAngleY -= (0.5f * Input.GetAxis("Mouse Y") * Mathf.Abs(Input.GetAxis("Mouse Y")) + 0.5f) * Time.deltaTime * angleSensitivity.y;
+                dAngleY -= (0.5f * Input.GetAxis("RightJoystick Y") * Mathf.Abs(Input.GetAxis("RightJoystick Y")) + 0.5f) * Time.deltaTime * angleSensitivity.y;
+            } else if (inputY < -0.01f)
+            {
+                dAngleY -= (0.5f * Input.GetAxis("Mouse Y") * Mathf.Abs(Input.GetAxis("Mouse Y")) - 0.5f) * Time.deltaTime * angleSensitivity.x;
+                dAngleY -= (0.5f * Input.GetAxis("RightJoystick Y") * Mathf.Abs(Input.GetAxis("RightJoystick Y")) - 0.5f) * Time.deltaTime * angleSensitivity.x;
+            } else {
+                dAngleY -= 0;
+            }
         }
 
         dAngleX = Clamp(dAngleX, -angleRange.x, angleRange.x);
