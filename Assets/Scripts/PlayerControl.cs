@@ -60,6 +60,7 @@ public class PlayerControl : MonoBehaviour
         Vector3 targetHeight = Vector3.zero;
         heightCD += Time.deltaTime;
         heightAxis = heightStandard + GetHeightOnGround();
+        //Debug.Log(heightAxis + "    ");
         if (Input.GetButton("raise") && heightState != 1 && heightCD > 0.5f)
         {
             heightState = Mathf.Min(++heightState, 1);
@@ -77,7 +78,7 @@ public class PlayerControl : MonoBehaviour
 
         Vector3 vertical = CameraForwardDirection() * Input.GetAxis("Vertical") * moveSpeed;
         Vector3 horizontal = CameraRightDirection() * Input.GetAxis("Horizontal") * moveSpeed;
-        Vector3 height = new Vector3(0, (heightStandard + heightState * heightRange - transform.position.y) * jumpSpeed, 0);
+        Vector3 height = new Vector3(0, (heightAxis + heightState * heightRange - transform.position.y) * jumpSpeed, 0);
         Vector3 dir = (vertical + horizontal + height) * Time.deltaTime;
         targetPos += dir;
 
@@ -89,8 +90,7 @@ public class PlayerControl : MonoBehaviour
         float y = heightAxis - heightStandard;
         float distance = 50f;
         RaycastHit[] hits;
-        hits = Physics.RaycastAll(transform.position, -transform.up, 50f);
-
+        hits = Physics.RaycastAll(transform.position, -Vector3.up, 300f);
         foreach (RaycastHit hit in hits)
         {
             if (hit.collider.gameObject.CompareTag("Terrain"))
@@ -102,7 +102,7 @@ public class PlayerControl : MonoBehaviour
                 }
             }
         }
-        //Debug.Log(y);
+        Debug.Log("final"+y);
         return y;
     }
 
