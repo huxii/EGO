@@ -8,20 +8,21 @@ public class PlayerControl : MonoBehaviour
 
     [Header("Attributes")]
     public float moveSpeed = 1f;
-    public float jumpSpeed = 20f;
+    public float jumpSpeed = 1f;
     public float rotationSpeed = 1f;
     public float heightStandard = 4f;
     public float heightRange = 2f;
-    public float heightLerpTime = 0.05f;
-    private float heightTime = 0;
-    private int heightState = 0;
 
     [Header("Debug")]
     //MainControl gameController;
     Camera cam;
     Rigidbody rb;
+
     [SerializeField]
+    Vector3 targetPos;
     float heightAxis;
+    private float heightCD = 0;
+    private int heightState = 0;
 
     // Use this for initialization
     void Start()
@@ -30,7 +31,7 @@ public class PlayerControl : MonoBehaviour
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody>();
         Vector3 pos = transform.position;
-        transform.position = new Vector3(pos.x, heightAxis, pos.z);
+        transform.position = new Vector3(pos.x, heightAxis + GetHeightOnGround(), pos.z);
     }
 
     // Update is called once per frame
@@ -38,8 +39,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (!frozen)
         {
-            //MovementUpdate();
-            NewMovementUpdate();
+            MovementUpdate();
         }
         else
         {
@@ -47,93 +47,50 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        if ((targetPos - transform.position).sqrMagnitude <= 0.01f)
+        {
+            transform.position = targetPos;
+        }
+    }
+
     void MovementUpdate()
     {
-        Vector3 height = new Vector3(0f, 0f, 0f);
-        heightAxis = heightStandard + GetHeightOnGround();
-
-        float jump = Input.GetAxis("Jump");
-        if (jump > 0)
-        {
-            if (transform.position.y < heightAxis + heightRange)
-            {
-                height.y = jumpSpeed;
-            }
-        }
-        else
-        if (jump == 0)
-        {
-            if (Mathf.Abs(transform.position.y - heightAxis) <= 0.01f)
-            {
-                height.y = 0;
-            }
-            else
-            if (transform.position.y > heightAxis)
-            {
-                height.y = -jumpSpeed;
-            }
-            else
-            {
-                height.y = jumpSpeed;
-            }
-        }
-        else
-        {
-            if (transform.position.y > heightAxis - heightRange)
-            {
-                height.y = -jumpSpeed;
-            }
-        }
-
-        if (jump != 0 && 
-            (transform.position.y > heightAxis + heightRange || transform.position.y < heightAxis - heightRange)
-            )
-        {
-            height.y = 0;
-        }
-
-        Vector3 vertical = CameraForwardDirection() * Input.GetAxis("Vertical") * moveSpeed;
-        Vector3 horizontal = CameraRightDirection() * Input.GetAxis("Horizontal") * moveSpeed;
-
-        Vector3 dir = (vertical + horizontal + height) * Time.deltaTime;
-        //Debug.Log(dir + " " + rb.velocity);
-        rb.MovePosition(transform.position + dir);
-        //if(height.y == 0 && )
-    }
-
-    void NewMovementUpdate(){
-        Vector3 height = Vector3.zero;
         Vector3 targetHeight = Vector3.zero;
-        heightTime += Time.deltaTime;
+        heightCD += Time.deltaTime;
         heightAxis = heightStandard + GetHeightOnGround();
-        if (Input.GetButton("raise") && heightState != 1 && heightTime > 0.5f)
+        //Debug.Log(heightAxis + "    ");
+        if (Input.GetButton("raise") && heightState != 1 && heightCD > 0.5f)
         {
             heightState = Mathf.Min(++heightState, 1);
-            heightTime = 0f;
+            heightCD = 0f;
         }
-        else if (Input.GetButton("low") && heightState != -1 && heightTime > 0.5f)
+        else if (Input.GetButton("low") && heightState != -1 && heightCD > 0.5f)
         {
             heightState = Mathf.Max(--heightState, -1);
-            heightTime = 0f;
+            heightCD = 0f;
         }
-        else {
+        else
+        {
             
         }
-        targetHeight = new Vector3(transform.position.x, heightStandard + heightState * heightRange, transform.position.z);
+
         Vector3 vertical = CameraForwardDirection() * Input.GetAxis("Vertical") * moveSpeed;
         Vector3 horizontal = CameraRightDirection() * Input.GetAxis("Horizontal") * moveSpeed;
-        
-        Vector3 dir = (vertical + horizontal) * Time.deltaTime;
-        rb.MovePosition(Vector3.Lerp(transform.position, targetHeight, heightLerpTime) + dir);
-        //Vector3.Lerp(transform.position, targetHeight, 0.05f);
+        Vector3 height = new Vector3(0, (heightAxis + heightState * heightRange - transform.position.y) * jumpSpeed, 0);
+        Vector3 dir = (vertical + horizontal + height) * Time.deltaTime;
+        targetPos += dir;
+
+        rb.MovePosition(targetPos);
     }
+
     float GetHeightOnGround()
     {
         float y = heightAxis - heightStandard;
         float distance = 50f;
         RaycastHit[] hits;
-        hits = Physics.RaycastAll(transform.position, -transform.up, 50f);
-
+        hits = Physics.RaycastAll(transform.position, -Vector3.up, 300f);
         foreach (RaycastHit hit in hits)
         {
             if (hit.collider.gameObject.CompareTag("Terrain"))
@@ -145,7 +102,7 @@ public class PlayerControl : MonoBehaviour
                 }
             }
         }
-        //Debug.Log(y);
+        Debug.Log("final"+y);
         return y;
     }
 
