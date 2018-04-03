@@ -12064,6 +12064,10 @@ Prefab:
       propertyPath: _uv.Array.data[2256].x
       value: -7.217045
       objectReference: {fileID: 0}
+    - target: {fileID: 1994967745816156, guid: 9396bf3ec88b0454191f4146f3fbecb1, type: 2}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9396bf3ec88b0454191f4146f3fbecb1, type: 2}
   m_IsPrefabParent: 0
@@ -14472,6 +14476,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4061382102007464, guid: 5a51a1677ab0be14caef9d5226436f31, type: 2}
       propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 54741881958161972, guid: 5a51a1677ab0be14caef9d5226436f31,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114491208417923216, guid: 5a51a1677ab0be14caef9d5226436f31,
+        type: 2}
+      propertyPath: jumpSpeed
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -17696,7 +17710,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-102480
+  m_Name: pb_Mesh-1412
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -18260,7 +18274,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-102482
+  m_Name: pb_Mesh-1414
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
