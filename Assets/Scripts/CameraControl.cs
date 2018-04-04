@@ -74,27 +74,50 @@ public class CameraControl : MonoBehaviour
 
         if (!frozen)
         {
-            float inputX = Input.GetAxis("Mouse X");
-            float inputY = Input.GetAxis("Mouse Y");
-            if (inputX > 0.01f)
+            float keyboardX = Input.GetAxis("Mouse X");
+            float controllerX = Input.GetAxis("RightJoystick X");
+            float keyboardY = Input.GetAxis("Mouse Y");
+            float controllerY = Input.GetAxis("RightJoystick Y");
+            if (keyboardX > 0.01f)
             {
                 dAngleX -= (0.5f * Input.GetAxis("Mouse X") * Mathf.Abs(Input.GetAxis("Mouse X")) + 0.5f) * Time.deltaTime * angleSensitivity.x;
-                dAngleX -= (0.5f * Input.GetAxis("RightJoystick X") * Mathf.Abs(Input.GetAxis("RightJoystick X")) + 0.5f) * Time.deltaTime * angleSensitivity.x;
-            } else if(inputX < -0.01f){
-                dAngleX -= (0.5f * Input.GetAxis("Mouse X") * Mathf.Abs(Input.GetAxis("Mouse X")) - 0.5f) * Time.deltaTime * angleSensitivity.x;
-                dAngleX -= (0.5f * Input.GetAxis("RightJoystick X") * Mathf.Abs(Input.GetAxis("RightJoystick X")) - 0.5f) * Time.deltaTime * angleSensitivity.x;    
+            } else if(keyboardX < -0.01f)
+            {
+                dAngleX -= (0.5f * Input.GetAxis("Mouse X") * Mathf.Abs(Input.GetAxis("Mouse X")) - 0.5f) * Time.deltaTime * angleSensitivity.x; 
             } else{
                 dAngleX -= 0;
             }
-            if (Mathf.Abs(inputY) > 0.01f)
+            if (keyboardY > 0.01f)
             {
                 dAngleY -= (0.5f * Input.GetAxis("Mouse Y") * Mathf.Abs(Input.GetAxis("Mouse Y")) + 0.5f) * Time.deltaTime * angleSensitivity.y;
-                dAngleY -= (0.5f * Input.GetAxis("RightJoystick Y") * Mathf.Abs(Input.GetAxis("RightJoystick Y")) + 0.5f) * Time.deltaTime * angleSensitivity.y;
-            } else if (inputY < -0.01f)
+            } else if (keyboardY < -0.01f)
             {
-                dAngleY -= (0.5f * Input.GetAxis("Mouse Y") * Mathf.Abs(Input.GetAxis("Mouse Y")) - 0.5f) * Time.deltaTime * angleSensitivity.x;
-                dAngleY -= (0.5f * Input.GetAxis("RightJoystick Y") * Mathf.Abs(Input.GetAxis("RightJoystick Y")) - 0.5f) * Time.deltaTime * angleSensitivity.x;
+                dAngleY -= (0.5f * Input.GetAxis("Mouse Y") * Mathf.Abs(Input.GetAxis("Mouse Y")) - 0.5f) * Time.deltaTime * angleSensitivity.y;
             } else {
+                dAngleY -= 0;
+            }
+            if (controllerX > 0.01f)
+            {
+                dAngleX -= (0.5f * Input.GetAxis("RightJoystick X") * Mathf.Abs(Input.GetAxis("RightJoystick X")) + 0.5f) * Time.deltaTime * angleSensitivity.x * 10;
+            }
+            else if (controllerX < -0.01f)
+            {
+                dAngleX -= (0.5f * Input.GetAxis("RightJoystick X") * Mathf.Abs(Input.GetAxis("RightJoystick X")) - 0.5f) * Time.deltaTime * angleSensitivity.x * 10;
+            }
+            else
+            {
+                dAngleX -= 0;
+            }
+            if (controllerY > 0.01f)
+            {
+                dAngleY -= (0.5f * Input.GetAxis("RightJoystick Y") * Mathf.Abs(Input.GetAxis("RightJoystick Y")) + 0.5f) * Time.deltaTime * angleSensitivity.y * 10;
+            }
+            else if (controllerY < -0.01f)
+            {
+                dAngleY -= (0.5f * Input.GetAxis("RightJoystick Y") * Mathf.Abs(Input.GetAxis("RightJoystick Y")) - 0.5f) * Time.deltaTime * angleSensitivity.y * 10;
+            }
+            else
+            {
                 dAngleY -= 0;
             }
         }
