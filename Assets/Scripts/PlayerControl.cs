@@ -102,7 +102,6 @@ public class PlayerControl : MonoBehaviour
                 }
             }
         }
-        Debug.Log("final"+y);
         return y;
     }
 

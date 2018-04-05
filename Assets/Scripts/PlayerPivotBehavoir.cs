@@ -4,37 +4,30 @@ using UnityEngine;
 
 public class PlayerPivotBehavoir : MonoBehaviour
 {
-    public Vector2 screenLimit = new Vector2(2f, 1f);
+    public float distance = 4f;
+    public Vector3 distanceRate = new Vector3(1f, 0.5f, 1f);
 
     GameObject player;
-    Vector3 targetPos;
 
     // Use this for initialization
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        targetPos = player.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 playerScreenPos = Camera.main.WorldToScreenPoint(player.transform.position);
-        Vector3 pivotScreenPos = Camera.main.WorldToScreenPoint(transform.position);
-        if (Mathf.Abs(playerScreenPos.x - pivotScreenPos.x) > screenLimit.x
-            || Mathf.Abs(playerScreenPos.y - pivotScreenPos.y) > screenLimit.y)
+        if (CustomDistance(transform.position, player.transform.position) > distance)
         {
-            targetPos = player.transform.position;
+            transform.Translate(Time.deltaTime * 5f * (player.transform.position - transform.position));
         }
+    }
 
-        Vector3 dir = targetPos - transform.position;
-        if (dir.magnitude < 0.01f)
-        {
-            transform.position = targetPos;
-        }
-        else
-        {
-            transform.Translate(dir.normalized * Time.deltaTime * 5f);
-        }
+    float CustomDistance(Vector3 o, Vector3 p)
+    {
+        Vector3 dir = p - o;
+        dir = new Vector3(dir.x * distanceRate.x, dir.y * distanceRate.y, dir.z * distanceRate.z);
+        return dir.magnitude;
     }
 }
