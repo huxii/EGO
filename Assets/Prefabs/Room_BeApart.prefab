@@ -1307,7 +1307,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4630429296009458}
   - component: {fileID: 33338443554171036}
-  - component: {fileID: 136397431787157272}
   - component: {fileID: 23283393162716086}
   m_Layer: 8
   m_Name: Carpet
@@ -1743,7 +1742,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1006770736003166}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 6.3599987, y: 4.75, z: 1.8599983}
+  m_LocalPosition: {x: 5.2, y: 4.75, z: 1.86}
   m_LocalScale: {x: 0.5063418, y: 1, z: 1.8191831}
   m_Children:
   - {fileID: 4582141184214556}
@@ -1971,7 +1970,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1660363434718526}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.0499997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4255026588593150}
@@ -6172,7 +6171,7 @@ MonoBehaviour:
   changeInteractionControl: 0
   nextTargets:
   - {fileID: 0}
-  playerHeight: 3.5
+  playerHeight: 1.5
 --- !u!114 &114734549178953410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6241,11 +6240,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 0}
-  distance: 15
-  angleZero: {x: -90, y: 40}
-  angleRange: {x: 170, y: 170}
-  angleSensitivity: {x: 60, y: 60}
-  angleSmooth: {x: 1, y: 1}
+  distance: 9
+  angleZero: {x: -90, y: 80}
+  angleRange: {x: 180, y: 50}
+  angleSensitivity: {x: 50, y: 20}
+  angleSmooth: {x: 3, y: 3}
   dAngle: {x: 0, y: 0}
   frozen: 0
 --- !u!114 &114826526207766578
@@ -6281,16 +6280,3 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1965788565383854}
   m_Enabled: 1
---- !u!136 &136397431787157272
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1899102944515280}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
