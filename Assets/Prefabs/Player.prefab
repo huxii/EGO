@@ -214,7 +214,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c97d7f4f4c9b945d296787fcfc90064a, type: 2}
+  - {fileID: 2100000, guid: 5fea62b5e6f164cfaa42106b7468e2eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -260,8 +260,8 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
+  m_Interpolate: 1
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!108 &108764402945703668
 Light:
@@ -310,7 +310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0032eb1706cbb8846b61b0d50cbb96cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 3
+  distance: 1
+  distanceRate: {x: 1, y: 0.5, z: 1}
 --- !u!114 &114491208417923216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -323,13 +324,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frozen: 0
-  moveSpeed: 7
-  jumpSpeed: 1
+  moveSpeed: 5
+  jumpSpeed: 2.5
   rotationSpeed: 1
-  heightStandard: 4
+  heightStandard: 2
   heightRange: 2
-  heightTol: 0.1
-  heightAxis: 4
+  targetPos: {x: 0, y: 0, z: 0}
 --- !u!135 &135545054566492528
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -402,7 +402,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1937489546
+  randomSeed: 1263264765
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3724,7 +3724,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6676de46d7a7541a08614bbc9767b0cd, type: 2}
+  - {fileID: 2100000, guid: cda1a97e89df2cd49a680963218de370, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
