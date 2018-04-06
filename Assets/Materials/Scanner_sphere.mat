@@ -69,7 +69,7 @@ Material:
     - _DstBlend: 0
     - _EdgeInnerBlur: 4
     - _EdgeOutterBlur: 4
-    - _EdgeWidth: 5
+    - _EdgeWidth: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -77,15 +77,15 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Range: 15
+    - _Range: 10
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Timer: 0.838
+    - _Timer: 0
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Center: {r: 0.9378011, g: -7.5246, b: 36.780083, a: 0}
+    - _Center: {r: -18.529663, g: -8.001999, b: 57.94416, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EdgeColor: {r: 1.1000001, g: 1.1000001, b: 1.1000001, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
