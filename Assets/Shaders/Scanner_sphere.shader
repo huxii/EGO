@@ -9,7 +9,7 @@ Shader "II/Postprocess/Scanner_sphere"
 		_Center("Center", Vector) = (0.0, 0.0, 0.0, 0.0)
 		_MainTex("Main Texture", 2D) = "white" {}
 		_EdgeWidth("Edge Width", float) = 1
-		_EdgeColor("Edge Color", Color) = (1.0, 1.0, 1.0, 1.0)
+		[HDR]_EdgeColor("Edge Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_EdgeTex("Edge Texture", 2D) = "white" {}
 		_InnerTex("Inner Texture", 2D) = "white" {}
 		_EdgeInnerBlur("Edge Inner Blur", float) = 1
