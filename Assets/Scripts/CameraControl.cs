@@ -20,6 +20,7 @@ public class CameraControl : MonoBehaviour
     Vector3 curTargetPos;
     Vector2 curAngle;
     float curDistance;
+    float curTargetDistance;
 
     // Use this for initialization
     void Start ()
@@ -28,6 +29,7 @@ public class CameraControl : MonoBehaviour
         curTargetPos = targetObject.transform.position;
         curAngle = angleZero;
         curDistance = distance;
+        curTargetDistance = distance;
 
         PositionUpdate();
         RotationUpdate(); 
@@ -40,14 +42,14 @@ public class CameraControl : MonoBehaviour
         {
             PositionUpdate();
             RotationUpdate();
-            //ZoomUpdate();
+            ZoomUpdate();
         }
     }
 
     void PositionUpdate()
     {
         curTargetPos = Vector3.Lerp(curTargetPos, targetObject.transform.position, Time.deltaTime * 5f);
-        curDistance = Mathf.Lerp(curDistance, distance, Time.deltaTime);
+        curDistance = Mathf.Lerp(curDistance, curTargetDistance, Time.deltaTime);
 
         float targetAngleX = angleZero.x + dAngle.x;
         float targetAngleY = angleZero.y + dAngle.y;
@@ -132,14 +134,39 @@ public class CameraControl : MonoBehaviour
 
     void ZoomUpdate()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        RaycastHit[] hits;
+        Vector3 dir = transform.position - curTargetPos;
+        hits = Physics.RaycastAll(curTargetPos, dir.normalized, dir.magnitude);
+
+        float d = -1;
+        foreach (RaycastHit hit in hits)
         {
-            --distance;
+            if (hit.collider.gameObject.CompareTag("Background"))
+            {
+                d = hit.distance;
+                break;
+            }
         }
 
-        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        if (d != -1)
         {
-            ++distance;
+            if (d > distance)
+            {
+                curTargetDistance = distance - 0.05f;
+            }
+            else
+            {
+                curTargetDistance = d - 0.05f;
+            }
+        }
+        else
+        {
+            curTargetDistance = distance - 0.05f;
+        }
+
+        if (curTargetDistance < 0)
+        {
+            curTargetDistance = 0;
         }
     }
 
