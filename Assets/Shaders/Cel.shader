@@ -59,22 +59,30 @@
 			uniform float _ReplacementStyle;
 			uniform float _ReplacementTimer;
 			uniform float4 _Center;
+			float _DissolveTimer;
+			uniform float _EdgeSpeedRate;
+			uniform float4 _EdgeColor;
+			uniform sampler2D _NoiseTex;
+			uniform float4 _NoiseTex_ST;
 			
 			struct VertexInput 
 			{
 				float4 vertex : POSITION;
 				float3 normal : NORMAL;
+				float4 texcoord : TEXCOORD1;
 			};
 
 			struct VertexOutput 
 			{
 				float4 pos : SV_POSITION;
 				float4 posWorld: TEXCOORD0;
+				float4 tex : TEXCOORD1;
 			};
 			VertexOutput vert(VertexInput v) 
 			{
 				VertexOutput o = (VertexOutput)0;
 				o.pos = UnityObjectToClipPos(float4(v.vertex.xyz + v.normal* _OutlineThickness, 1));
+				o.tex = v.texcoord;
 				return o;
 			}
 			float4 frag(VertexOutput i) : COLOR
@@ -113,6 +121,12 @@
 					{
 						clip(-1);
 					}
+
+				// dissolve
+				float noiseSample = tex2Dlod(_NoiseTex, float4(i.tex.xy * _NoiseTex_ST.xy + _NoiseTex_ST.zw, 0, 0));
+				clip(noiseSample - _DissolveTimer);
+
+				UNITY_APPLY_FOG(i.fogCoord, col);
 
 				return _OutlineColor;
 			}
