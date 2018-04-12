@@ -92,15 +92,15 @@ Material:
     - _Parallax: 0.02
     - _ReplacementInverted: 0
     - _ReplacementStyle: 2
-    - _ReplacementTimer: 20
+    - _ReplacementTimer: 0
     - _RimBoost: 2
     - _RimExp: 4
-    - _ShadowThreshold: 0.04
+    - _ShadowThreshold: 0.053
     - _SmoothnessTextureChannel: 0
-    - _SoftRange: 0.5
+    - _SoftRange: 0.179
     - _SpecBoost: 0.3
     - _SpecExp: 20
-    - _SpecThreshold: 0.85
+    - _SpecThreshold: 0.848
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _TextureAlpha: 0
