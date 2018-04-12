@@ -38,8 +38,7 @@
 	}
 
 	SubShader
-	{	
-		/*
+	{
 		Pass
 		{
 			Name "Outline"
@@ -54,6 +53,13 @@
 			#pragma multi_compile_shadowcaster
 			#pragma only_renderers d3d9 d3d11 glcore gles gles3 metal d3d11_9x xboxone ps4 psp2 n3ds wiiu 
 			#pragma target 3.0
+
+			uniform float _OutlineThickness;
+			uniform float4 _OutlineColor;
+			uniform float _ReplacementStyle;
+			uniform float _ReplacementTimer;
+			uniform float4 _Center;
+			
 			struct VertexInput 
 			{
 				float4 vertex : POSITION;
@@ -63,20 +69,56 @@
 			struct VertexOutput 
 			{
 				float4 pos : SV_POSITION;
+				float4 posWorld: TEXCOORD0;
 			};
 			VertexOutput vert(VertexInput v) 
 			{
 				VertexOutput o = (VertexOutput)0;
-				o.pos = UnityObjectToClipPos(float4(v.vertex.xyz + v.normal*0.05,1));
+				o.pos = UnityObjectToClipPos(float4(v.vertex.xyz + v.normal* _OutlineThickness, 1));
 				return o;
 			}
 			float4 frag(VertexOutput i) : COLOR
 			{
-				return fixed4(float3(0,0,0),0);
+
+				// replacement
+				float4 col;
+				float3 dir = i.posWorld - _Center.xyz;
+				float dis = length(dir);
+
+				//special cases
+				if (_ReplacementStyle == 0) {
+					//pass    
+				}
+				else if (_ReplacementStyle == 1) {
+				}
+				else if (_ReplacementStyle == 3) 
+				{
+					clip(-1);
+					/*
+					if (dis <= _ReplacementTimer) 
+					{
+						clip(-1);
+					}
+					else {
+					}
+					*/
+				}
+				else
+					if (_ReplacementStyle == 2)
+					{
+						//if (dis > _ReplacementTimer)
+							clip(-1);
+					}
+					else
+					{
+						clip(-1);
+					}
+
+				return _OutlineColor;
 			}
 			ENDCG
 		}
-		*/
+		
 		Pass
 		{
 			Name "AmbientLights"
