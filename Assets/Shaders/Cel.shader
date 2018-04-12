@@ -39,7 +39,44 @@
 
 	SubShader
 	{	
-		
+		/*
+		Pass
+		{
+			Name "Outline"
+			Tags{}
+			Cull Front
+
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			#include "UnityCG.cginc"
+			#pragma fragmentoption ARB_precision_hint_fastest
+			#pragma multi_compile_shadowcaster
+			#pragma only_renderers d3d9 d3d11 glcore gles gles3 metal d3d11_9x xboxone ps4 psp2 n3ds wiiu 
+			#pragma target 3.0
+			struct VertexInput 
+			{
+				float4 vertex : POSITION;
+				float3 normal : NORMAL;
+			};
+
+			struct VertexOutput 
+			{
+				float4 pos : SV_POSITION;
+			};
+			VertexOutput vert(VertexInput v) 
+			{
+				VertexOutput o = (VertexOutput)0;
+				o.pos = UnityObjectToClipPos(float4(v.vertex.xyz + v.normal*0.05,1));
+				return o;
+			}
+			float4 frag(VertexOutput i) : COLOR
+			{
+				return fixed4(float3(0,0,0),0);
+			}
+			ENDCG
+		}
+		*/
 		Pass
 		{
 			Name "AmbientLights"
@@ -291,9 +328,10 @@
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            #pragma multi_compile_fwdadd
+            #pragma multi_compile_fwdadd_fullshadows
 			#pragma multi_compile_fog
 
+			#include "UnityPBSLighting.cginc"
 			#include "AutoLight.cginc"
 			#include "UnityCG.cginc"
 
@@ -303,7 +341,7 @@
             float4 _MainTex_ST;
             float4 _ShadowColor;
             float4 _DiffuseColor;
-            float4 _SpecColor;
+            //float4 _SpecColor;
             float _DissolveTimer;
             uniform float _EdgeSpeedRate;
             uniform float4 _EdgeColor;
@@ -324,7 +362,7 @@
             uniform float _TextureBlendMode;
 
 			float4 _Center;
-			uniform float4 _LightColor0;
+			//uniform float4 _LightColor0;
 
 			struct vertexInput
 			{
@@ -593,81 +631,6 @@
                 }
             ENDCG
         }
-
-		/*
-		Pass
-		{
-			Name "Outline"
-			Tags {"LightMode" = "ForwardBase"}
-
-			CGPROGRAM
-			#pragma vertex vert
-			#pragma fragment frag
-			#pragma exclude_renderers flash
-
-			uniform sampler2D _MainTex;
-			uniform float4 _MainTex_ST;
-			uniform bool _ColoredOutline;
-			uniform float4 _OutlineColor;
-			uniform float _OutlineThickness;
-
-			struct vertexInput
-			{
-				float4 vertex : POSITION;
-				float3 normal : NORMAL;
-				float4 texcoord : TEXCOORD0;
-			};
-
-			struct vertexOutput
-			{
-				float4 pos : SV_POSITION;
-				float4 texColor : TEXCOORD0;
-			};
-
-			vertexOutput vert(vertexInput v)
-			{
-				vertexOutput o;
-
-				// scale up the whole mesh
-				float4 newPos = v.vertex;
-				float3 normal = normalize(v.vertex);
-				newPos += float4(normal, 0.0) * _OutlineThickness;
-
-				o.pos = UnityObjectToClipPos(newPos);
-				o.texColor = tex2Dlod(_MainTex, float4(v.texcoord.xy, 0, 0));
-
-				return o;	
-			}
-
-			float4 frag(vertexOutput i) : COLOR
-			{
-				float4 col;
-				if (_ColoredOutline)
-				{
-					col = i.texColor * _OutlineColor;
-				}
-				else
-				{
-					col = _OutlineColor;
-				}
-
-				return col;
-			}
-
-			ENDCG
-
-			//Cull OFF
-			//ZWrite OFF
-			ZTest ON
-			Stencil
-			{
-				Ref 4
-				Comp notequal
-				Fail keep
-				Pass replace
-			}
-		}
-		*/
 	}
 	//Fallback "Diffuse
 
