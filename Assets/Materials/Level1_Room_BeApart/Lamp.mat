@@ -96,7 +96,7 @@ Material:
     - _DiffuseColor: {r: 0.1764706, g: 0.1764706, b: 0.1764706, a: 1}
     - _EdgeColor: {r: 0.22329153, g: 0.35794508, b: 0.5147059, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 2, g: 2, b: 2, a: 1}
     - _ReDiffuseColor: {r: 0.19852942, g: 0.19852942, b: 0.19852942, a: 1}
     - _ReShadowColor: {r: 0.21323532, g: 0.108650535, b: 0.09093859, a: 1}
     - _ReSpecColor: {r: 1, g: 0.7629817, b: 0.5808823, a: 1}

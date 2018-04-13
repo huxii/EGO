@@ -23,7 +23,9 @@ ModelImporter:
     2100002: lambert2
     2100004: pasted__lambert4
     2300000: Floor_Lamp
+    2300002: //RootNode
     3300000: Floor_Lamp
+    3300002: //RootNode
     4300000: Floor_Lamp
   externalObjects: {}
   materials:
