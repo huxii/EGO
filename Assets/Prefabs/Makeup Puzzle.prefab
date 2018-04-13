@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 114679767355218340}
   m_Layer: 8
   m_Name: MakeupSwitchTrigger
-  m_TagString: Interactable
+  m_TagString: ViewportSwitcher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -417,7 +417,7 @@ Camera:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1136124084935644}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -714,8 +714,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.6261597, y: 4.2042775, z: 1.7470855}
-  m_Center: {x: -0.06511069, y: 0.014263805, z: 0.45828477}
+  m_Size: {x: 3.6261597, y: 4.2042775, z: 3}
+  m_Center: {x: -0.06511069, y: 0.014263805, z: 1}
 --- !u!65 &65844974137431868
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -770,13 +770,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 1136124084935644}
-  targetControl: {fileID: 0}
-  beginInteractionByButton: 0
-  endInteractionByButton: 0
-  changeInteractionControl: 0
-  nextTargets:
-  - {fileID: 0}
   playerHeight: 1.5
+  player: {fileID: 0}
 --- !u!114 &114740360364256156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -817,12 +812,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f096f4e98147849ad92d6719cf44b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 1300348399898822}
-  targetControl: {fileID: 0}
   beginInteractionByButton: 1
   endInteractionByButton: 1
-  changeInteractionControl: 0
-  nextTargets: []
+  targetCamera: {fileID: 1300348399898822}
   scannerTarget: {fileID: 1950523725785438}
   scanRange: 10
   scanEdgeWidth: 1
@@ -830,6 +822,7 @@ MonoBehaviour:
   scanInnerBlur: 4
   scanOutterBlur: 4
   hideTargetAfterDestroyed: 0
+  nextTargets: []
   ppObjs: []
 --- !u!114 &114863226058975408
 MonoBehaviour:
@@ -854,12 +847,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322b2ece0f165a94cbf0c29cc84ac590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 1300348399898822}
-  targetControl: {fileID: 0}
   beginInteractionByButton: 0
   endInteractionByButton: 0
-  changeInteractionControl: 0
-  nextTargets: []
+  targetCamera: {fileID: 1300348399898822}
   scannerTarget: {fileID: 1950523725785438}
   scanRange: 15
   scanEdgeWidth: 5
@@ -867,6 +857,7 @@ MonoBehaviour:
   scanInnerBlur: 4
   scanOutterBlur: 4
   hideTargetAfterDestroyed: 0
+  nextTargets: []
   ppObjs: []
   scanManualTimer: 0
 --- !u!124 &124481564954523468

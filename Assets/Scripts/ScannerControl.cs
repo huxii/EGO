@@ -6,6 +6,7 @@ using UnityEngine;
 public class ScannerControl : InteractableControl
 {
     [Header("Scanner Settings")]
+    public GameObject targetCamera;
     public GameObject scannerTarget;
     public float scanRange = 1f;
     public float scanEdgeWidth = 1f;
@@ -13,6 +14,7 @@ public class ScannerControl : InteractableControl
     public float scanInnerBlur = 1f;
     public float scanOutterBlur = 1f;
     public bool hideTargetAfterDestroyed = false;
+    public List<GameObject> nextTargets;
 
     protected GameObject bgCam;
     protected Material scannerMat;

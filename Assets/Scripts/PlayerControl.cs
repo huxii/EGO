@@ -147,6 +147,11 @@ public class PlayerControl : MonoBehaviour
                 other.gameObject.GetComponent<InteractableControl>().BeginInteraction();
             }
         }
+        else
+        if (other.gameObject.CompareTag("ViewportSwitcher"))
+        {
+            other.gameObject.GetComponent<ViewportControl>().SwitchViewport();
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -157,6 +162,11 @@ public class PlayerControl : MonoBehaviour
             {
                 other.gameObject.GetComponent<InteractableControl>().EndInteraction();
             }
+        }
+        else
+        if (other.gameObject.CompareTag("ViewportSwitcher"))
+        {
+            other.gameObject.GetComponent<ViewportControl>().SwitchBackViewport();
         }
     }
 

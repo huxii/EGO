@@ -9,6 +9,7 @@ TagManager:
   - Interactable
   - ScannerBgCamera
   - Background
+  - ViewportSwitcher
   layers:
   - Default
   - TransparentFX

@@ -5,12 +5,8 @@ using UnityEngine;
 public class InteractableControl : MonoBehaviour
 {
     [Header("Interactable System")]
-    public GameObject targetCamera = null;
-    public GameObject targetControl = null;
     public bool beginInteractionByButton = false;
     public bool endInteractionByButton = false;
-    public bool changeInteractionControl = false;
-    public List<GameObject> nextTargets = null;
 
     // Use this for initialization
     void Start ()

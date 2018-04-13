@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ViewportControl : InteractableControl
+public class ViewportControl : MonoBehaviour
 {
-    [Header("Player Change")]
+    public GameObject targetCamera;
     public float playerHeight = 4f;
 
+    [SerializeField]
     GameObject player;
     CameraControl originCameraCon;
     CameraControl targetCameraCon;
@@ -25,7 +26,6 @@ public class ViewportControl : InteractableControl
     // Use this for initialization
     void Start ()
     {
-		
 	}
 	
 	// Update is called once per frame
@@ -87,5 +87,15 @@ public class ViewportControl : InteractableControl
         originCameraCon.angleSmooth = angleSmooth0;
         originCameraCon.dAngle = dAngle0;
         player.GetComponent<PlayerControl>().heightStandard = playerHeight0;
+    }
+
+    public virtual void SwitchViewport()
+    {
+
+    }
+
+    public virtual void SwitchBackViewport()
+    {
+
     }
 }

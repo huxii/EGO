@@ -698,6 +698,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8022fc14d9e32c6499e2e3a1636a66c5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &231319351 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1965788565383854, guid: dfc0668484aed3f4fa581ebb20e4c118,
+    type: 2}
+  m_PrefabInternal: {fileID: 348305585}
 --- !u!1001 &310940546
 Prefab:
   m_ObjectHideFlags: 0
@@ -927,12 +932,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f096f4e98147849ad92d6719cf44b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 0}
-  targetControl: {fileID: 0}
   beginInteractionByButton: 0
   endInteractionByButton: 0
-  changeInteractionControl: 0
-  nextTargets: []
+  targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
   scanEdgeWidth: 1
@@ -940,6 +942,7 @@ MonoBehaviour:
   scanInnerBlur: 1
   scanOutterBlur: 1
   hideTargetAfterDestroyed: 0
+  nextTargets: []
   ppObjs: []
 --- !u!114 &327762763
 MonoBehaviour:
@@ -1143,7 +1146,25 @@ Prefab:
       propertyPath: m_TargetDisplay
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1031192770522790, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
+      propertyPath: m_TagString
+      value: ViewportSwitcher
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006770736003166, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
+      propertyPath: m_TagString
+      value: ViewportSwitcher
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418442666192590, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006770736003166, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114418442666192590, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &379815069
@@ -1208,6 +1229,48 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 6b9d09d11b378a04083b2b9850c2f7f2, type: 3}
   m_PrefabInternal: {fileID: 379815069}
+--- !u!1001 &402133987
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1364007681}
+    m_Modifications:
+    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.5879593
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.6833332
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 81.28825
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.21263637
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9771314
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &410435298
 Transform:
   m_ObjectHideFlags: 0
@@ -1647,20 +1710,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 20264453169825954, guid: a5378c391e3ab4b13a0404f730a940a5,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20264453169825954, guid: a5378c391e3ab4b13a0404f730a940a5,
-        type: 2}
-      propertyPath: m_TargetDisplay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241091466757800, guid: a5378c391e3ab4b13a0404f730a940a5, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5378c391e3ab4b13a0404f730a940a5, type: 2}
   m_IsPrefabParent: 0
@@ -1811,12 +1860,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c682d179bb7d8438546bc7e65d250b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 0}
-  targetControl: {fileID: 0}
   beginInteractionByButton: 0
   endInteractionByButton: 0
-  changeInteractionControl: 0
-  nextTargets: []
 --- !u!1 &704336702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,12 +1918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c682d179bb7d8438546bc7e65d250b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 0}
-  targetControl: {fileID: 0}
   beginInteractionByButton: 0
   endInteractionByButton: 0
-  changeInteractionControl: 0
-  nextTargets: []
 --- !u!1 &706035779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,12 +2111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f096f4e98147849ad92d6719cf44b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 0}
-  targetControl: {fileID: 0}
   beginInteractionByButton: 0
   endInteractionByButton: 0
-  changeInteractionControl: 0
-  nextTargets: []
+  targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
   scanEdgeWidth: 1
@@ -2083,6 +2121,7 @@ MonoBehaviour:
   scanInnerBlur: 1
   scanOutterBlur: 1
   hideTargetAfterDestroyed: 0
+  nextTargets: []
   ppObjs: []
 --- !u!65 &755787064
 BoxCollider:
@@ -2534,6 +2573,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1435912766154654, guid: 5a51a1677ab0be14caef9d5226436f31, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a51a1677ab0be14caef9d5226436f31, type: 2}
   m_IsPrefabParent: 0
@@ -2718,7 +2761,7 @@ MeshFilter:
 Transform:
   m_PrefabParentObject: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05,
     type: 2}
-  m_PrefabInternal: {fileID: 1637377656}
+  m_PrefabInternal: {fileID: 402133987}
 --- !u!4 &1135689988
 Transform:
   m_ObjectHideFlags: 0
@@ -2764,12 +2807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c682d179bb7d8438546bc7e65d250b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 0}
-  targetControl: {fileID: 0}
   beginInteractionByButton: 0
   endInteractionByButton: 0
-  changeInteractionControl: 0
-  nextTargets: []
 --- !u!23 &1142328780
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2893,12 +2932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c682d179bb7d8438546bc7e65d250b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 0}
-  targetControl: {fileID: 0}
   beginInteractionByButton: 0
   endInteractionByButton: 0
-  changeInteractionControl: 0
-  nextTargets: []
 --- !u!1 &1167263637
 GameObject:
   m_ObjectHideFlags: 0
@@ -2964,6 +2999,25 @@ Transform:
   m_Father: {fileID: 1834456865}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1178282530 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1031192770522790, guid: dfc0668484aed3f4fa581ebb20e4c118,
+    type: 2}
+  m_PrefabInternal: {fileID: 348305585}
+--- !u!114 &1178282532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1178282530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e56028129f4ae345ba145db9dbacfdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCamera: {fileID: 231319351}
+  playerHeight: 1.5
+  player: {fileID: 0}
 --- !u!1 &1233189403
 GameObject:
   m_ObjectHideFlags: 0
@@ -3107,12 +3161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f096f4e98147849ad92d6719cf44b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 0}
-  targetControl: {fileID: 0}
   beginInteractionByButton: 0
   endInteractionByButton: 0
-  changeInteractionControl: 0
-  nextTargets: []
+  targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
   scanEdgeWidth: 1
@@ -3120,6 +3171,7 @@ MonoBehaviour:
   scanInnerBlur: 1
   scanOutterBlur: 1
   hideTargetAfterDestroyed: 0
+  nextTargets: []
   ppObjs: []
 --- !u!114 &1240891315
 MonoBehaviour:
@@ -3649,12 +3701,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c682d179bb7d8438546bc7e65d250b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 0}
-  targetControl: {fileID: 0}
   beginInteractionByButton: 0
   endInteractionByButton: 0
-  changeInteractionControl: 0
-  nextTargets: []
 --- !u!23 &1567477505
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3753,12 +3801,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f096f4e98147849ad92d6719cf44b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 0}
-  targetControl: {fileID: 0}
   beginInteractionByButton: 0
   endInteractionByButton: 0
-  changeInteractionControl: 0
-  nextTargets: []
+  targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
   scanEdgeWidth: 1
@@ -3766,6 +3811,7 @@ MonoBehaviour:
   scanInnerBlur: 1
   scanOutterBlur: 1
   hideTargetAfterDestroyed: 0
+  nextTargets: []
   ppObjs: []
 --- !u!65 &1575137751
 BoxCollider:
@@ -3837,63 +3883,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4817218939215632, guid: bbe6296415c95491ab6ae2bba37ef75f,
     type: 2}
   m_PrefabInternal: {fileID: 1612889702}
---- !u!1001 &1637377656
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1364007681}
-    m_Modifications:
-    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 4.5879593
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 3.6833332
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 81.28825
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0.21263637
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.9771314
-      objectReference: {fileID: 0}
-    - target: {fileID: 4940205643685264, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 20316597700795608, guid: 14c92684197e24563b9b32cf27b6ba05,
-        type: 2}
-      propertyPath: m_Depth
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 20316597700795608, guid: 14c92684197e24563b9b32cf27b6ba05,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20316597700795608, guid: 14c92684197e24563b9b32cf27b6ba05,
-        type: 2}
-      propertyPath: m_TargetDisplay
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 14c92684197e24563b9b32cf27b6ba05, type: 2}
-  m_IsPrefabParent: 0
 --- !u!4 &1640421907 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4572061702290760, guid: 172431302ca7e4180bea8d59d795ccfa,
@@ -4041,16 +4030,6 @@ Prefab:
     - target: {fileID: 4572061702290760, guid: 172431302ca7e4180bea8d59d795ccfa, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20401587977801770, guid: 172431302ca7e4180bea8d59d795ccfa,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20401587977801770, guid: 172431302ca7e4180bea8d59d795ccfa,
-        type: 2}
-      propertyPath: m_TargetDisplay
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 172431302ca7e4180bea8d59d795ccfa, type: 2}
@@ -4372,12 +4351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f096f4e98147849ad92d6719cf44b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 0}
-  targetControl: {fileID: 0}
   beginInteractionByButton: 0
   endInteractionByButton: 0
-  changeInteractionControl: 0
-  nextTargets: []
+  targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
   scanEdgeWidth: 1
@@ -4385,6 +4361,7 @@ MonoBehaviour:
   scanInnerBlur: 1
   scanOutterBlur: 1
   hideTargetAfterDestroyed: 0
+  nextTargets: []
   ppObjs: []
 --- !u!65 &1769493186
 BoxCollider:
@@ -4458,12 +4435,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f096f4e98147849ad92d6719cf44b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 0}
-  targetControl: {fileID: 0}
   beginInteractionByButton: 0
   endInteractionByButton: 0
-  changeInteractionControl: 0
-  nextTargets: []
+  targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
   scanEdgeWidth: 1
@@ -4471,6 +4445,7 @@ MonoBehaviour:
   scanInnerBlur: 1
   scanOutterBlur: 1
   hideTargetAfterDestroyed: 0
+  nextTargets: []
   ppObjs: []
 --- !u!114 &1784435755
 MonoBehaviour:
@@ -4557,6 +4532,19 @@ Transform:
   m_PrefabParentObject: {fileID: 4332545196942198, guid: dfc0668484aed3f4fa581ebb20e4c118,
     type: 2}
   m_PrefabInternal: {fileID: 348305585}
+--- !u!114 &1791775929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1791775927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 863beef8c3728dd4695b0a3bda44f6fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDissolve: 0
+  dissolveSpeed: 0.5
 --- !u!4 &1834456865
 Transform:
   m_ObjectHideFlags: 0
@@ -4672,12 +4660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c682d179bb7d8438546bc7e65d250b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 0}
-  targetControl: {fileID: 0}
   beginInteractionByButton: 0
   endInteractionByButton: 0
-  changeInteractionControl: 0
-  nextTargets: []
 --- !u!1 &1846447592
 GameObject:
   m_ObjectHideFlags: 0

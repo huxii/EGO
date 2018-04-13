@@ -16,32 +16,14 @@ public class ViewportSwitchBehavior : ViewportControl
     {
     }
 
-    public override void BeginInteraction()
+    public override void SwitchViewport()
     {
         SwitchCamera();
-
-        if (changeInteractionControl)
-        {
-            Camera.main.GetComponent<CameraControl>().frozen = true;
-            if (targetControl)
-            {
-                targetControl.GetComponent<ObjectControl>().frozen = false;
-            }
-        }
     }
 
-    public override void EndInteraction()
+    public override void SwitchBackViewport()
     {
         SwitchBack();
-
-        // potential bug
-        if (changeInteractionControl)
-        {
-            Camera.main.GetComponent<CameraControl>().frozen = false;
-            if (targetControl)
-            {
-                targetControl.GetComponent<ObjectControl>().frozen = true;
-            }
-        }
     }
+
 }
