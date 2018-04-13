@@ -113,6 +113,21 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &30933561 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1032691762833556, guid: acde680032adc094f8527375489cae94,
+    type: 2}
+  m_PrefabInternal: {fileID: 310940546}
+--- !u!1 &66348928 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1001844729424014, guid: dfc0668484aed3f4fa581ebb20e4c118,
+    type: 2}
+  m_PrefabInternal: {fileID: 348305585}
+--- !u!1 &107637382 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1157646466829580, guid: acde680032adc094f8527375489cae94,
+    type: 2}
+  m_PrefabInternal: {fileID: 310940546}
 --- !u!1 &137892828
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +767,26 @@ Prefab:
       propertyPath: nextTargets.Array.data[0]
       value: 
       objectReference: {fileID: 1791775927}
+    - target: {fileID: 114735738136518038, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: scannerTarget
+      value: 
+      objectReference: {fileID: 30933561}
+    - target: {fileID: 114735738136518038, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerObject
+      value: 
+      objectReference: {fileID: 107637382}
+    - target: {fileID: 114659986012446574, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerOutlineWidth
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114735738136518038, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerOutlineWidth
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acde680032adc094f8527375489cae94, type: 2}
   m_IsPrefabParent: 0
@@ -934,6 +969,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 0
   endInteractionByButton: 0
+  triggerObject: {fileID: 0}
+  triggerOutlineWidth: 0.5
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -1162,6 +1199,21 @@ Prefab:
     - target: {fileID: 1006770736003166, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114734549178953410, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerObject
+      value: 
+      objectReference: {fileID: 66348928}
+    - target: {fileID: 114734549178953410, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: scannerTarget
+      value: 
+      objectReference: {fileID: 1791775927}
+    - target: {fileID: 114734549178953410, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerOutlineWidth
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114418442666192590, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
@@ -1862,6 +1914,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 0
   endInteractionByButton: 0
+  triggerObject: {fileID: 0}
+  triggerOutlineWidth: 0.5
 --- !u!1 &704336702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1920,6 +1974,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 0
   endInteractionByButton: 0
+  triggerObject: {fileID: 0}
+  triggerOutlineWidth: 0.5
 --- !u!1 &706035779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,6 +2169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 0
   endInteractionByButton: 0
+  triggerObject: {fileID: 0}
+  triggerOutlineWidth: 0.5
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -2809,6 +2867,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 0
   endInteractionByButton: 0
+  triggerObject: {fileID: 0}
+  triggerOutlineWidth: 0.5
 --- !u!23 &1142328780
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2934,6 +2994,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 0
   endInteractionByButton: 0
+  triggerObject: {fileID: 0}
+  triggerOutlineWidth: 0.5
 --- !u!1 &1167263637
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,6 +3225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 0
   endInteractionByButton: 0
+  triggerObject: {fileID: 0}
+  triggerOutlineWidth: 0.5
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -3703,6 +3767,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 0
   endInteractionByButton: 0
+  triggerObject: {fileID: 0}
+  triggerOutlineWidth: 0.5
 --- !u!23 &1567477505
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3803,6 +3869,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 0
   endInteractionByButton: 0
+  triggerObject: {fileID: 0}
+  triggerOutlineWidth: 0.5
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -4353,6 +4421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 0
   endInteractionByButton: 0
+  triggerObject: {fileID: 0}
+  triggerOutlineWidth: 0.5
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -4437,6 +4507,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 0
   endInteractionByButton: 0
+  triggerObject: {fileID: 0}
+  triggerOutlineWidth: 0.5
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -4662,6 +4734,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 0
   endInteractionByButton: 0
+  triggerObject: {fileID: 0}
+  triggerOutlineWidth: 0.5
 --- !u!1 &1846447592
 GameObject:
   m_ObjectHideFlags: 0

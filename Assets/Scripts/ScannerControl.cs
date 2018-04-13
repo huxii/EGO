@@ -42,6 +42,7 @@ public class ScannerControl : InteractableControl
             }
         }
 
+        base.Init();
         Init();
     }
 

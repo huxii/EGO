@@ -142,6 +142,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Interactable"))
         {
+            other.gameObject.GetComponent<InteractableControl>().InteractionReady();
             if (!other.gameObject.GetComponent<InteractableControl>().beginInteractionByButton)
             {
                 other.gameObject.GetComponent<InteractableControl>().BeginInteraction();
@@ -158,6 +159,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Interactable"))
         {
+            other.gameObject.GetComponent<InteractableControl>().InteractionUnready();
             if (!other.gameObject.GetComponent<InteractableControl>().endInteractionByButton)
             {
                 other.gameObject.GetComponent<InteractableControl>().EndInteraction();
