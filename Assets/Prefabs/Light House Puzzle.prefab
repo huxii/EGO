@@ -459,6 +459,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 1
   endInteractionByButton: 1
+  triggerObject: {fileID: 1128199754015970}
+  triggerOutlineWidth: 0.5
   targetControl: {fileID: 1128199754015970}
 --- !u!124 &124729022480668838
 Behaviour:

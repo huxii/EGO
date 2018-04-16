@@ -136,7 +136,7 @@
 			}
 			ENDCG
 
-			ZTest Off
+			ZTest On
 			Stencil
 			{
 				Ref 4
@@ -375,7 +375,7 @@
 			}
 			ENDCG
 
-			ZTest Off
+			ZTest On
 			Stencil
 			{
 				Ref 4

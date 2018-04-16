@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Metal_Keep
-  m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
+  m_Shader: {fileID: 4800000, guid: 431f664468538484dabe0a5a99c7ec00, type: 3}
   m_ShaderKeywords: _REPLACEMENTSTYLE_KEEP _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -94,9 +94,9 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffuseColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeColor: {r: 2, g: 2, b: 2, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 2, g: 2, b: 2, a: 1}
     - _ReDiffuseColor: {r: 0.18912196, g: 0.22049874, b: 0.24264705, a: 1}
     - _ReShadowColor: {r: 0.20403142, g: 0.18198529, b: 0.25, a: 1}
     - _ReSpecColor: {r: 0.49233547, g: 0.3368296, b: 0.6544118, a: 1}

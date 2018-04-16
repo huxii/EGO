@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Floor_Lamp_Light
-  m_Shader: {fileID: 4800000, guid: 8f1b2c2f285aac943933c1cfda657389, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0034f6120cf39a64a877f8b440ab6fab, type: 3}
   m_ShaderKeywords: _REPLACEMENTSTYLE_REPLACE _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -112,7 +112,7 @@ Material:
     - _DiffuseColor: {r: 1.2, g: 1.1234466, b: 1.0337155, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 2, g: 2, b: 2, a: 1}
     - _ReDiffuseColor: {r: 3, g: 2.3549697, b: 2.117647, a: 1}
     - _ReShadowColor: {r: 5.729, g: 3.8755004, b: 3.8755004, a: 1}
     - _ReSpecColor: {r: 3, g: 2.2758622, b: 1.5, a: 1}

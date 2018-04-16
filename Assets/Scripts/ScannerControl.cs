@@ -182,5 +182,6 @@ public class ScannerControl : InteractableControl
         }
 
         bgCam.SetActive(true);
+        InteractionUnready();
     }
 }

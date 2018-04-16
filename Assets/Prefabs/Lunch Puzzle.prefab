@@ -2136,6 +2136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 1
   endInteractionByButton: 1
+  triggerObject: {fileID: 1590501836681198}
+  triggerOutlineWidth: 0.12
   targetCamera: {fileID: 1269268302709694}
   scannerTarget: {fileID: 1035874550503840}
   scanRange: 10
@@ -2173,6 +2175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beginInteractionByButton: 0
   endInteractionByButton: 0
+  triggerObject: {fileID: 0}
+  triggerOutlineWidth: 0.5
   targetCamera: {fileID: 1269268302709694}
   scannerTarget: {fileID: 1035874550503840}
   scanRange: 15
