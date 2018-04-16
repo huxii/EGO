@@ -83,7 +83,7 @@ Material:
     - _ReplacementTimer: 0
     - _ShadowThreshold: 0.024
     - _SmoothnessTextureChannel: 0
-    - _SoftRange: 0.05
+    - _SoftRange: 0.131
     - _SpecThreshold: 0.807
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -97,8 +97,8 @@ Material:
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReDiffuseColor: {r: 0.30147058, g: 0.27765256, b: 0.25935337, a: 1}
-    - _ReShadowColor: {r: 0.30882353, g: 0.17289107, b: 0.14987023, a: 1}
-    - _ReSpecColor: {r: 1, g: 0.7629817, b: 0.5808823, a: 1}
+    - _ReDiffuseColor: {r: 0.375, g: 0.2943712, b: 0.26470587, a: 1}
+    - _ReShadowColor: {r: 0.17647058, g: 0.12975778, b: 0.12975778, a: 1}
+    - _ReSpecColor: {r: 0.60294116, g: 0.57811415, b: 0.5408737, a: 1}
     - _ShadowColor: {r: 0.27450982, g: 0.15294118, b: 0.13333334, a: 1}
     - _SpecColor: {r: 0.9960785, g: 0.76470596, b: 0.5921569, a: 1}

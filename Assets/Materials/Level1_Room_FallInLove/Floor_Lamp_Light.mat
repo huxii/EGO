@@ -92,7 +92,7 @@ Material:
     - _Parallax: 0.02
     - _ReplacementInverted: 0
     - _ReplacementStyle: 1
-    - _ReplacementTimer: 20
+    - _ReplacementTimer: 0
     - _RimBoost: 2
     - _RimExp: 4
     - _ShadowThreshold: 0.104
@@ -113,8 +113,8 @@ Material:
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReDiffuseColor: {r: 2, g: 1.5699798, b: 1.4117646, a: 1}
-    - _ReShadowColor: {r: 2, g: 1.3529412, b: 1.3529412, a: 1}
-    - _ReSpecColor: {r: 1.8382353, g: 1.3945234, b: 0.9191176, a: 1}
+    - _ReDiffuseColor: {r: 3, g: 2.3549697, b: 2.117647, a: 1}
+    - _ReShadowColor: {r: 5.729, g: 3.8755004, b: 3.8755004, a: 1}
+    - _ReSpecColor: {r: 3, g: 2.2758622, b: 1.5, a: 1}
     - _ShadowColor: {r: 1.2, g: 0.8941177, b: 0.72, a: 1}
     - _SpecColor: {r: 1.2, g: 1.1483976, b: 1.1294118, a: 1}

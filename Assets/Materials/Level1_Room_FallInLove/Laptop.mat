@@ -113,8 +113,8 @@ Material:
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReDiffuseColor: {r: 0.1102941, g: 0.1102941, b: 0.1102941, a: 1}
-    - _ReShadowColor: {r: 0.30882353, g: 0.20978703, b: 0.19301471, a: 1}
-    - _ReSpecColor: {r: 1, g: 0.7629817, b: 0.5808823, a: 1}
+    - _ReDiffuseColor: {r: 0.24264705, g: 0.22674948, b: 0.21231617, a: 1}
+    - _ReShadowColor: {r: 0.30147058, g: 0.19285251, b: 0.19285251, a: 1}
+    - _ReSpecColor: {r: 1, g: 0.93235296, b: 0.8308824, a: 1}
     - _ShadowColor: {r: 0.27450982, g: 0.18039216, b: 0.16862746, a: 1}
     - _SpecColor: {r: 0.9960785, g: 0.76470596, b: 0.5921569, a: 1}
