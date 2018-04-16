@@ -10,6 +10,10 @@ public class ObjectControl : MonoBehaviour
     public Vector2 angleSmooth = new Vector2(1f, 1f);
     public Vector2 dAngle = new Vector2(0, 0);
 
+    [Header("Fog Puzzle")]
+    public Vector2 solvedAngelRange = new Vector2(90f, 100f);
+    public GameObject fogCam;
+
     [SerializeField]
     Vector2 angleZero;
 
@@ -23,6 +27,7 @@ public class ObjectControl : MonoBehaviour
 	void Update ()
     {
         RotationUpdate();
+        SolvingPuzzle();
     }
 
     void RotationUpdate()
@@ -52,6 +57,26 @@ public class ObjectControl : MonoBehaviour
             curAngle.z
             );
         transform.localEulerAngles = curAngle;
+    }
+
+    void SolvingPuzzle()
+    {
+        float y = transform.localEulerAngles.y;
+        if (fogCam)
+        {
+            if (y >= 90f && y <= 100f)
+            {
+                fogCam.GetComponent<FogControl>().fogGoingAway = true;
+                if (fogCam.GetComponent<FogControl>().fogGone)
+                {
+                    Destroy(fogCam);
+                }
+            }
+            else
+            {
+                fogCam.GetComponent<FogControl>().fogGoingAway = false;
+            }
+        }
     }
 
     float Clamp(float value, float minValue, float maxValue)
