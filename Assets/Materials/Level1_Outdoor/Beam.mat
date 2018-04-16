@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Beam
   m_Shader: {fileID: 4800000, guid: 8f1b2c2f285aac943933c1cfda657389, type: 3}
-  m_ShaderKeywords: _REPLACEMENTINVERTED_ON _REPLACEMENTSTYLE_REPLACE _TEXTUREBLENDMODE_ALPHA
+  m_ShaderKeywords: _REPLACEMENTINVERTED_ON _REPLACEMENTSTYLE_KEEP _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -79,7 +79,7 @@ Material:
     - _OutlineThickness: 0
     - _Parallax: 0.02
     - _ReplacementInverted: 1
-    - _ReplacementStyle: 1
+    - _ReplacementStyle: 0
     - _ReplacementTimer: 0
     - _ShadowThreshold: 0.3
     - _SmoothnessTextureChannel: 0
@@ -93,12 +93,12 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DiffuseColor: {r: 0.4039216, g: 0.4039216, b: 0.4039216, a: 1}
+    - _DiffuseColor: {r: 2, g: 1.7176471, b: 1.3411765, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReDiffuseColor: {r: 2, g: 1.7163638, b: 1.3382353, a: 1}
     - _ReShadowColor: {r: 2, g: 1.5247103, b: 1.1911762, a: 1}
     - _ReSpecColor: {r: 2, g: 1.6091279, b: 1.3088233, a: 1}
-    - _ShadowColor: {r: 0.22626515, g: 0.24809656, b: 0.33088237, a: 1}
-    - _SpecColor: {r: 0.9117647, g: 0.97809327, b: 1, a: 1}
+    - _ShadowColor: {r: 2, g: 1.5215687, b: 1.1921569, a: 1}
+    - _SpecColor: {r: 2, g: 1.6078432, b: 1.309804, a: 1}
