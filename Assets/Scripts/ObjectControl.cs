@@ -16,7 +16,7 @@ public class ObjectControl : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        angleZero = new Vector2(transform.eulerAngles.x, transform.eulerAngles.y);
+        angleZero = new Vector2(transform.localEulerAngles.x, transform.localEulerAngles.y);
     }
 	
 	// Update is called once per frame
@@ -32,26 +32,26 @@ public class ObjectControl : MonoBehaviour
 
         if (!frozen)
         {
-            dAngleX -= Input.GetAxis("Mouse X") * Time.deltaTime * angleSensitivity.x;
+            dAngleX += Input.GetAxis("Mouse X") * Time.deltaTime * angleSensitivity.x;
             //dAngleY -= Input.GetAxis("Mouse Y") * Time.deltaTime * angleSensitivity.y;
-            dAngleX -= Input.GetAxis("RightJoystick X") * Time.deltaTime * angleSensitivity.x;
+            dAngleX += Input.GetAxis("RightJoystick X") * Time.deltaTime * angleSensitivity.x;
             //dAngleY -= Input.GetAxis("RightJoystick Y") * Time.deltaTime * angleSensitivity.y;
         }
 
-        dAngleX = Clamp(dAngleX, -angleRange.x, angleRange.x);
-        dAngleY = Clamp(dAngleY, -angleRange.y, angleRange.y);
+        dAngleX = Clamp(dAngleX, 0, angleRange.x);
+        dAngleY = Clamp(dAngleX, 0, angleRange.x);
 
         dAngle = new Vector2(dAngleX, dAngleY);
 
-        float targetAngleX = angleZero.x + dAngle.y;
-        float targetAngleY = angleZero.y - dAngle.x;
-        Vector3 curAngle = transform.eulerAngles;
+        float targetAngleX = angleZero.x;
+        float targetAngleY = angleZero.y + dAngle.y;
+        Vector3 curAngle = transform.localEulerAngles;
         curAngle = new Vector3(
             Mathf.Lerp(curAngle.x, targetAngleX, Time.deltaTime * angleSmooth.x),
             Mathf.Lerp(curAngle.y, targetAngleY, Time.deltaTime * angleSmooth.y),
             curAngle.z
             );
-        transform.eulerAngles = curAngle;
+        transform.localEulerAngles = curAngle;
     }
 
     float Clamp(float value, float minValue, float maxValue)
