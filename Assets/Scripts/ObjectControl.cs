@@ -13,8 +13,8 @@ public class ObjectControl : MonoBehaviour
     [Header("Fog Puzzle")]
     public Vector2 solvedAngelRange = new Vector2(90f, 100f);
     public GameObject fogCam;
+    public GameObject beam;
 
-    [SerializeField]
     Vector2 angleZero;
 
     // Use this for initialization
@@ -41,6 +41,16 @@ public class ObjectControl : MonoBehaviour
             //dAngleY -= Input.GetAxis("Mouse Y") * Time.deltaTime * angleSensitivity.y;
             dAngleX += Input.GetAxis("RightJoystick X") * Time.deltaTime * angleSensitivity.x;
             //dAngleY -= Input.GetAxis("RightJoystick Y") * Time.deltaTime * angleSensitivity.y;
+
+            beam.GetComponent<MeshRenderer>().material.SetFloat("_MaxBlinkFactor", 1.0f);
+            beam.GetComponent<MeshRenderer>().material.SetFloat("_MinBlinkFactor", 1.0f);
+            beam.GetComponent<MeshRenderer>().material.SetFloat("_MaxGrowSize", 0.5f);
+        }
+        else
+        {
+            beam.GetComponent<MeshRenderer>().material.SetFloat("_MaxBlinkFactor", 0.4f);
+            beam.GetComponent<MeshRenderer>().material.SetFloat("_MinBlinkFactor", 0.25f);
+            beam.GetComponent<MeshRenderer>().material.SetFloat("_MaxGrowSize", 0.00f);
         }
 
         dAngleX = Clamp(dAngleX, 0, angleRange.x);

@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Beam
-  m_Shader: {fileID: 4800000, guid: 8f1b2c2f285aac943933c1cfda657389, type: 3}
+  m_Shader: {fileID: 4800000, guid: f6b817a8833365247a53c97cb17df139, type: 3}
   m_ShaderKeywords: _REPLACEMENTINVERTED_ON _REPLACEMENTSTYLE_KEEP _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -63,6 +63,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Bias: 0
+    - _BlinkFactorBias: 0
+    - _BlinkingTimeOffsScale: 5
     - _BumpScale: 1
     - _ColoredOutline: 0
     - _Cutoff: 0.5
@@ -70,11 +73,18 @@ Material:
     - _DissolveTimer: 0
     - _DstBlend: 0
     - _EdgeSpeedRate: 0.8
+    - _FadeOutDistFar: 10000
+    - _FadeOutDistNear: 10
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _MaxBlinkFactor: 1
+    - _MaxGrowSize: 0
     - _Metallic: 0
+    - _MinBlinkFactor: 0
     - _Mode: 0
+    - _Multiplier: 1
+    - _NoiseAmount: 0
     - _OcclusionStrength: 1
     - _OutlineThickness: 0
     - _Parallax: 0.02
@@ -82,6 +92,8 @@ Material:
     - _ReplacementStyle: 0
     - _ReplacementTimer: 0
     - _ShadowThreshold: 0.3
+    - _SizeGrowEndDist: 50
+    - _SizeGrowStartDist: 5
     - _SmoothnessTextureChannel: 0
     - _SoftRange: 0.147
     - _SpecThreshold: 0.928
@@ -89,15 +101,17 @@ Material:
     - _SrcBlend: 1
     - _TextureAlpha: 0
     - _TextureBlendMode: 0
+    - _TimeOffDuration: 0.5
+    - _TimeOnDuration: 1.2
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DiffuseColor: {r: 2, g: 1.7176471, b: 1.3411765, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.753}
+    - _DiffuseColor: {r: 2.5, g: 2.147059, b: 1.6764705, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReDiffuseColor: {r: 2, g: 1.7163638, b: 1.3382353, a: 1}
+    - _ReDiffuseColor: {r: 2.5, g: 2.145455, b: 1.672794, a: 1}
     - _ReShadowColor: {r: 2, g: 1.5247103, b: 1.1911762, a: 1}
     - _ReSpecColor: {r: 2, g: 1.6091279, b: 1.3088233, a: 1}
     - _ShadowColor: {r: 2, g: 1.5215687, b: 1.1921569, a: 1}

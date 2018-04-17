@@ -170,6 +170,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8022fc14d9e32c6499e2e3a1636a66c5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &291954458 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1702847361358962, guid: 2fde922472f369147885c0841735f321,
+    type: 2}
+  m_PrefabInternal: {fileID: 1517569415}
 --- !u!1 &326240377
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +610,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh59422
+  m_Name: pb_Mesh-2728
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1570,8 +1575,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fogGoingAway: 0
   fogGone: 0
-  fogFallSpeed: 1
-  fogAlphaSpeed: 1
+  fogFallSpeed: 0.3
+  fogAlphaSpeed: 0.3
 --- !u!114 &1439504077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1615,7 +1620,7 @@ MonoBehaviour:
   _baselineRelativeToCameraDelay: 0
   _noiseScale: 1.5
   _alpha: 1.05
-  _color: {r: 0.89, g: 0.89, b: 0.89, a: 1}
+  _color: {r: 0.6747405, g: 0.57850343, b: 0.7352941, a: 1}
   _specularColor: {r: 1, g: 1, b: 0.8, a: 1}
   _specularThreshold: 0.6
   _specularIntensity: 0.259
@@ -1779,6 +1784,11 @@ Prefab:
       propertyPath: fogCam
       value: 
       objectReference: {fileID: 1439504074}
+    - target: {fileID: 114062726356981614, guid: 2fde922472f369147885c0841735f321,
+        type: 2}
+      propertyPath: beam
+      value: 
+      objectReference: {fileID: 291954458}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2fde922472f369147885c0841735f321, type: 2}
   m_IsPrefabParent: 0
