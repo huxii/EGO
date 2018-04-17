@@ -37,6 +37,8 @@ public class ViewportTransitionBehavior : ViewportControl
                 show.SetActive(true);
             }
         }
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>().heightStandard = 0;
     }
 
     public override void SwitchBackViewport()
