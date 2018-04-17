@@ -1789,6 +1789,22 @@ Prefab:
       propertyPath: beam
       value: 
       objectReference: {fileID: 291954458}
+    - target: {fileID: 4697979975681602, guid: 2fde922472f369147885c0841735f321, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.6156257
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697979975681602, guid: 2fde922472f369147885c0841735f321, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.824076
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697979975681602, guid: 2fde922472f369147885c0841735f321, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.824076
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697979975681602, guid: 2fde922472f369147885c0841735f321, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.43
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2fde922472f369147885c0841735f321, type: 2}
   m_IsPrefabParent: 0
