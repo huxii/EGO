@@ -62,6 +62,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1260879633686456
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4049838924555002}
+  m_Layer: 8
+  m_Name: BeamRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1409414519896338
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +158,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4049838924555002
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1260879633686456}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.43, y: 0.41, z: 0.1}
+  m_LocalScale: {x: 1.6156257, y: 1.824076, z: 1.824076}
+  m_Children:
+  - {fileID: 4742377465665980}
+  m_Father: {fileID: 4660421425887842}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4218789022209884
 Transform:
   m_ObjectHideFlags: 1
@@ -203,25 +232,25 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1745749079382672}
-  m_LocalRotation: {x: 0.030952595, y: 0.035498574, z: 0.22280502, w: 0.9737247}
+  m_LocalRotation: {x: 0.033484127, y: 0.033121392, z: 0.29394722, w: 0.95466065}
   m_LocalPosition: {x: 0.35801893, y: -0.10999966, z: 0.075692296}
   m_LocalScale: {x: 0.7999999, y: 0.79999995, z: 0.79999983}
   m_Children:
-  - {fileID: 4742377465665980}
+  - {fileID: 4049838924555002}
   m_Father: {fileID: 4626806872587032}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 2.548, y: 4.761, z: 25.883001}
+  m_LocalEulerAnglesHint: {x: 2.548, y: 4.761, z: 34.334003}
 --- !u!4 &4742377465665980
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1665919998616634}
-  m_LocalRotation: {x: 0.7147093, y: 0.68161094, z: -0.11284292, w: 0.108920604}
-  m_LocalPosition: {x: -16.48, y: 1.18, z: 0.06}
-  m_LocalScale: {x: 2.2571697, y: 16.732899, z: 2.2571692}
+  m_LocalRotation: {x: 0.7147094, y: 0.68161094, z: -0.1128429, w: 0.1089206}
+  m_LocalPosition: {x: -16.48, y: 0.7699983, z: -0.04002224}
+  m_LocalScale: {x: 2.2571797, y: 16.732946, z: 2.2571838}
   m_Children: []
-  m_Father: {fileID: 4660421425887842}
+  m_Father: {fileID: 4049838924555002}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 161.97, y: 0.7719879, z: -87.16199}
 --- !u!4 &4751449176167038
@@ -408,11 +437,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frozen: 1
-  angleRange: {x: 85, y: 85}
+  angleRange: {x: 120, y: 85}
   angleSensitivity: {x: 1000, y: 100}
   angleSmooth: {x: 3, y: 3}
   dAngle: {x: 0, y: 0}
-  angleZero: {x: 0, y: 0}
+  solvedAngelRange: {x: 90, y: 100}
+  fogCam: {fileID: 0}
+  beam: {fileID: 1665919998616634}
 --- !u!114 &114279402575532454
 MonoBehaviour:
   m_ObjectHideFlags: 1

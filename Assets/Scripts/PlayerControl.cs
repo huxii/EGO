@@ -176,5 +176,10 @@ public class PlayerControl : MonoBehaviour
     {
         rb.velocity = Vector3.zero;
     }
+
+    public void ResetHeight()
+    {
+        heightState = 0;
+    }
 }
 
