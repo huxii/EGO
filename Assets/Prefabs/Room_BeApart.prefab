@@ -2933,7 +2933,7 @@ Camera:
   field of view: 32
   orthographic: 0
   orthographic size: 5
-  m_Depth: 2
+  m_Depth: 3
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 256
@@ -6383,6 +6383,9 @@ MonoBehaviour:
   player: {fileID: 0}
   hideObjects:
   - {fileID: 1660363434718526}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   showObjects: []
 --- !u!114 &114303061100415966

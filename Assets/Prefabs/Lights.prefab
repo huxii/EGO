@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4642051633795682}
   - component: {fileID: 108085899102045986}
+  - component: {fileID: 114953854698501516}
   m_Layer: 9
   m_Name: Point light - Ambient
   m_TagString: Untagged
@@ -52,6 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4226446073120888}
   - component: {fileID: 108361668058017216}
+  - component: {fileID: 114619914350910818}
   m_Layer: 0
   m_Name: Spot Light - Inside
   m_TagString: Untagged
@@ -87,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4854712978718096}
   - component: {fileID: 108013992789694924}
+  - component: {fileID: 114505182533854842}
   m_Layer: 0
   m_Name: Spot Light_lighter - Outside
   m_TagString: Untagged
@@ -103,6 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4351158812029498}
   - component: {fileID: 108482245580336730}
+  - component: {fileID: 114455331713666750}
   m_Layer: 0
   m_Name: Spot Light - Outside
   m_TagString: Untagged
@@ -417,7 +421,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0.98421806, b: 0.9411765, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1.2
   m_Range: 50
   m_SpotAngle: 58.4
   m_CookieSize: 10
@@ -468,4 +472,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b54d6b56cdfb640bc611e091c4f440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
+--- !u!114 &114455331713666750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1642870698980008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99620e5664db4b1448db0a1a7f6fc2aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+--- !u!114 &114505182533854842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1601803130344938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99620e5664db4b1448db0a1a7f6fc2aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+--- !u!114 &114619914350910818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282465641337710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99620e5664db4b1448db0a1a7f6fc2aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+--- !u!114 &114953854698501516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234201983691824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99620e5664db4b1448db0a1a7f6fc2aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
