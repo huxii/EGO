@@ -6381,8 +6381,10 @@ MonoBehaviour:
   targetCamera: {fileID: 1751669964834222}
   playerHeight: 4
   player: {fileID: 0}
-  hideObjects: {fileID: 1660363434718526}
-  showObjects: {fileID: 0}
+  hideObjects:
+  - {fileID: 1660363434718526}
+  - {fileID: 0}
+  showObjects: []
 --- !u!114 &114303061100415966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6394,8 +6396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863beef8c3728dd4695b0a3bda44f6fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDissolve: 0
-  dissolveSpeed: 1
+  speed: 1
 --- !u!114 &114367203985150346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6421,6 +6422,7 @@ MonoBehaviour:
   hideTargetAfterDestroyed: 0
   nextTargets:
   - {fileID: 1006770736003166}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

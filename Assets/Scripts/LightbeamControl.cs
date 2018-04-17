@@ -2,36 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DissolveControl : TransitionEffectControl
+public class LightbeamControl : TransitionEffectControl
 {
 	// Use this for initialization
 	void Start ()
     {
         CollecteMats();
-
-        foreach (Material mat in mats)
-        {
-            mat.SetFloat("_DissolveTimer", timer);
-        }
-    }
+	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         if (start)
         {
-            timer += Time.deltaTime * speed;
+            timer -= Time.deltaTime * speed;
             foreach (Material mat in mats)
             {
-                mat.SetFloat("_DissolveTimer", timer);
+                mat.SetFloat("_Tweak", timer);
             }
 
-            if (timer >= 1.0f)
+            if (timer <= -5f)
             {
                 Destroy(gameObject);
             }
         }
-	}
+    }
 
     public override void Disappear()
     {

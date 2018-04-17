@@ -168,21 +168,30 @@ public class ScannerControl : InteractableControl
     public override void BeforeDestroyed()
     {
         scannerMat.SetFloat("_Timer", 0);
-        foreach (GameObject nextTarget in nextTargets)
+
+        if (nextTargets != null)
         {
-            nextTarget.SetActive(true);
-            if (nextTarget.GetComponent<ScannerControl>())
+            foreach (GameObject nextTarget in nextTargets)
             {
-                nextTarget.GetComponent<ScannerControl>().scannerTarget.SetActive(true);
-            }         
+                nextTarget.SetActive(true);
+                if (nextTarget.GetComponent<ScannerControl>())
+                {
+                    nextTarget.GetComponent<ScannerControl>().scannerTarget.SetActive(true);
+                }
+            }
         }
-        foreach (GameObject hide in hideObjects)
+
+        if (hideObjects != null)
         {
-            hide.SetActive(false);
+            foreach (GameObject hide in hideObjects)
+            {
+                Destroy(hide);
+            }
         }
+
         if (hideTargetAfterDestroyed)
         {
-            scannerTarget.SetActive(false);
+            Destroy(scannerTarget);
         }
 
         bgCam.SetActive(true);

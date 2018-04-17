@@ -6,8 +6,8 @@ using DG.Tweening;
 public class ViewportTransitionBehavior : ViewportControl
 {
     [Header("Environment Change")]
-    public GameObject hideObjects;
-    public GameObject showObjects;
+    public List<GameObject> hideObjects;
+    public List<GameObject> showObjects;
 
     // Use this for initialization
     void Start()
@@ -23,7 +23,20 @@ public class ViewportTransitionBehavior : ViewportControl
     public override void SwitchViewport()
     {
         SwitchCamera();
-        hideObjects.GetComponent<DissolveControl>().startDissolve = true;
+        if (hideObjects != null)
+        {
+            foreach (GameObject hide in hideObjects)
+            {
+                hide.GetComponent<TransitionEffectControl>().Disappear();
+            }
+        }
+        if (showObjects != null)
+        {
+            foreach (GameObject show in showObjects)
+            {
+                show.SetActive(true);
+            }
+        }
     }
 
     public override void SwitchBackViewport()
