@@ -5867,7 +5867,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1688910254781198}
-  m_Mesh: {fileID: 4300000, guid: d6ac6ce0af2db46088026f6e46ba4f9f, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 1093360d2ca054547972120c173a9334, type: 3}
 --- !u!33 &33700360086319092
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -6423,6 +6423,9 @@ MonoBehaviour:
   - {fileID: 1006770736003166}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  hideObjects:
+  - {fileID: 0}
   ppObjs: []
 --- !u!114 &114418442666192590
 MonoBehaviour:
@@ -6476,6 +6479,7 @@ MonoBehaviour:
   nextTargets:
   - {fileID: 1006770736003166}
   - {fileID: 0}
+  hideObjects: []
   ppObjs: []
   scanManualTimer: 0
 --- !u!114 &114693222145964968

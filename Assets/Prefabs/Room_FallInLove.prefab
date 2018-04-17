@@ -2117,7 +2117,7 @@ Camera:
   field of view: 32
   orthographic: 0
   orthographic size: 5
-  m_Depth: 3
+  m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 256
@@ -4519,7 +4519,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1937693803289640}
-  m_Mesh: {fileID: 4300000, guid: d6ac6ce0af2db46088026f6e46ba4f9f, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 1093360d2ca054547972120c173a9334, type: 3}
 --- !u!33 &33824504014161510
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -4885,6 +4885,7 @@ MonoBehaviour:
   hideTargetAfterDestroyed: 1
   nextTargets:
   - {fileID: 0}
+  hideObjects: []
   ppObjs: []
   scanManualTimer: 0
 --- !u!114 &114535804261122314
@@ -4912,6 +4913,7 @@ MonoBehaviour:
   hideTargetAfterDestroyed: 1
   nextTargets:
   - {fileID: 0}
+  hideObjects: []
   ppObjs: []
 --- !u!114 &114710961719247238
 MonoBehaviour:

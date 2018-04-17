@@ -15,6 +15,7 @@ public class ScannerControl : InteractableControl
     public float scanOutterBlur = 1f;
     public bool hideTargetAfterDestroyed = false;
     public List<GameObject> nextTargets;
+    public List<GameObject> hideObjects;
 
     protected GameObject bgCam;
     protected Material scannerMat;
@@ -175,7 +176,10 @@ public class ScannerControl : InteractableControl
                 nextTarget.GetComponent<ScannerControl>().scannerTarget.SetActive(true);
             }         
         }
-
+        foreach (GameObject hide in hideObjects)
+        {
+            hide.SetActive(false);
+        }
         if (hideTargetAfterDestroyed)
         {
             scannerTarget.SetActive(false);
