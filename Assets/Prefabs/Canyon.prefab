@@ -3379,8 +3379,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1509223966126560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.76, y: 0.41, z: 0.1}
-  m_LocalScale: {x: 1.6894618, y: 2.862212, z: 2.862212}
+  m_LocalPosition: {x: -1.43, y: 0.41, z: 0.1}
+  m_LocalScale: {x: 1.6156257, y: 1.824076, z: 1.824076}
   m_Children:
   - {fileID: 4630226551897450}
   m_Father: {fileID: 4559974668186418}
@@ -4010,7 +4010,7 @@ Camera:
   field of view: 32
   orthographic: 0
   orthographic size: 5
-  m_Depth: 2
+  m_Depth: 3
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 256
@@ -4046,7 +4046,7 @@ Camera:
   field of view: 32
   orthographic: 0
   orthographic size: 5
-  m_Depth: 2
+  m_Depth: 3
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 256
@@ -4103,7 +4103,7 @@ Camera:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1941895884025562}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -6656,7 +6656,9 @@ MonoBehaviour:
   angleSensitivity: {x: 1000, y: 100}
   angleSmooth: {x: 3, y: 3}
   dAngle: {x: 0, y: 0}
-  angleZero: {x: -0, y: 0}
+  solvedAngelRange: {x: 90, y: 100}
+  fogCam: {fileID: 0}
+  beam: {fileID: 1702847361358962}
 --- !u!114 &114092514235499196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6705,6 +6707,7 @@ MonoBehaviour:
   scanOutterBlur: 4
   hideTargetAfterDestroyed: 0
   nextTargets: []
+  hideObjects: []
   ppObjs: []
 --- !u!114 &114239578793512310
 MonoBehaviour:
@@ -6730,6 +6733,7 @@ MonoBehaviour:
   scanOutterBlur: 4
   hideTargetAfterDestroyed: 0
   nextTargets: []
+  hideObjects: []
   ppObjs: []
   scanManualTimer: 0
 --- !u!114 &114265519264193300
@@ -6770,6 +6774,7 @@ MonoBehaviour:
   scanOutterBlur: 4
   hideTargetAfterDestroyed: 0
   nextTargets: []
+  hideObjects: []
   ppObjs: []
   scanManualTimer: 0
 --- !u!114 &114346413563907656
@@ -6886,6 +6891,7 @@ MonoBehaviour:
   scanOutterBlur: 4
   hideTargetAfterDestroyed: 0
   nextTargets: []
+  hideObjects: []
   ppObjs: []
 --- !u!114 &114748733348538184
 MonoBehaviour:
