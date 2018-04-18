@@ -24,33 +24,14 @@ public class InteractableControl : MonoBehaviour
 		
 	}
 
-    protected void Init()
-    {
-        MeshRenderer[] renderers = triggerObject.GetComponentsInChildren<MeshRenderer>();
-        List<Material> tmpMats = new List<Material>();
-        foreach (MeshRenderer mr in renderers)
-        {
-            foreach (Material m in mr.materials)
-                tmpMats.Add(m);
-        }
-
-        mats = tmpMats.Distinct().ToList();
-    }
-
     public void InteractionReady()
     {
-        foreach (Material mat in mats)
-        {
-            mat.SetFloat("_OutlineThickness", triggerOutlineWidth);
-        }
+        triggerObject.GetComponent<FeedbackTransitionControl>().Play(new TransitionData(triggerOutlineWidth));
     }
 
     public void InteractionUnready()
     {
-        foreach (Material mat in mats)
-        {
-            mat.SetFloat("_OutlineThickness", 0);
-        }
+        triggerObject.GetComponent<FeedbackTransitionControl>().Reverse();
     }
 
     public virtual void BeginInteraction()

@@ -29,7 +29,7 @@ public class LightbeamTransitionControl : TransitionEffectControl
         }
     }
 
-    public override void Disappear()
+    public override void Play(TransitionData data = null)
     {
         start = true;
     }

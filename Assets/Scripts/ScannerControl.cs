@@ -19,18 +19,11 @@ public class ScannerControl : InteractableControl
 
     protected GameObject bgCam;
     protected Material scannerMat;
-    [SerializeField]
-    protected List<GameObject> ppObjs;
-
-    bool startScanner;
-    float scanTimer;
+    protected ScannerTransitionControl transitionCon;
 
     // Use this for initialization
     void Start()
     {
-        startScanner = false;
-        scanTimer = 0f;
-
         foreach (GameObject nextTarget in nextTargets)
         {
             if (nextTarget)
@@ -43,49 +36,16 @@ public class ScannerControl : InteractableControl
             }
         }
 
-        base.Init();
         Init();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (startScanner)
+        if (transitionCon != null && transitionCon.timer >= 1f)
         {
-            if (scanTimer < 1.0f)
-            {
-                scanTimer += Time.deltaTime * scanSpeed;
-                scannerMat.SetFloat("_Timer", scanTimer);
-
-                foreach (GameObject o in ppObjs)
-                {
-                    if (Vector3.Distance(transform.position, o.transform.position) < scanRange)
-                    {
-                        MeshRenderer[] meshes = o.GetComponentsInChildren<MeshRenderer>();
-                        foreach (MeshRenderer mesh in meshes)
-                        {
-                            foreach (Material mat in mesh.materials)
-                            {
-                                float timer = scanTimer * scanRange;
-                                mat.SetFloat("_ReplacementTimer", timer);
-
-                                /*
-                                float style = mat.GetFloat("_ReplacementStyle");
-                                if (style == 3 && timer >= 30)
-                                {
-                                    o.SetActive(false);
-                                }
-                                */
-                            }
-                        }
-                    }
-                }
-            }
-            else
-            {
-                BeforeDestroyed();
-                Destroy(gameObject);
-            }
+            BeforeDestroyed();
+            Destroy(gameObject);
         }
     }
 
@@ -103,62 +63,21 @@ public class ScannerControl : InteractableControl
 
         if (scannerTarget)
         {
-            ppObjs = new List<GameObject>();
-            Transform[] allChildren = scannerTarget.GetComponentsInChildren<Transform>();
-            foreach (Transform child in allChildren)
-            {
-                //Debug.Log(child.gameObject);
-                if (child.gameObject.layer == 8)
-                {
-                    ppObjs.Add(child.gameObject);
-                    MeshRenderer[] meshes = child.gameObject.GetComponentsInChildren<MeshRenderer>();
-                    foreach (MeshRenderer mesh in meshes)
-                    {
-                        foreach (Material mat in mesh.materials)
-                        {
-                            mat.SetFloat("_ReplacementTimer", 0);
-
-                            /*
-                            float style = mat.GetFloat("_ReplacementStyle");
-                            if (style == 2)
-                            {
-                                child.gameObject.SetActive(false);
-                            }
-                            */
-                        }
-                    }
-                }
-            }
+            transitionCon = scannerTarget.GetComponent<ScannerTransitionControl>();
+            transitionCon.scannerMat = scannerMat;
+            transitionCon.speed = scanSpeed;
         }
     }
 
     public override void BeginInteraction()
     {
-        if (!startScanner)
-        {
-            bgCam.SetActive(false);
-            targetCamera.SetActive(true);
-            startScanner = true;
-            scanTimer = 0;
-            scannerMat.SetFloat("_Timer", 0);
-            scannerMat.SetVector("_Center", transform.position);
+        bgCam.SetActive(false);
+        targetCamera.SetActive(true);
 
-            foreach (GameObject o in ppObjs)
-            {
-                if (Vector3.Distance(transform.position, o.transform.position) < scanRange)
-                {
-                    MeshRenderer[] meshes = o.GetComponentsInChildren<MeshRenderer>();
-                    //o.SetActive(true);
-                    foreach (MeshRenderer mesh in meshes)
-                    {
-                        foreach (Material mat in mesh.materials)
-                        {
-                            mat.SetVector("_Center", transform.position);
-                        }
-                    }
-                }
-            }
-        }
+        scannerMat.SetFloat("_Timer", 0);
+        scannerMat.SetVector("_Center", transform.position);
+
+        transitionCon.Play(new TransitionData(transform.position));
     }
 
     public override void EndInteraction()
@@ -189,11 +108,12 @@ public class ScannerControl : InteractableControl
             }
         }
 
+        /*
         if (hideTargetAfterDestroyed)
         {
             Destroy(scannerTarget);
         }
-
+        */
         bgCam.SetActive(true);
         InteractionUnready();
     }

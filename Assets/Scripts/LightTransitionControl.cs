@@ -28,7 +28,7 @@ public class LightTransitionControl : TransitionEffectControl
         }
     }
 
-    public override void Disappear()
+    public override void Play(TransitionData data = null)
     {
         start = true;
     }

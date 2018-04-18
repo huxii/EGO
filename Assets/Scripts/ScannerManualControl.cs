@@ -22,7 +22,7 @@ public class ScannerManualControl : ScannerControl
     {
         scannerMat.SetFloat("_Timer", scanManualTimer);
         scannerMat.SetVector("_Center", transform.position);
-
+        /*
         foreach (GameObject o in ppObjs)
         {
             if (Vector3.Distance(transform.position, o.transform.position) < scanRange)
@@ -38,5 +38,6 @@ public class ScannerManualControl : ScannerControl
                 }
             }
         }
+        */
     }
 }

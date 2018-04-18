@@ -27,7 +27,7 @@ public class ViewportTransitionBehavior : ViewportControl
         {
             foreach (GameObject hide in hideObjects)
             {
-                hide.GetComponent<TransitionEffectControl>().Disappear();
+                hide.GetComponent<TransitionEffectControl>().Play();
             }
         }
         if (showObjects != null)

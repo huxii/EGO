@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4626806872587032}
   - component: {fileID: 114079538030881590}
+  - component: {fileID: 114557077739255800}
   m_Layer: 8
   m_Name: Searchlight
   m_TagString: Untagged
@@ -493,6 +494,20 @@ MonoBehaviour:
   triggerObject: {fileID: 1128199754015970}
   triggerOutlineWidth: 0.5
   targetControl: {fileID: 1128199754015970}
+--- !u!114 &114557077739255800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128199754015970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1331eb6cc2cea44993d7826e3c744f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  speed: 1
+  destroyWhenFinish: 0
 --- !u!124 &124729022480668838
 Behaviour:
   m_ObjectHideFlags: 1

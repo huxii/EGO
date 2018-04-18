@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4006794462471454}
+  - component: {fileID: 114227771129903038}
   m_Layer: 8
   m_Name: LunchTarget
   m_TagString: Untagged
@@ -190,6 +191,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4077145570218838}
+  - component: {fileID: 114107398562006966}
   m_Layer: 8
   m_Name: StreetLIght_Light
   m_TagString: Untagged
@@ -2291,6 +2293,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 8, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114107398562006966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273074664298100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1331eb6cc2cea44993d7826e3c744f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  speed: 1
+  destroyWhenFinish: 0
+--- !u!114 &114227771129903038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1035874550503840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed6183ed20c21ac4ea843001dd249617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  speed: 1
+  destroyWhenFinish: 0
+  scannerMat: {fileID: 0}
 --- !u!114 &114395165535865596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2364,7 +2395,6 @@ MonoBehaviour:
   hideTargetAfterDestroyed: 0
   nextTargets: []
   hideObjects: []
-  ppObjs: []
 --- !u!114 &114662632442720950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2404,7 +2434,6 @@ MonoBehaviour:
   hideTargetAfterDestroyed: 0
   nextTargets: []
   hideObjects: []
-  ppObjs: []
   scanManualTimer: 0
 --- !u!114 &114911083727894674
 MonoBehaviour:
