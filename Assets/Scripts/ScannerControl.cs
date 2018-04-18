@@ -13,10 +13,8 @@ public class ScannerControl : InteractableControl
     public float scanSpeed = 0.2f;
     public float scanInnerBlur = 1f;
     public float scanOutterBlur = 1f;
-    public bool hideTargetAfterDestroyed = false;
-    public List<GameObject> nextTargets;
-    public List<GameObject> hideObjects;
 
+    [SerializeField]
     protected GameObject bgCam;
     protected Material scannerMat;
     protected ScannerTransitionControl transitionCon;
@@ -24,18 +22,6 @@ public class ScannerControl : InteractableControl
     // Use this for initialization
     void Start()
     {
-        foreach (GameObject nextTarget in nextTargets)
-        {
-            if (nextTarget)
-            {
-                nextTarget.SetActive(false);
-                if (nextTarget.GetComponent<ScannerControl>())
-                {
-                    nextTarget.GetComponent<ScannerControl>().scannerTarget.SetActive(false);
-                }
-            }
-        }
-
         Init();
     }
 
@@ -56,7 +42,6 @@ public class ScannerControl : InteractableControl
         CameraRenderImage camRender = targetCamera.GetComponent<CameraRenderImage>();
         scannerMat = camRender.mat;
         scannerMat.SetFloat("_Timer", 0);
-        scannerMat.SetFloat("_Range", scanRange);
         scannerMat.SetFloat("_EdgeWidth", scanEdgeWidth);
         scannerMat.SetFloat("_EdgeInnerBlur", scanInnerBlur);
         scannerMat.SetFloat("_EdgeOutterBlur", scanOutterBlur);
@@ -64,17 +49,18 @@ public class ScannerControl : InteractableControl
         if (scannerTarget)
         {
             transitionCon = scannerTarget.GetComponent<ScannerTransitionControl>();
-            transitionCon.scannerMat = scannerMat;
+            transitionCon.SetScannerMat(scannerMat);
             transitionCon.speed = scanSpeed;
         }
     }
 
     public override void BeginInteraction()
     {
-        bgCam.SetActive(false);
+        bgCam.GetComponent<Camera>().enabled = false;
         targetCamera.SetActive(true);
 
         scannerMat.SetFloat("_Timer", 0);
+        scannerMat.SetFloat("_Range", scanRange);
         scannerMat.SetVector("_Center", transform.position);
 
         transitionCon.Play(new TransitionData(transform.position));
@@ -88,33 +74,7 @@ public class ScannerControl : InteractableControl
     {
         scannerMat.SetFloat("_Timer", 0);
 
-        if (nextTargets != null)
-        {
-            foreach (GameObject nextTarget in nextTargets)
-            {
-                nextTarget.SetActive(true);
-                if (nextTarget.GetComponent<ScannerControl>())
-                {
-                    nextTarget.GetComponent<ScannerControl>().scannerTarget.SetActive(true);
-                }
-            }
-        }
-
-        if (hideObjects != null)
-        {
-            foreach (GameObject hide in hideObjects)
-            {
-                Destroy(hide);
-            }
-        }
-
-        /*
-        if (hideTargetAfterDestroyed)
-        {
-            Destroy(scannerTarget);
-        }
-        */
-        bgCam.SetActive(true);
+        bgCam.GetComponent<Camera>().enabled = true;
         InteractionUnready();
     }
 }

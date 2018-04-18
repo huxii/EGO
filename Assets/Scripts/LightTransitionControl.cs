@@ -23,7 +23,8 @@ public class LightTransitionControl : TransitionEffectControl
 
             if (timer <= 0)
             {
-                Destroy(gameObject);
+                BeforeEnd();
+                start = false;
             }
         }
     }

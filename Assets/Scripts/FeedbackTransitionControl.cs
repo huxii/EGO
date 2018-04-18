@@ -9,7 +9,7 @@ public class FeedbackTransitionControl : TransitionEffectControl
 	// Use this for initialization
 	void Start ()
     {
-        CollecteMats();
+        Init();
 	}
 	
 	// Update is called once per frame

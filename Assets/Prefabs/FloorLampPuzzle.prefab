@@ -129,7 +129,7 @@ Camera:
   m_Depth: 3
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4294967295
   m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -175,10 +175,7 @@ MonoBehaviour:
   scanSpeed: 1
   scanInnerBlur: 4
   scanOutterBlur: 4
-  hideTargetAfterDestroyed: 1
-  nextTargets:
-  - {fileID: 0}
-  hideObjects: []
+  bgCam: {fileID: 0}
 --- !u!114 &114082560220061492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,10 +221,7 @@ MonoBehaviour:
   scanSpeed: 1
   scanInnerBlur: 4
   scanOutterBlur: 4
-  hideTargetAfterDestroyed: 1
-  nextTargets:
-  - {fileID: 0}
-  hideObjects: []
+  bgCam: {fileID: 0}
   scanManualTimer: 0
 --- !u!114 &114930612371774422
 MonoBehaviour:

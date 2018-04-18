@@ -7,11 +7,11 @@ public class DissolveTransitionControl : TransitionEffectControl
 	// Use this for initialization
 	void Start ()
     {
-        CollecteMats();
+        Init();
 
         foreach (Material mat in mats)
         {
-            mat.SetFloat("_DissolveTimer", timer);
+            mat.SetFloat("_DissolveTimer", 1 - timer);
         }
     }
 	
@@ -23,12 +23,13 @@ public class DissolveTransitionControl : TransitionEffectControl
             timer += Time.deltaTime * speed;
             foreach (Material mat in mats)
             {
-                mat.SetFloat("_DissolveTimer", timer);
+                mat.SetFloat("_DissolveTimer", 1 - timer);
             }
 
-            if (timer >= 1.0f)
+            if (timer > 1.0f || timer < 0.0f)
             {
-                Destroy(gameObject);
+                BeforeEnd();
+                start = false;
             }
         }
 	}

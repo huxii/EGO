@@ -7,6 +7,8 @@ public class ViewportControl : MonoBehaviour
     public GameObject targetCamera;
     public float playerHeight = 4f;
 
+    protected bool switched = false;
+
     [SerializeField]
     GameObject player;
     CameraControl originCameraCon;
@@ -20,8 +22,6 @@ public class ViewportControl : MonoBehaviour
     Vector2 angleSensitivity0;
     Vector2 angleSmooth0;
     Vector2 dAngle0;
-
-    bool switched = false;
 
     // Use this for initialization
     void Start ()

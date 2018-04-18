@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class ScannerTransitionControl : TransitionEffectControl
 {
-    public Material scannerMat;
-
+    Material scannerMat;
     float scannerRange;
 
     // Use this for initialization
     void Start()
     {
         timer = 0;
-        CollecteMats();
+        Init();
 
         foreach (Material mat in mats)
         {
@@ -36,10 +35,7 @@ public class ScannerTransitionControl : TransitionEffectControl
 
             if (timer >= 1.0f)
             {
-                if (destroyWhenFinish)
-                {
-                    Destroy(gameObject);
-                }
+                BeforeEnd();
                 start = false;
             }
         }
@@ -55,5 +51,10 @@ public class ScannerTransitionControl : TransitionEffectControl
         {
             mat.SetVector("_Center", data.pos);
         }
+    }
+
+    public void SetScannerMat(Material mat)
+    {
+        scannerMat = mat;
     }
 }

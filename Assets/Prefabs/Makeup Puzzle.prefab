@@ -902,7 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 1136124084935644}
-  playerHeight: 1.5
+  playerHeight: 3
   player: {fileID: 0}
 --- !u!114 &114740360364256156
 MonoBehaviour:
@@ -955,9 +955,7 @@ MonoBehaviour:
   scanSpeed: 1
   scanInnerBlur: 4
   scanOutterBlur: 4
-  hideTargetAfterDestroyed: 0
-  nextTargets: []
-  hideObjects: []
+  bgCam: {fileID: 0}
 --- !u!114 &114863226058975408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -984,6 +982,9 @@ MonoBehaviour:
   timer: 0
   speed: 1
   destroyWhenFinish: 0
+  nextPlays: []
+  hideTargets: []
+  showTargets: []
 --- !u!114 &114980070801013688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -998,7 +999,9 @@ MonoBehaviour:
   timer: 0
   speed: 1
   destroyWhenFinish: 0
-  scannerMat: {fileID: 0}
+  nextPlays: []
+  hideTargets: []
+  showTargets: []
 --- !u!114 &114981615108656294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1021,9 +1024,7 @@ MonoBehaviour:
   scanSpeed: 0.2
   scanInnerBlur: 4
   scanOutterBlur: 4
-  hideTargetAfterDestroyed: 0
-  nextTargets: []
-  hideObjects: []
+  bgCam: {fileID: 0}
   scanManualTimer: 0
 --- !u!124 &124481564954523468
 Behaviour:

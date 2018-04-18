@@ -7,7 +7,7 @@ public class LightbeamTransitionControl : TransitionEffectControl
 	// Use this for initialization
 	void Start ()
     {
-        CollecteMats();
+        Init();
         timer = 4.0f;
 	}
 	
@@ -24,7 +24,8 @@ public class LightbeamTransitionControl : TransitionEffectControl
 
             if (timer <= -5f)
             {
-                Destroy(gameObject);
+                BeforeEnd();
+                start = false;
             }
         }
     }
