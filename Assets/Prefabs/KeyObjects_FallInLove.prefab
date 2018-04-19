@@ -1066,7 +1066,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863beef8c3728dd4695b0a3bda44f6fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
   speed: 1
   destroyWhenFinish: 1
   nextPlays: []
@@ -1075,3 +1074,4 @@ MonoBehaviour:
   showTargets:
   - {fileID: 0}
   - {fileID: 0}
+  reverse: 1

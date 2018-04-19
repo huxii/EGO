@@ -23,7 +23,6 @@ public class TransitionData
 
 public class TransitionEffectControl : MonoBehaviour
 {
-    public float timer = 0;
     public float speed = 1;
     public bool destroyWhenFinish = true;
     public List<GameObject> nextPlays;
@@ -32,6 +31,8 @@ public class TransitionEffectControl : MonoBehaviour
 
     protected List<Material> mats;
     protected bool start = false;
+    protected bool done = false;
+    protected float timer = 0;
 
     // Use this for initialization
     void Start ()
@@ -77,7 +78,7 @@ public class TransitionEffectControl : MonoBehaviour
         }
     }
 
-    protected void BeforeEnd()
+    protected void End()
     {
         if (destroyWhenFinish)
         {
@@ -115,6 +116,19 @@ public class TransitionEffectControl : MonoBehaviour
                 transition.SetActive(true);
             }
         }
+
+        start = false;
+        done = true;
+    }
+
+    public bool Done()
+    {
+        return done;
+    }
+
+    public void Pause()
+    {
+        start = false;
     }
 
     public virtual void Play(TransitionData data = null)

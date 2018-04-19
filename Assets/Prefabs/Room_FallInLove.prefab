@@ -4033,7 +4033,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1331eb6cc2cea44993d7826e3c744f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
   speed: 1
   destroyWhenFinish: 1
   nextPlays: []
@@ -4050,7 +4049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed6183ed20c21ac4ea843001dd249617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
   speed: 1
   destroyWhenFinish: 0
   nextPlays:

@@ -76,15 +76,11 @@ public class ObjectControl : MonoBehaviour
         {
             if (y >= 90f && y <= 100f && !frozen)
             {
-                fogCam.GetComponent<FogControl>().fogGoingAway = true;
-                if (fogCam.GetComponent<FogControl>().fogGone)
-                {
-                    Destroy(fogCam);
-                }
+                fogCam.GetComponent<FogTransitionControl>().Play();
             }
             else
             {
-                fogCam.GetComponent<FogControl>().fogGoingAway = false;
+                fogCam.GetComponent<FogTransitionControl>().Pause();
             }
         }
     }

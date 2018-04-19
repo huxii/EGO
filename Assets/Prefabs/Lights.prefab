@@ -472,7 +472,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b54d6b56cdfb640bc611e091c4f440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
   speed: 10
   destroyWhenFinish: 1
   nextPlays: []
@@ -489,7 +488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99620e5664db4b1448db0a1a7f6fc2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
   speed: 10
   destroyWhenFinish: 1
   nextPlays: []
@@ -506,7 +504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99620e5664db4b1448db0a1a7f6fc2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
   speed: 10
   destroyWhenFinish: 1
   nextPlays: []
@@ -523,7 +520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99620e5664db4b1448db0a1a7f6fc2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
   speed: 10
   destroyWhenFinish: 1
   nextPlays: []
@@ -540,7 +536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99620e5664db4b1448db0a1a7f6fc2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
   speed: 10
   destroyWhenFinish: 1
   nextPlays: []

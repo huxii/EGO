@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class DissolveTransitionControl : TransitionEffectControl
 {
-	// Use this for initialization
-	void Start ()
+    public bool reverse = false;
+
+    // Use this for initialization
+    void Start ()
     {
         Init();
-
-        foreach (Material mat in mats)
-        {
-            mat.SetFloat("_DissolveTimer", 1 - timer);
-        }
+        ResetMaterials();
     }
 	
 	// Update is called once per frame
@@ -21,18 +19,50 @@ public class DissolveTransitionControl : TransitionEffectControl
         if (start)
         {
             timer += Time.deltaTime * speed;
-            foreach (Material mat in mats)
+            if (reverse)
             {
-                mat.SetFloat("_DissolveTimer", 1 - timer);
+                foreach (Material mat in mats)
+                {
+                    mat.SetFloat("_DissolveTimer", 1 - timer);
+                }
+            }
+            else
+            {
+                foreach (Material mat in mats)
+                {
+                    mat.SetFloat("_DissolveTimer", timer);
+                }
             }
 
             if (timer > 1.0f || timer < 0.0f)
             {
-                BeforeEnd();
-                start = false;
+                if (destroyWhenFinish)
+                {
+                    ResetMaterials();
+                }
+                End();
             }
         }
 	}
+
+    void ResetMaterials()
+    {
+        timer = 0;
+        if (reverse)
+        {
+            foreach (Material mat in mats)
+            {
+                mat.SetFloat("_DissolveTimer", 1 - timer);
+            }
+        }
+        else
+        {
+            foreach (Material mat in mats)
+            {
+                mat.SetFloat("_DissolveTimer", 0);
+            }
+        }
+    }
 
     public override void Play(TransitionData data = null)
     {

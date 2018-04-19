@@ -24,8 +24,7 @@ public class LightbeamTransitionControl : TransitionEffectControl
 
             if (timer <= -5f)
             {
-                BeforeEnd();
-                start = false;
+                End();
             }
         }
     }

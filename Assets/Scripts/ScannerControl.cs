@@ -28,7 +28,7 @@ public class ScannerControl : InteractableControl
     // Update is called once per frame
     void Update()
     {
-        if (transitionCon != null && transitionCon.timer >= 1f)
+        if (transitionCon != null && transitionCon.Done())
         {
             BeforeDestroyed();
             Destroy(gameObject);

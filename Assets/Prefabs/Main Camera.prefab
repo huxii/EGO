@@ -104,7 +104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4113789397385786
 Transform:
   m_ObjectHideFlags: 1
@@ -198,7 +198,7 @@ Camera:
   m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 770
+    m_Bits: 4294967295
   m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -514,10 +514,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d449971dc3a139d4ba9c6dccb336b834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fogGoingAway: 0
-  fogGone: 0
-  fogFallSpeed: 0.3
-  fogAlphaSpeed: 0.3
+  speed: 1
+  destroyWhenFinish: 1
+  nextPlays: []
+  hideTargets:
+  - {fileID: 0}
+  showTargets: []
 --- !u!114 &114246798688771728
 MonoBehaviour:
   m_ObjectHideFlags: 1

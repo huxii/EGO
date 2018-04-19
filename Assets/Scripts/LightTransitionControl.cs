@@ -23,8 +23,7 @@ public class LightTransitionControl : TransitionEffectControl
 
             if (timer <= 0)
             {
-                BeforeEnd();
-                start = false;
+                End();
             }
         }
     }

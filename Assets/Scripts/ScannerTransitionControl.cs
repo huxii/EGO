@@ -35,8 +35,7 @@ public class ScannerTransitionControl : TransitionEffectControl
 
             if (timer >= 1.0f)
             {
-                BeforeEnd();
-                start = false;
+                End();
             }
         }
     }

@@ -2,13 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FogControl : MonoBehaviour
+public class FogTransitionControl : TransitionEffectControl
 {
-    public bool fogGoingAway = false;
-    public bool fogGone = false;
-    public float fogFallSpeed = 1f;
-    public float fogAlphaSpeed = 1f;
-
     VolumetricFogAndMist.VolumetricFog fog;
 
     // Use this for initialization
@@ -20,16 +15,20 @@ public class FogControl : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (!fogGone && fogGoingAway)
+        if (!done && start)
         {
-            fog.alpha -= Time.deltaTime * fogAlphaSpeed;
-            fog.fogAreaFallOff -= Time.deltaTime * fogFallSpeed;
+            fog.alpha -= Time.deltaTime * speed;
+            fog.fogAreaFallOff -= Time.deltaTime * speed;
 
             if (fog.alpha <= 0 && fog.fogAreaFallOff <= 0)
             {
-                fogGone = true;
-                fogGoingAway = false;
+                End();
             }
         }
 	}
+
+    public override void Play(TransitionData data = null)
+    {
+        start = true;
+    }
 }

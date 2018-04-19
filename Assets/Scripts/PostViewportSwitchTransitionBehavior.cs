@@ -31,6 +31,7 @@ public class PostViewportSwitchTransitionBehavior : ViewportSwitchBehavior
                     {
                         foreach (GameObject transition in nextPlays)
                         {
+                            transition.SetActive(true);
                             transition.GetComponent<TransitionEffectControl>().Play();
                         }
                     }
