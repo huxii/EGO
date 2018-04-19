@@ -92,7 +92,7 @@ Material:
     - _Parallax: 0.02
     - _ReplacementInverted: 0
     - _ReplacementStyle: 2
-    - _ReplacementTimer: 0
+    - _ReplacementTimer: 30
     - _RimBoost: 2
     - _RimExp: 4
     - _ShadowThreshold: 0.104

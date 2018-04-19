@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Calender_Sheet
+  m_Name: Calender_Sheet_After
   m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
-  m_ShaderKeywords: _REPLACEMENTSTYLE_APPEAR _TEXTUREBLENDMODE_MULTIPLY
+  m_ShaderKeywords: _REPLACEMENTINVERTED_ON _REPLACEMENTSTYLE_APPEAR _TEXTUREBLENDMODE_MULTIPLY
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -34,16 +34,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _DiffTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4355c47d190394bdd8ded7ceb6d37a0d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 170b00f83eaed4d59866d7d3ec83a801, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -52,11 +48,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
         m_Texture: {fileID: 2800000, guid: 1c41f858f46a69c468d3df2ca4fb8a46, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 0.3, y: 0.3}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
@@ -66,12 +58,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _RampTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _ReplacementTex:
-        m_Texture: {fileID: 2800000, guid: 4355c47d190394bdd8ded7ceb6d37a0d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 170b00f83eaed4d59866d7d3ec83a801, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -81,7 +69,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DissolveTimer: 0
     - _DstBlend: 0
-    - _EdgeSpeedRate: 0.8
+    - _EdgeSpeedRate: 0.867
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -90,16 +78,12 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineThickness: 0
     - _Parallax: 0.02
-    - _ReplacementInverted: 0
+    - _ReplacementInverted: 1
     - _ReplacementStyle: 2
-    - _ReplacementTimer: 30
-    - _RimBoost: 2
-    - _RimExp: 4
+    - _ReplacementTimer: 0
     - _ShadowThreshold: 0.104
     - _SmoothnessTextureChannel: 0
     - _SoftRange: 0.181
-    - _SpecBoost: 0.3
-    - _SpecExp: 20
     - _SpecThreshold: 0.733
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -109,12 +93,12 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DiffuseColor: {r: 0.5803922, g: 0.5803922, b: 0.5803922, a: 1}
-    - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DiffuseColor: {r: 0.8007353, g: 0.7784927, b: 0.8897059, a: 1}
+    - _EdgeColor: {r: 0.22329153, g: 0.35794508, b: 0.5147059, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReDiffuseColor: {r: 1, g: 0.8689655, b: 0.75, a: 1}
     - _ReShadowColor: {r: 0.30147058, g: 0.19285251, b: 0.19285251, a: 1}
     - _ReSpecColor: {r: 1, g: 0.93235296, b: 0.8308824, a: 1}
-    - _ShadowColor: {r: 0.34509805, g: 0.26666668, b: 0.25490198, a: 1}
-    - _SpecColor: {r: 0.9960785, g: 0.76470596, b: 0.5921569, a: 1}
+    - _ShadowColor: {r: 0.39215684, g: 0.3321799, b: 0.4705882, a: 1}
+    - _SpecColor: {r: 0.9191176, g: 0.953144, b: 1, a: 1}
