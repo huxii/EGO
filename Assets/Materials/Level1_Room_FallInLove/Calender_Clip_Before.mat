@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Calender_Clip 1
+  m_Name: Calender_Clip_Before
   m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
-  m_ShaderKeywords: _REPLACEMENTSTYLE_APPEAR _TEXTUREBLENDMODE_ALPHA
+  m_ShaderKeywords: _REPLACEMENTINVERTED_ON _REPLACEMENTSTYLE_DISAPPEAR _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -90,9 +90,9 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineThickness: 0
     - _Parallax: 0.02
-    - _ReplacementInverted: 0
-    - _ReplacementStyle: 2
-    - _ReplacementTimer: 30
+    - _ReplacementInverted: 1
+    - _ReplacementStyle: 3
+    - _ReplacementTimer: 0
     - _RimBoost: 2
     - _RimExp: 4
     - _ShadowThreshold: 0.104
