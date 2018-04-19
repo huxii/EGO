@@ -79,10 +79,11 @@ public class PlayerControl : MonoBehaviour
         Vector3 vertical = CameraForwardDirection() * Input.GetAxis("Vertical") * moveSpeed;
         Vector3 horizontal = CameraRightDirection() * Input.GetAxis("Horizontal") * moveSpeed;
         Vector3 height = new Vector3(0, (heightAxis + heightState * heightRange - transform.position.y) * jumpSpeed, 0);
-        Vector3 dir = (vertical + horizontal + height) * Time.deltaTime;
-        targetPos += dir;
+        Vector3 dir = (vertical + horizontal + height);
+        targetPos += dir * Time.deltaTime;
 
-        rb.MovePosition(targetPos);
+        rb.velocity = dir;
+        //rb.MovePosition(targetPos);
     }
 
     float GetHeightOnGround()

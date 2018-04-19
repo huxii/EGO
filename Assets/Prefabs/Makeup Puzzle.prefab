@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33286559155602468}
   - component: {fileID: 23981949085058376}
   - component: {fileID: 114887609694179314}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Mirror_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 20401587977801770}
   - component: {fileID: 124943622370251082}
   - component: {fileID: 114290044819567510}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: MakeupCamera
   m_TagString: Camera
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 33040473468111944}
   - component: {fileID: 64366920576658110}
   - component: {fileID: 23316089849859754}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4572061702290760}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Makeup Puzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4461743134464542}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4385448234514156}
   - component: {fileID: 33523142450735080}
   - component: {fileID: 23313343279284604}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Makeup_Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 4243426506966314}
   - component: {fileID: 33448742561327260}
   - component: {fileID: 23906861696245136}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4071737594524142}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Mirror_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4077860247701840}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Make_Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 4586868668027544}
   - component: {fileID: 33578165498885544}
   - component: {fileID: 23115915567680718}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Notebook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 4939133173505792}
   - component: {fileID: 65844974137431868}
   - component: {fileID: 114679767355218340}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: MakeupSwitchTrigger
   m_TagString: ViewportSwitcher
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 4448879418664184}
   - component: {fileID: 33828009917815064}
   - component: {fileID: 23825599228255114}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Makeup_Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4655188571004996}
   - component: {fileID: 114980070801013688}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: MakeupTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +562,7 @@ Camera:
   m_Depth: 3
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4294967295
   m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -902,7 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 1136124084935644}
-  playerHeight: 3
+  playerHeight: 2
   player: {fileID: 0}
 --- !u!114 &114740360364256156
 MonoBehaviour:

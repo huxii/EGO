@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4257378001476954}
   - component: {fileID: 33322190657412330}
   - component: {fileID: 23937515709149396}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Paper_Toss (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4006794462471454}
   - component: {fileID: 114227771129903038}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LunchTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4788647645377574}
   - component: {fileID: 33081689767351282}
   - component: {fileID: 23050388001864518}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: polySurface2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4708333418118574}
   - component: {fileID: 33830275815396976}
   - component: {fileID: 23108711382050234}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Paper_Toss (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 20264453169825954}
   - component: {fileID: 124894042073810828}
   - component: {fileID: 114395165535865596}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LunchCamera
   m_TagString: Camera
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 4318651817601412}
   - component: {fileID: 33502090451982524}
   - component: {fileID: 23184818049694544}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Can (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 4865446322820472}
   - component: {fileID: 33847700022750884}
   - component: {fileID: 23724389476100006}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Paper_Toss (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4077145570218838}
   - component: {fileID: 114107398562006966}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: StreetLIght_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 4328485205313418}
   - component: {fileID: 33053195632281086}
   - component: {fileID: 23775067811180688}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Paper_Toss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 4623923731726240}
   - component: {fileID: 33808625052836982}
   - component: {fileID: 23462562706863388}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Paper_Toss (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 4677944377288962}
   - component: {fileID: 65308748625012686}
   - component: {fileID: 114662632442720950}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LunchSwitchTrigger
   m_TagString: ViewportSwitcher
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4994258289072776}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: StreetLIght_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 4822858149839680}
   - component: {fileID: 33508999239883138}
   - component: {fileID: 23697793332148844}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4577472421877076}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Lunch Puzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 4966032665837374}
   - component: {fileID: 33692939549496030}
   - component: {fileID: 23016572755306330}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Can (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 4061729469507152}
   - component: {fileID: 33026986872569632}
   - component: {fileID: 23075683019067558}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Can (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 4880841577196648}
   - component: {fileID: 33735092306560874}
   - component: {fileID: 23551420970464170}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 4098291517529756}
   - component: {fileID: 33670804144237156}
   - component: {fileID: 23192668215634136}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Paper_Toss (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4312543973965654}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Street_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 4112672930232556}
   - component: {fileID: 33698643996210784}
   - component: {fileID: 23551552501978730}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Can (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 4772617488559354}
   - component: {fileID: 33142089647549674}
   - component: {fileID: 23706231638957702}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Paper_Toss (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 4364452357676312}
   - component: {fileID: 33512253316105488}
   - component: {fileID: 23783035685340804}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Can (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 4575193032824010}
   - component: {fileID: 33150588500753902}
   - component: {fileID: 23136713093647202}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 4934625007863182}
   - component: {fileID: 33600451377114358}
   - component: {fileID: 23139053974244680}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Paper_Toss (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 4063618069964264}
   - component: {fileID: 33878017381159058}
   - component: {fileID: 23459407365603304}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Paper_Toss (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,23 +492,8 @@ GameObject:
   - component: {fileID: 4825749685504786}
   - component: {fileID: 33592746089214762}
   - component: {fileID: 23598199264852096}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Can (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1790815584182856
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4336475160091168}
-  m_Layer: 8
-  m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,7 +509,7 @@ GameObject:
   - component: {fileID: 4830844562591690}
   - component: {fileID: 33408252348240240}
   - component: {fileID: 23338844024800890}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Table_Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +524,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4957358694967574}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Paper_Tosses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +541,7 @@ GameObject:
   - component: {fileID: 4345104917706820}
   - component: {fileID: 33992802916713524}
   - component: {fileID: 23496255015800976}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Paper_Toss (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,8 +556,23 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4414718129400048}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Lunch_Box
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1908448505606598
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4498203689968702}
+  m_Layer: 0
+  m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -586,7 +586,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4803920034305778}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 4874474742596416}
   - component: {fileID: 33339284302832104}
   - component: {fileID: 23831127229618016}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Garbage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4075303749767984}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 4727700490802984}
   - component: {fileID: 33134166679860296}
   - component: {fileID: 23058654610773970}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Can (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +652,7 @@ GameObject:
   - component: {fileID: 4111237741170502}
   - component: {fileID: 33221039758764782}
   - component: {fileID: 23265263212429952}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Can (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,13 +693,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1436342923395580}
-  m_LocalRotation: {x: -0, y: 0.9986578, z: -0, w: -0.05179453}
-  m_LocalPosition: {x: 2.708, y: -2.21, z: 10.656}
+  m_LocalRotation: {x: 0.07115214, y: 0.99602723, z: 0.014091155, w: -0.051657964}
+  m_LocalPosition: {x: 2.708, y: -2.118, z: 10.656}
   m_LocalScale: {x: 1.9, y: 1.9, z: 1.9}
   m_Children: []
   m_Father: {fileID: 4803920034305778}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 185.93799, z: 0}
+  m_LocalEulerAnglesHint: {x: -2.0300002, y: 185.795, z: 8.069}
 --- !u!4 &4063618069964264
 Transform:
   m_ObjectHideFlags: 1
@@ -723,7 +723,7 @@ Transform:
   m_LocalPosition: {x: 12.3760805, y: 0.35465991, z: 8.044883}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4994258289072776}
+  m_Father: {fileID: 4077145570218838}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4077145570218838
@@ -737,7 +737,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4788647645377574}
-  - {fileID: 4336475160091168}
+  - {fileID: 4075303749767984}
   m_Father: {fileID: 4312543973965654}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -834,19 +834,6 @@ Transform:
   m_Father: {fileID: 4957358694967574}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 152.826, z: 0}
---- !u!4 &4336475160091168
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1790815584182856}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.3760805, y: 0.35465991, z: 8.044883}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4077145570218838}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4345104917706820
 Transform:
   m_ObjectHideFlags: 1
@@ -891,6 +878,19 @@ Transform:
   m_Father: {fileID: 4006794462471454}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -88.562004, z: 0}
+--- !u!4 &4498203689968702
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908448505606598}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.3760805, y: 0.35465991, z: 8.044883}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4994258289072776}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4575193032824010
 Transform:
   m_ObjectHideFlags: 1
@@ -1200,7 +1200,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4822858149839680}
-  - {fileID: 4075303749767984}
+  - {fileID: 4498203689968702}
   m_Father: {fileID: 4312543973965654}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1228,8 +1228,8 @@ Camera:
   m_Depth: 3
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
-  m_RenderingPath: -1
+    m_Bits: 4294967295
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -2307,6 +2307,9 @@ MonoBehaviour:
   timer: 0
   speed: 1
   destroyWhenFinish: 0
+  nextPlays: []
+  hideTargets: []
+  showTargets: []
 --- !u!114 &114227771129903038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2321,7 +2324,9 @@ MonoBehaviour:
   timer: 0
   speed: 1
   destroyWhenFinish: 0
-  scannerMat: {fileID: 0}
+  nextPlays: []
+  hideTargets: []
+  showTargets: []
 --- !u!114 &114395165535865596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2392,9 +2397,7 @@ MonoBehaviour:
   scanSpeed: 1
   scanInnerBlur: 4
   scanOutterBlur: 4
-  hideTargetAfterDestroyed: 0
-  nextTargets: []
-  hideObjects: []
+  bgCam: {fileID: 0}
 --- !u!114 &114662632442720950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2431,9 +2434,7 @@ MonoBehaviour:
   scanSpeed: 0.2
   scanInnerBlur: 4
   scanOutterBlur: 4
-  hideTargetAfterDestroyed: 0
-  nextTargets: []
-  hideObjects: []
+  bgCam: {fileID: 0}
   scanManualTimer: 0
 --- !u!114 &114911083727894674
 MonoBehaviour:
