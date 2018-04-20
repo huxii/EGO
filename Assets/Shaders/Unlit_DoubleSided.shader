@@ -4,6 +4,7 @@ Shader "Unlit/Unlit_DoubleSided"
 {
 	 Properties {
      _MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
+     _Color ("Main Color", Color) = (1,1,1,0)
  }
  
  SubShader {
@@ -35,6 +36,7 @@ Shader "Unlit/Unlit_DoubleSided"
  
              sampler2D _MainTex;
              float4 _MainTex_ST;
+             float4 _Color;
              
              v2f vert (appdata_t v)
              {
@@ -49,7 +51,7 @@ Shader "Unlit/Unlit_DoubleSided"
              {
                  fixed4 col = tex2D(_MainTex, i.texcoord);
                  UNITY_APPLY_FOG(i.fogCoord, col);
-                 return col;
+                 return col*_Color;
              }
          ENDCG
      }
