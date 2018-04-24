@@ -7,8 +7,8 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Firefly_Particle
-  m_Shader: {fileID: 4800000, guid: d6be7117350325e4088cabd1bd05b022, type: 3}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _REPLACEMENTSTYLE_KEEP
+  m_Shader: {fileID: 4800000, guid: 8f1b2c2f285aac943933c1cfda657389, type: 3}
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _REPLACEMENTSTYLE_KEEP _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -76,6 +76,7 @@ Material:
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _ReplacementInverted: 0
     - _ReplacementStyle: 0
     - _ReplacementTimer: 0
     - _ShadowThreshold: 0.3
@@ -84,16 +85,18 @@ Material:
     - _SpecThreshold: 0.85
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _TextureAlpha: 0
+    - _TextureBlendMode: 0
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
-    - _DiffuseColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _DiffuseColor: {r: 1, g: 0.9529412, b: 0.47058824, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.9705882, g: 0.23551036, b: 0.23551036, a: 1}
-    - _ReDiffuseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _ReShadowColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReSpecColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ReDiffuseColor: {r: 2, g: 1.9058824, b: 0.94117624, a: 1}
+    - _ReShadowColor: {r: 2, g: 1.9058824, b: 0.94117624, a: 1}
+    - _ReSpecColor: {r: 2, g: 1.9058824, b: 1.0274512, a: 1}
     - _ShadowColor: {r: 1, g: 0.95294124, b: 0.47058827, a: 1}
     - _SilhouettedColor: {r: 1, g: 0.95294124, b: 0.54901963, a: 1}
     - _SpecColor: {r: 1, g: 0.95294124, b: 0.5137255, a: 1}

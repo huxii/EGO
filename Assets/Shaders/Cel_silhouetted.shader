@@ -3,9 +3,9 @@
 	Properties
 	{
 		_MainTex("Diffuse Texture", 2D) = "white" {}
-		_ShadowColor("Shadow Color", Color) = (0.0, 0.0, 0.0, 1.0)
-		_SpecColor("Specular Color", Color) = (1.0, 1.0, 1.0, 1.0)
-		_SilhouettedColor("Silhouetted Color", Color) = (1.0, 1.0, 1.0, 1.0)
+		[HDR]_ShadowColor("Shadow Color", Color) = (0.0, 0.0, 0.0, 1.0)
+		[HDR]_SpecColor("Specular Color", Color) = (1.0, 1.0, 1.0, 1.0)
+		[HDR]_SilhouettedColor("Silhouetted Color", Color) = (1.0, 1.0, 1.0, 1.0)
 	}
 
 	SubShader
@@ -13,7 +13,7 @@
 		LOD 200
 		Tags 
 		{ 
-			"Queue"="AlphaTest" 
+			"Queue"="Transparent" 
 			"IgnoreProjector"="True" 
 			"RenderType"="Transparent"
 		}

@@ -1,4 +1,4 @@
-﻿Shader "II/Cel" 
+﻿Shader "II/Cel_normal" 
 {
 	Properties
 	{
