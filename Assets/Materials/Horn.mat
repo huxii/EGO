@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Deer
+  m_Name: Horn
   m_Shader: {fileID: 4800000, guid: 25d3d170932f0494ab9cfc2e8377e965, type: 3}
-  m_ShaderKeywords: _REPLACEMENTSTYLE_REPLACE _TEXTUREBLENDMODE_ALPHA
+  m_ShaderKeywords: _REPLACEMENTSTYLE_KEEP _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -81,7 +81,7 @@ Material:
     - _OutlineThickness: 0
     - _Parallax: 0.02
     - _ReplacementInverted: 0
-    - _ReplacementStyle: 1
+    - _ReplacementStyle: 0
     - _ReplacementTimer: 0
     - _ShadowThreshold: 0.3
     - _SmoothnessTextureChannel: 0
@@ -109,6 +109,6 @@ Material:
     - _ReDiffuseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _ReShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReSpecColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColor: {r: 0.81691176, g: 0.93633986, b: 1.1, a: 1}
+    - _ShadowColor: {r: 0.85423875, g: 1.1142615, b: 1.4705882, a: 1}
     - _SilhouettedColor: {r: 0.5176471, g: 0.60784316, b: 0.70980394, a: 1}
-    - _SpecColor: {r: 1.2, g: 1.2, b: 1.2, a: 1}
+    - _SpecColor: {r: 1.2110727, g: 1.7781887, b: 2, a: 1}

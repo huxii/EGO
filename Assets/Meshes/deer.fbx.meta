@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6b9d09d11b378a04083b2b9850c2f7f2
-timeCreated: 1522890135
+guid: 52340fd1280854f46b10afc5a28fcde8
+timeCreated: 1524603548
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -89,7 +89,8 @@ ModelImporter:
     400078: Tail1
     400080: Tail2
     400082: Tail3
-    2100000: lambert5
+    2100000: Body
+    2100002: Horn
     2300000: Deer
     3300000: Deer
     4300000: Deer
@@ -125,7 +126,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -144,7 +145,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
