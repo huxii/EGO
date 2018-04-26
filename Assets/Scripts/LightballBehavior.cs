@@ -18,8 +18,9 @@ public class LightballBehavior : InteractableControl
     bool fadeOutTrigger = false;
     Color color;
 	// Use this for initialization
-	void Start ()
-    {
+	void Start (){
+        transform.localScale = transform.localScale * Random.Range(0.8f, 1.2f);
+
         xOrg = Random.Range(-1.0f, 1.0f);
         yOrg = Random.Range(-1.0f, 1.0f);
         zOrg = Random.Range(-1.0f, 1.0f);
@@ -31,9 +32,7 @@ public class LightballBehavior : InteractableControl
 	}
 	
 	// Update is called once per frame
-	void Update ()
-    {
-        
+	void Update (){
         if(fadeOutTrigger){
             FadeOut();
         }else{
