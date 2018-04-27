@@ -546,6 +546,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1847302743430152
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4047864341358958}
+  m_Layer: 0
+  m_Name: transform1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1871478144778380
 GameObject:
   m_ObjectHideFlags: 1
@@ -573,21 +588,6 @@ GameObject:
   - component: {fileID: 4414718129400048}
   m_Layer: 0
   m_Name: Lunch_Box
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1908448505606598
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4498203689968702}
-  m_Layer: 0
-  m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -681,10 +681,23 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1114012438619570}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.06, y: 5.8, z: 4.15}
+  m_LocalPosition: {x: 3.21, y: 5.8, z: 4.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4677944377288962}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4047864341358958
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847302743430152}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.3760805, y: 0.35465991, z: 8.044883}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4077145570218838}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4061729469507152
@@ -724,7 +737,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4788647645377574}
-  - {fileID: 4498203689968702}
+  - {fileID: 4047864341358958}
   m_Father: {fileID: 4312543973965654}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -878,19 +891,6 @@ Transform:
   m_Father: {fileID: 4006794462471454}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -88.562004, z: 0}
---- !u!4 &4498203689968702
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1908448505606598}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.3760805, y: 0.35465991, z: 8.044883}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4077145570218838}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4575193032824010
 Transform:
   m_ObjectHideFlags: 1
@@ -910,8 +910,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1386688529484838}
-  m_LocalRotation: {x: -0, y: -0.79733735, z: -0, w: -0.6035339}
-  m_LocalPosition: {x: -21.36, y: 1.4833337, z: 43.71}
+  m_LocalRotation: {x: -0, y: -0.7772849, z: -0, w: -0.6291488}
+  m_LocalPosition: {x: -36.53, y: -5.11, z: 145.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4677944377288962}
@@ -919,7 +919,7 @@ Transform:
   - {fileID: 4006794462471454}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -254.247, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -257.975, z: 0}
 --- !u!4 &4623923731726240
 Transform:
   m_ObjectHideFlags: 1
@@ -2279,8 +2279,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 8, z: 8}
-  m_Center: {x: 1.92, y: 2, z: 0}
+  m_Size: {x: 19.8, y: 8, z: 10}
+  m_Center: {x: 1.92, y: 2, z: -1.2}
 --- !u!65 &65868646553018804
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2337,8 +2337,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1114012438619570}
-  distance: 10
-  angleZero: {x: 0, y: 40}
+  distance: 12
+  angleZero: {x: -10, y: 40}
   angleRange: {x: 5, y: 5}
   angleSensitivity: {x: 1000, y: 100}
   angleSmooth: {x: 1, y: 1}
@@ -2390,7 +2390,7 @@ MonoBehaviour:
   triggerOutlineWidth: 0.12
   targetCamera: {fileID: 1269268302709694}
   scannerTarget: {fileID: 1035874550503840}
-  scanRange: 10
+  scanRange: 20
   scanEdgeWidth: 1
   scanSpeed: 1
   scanInnerBlur: 4

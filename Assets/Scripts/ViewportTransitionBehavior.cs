@@ -35,6 +35,7 @@ public class ViewportTransitionBehavior : ViewportControl
             foreach (GameObject show in showObjects)
             {
                 show.SetActive(true);
+                show.GetComponent<TransitionEffectControl>().Reverse();
             }
         }
 
