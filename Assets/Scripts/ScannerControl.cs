@@ -67,13 +67,14 @@ public class ScannerControl : InteractableControl
         scannerMat.SetVector("_Center", transform.position);
 
         transitionCon.Play(new TransitionData(transform.position));
+        /*
         if (gameObject.name == "TableLampScannerTrigger")
         {
             SoundControl.Instance.ChangeMusic(SoundControl.BGM.InValley, gameObject.transform.position,5);
             SoundControl.Instance.PlayAmbience(SoundControl.Ambience.AfterTable, gameObject.transform.position, 5);
         }else if (gameObject.name == "MakeupScannerSphereTrigger"){
             SoundControl.Instance.PlayEffect(SoundControl.SFX.Makeup, gameObject.transform.position, 1);
-        }
+        }*/
     }
 
     public override void EndInteraction()
