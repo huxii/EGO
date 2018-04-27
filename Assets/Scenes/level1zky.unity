@@ -7217,6 +7217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1129186075}
   - component: {fileID: 1129186074}
+  - component: {fileID: 1129186076}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -7237,7 +7238,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music_player: {fileID: 838475222}
   ambience_player: {fileID: 2030449217}
-  effect_player: {fileID: 16789814}
   music_sources:
   - {fileID: 8300000, guid: d4fe41be47ef0c04aae2e595a089c960, type: 3}
   - {fileID: 8300000, guid: 4602587f6dc276e458a0ccf45647b8b9, type: 3}
@@ -7272,6 +7272,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1129186076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129186073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58edaf34c0a004d7695427858d3030ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect_player: {fileID: 16789814}
+  pooledamount: 10
+  WillGrow: 1
 --- !u!4 &1135689988
 Transform:
   m_ObjectHideFlags: 0

@@ -14,7 +14,8 @@ public class SoundEffectController : MonoBehaviour {
             played = true;
         }
         if(!GetComponent<AudioSource>().isPlaying && played){
-            Destroy(gameObject);
+            GetComponent<AudioSource>().clip = null;
+            gameObject.SetActive(false);
         }
 	}
 }

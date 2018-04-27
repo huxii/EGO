@@ -7,7 +7,6 @@ public class SoundControl : MonoBehaviour
 {
     public AudioSource music_player;
     public AudioSource ambience_player;
-    public GameObject effect_player;
     public AudioClip[] music_sources;
     public AudioClip[] effect_sources;
     public AudioClip[] ambience_sources;
@@ -62,6 +61,7 @@ public class SoundControl : MonoBehaviour
         music_player.loop = true;
         music_player.Play();
         music_player.DOFade(fade_volume, fade_duration);
+
     }
 
     // Update is called once per frame
@@ -71,16 +71,20 @@ public class SoundControl : MonoBehaviour
     }
     //could be replaced by pooling
     public void PlayEffect(SFX s,Vector3 position,float delay){
-        GameObject SoundEffect;
         AudioClip value;
-        SoundEffect = Instantiate(effect_player) as GameObject;
-        SoundEffect.transform.position = position;
-        AudioSource source = SoundEffect.GetComponent<AudioSource>();
-        if(sfxs.TryGetValue(s,out value)){
+        GameObject eff = NewPooledObject.current.GetSoundEffect();
+        if (eff == null) return;
+
+        eff.transform.position = position;
+        AudioSource source = eff.GetComponent<AudioSource>();
+        if (sfxs.TryGetValue(s, out value))
+        {
             source.clip = value;
             source.loop = false;
+            eff.SetActive(true);
             source.PlayDelayed(delay);
         }
+
     }
     public void PlayMusic(BGM b, Vector3 position, float fade_duration)
     {
