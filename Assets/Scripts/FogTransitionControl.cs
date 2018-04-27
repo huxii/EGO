@@ -5,7 +5,6 @@ using UnityEngine;
 public class FogTransitionControl : TransitionEffectControl
 {
     VolumetricFogAndMist.VolumetricFog fog;
-
     // Use this for initialization
     void Start ()
     {
@@ -22,6 +21,7 @@ public class FogTransitionControl : TransitionEffectControl
 
             if (fog.alpha <= 0 && fog.fogAreaFallOff <= 0)
             {
+                SoundControl.Instance.ChangeMusic(SoundControl.BGM.AfterFog, gameObject.transform.position);
                 End();
             }
         }

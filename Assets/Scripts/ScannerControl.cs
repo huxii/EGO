@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ScannerControl : InteractableControl
 {
+
     [Header("Scanner Settings")]
     public GameObject targetCamera;
     public GameObject scannerTarget;
@@ -18,6 +19,8 @@ public class ScannerControl : InteractableControl
     protected GameObject bgCam;
     protected Material scannerMat;
     protected ScannerTransitionControl transitionCon;
+
+
 
     // Use this for initialization
     void Start()
@@ -64,10 +67,18 @@ public class ScannerControl : InteractableControl
         scannerMat.SetVector("_Center", transform.position);
 
         transitionCon.Play(new TransitionData(transform.position));
+        if (gameObject.name == "TableLampScannerTrigger")
+        {
+            SoundControl.Instance.ChangeMusic(SoundControl.BGM.InValley, gameObject.transform.position,5);
+            SoundControl.Instance.PlayAmbience(SoundControl.Ambience.AfterTable, gameObject.transform.position, 5);
+        }else if (gameObject.name == "MakeupScannerSphereTrigger"){
+            SoundControl.Instance.PlayEffect(SoundControl.SFX.Makeup, gameObject.transform.position, 1);
+        }
     }
 
     public override void EndInteraction()
     {
+        
     }
 
     public override void BeforeDestroyed()
