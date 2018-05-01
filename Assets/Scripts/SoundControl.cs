@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class SoundControl : MonoBehaviour
 {
@@ -11,9 +12,29 @@ public class SoundControl : MonoBehaviour
     public AudioClip[] effect_sources;
     public AudioClip[] ambience_sources;
 
-    public enum BGM { InRoom = 0, InValley, AfterFog };
-    public enum Ambience { AfterTable = 0, BeforeLeave, AfterLeave }
-    public enum SFX { LightBallNormal, LightBallRunAway, Makeup, Picnic, PicnicLight, CameraLight, Water };
+    public enum BGM
+    {
+        InRoom = 0,
+        InValley,
+        AfterFog
+    };
+    public enum Ambience
+    {
+        AfterTable = 0,
+        BeforeLeave,
+        AfterLeave
+    }
+    public enum SFX
+    {
+        LightBallNormal,
+        LightBallRunAway,
+        Makeup,
+        Picnic,
+        PicnicLight,
+        CameraLight,
+        Water,
+        Light
+    };
 
     public Dictionary<BGM,AudioClip> musics = new Dictionary<BGM, AudioClip>();
     public Dictionary<Ambience, AudioClip> ambiences = new Dictionary<Ambience, AudioClip>();
@@ -42,20 +63,22 @@ public class SoundControl : MonoBehaviour
 
     }
     void Start()
-    {   
-        musics.Add(BGM.InRoom, music_sources[0]);
-        musics.Add(BGM.InValley, music_sources[1]);
-        musics.Add(BGM.AfterFog, music_sources[2]);
-        ambiences.Add(Ambience.AfterTable, ambience_sources[0]);
-        ambiences.Add(Ambience.BeforeLeave, ambience_sources[1]);
-        ambiences.Add(Ambience.AfterLeave, ambience_sources[2]);
-        sfxs.Add(SFX.LightBallNormal, effect_sources[0]);
-        sfxs.Add(SFX.LightBallRunAway, effect_sources[1]);
-        sfxs.Add(SFX.Makeup, effect_sources[2]);
-        sfxs.Add(SFX.Picnic, effect_sources[3]);
-        sfxs.Add(SFX.PicnicLight, effect_sources[4]);
-        sfxs.Add(SFX.CameraLight, effect_sources[5]);
-        sfxs.Add(SFX.Water, effect_sources[6]);
+    {
+        foreach (BGM bgm in Enum.GetValues(typeof(BGM)))
+        {
+            musics.Add(bgm, music_sources[(int)bgm]);
+        }
+
+        foreach (Ambience amb in Enum.GetValues(typeof(Ambience)))
+        {
+            ambiences.Add(amb, ambience_sources[(int)amb]);
+        }
+
+        foreach (SFX sfx in Enum.GetValues(typeof(SFX)))
+        {
+            sfxs.Add(sfx, effect_sources[(int)sfx]);
+        }
+
         transform.position = GameObject.Find("Player").transform.position;
         music_player.clip = musics[BGM.InRoom];
         music_player.loop = true;
@@ -70,7 +93,7 @@ public class SoundControl : MonoBehaviour
 
     }
     //could be replaced by pooling
-    public void PlayEffect(SFX s,Vector3 position,float delay){
+    public void PlayEffect(SFX s,Vector3 position,float delay = 0f){
         AudioClip value;
         GameObject eff = NewPooledObject.current.GetSoundEffect();
         if (eff == null) return;
