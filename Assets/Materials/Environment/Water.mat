@@ -164,7 +164,7 @@ Material:
     - _ToneStyle: 0
     - _UVSec: 0
     - _UnlitOutlineThickness: 0.4
-    - _WaveAmp: 0.45
+    - _WaveAmp: 0.8
     - _WaveHeight: 1
     - _WaveSpeed: 50
     - _ZWrite: 1
