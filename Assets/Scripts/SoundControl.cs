@@ -36,7 +36,7 @@ public class SoundControl : MonoBehaviour
         PICNICNIGHT,
         CAMERALIGHT,
         WATER,
-        LIGHT
+        LAUGHAT
     };
 
     public Dictionary<BGM,AudioClip> musics = new Dictionary<BGM, AudioClip>();
