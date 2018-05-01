@@ -14,26 +14,29 @@ public class SoundControl : MonoBehaviour
 
     public enum BGM
     {
-        InRoom = 0,
-        InValley,
-        AfterFog
+        NONE = 0,
+        INROOM,
+        INVALLEY,
+        AFTERFOG
     };
     public enum Ambience
     {
-        AfterTable = 0,
-        BeforeLeave,
-        AfterLeave
+        NONE = 0,
+        AFTERTABLE,
+        BEFORELEAVE,
+        AFTERLEAVE
     }
     public enum SFX
     {
-        LightBallNormal,
-        LightBallRunAway,
-        Makeup,
-        Picnic,
-        PicnicLight,
-        CameraLight,
-        Water,
-        Light
+        NONE = 0,
+        LIGHTBALLNORMAL,
+        LIGHTBALLRUNAWAY,
+        MAKEUP,
+        PICNIC,
+        PICNICNIGHT,
+        CAMERALIGHT,
+        WATER,
+        LIGHT
     };
 
     public Dictionary<BGM,AudioClip> musics = new Dictionary<BGM, AudioClip>();
@@ -80,7 +83,7 @@ public class SoundControl : MonoBehaviour
         }
 
         transform.position = GameObject.Find("Player").transform.position;
-        music_player.clip = musics[BGM.InRoom];
+        music_player.clip = musics[BGM.INROOM];
         music_player.loop = true;
         music_player.Play();
         music_player.DOFade(fade_volume, fade_duration);
