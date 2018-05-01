@@ -317,6 +317,16 @@ Prefab:
       propertyPath: showObjects.Array.data[0]
       value: 
       objectReference: {fileID: 1960723142}
+    - target: {fileID: 114433683004074828, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSFX
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433683004074828, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerBGM
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
   m_IsPrefabParent: 0
@@ -966,6 +976,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerSFX: 0
+  triggerBGM: 0
+  triggerAmbience: 0
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -1797,6 +1810,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerSFX: 0
+  triggerBGM: 0
+  triggerAmbience: 0
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -2773,6 +2789,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerSFX: 0
+  triggerBGM: 0
+  triggerAmbience: 0
   freq: 0.3
   scale: 5
   lifespan: 1
@@ -3030,6 +3049,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerSFX: 0
+  triggerBGM: 0
+  triggerAmbience: 0
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -4018,6 +4040,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerSFX: 0
+  triggerBGM: 0
+  triggerAmbience: 0
   freq: 0.3
   scale: 5
   lifespan: 1
@@ -4124,6 +4149,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerSFX: 0
+  triggerBGM: 0
+  triggerAmbience: 0
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -4600,6 +4628,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerSFX: 0
+  triggerBGM: 0
+  triggerAmbience: 0
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -4684,6 +4715,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerSFX: 0
+  triggerBGM: 0
+  triggerAmbience: 0
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -4871,6 +4905,16 @@ Prefab:
       propertyPath: nextPlays.Array.data[0]
       value: 
       objectReference: {fileID: 478464290}
+    - target: {fileID: 114910957852637858, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSFX
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114910957852637858, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerBGM
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acde680032adc094f8527375489cae94, type: 2}
   m_IsPrefabParent: 0
@@ -5079,6 +5123,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerSFX: 0
+  triggerBGM: 0
+  triggerAmbience: 0
   freq: 0.3
   scale: 5
   lifespan: 1
@@ -5743,6 +5790,9 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 141980353}
   triggerOutlineWidth: 0.5
+  triggerSFX: 0
+  triggerBGM: 0
+  triggerAmbience: 0
   targetControl: {fileID: 141980353}
 --- !u!65 &2094064722
 BoxCollider:

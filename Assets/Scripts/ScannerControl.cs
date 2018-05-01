@@ -57,12 +57,7 @@ public class ScannerControl : InteractableControl
 
     public override void BeginInteraction()
     {
-        /*
-        Debug.Log(".....");
-        GameControl.soundController.PlayEffect(SoundControl.SFX.Light, transform.position);
-        GameControl.soundController.PlayMusic(SoundControl.SFX.Light, transform.position);
-        GameControl.soundController.PlayAmbience(SoundControl.SFX.Light, transform.position);
-        */
+        SoundUpdate();
 
         bgCam.GetComponent<Camera>().enabled = false;
         targetCamera.SetActive(true);
