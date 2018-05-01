@@ -7445,21 +7445,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: music_sources.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: effect_sources.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: ambience_sources.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4356229606547220, guid: 028093ce135b48c4eb9db5823480b5fb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7491,91 +7476,6 @@ Prefab:
     - target: {fileID: 4356229606547220, guid: 028093ce135b48c4eb9db5823480b5fb, type: 2}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: music_sources.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 66d52678fa2dd4fdebf2be75c90883f2, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: effect_sources.Array.data[7]
-      value: 
-      objectReference: {fileID: 8300000, guid: d7e4441c521f94f569c406bada916374, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: effect_sources.Array.data[8]
-      value: 
-      objectReference: {fileID: 8300000, guid: 81755d9ec51a34eaab0a9a24fb881bb3, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: ambience_sources.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: dced9462401e14f1781ed0fd4ee13531, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: music_sources.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: e985dde3dd31e433b94ae7bd595bec9f, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: music_sources.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: ee57e89d769eb40aba4a0307d3b2cdc9, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: music_sources.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: effect_sources.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 4efac36cbf8be43b5aedc08c327b23c1, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: ambience_sources.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 659c1eef76c42495a8bb08350026751e, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: ambience_sources.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: c9ba6175106714c85abf06b96cb76900, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: ambience_sources.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: effect_sources.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8d9305af3a1ea4c3aa11c189c66ec7ef, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: effect_sources.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: f5208831217084efa87db63f4c827569, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: effect_sources.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 7a2ad3c5dd48c4fd0b9be76c73b15f0a, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: effect_sources.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 1e8d4413a10f64400984383bec7383c1, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: effect_sources.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: 0f6e3b5d1834e4621adf027443703afc, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: effect_sources.Array.data[0]
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028093ce135b48c4eb9db5823480b5fb, type: 2}

@@ -389,21 +389,25 @@ MonoBehaviour:
   music_player: {fileID: 82417146751545144}
   ambience_player: {fileID: 82740982085786228}
   music_sources:
-  - {fileID: 8300000, guid: d4fe41be47ef0c04aae2e595a089c960, type: 3}
-  - {fileID: 8300000, guid: 4602587f6dc276e458a0ccf45647b8b9, type: 3}
-  - {fileID: 8300000, guid: 201d72b11d9ac61418b0c51835d54b4a, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: e985dde3dd31e433b94ae7bd595bec9f, type: 3}
+  - {fileID: 8300000, guid: ee57e89d769eb40aba4a0307d3b2cdc9, type: 3}
+  - {fileID: 8300000, guid: 66d52678fa2dd4fdebf2be75c90883f2, type: 3}
   effect_sources:
-  - {fileID: 8300000, guid: aff625354d1eb7e43b9e559e633dc974, type: 3}
-  - {fileID: 8300000, guid: bdfc3c975db22b14196a1977965f4079, type: 3}
-  - {fileID: 8300000, guid: 71243dab504872e4bb3a991d6bf770a9, type: 3}
-  - {fileID: 8300000, guid: 72c413e7e748f0643a7f9c5ab33f08f8, type: 3}
-  - {fileID: 8300000, guid: 5a5077763ff6f4847bc8dd9d23a487d1, type: 3}
-  - {fileID: 8300000, guid: 5835cc04b2cbace47a0eea4e8365c7d1, type: 3}
-  - {fileID: 8300000, guid: 3fb175c0e50622b49bdce90231d7e4c9, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 4efac36cbf8be43b5aedc08c327b23c1, type: 3}
+  - {fileID: 8300000, guid: 8d9305af3a1ea4c3aa11c189c66ec7ef, type: 3}
+  - {fileID: 8300000, guid: f5208831217084efa87db63f4c827569, type: 3}
+  - {fileID: 8300000, guid: 7a2ad3c5dd48c4fd0b9be76c73b15f0a, type: 3}
+  - {fileID: 8300000, guid: 1e8d4413a10f64400984383bec7383c1, type: 3}
+  - {fileID: 8300000, guid: 0f6e3b5d1834e4621adf027443703afc, type: 3}
+  - {fileID: 8300000, guid: d7e4441c521f94f569c406bada916374, type: 3}
+  - {fileID: 8300000, guid: 81755d9ec51a34eaab0a9a24fb881bb3, type: 3}
   ambience_sources:
-  - {fileID: 8300000, guid: 95e14cbf7a8345d4abf3b9e6a21df009, type: 3}
-  - {fileID: 8300000, guid: 1e7a8706f2966974d884c8a04b7a03b7, type: 3}
-  - {fileID: 8300000, guid: b21e5595791ea164d97c4856360ff4ea, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: c9ba6175106714c85abf06b96cb76900, type: 3}
+  - {fileID: 8300000, guid: 659c1eef76c42495a8bb08350026751e, type: 3}
+  - {fileID: 8300000, guid: dced9462401e14f1781ed0fd4ee13531, type: 3}
   fade_duration: 5
   fade_volume: 100
 --- !u!114 &114432983661838858
