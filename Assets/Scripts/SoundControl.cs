@@ -32,10 +32,10 @@ public class SoundControl : MonoBehaviour
         LIGHTBALLNORMAL,
         LIGHTBALLRUNAWAY,
         MAKEUP,
-        PICNIC,
+        PICNICLIGHTBACKGROUND,
         PICNICNIGHT,
-        CAMERALIGHT,
-        LIGHT
+        SPOTLIGHT,
+        PICNICLAUGHAT
     };
 
     public Dictionary<BGM,AudioClip> musics = new Dictionary<BGM, AudioClip>();
