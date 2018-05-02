@@ -9,23 +9,28 @@ ModelImporter:
     100002: Mountain
     100004: Water
     100006: Land
+    100008: Platform
     400000: //RootNode
     400002: Mountain
     400004: Water
     400006: Land
+    400008: Platform
     2100000: lambert1
     2300000: //RootNode
     2300002: Mountain
     2300004: Water
     2300006: Land
+    2300008: Platform
     3300000: //RootNode
     3300002: Mountain
     3300004: Water
     3300006: Land
+    3300008: Platform
     4300000: planarTrimmedSurface1
     4300002: Mountain
     4300004: Water
     4300006: Land
+    4300008: Platform
   externalObjects: {}
   materials:
     importMaterials: 0
