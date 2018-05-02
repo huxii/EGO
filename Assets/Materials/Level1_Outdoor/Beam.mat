@@ -79,7 +79,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _MaxBlinkFactor: 1
-    - _MaxGrowSize: 0
+    - _MaxGrowSize: 0.035
     - _Metallic: 0
     - _MinBlinkFactor: 0
     - _Mode: 0
@@ -92,8 +92,8 @@ Material:
     - _ReplacementStyle: 0
     - _ReplacementTimer: 0
     - _ShadowThreshold: 0.3
-    - _SizeGrowEndDist: 50
-    - _SizeGrowStartDist: 5
+    - _SizeGrowEndDist: 0
+    - _SizeGrowStartDist: 0
     - _SmoothnessTextureChannel: 0
     - _SoftRange: 0.147
     - _SpecThreshold: 0.928

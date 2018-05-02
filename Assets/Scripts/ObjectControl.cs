@@ -44,7 +44,7 @@ public class ObjectControl : MonoBehaviour
 
             beam.GetComponent<MeshRenderer>().material.SetFloat("_MaxBlinkFactor", 1.0f);
             beam.GetComponent<MeshRenderer>().material.SetFloat("_MinBlinkFactor", 1.0f);
-            beam.GetComponent<MeshRenderer>().material.SetFloat("_MaxGrowSize", 1f);
+            beam.GetComponent<MeshRenderer>().material.SetFloat("_MaxGrowSize", 0.035f);
         }
         else
         {
@@ -74,7 +74,7 @@ public class ObjectControl : MonoBehaviour
         float y = transform.localEulerAngles.y;
         if (fogCam)
         {
-            if (y >= 90f && y <= 100f && !frozen)
+            if (y >= solvedAngelRange.x && y <= solvedAngelRange.y && !frozen)
             {
                 fogCam.GetComponent<FogTransitionControl>().Play();
             }
