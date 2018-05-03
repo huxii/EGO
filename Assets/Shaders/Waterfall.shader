@@ -21,13 +21,14 @@ Shader "II/Waterfall" {
     SubShader {
         Tags {
             "RenderType"="Opaque"
+			"Queue" = "Transparent"
         }
         Pass {
             Name "FORWARD"
             Tags {
                 "LightMode"="ForwardBase"
             }
-            Cull Off  
+            Cull Back  
             
             CGPROGRAM
             #pragma vertex vert
@@ -113,6 +114,7 @@ Shader "II/Waterfall" {
                 return fixed4(finalColor,1);
             }
             ENDCG
+
         }
 		/*
         Pass {
@@ -221,7 +223,7 @@ Shader "II/Waterfall" {
             Offset 1, 1
            
             Fog {Mode Off}
-            ZWrite On ZTest LEqual Cull Off
+            ZWrite On ZTest LEqual Cull Back
    
             CGPROGRAM
             #pragma vertex vert
@@ -230,12 +232,6 @@ Shader "II/Waterfall" {
             #pragma fragmentoption ARB_precision_hint_fastest
             #include "UnityCG.cginc"
 
-			uniform float _ReplacementStyle;
-			uniform float _ReplacementTimer;
-			float4 _Center;
-			float _DissolveTimer;
-			uniform sampler2D _NoiseTex;
-			uniform float4 _NoiseTex_ST;
 			uniform sampler2D _MainTex;
 			uniform float4 _MainTex_ST;
 
@@ -257,47 +253,8 @@ Shader "II/Waterfall" {
                
             float4 frag( v2f i ) : COLOR 
 			{
-				// replacement
-				float4 col;
-				float3 dir = i.posWorld - _Center.xyz;
-				float dis = length(dir);
-
-				//special cases
-				if (_ReplacementStyle == 0)
-				{
-					//pass    
-				}
-				else 
-				if (_ReplacementStyle == 1)
-				{
-				}
-				else 
-				if (_ReplacementStyle == 3)
-				{
-					if (dis <= _ReplacementTimer)
-					{
-						clip(-1);
-					}
-				}
-				else
-				if (_ReplacementStyle == 2)
-				{
-					if (dis > _ReplacementTimer)
-					{
-						clip(-1);
-					}
-				}
-				else
-				{
-					clip(-1);
-				}
-
-				// dissolve
-				float noiseSample = tex2Dlod(_NoiseTex, float4(i.tex.xy * _NoiseTex_ST.xy + _NoiseTex_ST.zw, 0, 0));
-				clip(noiseSample - _DissolveTimer);
-
 				SHADOW_CASTER_FRAGMENT(i)
-                }
+            }
             ENDCG
         }
     }

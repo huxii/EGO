@@ -19,6 +19,7 @@ Shader "II/WaterWave" {
     SubShader {
         Tags {
             "RenderType"="Opaque"
+			"Queue"="Transparent"
         }
         Pass {
             Name "FORWARD"
@@ -26,7 +27,8 @@ Shader "II/WaterWave" {
                 "LightMode"="ForwardBase"
             }
             
-            
+            Cull Back
+
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -105,6 +107,7 @@ Shader "II/WaterWave" {
                 return finalRGBA;
             }
             ENDCG
+
         }
 		/*
         Pass {
@@ -189,7 +192,7 @@ Shader "II/WaterWave" {
             ENDCG
         }
 		*/
-
+		/*
 		Pass 
 		{
             Name "Caster"
@@ -203,7 +206,7 @@ Shader "II/WaterWave" {
             Offset 1, 1
            
             Fog {Mode Off}
-            ZWrite On ZTest LEqual Cull Off
+            ZWrite On ZTest LEqual Cull Back
    
             CGPROGRAM
             #pragma vertex vert
@@ -282,6 +285,7 @@ Shader "II/WaterWave" {
                 }
             ENDCG
         }
+		*/
     }
     FallBack "Diffuse"
     CustomEditor "ShaderForgeMaterialInspector"
