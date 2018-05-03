@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17749251, g: 0.22221176, b: 0.3044213, a: 1}
+  m_IndirectSpecularColor: {r: 0.1774923, g: 0.22221148, b: 0.3044208, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2157,6 +2157,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -3551,6 +3554,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   freq: 0.3
   scale: 5
   lifespan: 1
@@ -4788,6 +4794,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -5093,6 +5102,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   targetCamera: {fileID: 1284975597}
   scannerTarget: {fileID: 888001525}
   scanRange: 15
@@ -5118,6 +5130,9 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 837187977}
   triggerOutlineWidth: 0.12
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   targetCamera: {fileID: 1284975597}
   scannerTarget: {fileID: 888001525}
   scanRange: 10
@@ -7187,6 +7202,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   freq: 0.3
   scale: 5
   lifespan: 1
@@ -7786,6 +7804,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -9977,6 +9998,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   targetCamera: {fileID: 1423745754}
   scannerTarget: {fileID: 1268516984}
   scanRange: 15
@@ -10002,6 +10026,9 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 2144049465}
   triggerOutlineWidth: 0.12
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   targetCamera: {fileID: 1423745754}
   scannerTarget: {fileID: 1268516984}
   scanRange: 10
@@ -10660,6 +10687,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   freq: 0.3
   scale: 5
   lifespan: 1
@@ -10801,6 +10831,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -11679,6 +11712,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   freq: 0.3
   scale: 5
   lifespan: 1
@@ -11863,6 +11899,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -11947,6 +11986,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   targetCamera: {fileID: 0}
   scannerTarget: {fileID: 0}
   scanRange: 20
@@ -12676,6 +12718,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   freq: 0.3
   scale: 5
   lifespan: 1
@@ -13426,6 +13471,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   freq: 0.3
   scale: 5
   lifespan: 1
@@ -14219,6 +14267,9 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 141980353}
   triggerOutlineWidth: 0.5
+  triggerFx: 0
+  triggerAmbience: 0
+  triggerBGM: 0
   targetControl: {fileID: 141980353}
 --- !u!65 &2094064722
 BoxCollider:

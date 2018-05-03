@@ -117,7 +117,7 @@ Material:
     - _Deg: 55
     - _DepthFactor: 0.52
     - _DepthLevel: 1
-    - _DepthTransparency: 0.8
+    - _DepthTransparency: 0.798
     - _DetailNormalMapScale: 1
     - _DiffuseThreshold: 0.1
     - _DistortStrength: 0.3
@@ -164,7 +164,7 @@ Material:
     - _ToneStyle: 0
     - _UVSec: 0
     - _UnlitOutlineThickness: 0.4
-    - _WaveAmp: 0.45
+    - _WaveAmp: 0.8
     - _WaveHeight: 1
     - _WaveSpeed: 50
     - _ZWrite: 1
@@ -174,8 +174,8 @@ Material:
     - _BumpDirection: {r: 1, g: 1, b: -1, a: 1}
     - _BumpScale: {r: 1, g: 2, b: 3, a: 4}
     - _BumpTiling: {r: 1, g: 1, b: 0, a: 0}
-    - _Color: {r: 0.3419118, g: 0.75, b: 0.75, a: 1}
-    - _DepthColor: {r: 0.64911336, g: 0.969322, b: 1, a: 1}
+    - _Color: {r: 0.759029, g: 1, b: 0.9213984, a: 1}
+    - _DepthColor: {r: 0.30493078, g: 0.88235295, b: 0.6434195, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
@@ -191,7 +191,7 @@ Material:
     - _RegularColor: {r: 1, g: 1, b: 1, a: 0.459}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 0.72794116, g: 0.48172578, b: 0.6702079, a: 1}
-    - _SpecColor: {r: 0.6691177, g: 0.9726166, b: 1, a: 1}
+    - _SpecColor: {r: 0.7777357, g: 0.9883501, b: 1, a: 1}
     - _UnlitColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _WaterCol: {r: 0.3, g: 0.3, b: 1, a: 1}
     - _WaveColor: {r: 1, g: 1, b: 1, a: 1}

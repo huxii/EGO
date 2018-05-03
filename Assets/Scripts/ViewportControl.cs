@@ -10,7 +10,6 @@ public class ViewportControl : MonoBehaviour
     protected bool switched = false;
 
     [SerializeField]
-    GameObject player;
     CameraControl originCameraCon;
     CameraControl targetCameraCon;
 
@@ -36,7 +35,6 @@ public class ViewportControl : MonoBehaviour
 
     protected void Init()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         originCameraCon = Camera.main.GetComponent<CameraControl>();
         targetCameraCon = targetCamera.GetComponent<CameraControl>();
     }
@@ -49,7 +47,7 @@ public class ViewportControl : MonoBehaviour
         }
         switched = true;
 
-        playerHeight0 = player.GetComponent<PlayerControl>().heightStandard;
+        playerHeight0 = GameControl.playerController.heightStandard;
         targetObject0 = originCameraCon.targetObject;
         distance0 = originCameraCon.distance;
         angleZero0 = originCameraCon.angleZero;
@@ -66,7 +64,7 @@ public class ViewportControl : MonoBehaviour
         originCameraCon.angleSmooth = targetCameraCon.angleSmooth;
         originCameraCon.dAngle = new Vector2(0, 0);
 
-        player.GetComponent<PlayerControl>().heightStandard = playerHeight;
+        GameControl.playerController.heightStandard = playerHeight;
 
 
     }
@@ -86,7 +84,7 @@ public class ViewportControl : MonoBehaviour
         originCameraCon.angleSensitivity = angleSensitivity0;
         originCameraCon.angleSmooth = angleSmooth0;
         originCameraCon.dAngle = dAngle0;
-        player.GetComponent<PlayerControl>().heightStandard = playerHeight0;
+        GameControl.playerController.heightStandard = playerHeight0;
     }
 
     public virtual void SwitchViewport()

@@ -32,11 +32,10 @@ public class SoundControl : MonoBehaviour
         LIGHTBALLNORMAL,
         LIGHTBALLRUNAWAY,
         MAKEUP,
-        PICNIC,
+        PICNICLIGHTBACKGROUND,
         PICNICNIGHT,
-        CAMERALIGHT,
-        WATER,
-        LIGHT
+        SPOTLIGHT,
+        PICNICLAUGHAT
     };
 
     public Dictionary<BGM,AudioClip> musics = new Dictionary<BGM, AudioClip>();
@@ -83,7 +82,7 @@ public class SoundControl : MonoBehaviour
         }
 
         transform.position = GameObject.Find("Player").transform.position;
-        music_player.clip = musics[BGM.INROOM];
+        //music_player.clip = musics[BGM.INROOM];
         music_player.loop = true;
         music_player.Play();
         music_player.DOFade(fade_volume, fade_duration);
@@ -96,10 +95,15 @@ public class SoundControl : MonoBehaviour
 
     }
     //could be replaced by pooling
-    public void PlayEffect(SFX s,Vector3 position,float delay = 0f){
+    public void PlayEffect(SFX s,Vector3 position,float delay = 0f)
+    {
+        if (s == SFX.NONE)
+        {
+            return;
+        }
+
         AudioClip value;
         GameObject eff = NewPooledObject.current.GetSoundEffect();
-        if (eff == null) return;
 
         eff.transform.position = position;
         AudioSource source = eff.GetComponent<AudioSource>();
@@ -112,22 +116,32 @@ public class SoundControl : MonoBehaviour
         }
 
     }
-    public void PlayMusic(BGM b, Vector3 position, float fade_duration)
+    public void PlayMusic(BGM b, Vector3 position, float fade_duration = 1f)
     {
-            AudioClip value;
-            if (musics.TryGetValue(b,out value))
-            {
-                music_player.gameObject.transform.position = position;
-                music_player.clip = value;
-                music_player.loop = true;
-                music_player.volume = 0;
-            }
-            music_player.Play();
-            music_player.DOFade(fade_volume, fade_duration);
+        if (b == BGM.NONE)
+        {
+            return;
+        }
+
+        AudioClip value;
+        if (musics.TryGetValue(b, out value))
+        {
+            music_player.gameObject.transform.position = position;
+            music_player.clip = value;
+            music_player.loop = true;
+            music_player.volume = 0;
+        }
+        music_player.Play();
+        music_player.DOFade(fade_volume, fade_duration);
     }
 
-    public void PlayAmbience(Ambience a, Vector3 position, float fade_duration)
+    public void PlayAmbience(Ambience a, Vector3 position, float fade_duration = 1f)
     {
+        if (a == Ambience.NONE)
+        {
+            return;
+        }
+
         AudioClip value;
         if (ambiences.TryGetValue(a,out value))
             {
@@ -140,7 +154,7 @@ public class SoundControl : MonoBehaviour
             ambience_player.DOFade(fade_volume, fade_duration);
     }
 
-    public void StopAmbience(float fade_duration)
+    public void StopAmbience(float fade_duration = 1f)
     {
         if (ambience_player.isPlaying)
         {
@@ -148,7 +162,7 @@ public class SoundControl : MonoBehaviour
         }
     }
 
-    public void StopMusic(float fade_duration)
+    public void StopMusic(float fade_duration = 1f)
     {
         if (music_player.isPlaying)
         {
@@ -156,12 +170,12 @@ public class SoundControl : MonoBehaviour
         }
     }
 
-    public void ChangeMusic(BGM b, Vector3 position, float fade_duration = 1)
+    public void ChangeMusic(BGM b, Vector3 position, float fade_duration = 1f)
     {
         StartCoroutine(ChangeMusicRoutine(b, position, fade_duration));
     }
 
-    public IEnumerator ChangeMusicRoutine(BGM b, Vector3 position, float fade_duration = 2)         // This will fade out whatever is currently playing, and fade in whatever string you pass it, if there's a music file with that file name in music_sources
+    public IEnumerator ChangeMusicRoutine(BGM b, Vector3 position, float fade_duration = 2f)         // This will fade out whatever is currently playing, and fade in whatever string you pass it, if there's a music file with that file name in music_sources
     {
         music_player.DOFade(0, fade_duration);
         yield return new WaitForSeconds(fade_duration);
@@ -179,12 +193,12 @@ public class SoundControl : MonoBehaviour
         yield return new WaitForSeconds(fade_duration);
     }
 
-    public void ChangeAmbience(Ambience a, Vector3 position, float fade_duration = 2)
+    public void ChangeAmbience(Ambience a, Vector3 position, float fade_duration = 2f)
     {
         StartCoroutine(ChangeAmbienceRoutine(a, position, fade_duration));
     }
 
-    public IEnumerator ChangeAmbienceRoutine(Ambience a, Vector3 position, float fade_duration = 2)         // This will fade out whatever is currently playing, and fade in whatever string you pass it, if there's a music file with that file name in music_sources
+    public IEnumerator ChangeAmbienceRoutine(Ambience a, Vector3 position, float fade_duration = 2f)         // This will fade out whatever is currently playing, and fade in whatever string you pass it, if there's a music file with that file name in music_sources
     {
         ambience_player.DOFade(0, fade_duration);
         yield return new WaitForSeconds(fade_duration);
