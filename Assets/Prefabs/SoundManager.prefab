@@ -96,7 +96,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1573163204170900}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -387,7 +387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music_player: {fileID: 82417146751545144}
-  ambience_player: {fileID: 82740982085786228}
   music_sources:
   - {fileID: 0}
   - {fileID: 8300000, guid: e985dde3dd31e433b94ae7bd595bec9f, type: 3}
@@ -400,14 +399,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f5208831217084efa87db63f4c827569, type: 3}
   - {fileID: 8300000, guid: 7a2ad3c5dd48c4fd0b9be76c73b15f0a, type: 3}
   - {fileID: 8300000, guid: 1e8d4413a10f64400984383bec7383c1, type: 3}
-  - {fileID: 8300000, guid: 0f6e3b5d1834e4621adf027443703afc, type: 3}
-  - {fileID: 8300000, guid: d7e4441c521f94f569c406bada916374, type: 3}
-  - {fileID: 8300000, guid: 81755d9ec51a34eaab0a9a24fb881bb3, type: 3}
   ambience_sources:
   - {fileID: 0}
   - {fileID: 8300000, guid: c9ba6175106714c85abf06b96cb76900, type: 3}
   - {fileID: 8300000, guid: 659c1eef76c42495a8bb08350026751e, type: 3}
-  - {fileID: 8300000, guid: dced9462401e14f1781ed0fd4ee13531, type: 3}
+  - {fileID: 8300000, guid: b21e5595791ea164d97c4856360ff4ea, type: 3}
+  - {fileID: 8300000, guid: b21e5595791ea164d97c4856360ff4ea, type: 3}
+  - {fileID: 8300000, guid: b21e5595791ea164d97c4856360ff4ea, type: 3}
+  - {fileID: 8300000, guid: b21e5595791ea164d97c4856360ff4ea, type: 3}
+  - {fileID: 8300000, guid: b21e5595791ea164d97c4856360ff4ea, type: 3}
+  - {fileID: 8300000, guid: b21e5595791ea164d97c4856360ff4ea, type: 3}
   fade_duration: 5
   fade_volume: 100
 --- !u!114 &114432983661838858

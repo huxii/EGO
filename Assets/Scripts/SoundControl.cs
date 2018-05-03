@@ -7,7 +7,6 @@ using System;
 public class SoundControl : MonoBehaviour
 {
     public AudioSource music_player;
-    public AudioSource ambience_player;
     public AudioClip[] music_sources;
     public AudioClip[] effect_sources;
     public AudioClip[] ambience_sources;
@@ -24,18 +23,22 @@ public class SoundControl : MonoBehaviour
         NONE = 0,
         AFTERTABLE,
         BEFORELEAVE,
-        AFTERLEAVE
+        AFTERLEAVE,
+        WATER,
+        STREETLIGHTBUZZ,
+        LAUGHAT,
+        LIGHTBALLNORMAL,
+        LIGHtBALLRUNAWAY
+
     }
     public enum SFX
     {
         NONE = 0,
-        LIGHTBALLNORMAL,
-        LIGHTBALLRUNAWAY,
         MAKEUP,
-        PICNICLIGHTBACKGROUND,
         PICNICNIGHT,
         SPOTLIGHT,
-        PICNICLAUGHAT
+        FIREFLYSKILL1,
+        FIREFLYSKILL2
     };
 
     public Dictionary<BGM,AudioClip> musics = new Dictionary<BGM, AudioClip>();
@@ -135,7 +138,7 @@ public class SoundControl : MonoBehaviour
         music_player.DOFade(fade_volume, fade_duration);
     }
 
-    public void PlayAmbience(Ambience a, Vector3 position, float fade_duration = 1f)
+    /*public void PlayAmbience(Ambience a, Vector3 position, float fade_duration = 1f)
     {
         if (a == Ambience.NONE)
         {
@@ -152,15 +155,38 @@ public class SoundControl : MonoBehaviour
             }
             ambience_player.Play();
             ambience_player.DOFade(fade_volume, fade_duration);
+    }*/
+    public void PlayAmbience(Ambience a, Vector3 position, float delay = 0f, float fade_duration = 5f)
+    {
+        if (a == Ambience.NONE)
+        {
+            return;
+        }
+
+        AudioClip value;
+        GameObject eff = NewPooledObject.current.GetSoundEffect();
+
+        eff.transform.position = position;
+        AudioSource source = eff.GetComponent<AudioSource>();
+        if (ambiences.TryGetValue(a, out value))
+        {
+            source.clip = value;
+            source.loop = true;
+            eff.SetActive(true);
+            source.volume = 0;
+            source.PlayDelayed(delay);
+            source.DOFade(1, fade_duration);
+        }
+
     }
 
-    public void StopAmbience(float fade_duration = 1f)
+    /*public void StopAmbience(float fade_duration = 1f)
     {
         if (ambience_player.isPlaying)
         {
             ambience_player.DOFade(0, fade_duration);
         }
-    }
+    }*/
 
     public void StopMusic(float fade_duration = 1f)
     {
@@ -193,7 +219,7 @@ public class SoundControl : MonoBehaviour
         yield return new WaitForSeconds(fade_duration);
     }
 
-    public void ChangeAmbience(Ambience a, Vector3 position, float fade_duration = 2f)
+    /*public void ChangeAmbience(Ambience a, Vector3 position, float fade_duration = 2f)
     {
         StartCoroutine(ChangeAmbienceRoutine(a, position, fade_duration));
     }
@@ -214,5 +240,5 @@ public class SoundControl : MonoBehaviour
             music_player.DOFade(1, fade_duration);
             yield return new WaitForSeconds(fade_duration);
         }
-    }
+    }*/
 }
