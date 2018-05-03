@@ -73,7 +73,7 @@ Material:
     - _Gradient: 1
     - _IfGradient: 1
     - _IfSplash: 0
-    - _Light: 3.5
+    - _Light: 0.03
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -90,5 +90,5 @@ Material:
     - _VertexPower: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.5803921, g: 0.8901961, b: 0.8117647, a: 1}
+    - _Color: {r: 0.36078432, g: 0.35686275, b: 0.4627451, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
