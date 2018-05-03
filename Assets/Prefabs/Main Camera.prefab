@@ -138,7 +138,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070321503346120}
   m_LocalRotation: {x: 0.1714166, y: -0, z: -0, w: 0.9851986}
-  m_LocalPosition: {x: 0, y: 7.4, z: -17.38}
+  m_LocalPosition: {x: 0, y: 8, z: -18.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4113789397385786}
@@ -168,7 +168,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1808714285736302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.9, z: 5.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4464368827553950}
@@ -234,7 +234,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -264,7 +264,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 32
+  field of view: 38
   orthographic: 0
   orthographic size: 5
   m_Depth: 3
@@ -307,7 +307,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 0
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -342,7 +342,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967279
   m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -387,12 +387,12 @@ MonoBehaviour:
   _maxFogLength: 1000
   _maxFogLengthFallOff: 0
   _distanceFallOff: 0
-  _height: 12
-  _baselineHeight: -13.97
+  _height: 40
+  _baselineHeight: -15
   _baselineRelativeToCamera: 0
   _baselineRelativeToCameraDelay: 0
-  _noiseScale: 1.5
-  _alpha: 0.95
+  _noiseScale: 2
+  _alpha: 0.9
   _color: {r: 0.6747405, g: 0.57850343, b: 0.7352941, a: 1}
   _specularColor: {r: 1, g: 1, b: 0.8, a: 1}
   _specularThreshold: 0.6
@@ -417,11 +417,11 @@ MonoBehaviour:
   _fogVoidHeight: 35
   _fogVoidInverted: 0
   _fogAreaCenter: {fileID: 0}
-  _fogAreaFallOff: 1
-  _fogAreaRadius: 53
-  _fogAreaPosition: {x: -5, y: -13.97, z: 125}
+  _fogAreaFallOff: 0.7
+  _fogAreaRadius: 400
+  _fogAreaPosition: {x: -53, y: -15, z: 560}
   _fogAreaDepth: 0
-  _fogAreaHeight: 35
+  _fogAreaHeight: 0
   _pointLights:
   - {fileID: 0}
   - {fileID: 0}
