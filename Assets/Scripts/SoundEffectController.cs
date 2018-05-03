@@ -14,8 +14,11 @@ public class SoundEffectController : MonoBehaviour {
             played = true;
         }
         if(!GetComponent<AudioSource>().isPlaying && played){
-            GetComponent<AudioSource>().clip = null;
-            gameObject.SetActive(false);
+            Turnoff();
         }
 	}
+    void Turnoff(){
+        GetComponent<AudioSource>().clip = null;
+        gameObject.SetActive(false);
+    }
 }
