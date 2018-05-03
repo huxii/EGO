@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 335a027137a29da48a390838735953b7
+timeCreated: 1525227476
+licenseType: Free
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _WaterTex: {fileID: 2800000, guid: 6680d6cacc018754581c6f080303995c, type: 3}
+  - _WaterNoise: {fileID: 2800000, guid: 9733f0d7aec8848f08cae3c95b44d3ae, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
