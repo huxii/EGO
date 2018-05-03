@@ -120,6 +120,7 @@
 
 			Blend SrcAlpha OneMinusSrcAlpha
 			Lighting On
+			ZTest On
 			Tags 
 			{ 
 				"Queue" = "AlphaTest"   // Transparent cant receive shadow

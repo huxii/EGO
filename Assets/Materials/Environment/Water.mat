@@ -117,7 +117,7 @@ Material:
     - _Deg: 55
     - _DepthFactor: 0.52
     - _DepthLevel: 1
-    - _DepthTransparency: 0.798
+    - _DepthTransparency: 0.7
     - _DetailNormalMapScale: 1
     - _DiffuseThreshold: 0.1
     - _DistortStrength: 0.3
@@ -181,7 +181,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlowColor: {r: 1, g: 1, b: 1, a: 0}
     - _Foam: {r: 0.1, g: 0.375, b: 0, a: 0}
-    - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0}
     - _HighlightColor: {r: 0.42962953, g: 0.53676474, b: 0.05130838, a: 0.5}
     - _IntersectionColor: {r: 0.8455882, g: 0.012435133, b: 0.012435133, a: 1}
     - _InvFadeParemeter: {r: 0.2, g: 0.39, b: 0.5, a: 1}

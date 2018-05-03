@@ -73,7 +73,7 @@ Material:
     - _Gradient: 1
     - _IfGradient: 1
     - _IfSplash: 0
-    - _Light: 7
+    - _Light: 3.5
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
