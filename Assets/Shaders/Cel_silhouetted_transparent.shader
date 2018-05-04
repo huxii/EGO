@@ -20,6 +20,8 @@
 
 		Pass 
 		{
+			Cull Off
+
 			Name "SILHOUETTED"
 			Tags 
 			{ 
