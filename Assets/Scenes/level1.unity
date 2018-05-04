@@ -460,6 +460,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4210118328681616, guid: 5a51a1677ab0be14caef9d5226436f31, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a51a1677ab0be14caef9d5226436f31, type: 2}
   m_IsPrefabParent: 0
@@ -932,11 +936,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 733373159}
     m_Modifications:
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: effect_sources.Array.size
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4356229606547220, guid: 028093ce135b48c4eb9db5823480b5fb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -969,16 +968,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: effect_sources.Array.data[7]
-      value: 
-      objectReference: {fileID: 8300000, guid: 3d225b8aa686c4b2382db023803d91eb, type: 3}
-    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
-        type: 2}
-      propertyPath: ambience_sources.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: b21e5595791ea164d97c4856360ff4ea, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028093ce135b48c4eb9db5823480b5fb, type: 2}
   m_IsPrefabParent: 0
@@ -1298,6 +1287,11 @@ Prefab:
       propertyPath: nextPlays.Array.data[0]
       value: 
       objectReference: {fileID: 478464290}
+    - target: {fileID: 114910957852637858, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSFX
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acde680032adc094f8527375489cae94, type: 2}
   m_IsPrefabParent: 0
