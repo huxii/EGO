@@ -43,7 +43,7 @@
 		{
 			Name "Outline"
 			Tags{}
-			//Cull Front
+			Cull Front
 
 			CGPROGRAM
 			#pragma vertex vert
@@ -150,7 +150,7 @@
 		{
 			Name "AmbientLights"
 			LOD 200
-			//Cull Off
+			Cull Off
 
 			//Blend SrcAlpha OneMinusSrcAlpha
 			Lighting On
@@ -609,7 +609,7 @@
 			}
 			ENDCG
         }
-		
+		/*
 		Pass 
 		{
             Name "Caster"
@@ -702,6 +702,7 @@
                 }
             ENDCG
         }
+		*/
 	}
 	//Fallback "Diffuse
 
