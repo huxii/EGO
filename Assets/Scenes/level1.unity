@@ -236,7 +236,7 @@ Prefab:
         type: 2}
       propertyPath: targetObject
       value: 
-      objectReference: {fileID: 195520369}
+      objectReference: {fileID: 0}
     - target: {fileID: 1660363434718526, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -473,19 +473,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4504754606338738, guid: 5a51a1677ab0be14caef9d5226436f31, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a51a1677ab0be14caef9d5226436f31, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &195520368 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4389392877701996, guid: 5a51a1677ab0be14caef9d5226436f31,
-    type: 2}
-  m_PrefabInternal: {fileID: 195520367}
---- !u!1 &195520369 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1248498172896510, guid: 5a51a1677ab0be14caef9d5226436f31,
-    type: 2}
-  m_PrefabInternal: {fileID: 195520367}
 --- !u!4 &244099857 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4572061702290760, guid: 172431302ca7e4180bea8d59d795ccfa,
@@ -534,6 +528,16 @@ GameObject:
   m_PrefabParentObject: {fileID: 1601803130344938, guid: e1266f752a3d078418b4f72e63f43e38,
     type: 2}
   m_PrefabInternal: {fileID: 592075127}
+--- !u!1 &409401379 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1607181226028002, guid: 5a51a1677ab0be14caef9d5226436f31,
+    type: 2}
+  m_PrefabInternal: {fileID: 195520367}
+--- !u!4 &409401385 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4504754606338738, guid: 5a51a1677ab0be14caef9d5226436f31,
+    type: 2}
+  m_PrefabInternal: {fileID: 195520367}
 --- !u!1 &478464290 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1934727368837372, guid: f6bdf8f7937fc6c4f850f6cf1bcb7ed0,
@@ -761,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59998c223c839294b91479505094b23c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 409401379}
   soundManager: {fileID: 831831180}
   videoManager: {fileID: 1624658672}
 --- !u!4 &733373159
@@ -776,7 +780,7 @@ Transform:
   m_Children:
   - {fileID: 831831183}
   - {fileID: 1624658673}
-  - {fileID: 195520368}
+  - {fileID: 409401385}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
