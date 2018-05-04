@@ -55,8 +55,8 @@ public class PlayerControl : MonoBehaviour
             rb.velocity = new Vector3(0, 0, 0);
         }
 
-        anime.SetFloat("speedH", Mathf.Abs(rb.velocity.x + rb.velocity.z));
-        anime.SetFloat("speedV", Mathf.Abs(rb.velocity.y));
+        anime.SetFloat("speedH", Mathf.Abs(rb.velocity.x + rb.velocity.z) - 0.01f);
+		anime.SetFloat("speedV", Mathf.Abs(rb.velocity.y) - 0.02f);
     }
 
     void FixedUpdate()
@@ -150,6 +150,9 @@ public class PlayerControl : MonoBehaviour
                 GameControl.soundController.PlayEffect(skillSFX, transform.position);
                 triggerInteractable.GetComponent<InteractableControl>().BeginInteraction();
                 anime.SetTrigger("skill");
+
+				triggerInteractable.GetComponent<InteractableControl>().EndInteraction();
+				triggerInteractable = null;
             }
         }
         else
