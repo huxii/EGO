@@ -21,6 +21,7 @@ public class PlayerControl : MonoBehaviour
     //MainControl gameController;
     Camera cam;
     Rigidbody rb;
+    Animator anime;
 
     [SerializeField]
     Vector3 targetPos;
@@ -36,6 +37,7 @@ public class PlayerControl : MonoBehaviour
         //gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainControl>();
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody>();
+        anime = GetComponentInChildren<Animator>();
         Vector3 pos = transform.position;
         transform.position = new Vector3(pos.x, heightAxis + GetHeightOnGround(), pos.z);
     }
@@ -52,6 +54,9 @@ public class PlayerControl : MonoBehaviour
         {
             rb.velocity = new Vector3(0, 0, 0);
         }
+
+        anime.SetFloat("speedH", Mathf.Abs(rb.velocity.x + rb.velocity.z));
+        anime.SetFloat("speedV", Mathf.Abs(rb.velocity.y));
     }
 
     void FixedUpdate()
@@ -144,6 +149,7 @@ public class PlayerControl : MonoBehaviour
             {
                 GameControl.soundController.PlayEffect(skillSFX, transform.position);
                 triggerInteractable.GetComponent<InteractableControl>().BeginInteraction();
+                anime.SetTrigger("skill");
             }
         }
         else
