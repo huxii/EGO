@@ -38,7 +38,7 @@
 		{
 			Name "AmbientLights"
 			LOD 200
-			//Cull Off
+			Cull Back
 
 			//Blend SrcAlpha OneMinusSrcAlpha
 			Lighting On
@@ -501,7 +501,7 @@
             Offset 1, 1
            
             Fog {Mode Off}
-            ZWrite On ZTest LEqual Cull Off
+            ZWrite On ZTest LEqual Cull Back
    
             CGPROGRAM
             #pragma vertex vert

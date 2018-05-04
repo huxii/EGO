@@ -424,8 +424,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221867416575044}
   m_LocalRotation: {x: -0, y: 0.9526039, z: -0, w: -0.30421364}
-  m_LocalPosition: {x: 13.44, y: 1.27, z: 37.92}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.3640003, y: -12.198, z: 54.052}
+  m_LocalScale: {x: 0.60000074, y: 0.6, z: 0.60000074}
   m_Children:
   - {fileID: 4346831132124818}
   - {fileID: 4939133173505792}
@@ -934,6 +934,9 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerSFX: 0
+  triggerBGM: 0
+  triggerAmbience: 0
   targetCamera: {fileID: 1525820377686250}
   scannerTarget: {fileID: 1950523725785438}
   scanRange: 15
@@ -956,7 +959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 1136124084935644}
   playerHeight: 2
-  player: {fileID: 0}
+  originCameraCon: {fileID: 0}
 --- !u!114 &114857900912465896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1000,6 +1003,9 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 1104089041196970}
   triggerOutlineWidth: 0.12
+  triggerSFX: 0
+  triggerBGM: 0
+  triggerAmbience: 0
   targetCamera: {fileID: 1525820377686250}
   scannerTarget: {fileID: 1950523725785438}
   scanRange: 10

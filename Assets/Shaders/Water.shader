@@ -143,6 +143,7 @@
 
 			uniform float4 _Color;
 			uniform sampler2D _MainTex;
+			uniform float4 _MainTex_ST;
 			uniform sampler2D _NormalTex;
 			uniform float4 _NormalTex_ST;
 			uniform float _LightIntensity;
@@ -284,7 +285,7 @@
 				float2 foamCoord = float2(foamLine, Rotate(i.posWorld.xz - i.tex.xz * 10, _FoamDegree).x);
 				float4 foamRamp = tex2D(_FoamTex, foamCoord * _FoamTex_ST.xy + _FoamTex_ST.zw);
 
-				float4 tex = tex2D(_MainTex, i.tex.xy);
+				float4 tex = tex2D(_MainTex, TRANSFORM_TEX(i.tex, _MainTex));
 				float2 flowCoord = Rotate(i.tex.xy, _FlowDegree);
 				float4 flowTex = tex2D(_FlowTex, flowCoord * _FlowTex_ST.xy + _FlowTex_ST.zw);
 

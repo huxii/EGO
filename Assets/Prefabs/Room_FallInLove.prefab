@@ -4120,7 +4120,7 @@ MonoBehaviour:
   beginInteractionByButton: 1
   endInteractionByButton: 1
   triggerObject: {fileID: 1352965381639712}
-  triggerOutlineWidth: 0.12
+  triggerOutlineWidth: 0.1
   triggerSFX: 7
   triggerBGM: 1
   triggerAmbience: 0

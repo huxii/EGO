@@ -53,6 +53,8 @@ public class PlayerControl : MonoBehaviour
         {
             transform.position = targetPos;
         }
+
+        transform.forward = rb.velocity.normalized;
     }
 
     void MovementUpdate()
@@ -83,7 +85,6 @@ public class PlayerControl : MonoBehaviour
         targetPos += dir * Time.deltaTime;
 
         rb.velocity = dir;
-        //rb.MovePosition(targetPos);
     }
 
     float GetHeightOnGround()
@@ -161,7 +162,7 @@ public class PlayerControl : MonoBehaviour
         if (other.gameObject.CompareTag("Interactable"))
         {
             other.gameObject.GetComponent<InteractableControl>().InteractionUnready();
-            if (!other.gameObject.GetComponent<InteractableControl>().endInteractionByButton)
+            //if (!other.gameObject.GetComponent<InteractableControl>().endInteractionByButton)
             {
                 other.gameObject.GetComponent<InteractableControl>().EndInteraction();
             }

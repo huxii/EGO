@@ -518,7 +518,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: f93b9666e3838476696393e88edcb078, type: 2}
+  - {fileID: 2100000, guid: 8fc9d862c83870e4a9532208ed0aa3fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -802,7 +802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frozen: 1
   angleRange: {x: 120, y: 85}
-  angleSensitivity: {x: 1000, y: 100}
+  angleSensitivity: {x: 500, y: 100}
   angleSmooth: {x: 3, y: 3}
   dAngle: {x: 0, y: 0}
   solvedAngelRange: {x: 60, y: 63}
@@ -855,7 +855,7 @@ MonoBehaviour:
   beginInteractionByButton: 1
   endInteractionByButton: 1
   triggerObject: {fileID: 1128199754015970}
-  triggerOutlineWidth: 0.5
+  triggerOutlineWidth: 0.15
   triggerSFX: 0
   triggerBGM: 0
   triggerAmbience: 0

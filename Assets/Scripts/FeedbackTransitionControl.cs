@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class FeedbackTransitionControl : TransitionEffectControl
 {
-    
+    float width;
 
 	// Use this for initialization
 	void Start ()
@@ -22,7 +23,7 @@ public class FeedbackTransitionControl : TransitionEffectControl
     {
         foreach (Material mat in mats)
         {
-            mat.SetFloat("_OutlineThickness", data.width);
+            mat.DOFloat(data.width, "_OutlineThickness", 0.5f);
         }
     }
 
@@ -30,7 +31,7 @@ public class FeedbackTransitionControl : TransitionEffectControl
     {
         foreach (Material mat in mats)
         {
-            mat.SetFloat("_OutlineThickness", 0);
+            mat.DOFloat(0, "_OutlineThickness", 0.5f);
         }
     }
 }

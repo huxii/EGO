@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Wall
-  m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8f1b2c2f285aac943933c1cfda657389, type: 3}
   m_ShaderKeywords: _PLAYMODE_OUT _REPLACEMENTSTYLE_KEEP _REPLACEMENTSTYLE_TEXTURE
     _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 4
@@ -100,6 +100,7 @@ Material:
     - _PlayMode: 0
     - _ReplacementInv: 0
     - _ReplacementInvert: 0
+    - _ReplacementInverted: 0
     - _ReplacementStyle: 0
     - _ReplacementTimer: 10
     - _RimBoost: 2
@@ -122,8 +123,8 @@ Material:
     - _EdgeColor: {r: 0.8088235, g: 0.8088235, b: 0.8088235, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReDiffuseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _ReShadowColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReSpecColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ReDiffuseColor: {r: 2.0955882, g: 1.3097427, b: 1.3097427, a: 1}
+    - _ReShadowColor: {r: 1.7955236, g: 1.7955236, b: 1.7955236, a: 1}
+    - _ReSpecColor: {r: 1.367647, g: 1.1765788, b: 1.1765788, a: 1}
     - _ShadowColor: {r: 0.41176468, g: 0.40570933, b: 0.40570933, a: 1}
     - _SpecColor: {r: 0.8088235, g: 0.8028763, b: 0.8028763, a: 1}

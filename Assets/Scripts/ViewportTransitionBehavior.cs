@@ -27,7 +27,10 @@ public class ViewportTransitionBehavior : ViewportControl
         {
             foreach (GameObject hide in hideObjects)
             {
-                hide.GetComponent<TransitionEffectControl>().Play();
+                if (hide.GetComponent<TransitionEffectControl>())
+                {
+                    hide.GetComponent<TransitionEffectControl>().Play();
+                }
             }
         }
         if (showObjects != null)
@@ -35,7 +38,10 @@ public class ViewportTransitionBehavior : ViewportControl
             foreach (GameObject show in showObjects)
             {
                 show.SetActive(true);
-                show.GetComponent<TransitionEffectControl>().Reverse();
+                if (show.GetComponent<TransitionEffectControl>())
+                {
+                    show.GetComponent<TransitionEffectControl>().Reverse();
+                }
             }
         }
 
