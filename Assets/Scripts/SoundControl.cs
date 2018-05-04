@@ -16,7 +16,8 @@ public class SoundControl : MonoBehaviour
         NONE = 0,
         INROOM,
         INVALLEY,
-        AFTERFOG
+        AFTERFOG,
+        EMPTYROOM,
     };
     public enum Ambience
     {
@@ -38,14 +39,15 @@ public class SoundControl : MonoBehaviour
         PICNICNIGHT,
         SPOTLIGHT,
         FIREFLYSKILL1,
-        FIREFLYSKILL2
+        FIREFLYSKILL2,
+        FOGCLEAR,
     };
 
     public Dictionary<BGM,AudioClip> musics = new Dictionary<BGM, AudioClip>();
     public Dictionary<Ambience, AudioClip> ambiences = new Dictionary<Ambience, AudioClip>();
     public Dictionary<SFX, AudioClip> sfxs = new Dictionary<SFX, AudioClip>();
 
-
+    public BGM startBGM = BGM.NONE;
     public float fade_duration = 10.0f;
     public float fade_volume = 0.5f;
 
@@ -85,7 +87,7 @@ public class SoundControl : MonoBehaviour
         }
 
         transform.position = GameObject.Find("Player").transform.position;
-        //music_player.clip = musics[BGM.INROOM];
+        music_player.clip = musics[startBGM];
         music_player.loop = true;
         music_player.Play();
         music_player.DOFade(fade_volume, fade_duration);
@@ -119,7 +121,7 @@ public class SoundControl : MonoBehaviour
         }
 
     }
-    public void PlayMusic(BGM b, Vector3 position, float fade_duration = 1f)
+    public void PlayMusic(BGM b, float fade_duration = 1f)
     {
         if (b == BGM.NONE)
         {
@@ -129,7 +131,7 @@ public class SoundControl : MonoBehaviour
         AudioClip value;
         if (musics.TryGetValue(b, out value))
         {
-            music_player.gameObject.transform.position = position;
+            music_player.gameObject.transform.position = new Vector3(0, 0, 0);
             music_player.clip = value;
             music_player.loop = true;
             music_player.volume = 0;

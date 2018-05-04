@@ -21,7 +21,6 @@ public class FogTransitionControl : TransitionEffectControl
 
             if (fog.alpha <= 0 && fog.fogAreaFallOff <= 0)
             {
-                SoundControl.Instance.ChangeMusic(SoundControl.BGM.AFTERFOG, gameObject.transform.position);
                 End();
             }
         }
