@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
   m_Fog: 1
-  m_FogColor: {r: 0.1067295, g: 0.09083046, b: 0.14705884, a: 0}
+  m_FogColor: {r: 0.09411765, g: 0.105882354, b: 0.22745098, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.025
+  m_FogDensity: 0.018
   m_LinearFogStart: 0
   m_LinearFogEnd: 600
   m_AmbientSkyColor: {r: 0.5808823, g: 0.71464336, b: 1, a: 1}
@@ -1165,17 +1165,17 @@ Prefab:
     - target: {fileID: 114090454908988608, guid: a742912ef1455f04c9c385c80f8a0085,
         type: 2}
       propertyPath: _color.r
-      value: 0.23921569
+      value: 0.41165656
       objectReference: {fileID: 0}
     - target: {fileID: 114090454908988608, guid: a742912ef1455f04c9c385c80f8a0085,
         type: 2}
       propertyPath: _color.g
-      value: 0.20784314
+      value: 0.42053598
       objectReference: {fileID: 0}
     - target: {fileID: 114090454908988608, guid: a742912ef1455f04c9c385c80f8a0085,
         type: 2}
       propertyPath: _color.b
-      value: 0.3019608
+      value: 0.5955882
       objectReference: {fileID: 0}
     - target: {fileID: 114090454908988608, guid: a742912ef1455f04c9c385c80f8a0085,
         type: 2}
@@ -1190,6 +1190,21 @@ Prefab:
         type: 2}
       propertyPath: m_ClearFlags
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114090454908988608, guid: a742912ef1455f04c9c385c80f8a0085,
+        type: 2}
+      propertyPath: _specularColor.r
+      value: 0.36202422
+      objectReference: {fileID: 0}
+    - target: {fileID: 114090454908988608, guid: a742912ef1455f04c9c385c80f8a0085,
+        type: 2}
+      propertyPath: _specularColor.g
+      value: 0.7752773
+      objectReference: {fileID: 0}
+    - target: {fileID: 114090454908988608, guid: a742912ef1455f04c9c385c80f8a0085,
+        type: 2}
+      propertyPath: _specularColor.b
+      value: 0.9117647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a742912ef1455f04c9c385c80f8a0085, type: 2}
