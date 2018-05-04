@@ -236,7 +236,7 @@ Prefab:
         type: 2}
       propertyPath: targetObject
       value: 
-      objectReference: {fileID: 1636446782}
+      objectReference: {fileID: 1692642403}
     - target: {fileID: 1660363434718526, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -738,7 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59998c223c839294b91479505094b23c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1636446782}
+  player: {fileID: 1692642403}
   soundManager: {fileID: 831831180}
   videoManager: {fileID: 1624658672}
 --- !u!4 &733373159
@@ -753,7 +753,7 @@ Transform:
   m_Children:
   - {fileID: 831831183}
   - {fileID: 1624658673}
-  - {fileID: 1636446783}
+  - {fileID: 1692642409}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1091,28 +1091,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4566290125024320, guid: fa58b34961e62094a84248316568c383,
     type: 2}
   m_PrefabInternal: {fileID: 128971378}
---- !u!1 &1636446782 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1322983103195546, guid: 5a51a1677ab0be14caef9d5226436f31,
-    type: 2}
-  m_PrefabInternal: {fileID: 195520367}
---- !u!4 &1636446783 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4996319500056610, guid: 5a51a1677ab0be14caef9d5226436f31,
-    type: 2}
-  m_PrefabInternal: {fileID: 195520367}
---- !u!114 &1636446789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1636446782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be33d7b257424ed468635a42056f210e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aperture: 0.1
 --- !u!1001 &1647967085
 Prefab:
   m_ObjectHideFlags: 0
@@ -1209,6 +1187,16 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a742912ef1455f04c9c385c80f8a0085, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1692642403 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1078239652423168, guid: 5a51a1677ab0be14caef9d5226436f31,
+    type: 2}
+  m_PrefabInternal: {fileID: 195520367}
+--- !u!4 &1692642409 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4210118328681616, guid: 5a51a1677ab0be14caef9d5226436f31,
+    type: 2}
+  m_PrefabInternal: {fileID: 195520367}
 --- !u!4 &1693189336 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4577472421877076, guid: a5378c391e3ab4b13a0404f730a940a5,
