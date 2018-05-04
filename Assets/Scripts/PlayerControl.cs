@@ -53,6 +53,8 @@ public class PlayerControl : MonoBehaviour
         {
             transform.position = targetPos;
         }
+
+        transform.forward = rb.velocity.normalized;
     }
 
     void MovementUpdate()
@@ -83,7 +85,6 @@ public class PlayerControl : MonoBehaviour
         targetPos += dir * Time.deltaTime;
 
         rb.velocity = dir;
-        //rb.MovePosition(targetPos);
     }
 
     float GetHeightOnGround()
