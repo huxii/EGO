@@ -15,6 +15,7 @@ public class PlayerControl : MonoBehaviour
 
     [Header("Sounds")]
     public SoundControl.SFX skillSFX = SoundControl.SFX.NONE;
+    public SoundControl.SFX failSFX = SoundControl.SFX.NONE;
 
     [Header("Debug")]
     //MainControl gameController;
@@ -137,6 +138,7 @@ public class PlayerControl : MonoBehaviour
         {
             if (triggerInteractable == null)
             {
+                GameControl.soundController.PlayEffect(failSFX, transform.position);
             }
             else
             {

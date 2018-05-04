@@ -25,6 +25,15 @@ public class CameraControl : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+    }
+
+    void Awake()
+    {
+        if (targetObject == null)
+        {
+            targetObject = GameObject.FindGameObjectWithTag("Player");
+        }
+
         transform.eulerAngles = new Vector3(angleZero.y, 0, 0);
         curTargetPos = targetObject.transform.position;
         curAngle = angleZero;
@@ -32,7 +41,7 @@ public class CameraControl : MonoBehaviour
         curTargetDistance = distance;
 
         PositionUpdate();
-        RotationUpdate(); 
+        RotationUpdate();
     }
 
     // Update is called once per frame

@@ -32,7 +32,7 @@ public class InteractableControl : MonoBehaviour
 
     protected void SoundUpdate()
     {
-        GameControl.soundController.PlayMusic(triggerBGM, transform.position);
+        GameControl.soundController.PlayMusic(triggerBGM);
         GameControl.soundController.PlayAmbience(triggerAmbience, transform.position);
     }
 

@@ -23,11 +23,17 @@ public class TransitionData
 
 public class TransitionEffectControl : MonoBehaviour
 {
+    [Header("Transition Settings")]
     public float speed = 1;
     public bool destroyWhenFinish = true;
     public List<GameObject> nextPlays;
     public List<GameObject> hideTargets;
     public List<GameObject> showTargets;
+
+    [Header("Sounds")]
+    public SoundControl.SFX endSFX = SoundControl.SFX.NONE;
+    public SoundControl.BGM afterBGM = SoundControl.BGM.NONE;
+    public SoundControl.Ambience afterAmbience = SoundControl.Ambience.NONE;
 
     protected List<Material> mats;
     protected bool start = false;
@@ -119,6 +125,10 @@ public class TransitionEffectControl : MonoBehaviour
 
         start = false;
         done = true;
+
+        GameControl.soundController.PlayEffect(endSFX, transform.position);
+        GameControl.soundController.PlayMusic(afterBGM);
+        GameControl.soundController.PlayAmbience(afterAmbience, transform.position);
     }
 
     public bool Done()

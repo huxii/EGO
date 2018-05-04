@@ -393,8 +393,8 @@ MonoBehaviour:
   _baselineRelativeToCameraDelay: 0
   _noiseScale: 2
   _alpha: 0.9
-  _color: {r: 0.6747405, g: 0.57850343, b: 0.7352941, a: 1}
-  _specularColor: {r: 1, g: 1, b: 0.8, a: 1}
+  _color: {r: 0.41165656, g: 0.42053598, b: 0.5955882, a: 1}
+  _specularColor: {r: 0.36202422, g: 0.7752773, b: 0.9117647, a: 1}
   _specularThreshold: 0.6
   _specularIntensity: 0.259
   _lightDirection: {x: -1, y: 0, z: -1}
@@ -520,6 +520,9 @@ MonoBehaviour:
   hideTargets:
   - {fileID: 0}
   showTargets: []
+  endSFX: 6
+  afterBGM: 3
+  afterAmbience: 0
 --- !u!114 &114246798688771728
 MonoBehaviour:
   m_ObjectHideFlags: 1
