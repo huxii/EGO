@@ -13,6 +13,9 @@ public class PlayerControl : MonoBehaviour
     public float heightStandard = 4f;
     public float heightRange = 2f;
 
+    [Header("Sounds")]
+    public SoundControl.SFX skillSFX = SoundControl.SFX.NONE;
+
     [Header("Debug")]
     //MainControl gameController;
     Camera cam;
@@ -23,6 +26,8 @@ public class PlayerControl : MonoBehaviour
     float heightAxis;
     private float heightCD = 0;
     private int heightState = 0;
+
+    GameObject triggerInteractable = null;
 
     // Use this for initialization
     void Start()
@@ -40,6 +45,7 @@ public class PlayerControl : MonoBehaviour
         if (!frozen)
         {
             MovementUpdate();
+            InteractionUpdate();
         }
         else
         {
@@ -121,6 +127,31 @@ public class PlayerControl : MonoBehaviour
         return v;
     }
 
+    void InteractionUpdate()
+    {
+        if (triggerInteractable == null)
+        {
+            return;
+        }
+        if (Input.GetButtonDown("Interact"))
+        {
+            if (triggerInteractable == null)
+            {
+            }
+            else
+            {
+                GameControl.soundController.PlayEffect(skillSFX, transform.position);
+                triggerInteractable.GetComponent<InteractableControl>().BeginInteraction();
+            }
+        }
+        else
+        if (Input.GetButtonDown("Exit"))
+        {
+            triggerInteractable.GetComponent<InteractableControl>().EndInteraction();
+        }
+    }
+
+    /*
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Interactable"))
@@ -139,11 +170,13 @@ public class PlayerControl : MonoBehaviour
             }
         }
     }
+    */
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Interactable"))
         {
+            triggerInteractable = other.gameObject;
             other.gameObject.GetComponent<InteractableControl>().InteractionReady();
             if (!other.gameObject.GetComponent<InteractableControl>().beginInteractionByButton)
             {
@@ -161,6 +194,11 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Interactable"))
         {
+            //if (triggerInteractable == other.gameObject)
+            {
+                triggerInteractable = null;
+            }
+            
             other.gameObject.GetComponent<InteractableControl>().InteractionUnready();
             //if (!other.gameObject.GetComponent<InteractableControl>().endInteractionByButton)
             {

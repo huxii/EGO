@@ -14,7 +14,6 @@ public class InteractableControl : MonoBehaviour
     public float triggerOutlineWidth = 0.5f;
 
     [Header("Trigger Sound")]
-    public SoundControl.SFX triggerSFX = SoundControl.SFX.NONE;
     public SoundControl.BGM triggerBGM = SoundControl.BGM.NONE;
     public SoundControl.Ambience triggerAmbience = SoundControl.Ambience.NONE;
 
@@ -33,7 +32,6 @@ public class InteractableControl : MonoBehaviour
 
     protected void SoundUpdate()
     {
-        GameControl.soundController.PlayEffect(triggerSFX, transform.position);
         GameControl.soundController.PlayMusic(triggerBGM, transform.position);
         GameControl.soundController.PlayAmbience(triggerAmbience, transform.position);
     }
