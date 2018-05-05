@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class TutorialController : MonoBehaviour {
     public Image tutorialImage;
@@ -36,29 +37,40 @@ public class TutorialController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (Time.timeSinceLevelLoad > 5 && Time.timeSinceLevelLoad<5.1f) {
+            ChangeState(State.WAITFLYUP);
+        }
 	}
 
     public void ChangeState(State s) {
         currentState = s;
         switch (currentState) {
             case State.NONE:
-                tutorialImage.sprite = icons[(int)currentState];
-                tutorialImage.transform.position = targetPos[(int)currentState].position;
+                ChangeIcon(currentState);
                 break;
             case State.WAITFLYUP:
-                tutorialImage.sprite = icons[(int)currentState];
-                tutorialImage.transform.position = targetPos[(int)currentState].position;
+                ChangeIcon(currentState);
                 break;
             case State.WAITINTERACT:
-                tutorialImage.sprite = icons[(int)currentState];
-                tutorialImage.transform.position = targetPos[(int)currentState].position;
+                ChangeIcon(currentState);
                 break;
             case State.WAITMOVECAMERA:
-                tutorialImage.sprite = icons[(int)currentState];
-                tutorialImage.transform.position = targetPos[(int)currentState].position;
+                ChangeIcon(currentState);
                 break;
 
         }
+    }
+    public void ChangeIcon(State s) {
+        StartCoroutine(ChangeIconRoutine(s));
+    }
+
+    public IEnumerator ChangeIconRoutine(State s, float fade_duration = 1f) {
+        tutorialImage.DOFade(0, fade_duration);
+        yield return new WaitForSeconds(fade_duration*3);
+        tutorialImage.sprite = icons[(int)s];
+        tutorialImage.transform.position = targetPos[(int)s].position;
+        tutorialImage.DOFade(1, fade_duration);
+        Debug.Log(tutorialImage.color);
+        yield return new WaitForSeconds(fade_duration);
     }
 }
