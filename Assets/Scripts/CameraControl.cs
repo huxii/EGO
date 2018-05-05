@@ -92,10 +92,10 @@ public class CameraControl : MonoBehaviour
             if (keyboardX > 0.01f)
             {
                 dAngleX -= (0.5f * Input.GetAxis("Mouse X") * Mathf.Abs(Input.GetAxis("Mouse X")) + 0.5f) * Time.deltaTime * angleSensitivity.x;
-            } else if(keyboardX < -0.01f)
+            } else if (keyboardX < -0.01f)
             {
-                dAngleX -= (0.5f * Input.GetAxis("Mouse X") * Mathf.Abs(Input.GetAxis("Mouse X")) - 0.5f) * Time.deltaTime * angleSensitivity.x; 
-            } else{
+                dAngleX -= (0.5f * Input.GetAxis("Mouse X") * Mathf.Abs(Input.GetAxis("Mouse X")) - 0.5f) * Time.deltaTime * angleSensitivity.x;
+            } else {
                 dAngleX -= 0;
             }
             if (keyboardY > 0.01f)
@@ -133,8 +133,14 @@ public class CameraControl : MonoBehaviour
             }
         }
 
-        dAngleX = Clamp(dAngleX, -angleRange.x, angleRange.x);
-        dAngleY = Clamp(dAngleY, -angleRange.y, angleRange.y);
+        if (angleRange.x < 180)
+        {
+            dAngleX = Clamp(dAngleX, -angleRange.x, angleRange.x);
+        }
+        if (angleRange.y < 180)
+        {
+            dAngleY = Clamp(dAngleY, -angleRange.y, angleRange.y);
+        }
 
         dAngle = new Vector2(dAngleX, dAngleY);
 
