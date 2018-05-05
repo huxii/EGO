@@ -9,6 +9,10 @@ public class ViewportTransitionBehavior : ViewportControl
     public List<GameObject> hideObjects;
     public List<GameObject> showObjects;
 
+    [Header("Trigger Sound")]
+    public SoundControl.BGMSettings triggerBGM;
+    public List<SoundControl.AmbienceSettings> triggerAmbience;
+
     // Use this for initialization
     void Start()
     {
@@ -46,6 +50,12 @@ public class ViewportTransitionBehavior : ViewportControl
         }
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>().ResetHeight();
+
+        GameControl.soundController.PlayMusic(triggerBGM.id);
+        foreach (SoundControl.AmbienceSettings am in triggerAmbience)
+        {
+            GameControl.soundController.PlayAmbience(am.id, transform.position);
+        }
     }
 
     public override void SwitchBackViewport()

@@ -19,6 +19,7 @@ public class CameraControl : MonoBehaviour
 
     Vector3 curTargetPos;
     Vector2 curAngle;
+    Vector2Int rounds;
     float curDistance;
     float curTargetDistance;
 
@@ -39,6 +40,7 @@ public class CameraControl : MonoBehaviour
         curAngle = angleZero;
         curDistance = distance;
         curTargetDistance = distance;
+        rounds = new Vector2Int(0, 0);
 
         PositionUpdate();
         RotationUpdate();
@@ -60,8 +62,8 @@ public class CameraControl : MonoBehaviour
         curTargetPos = Vector3.Lerp(curTargetPos, targetObject.transform.position, Time.deltaTime * 5f);
         curDistance = Mathf.Lerp(curDistance, curTargetDistance, Time.deltaTime);
 
-        float targetAngleX = angleZero.x + dAngle.x;
-        float targetAngleY = angleZero.y + dAngle.y;
+        float targetAngleX = angleZero.x + dAngle.x + rounds.x * 360f;
+        float targetAngleY = angleZero.y + dAngle.y + rounds.y * 360f;
         curAngle = new Vector2(
             Mathf.Lerp(curAngle.x, targetAngleX, Time.deltaTime * angleSmooth.x),
             Mathf.Lerp(curAngle.y, targetAngleY, Time.deltaTime * angleSmooth.y)
@@ -137,9 +139,46 @@ public class CameraControl : MonoBehaviour
         {
             dAngleX = Clamp(dAngleX, -angleRange.x, angleRange.x);
         }
+        else
+        {
+            dAngleX += rounds.x * 360f;
+            rounds.x = (int)(dAngleX / 360f);
+            dAngleX -= rounds.x * 360f;
+
+            if (dAngleX > 180f)
+            {
+                ++rounds.x;
+                dAngleX -= 360f;
+            }
+            else
+            if (dAngleX < -180f)
+            {
+                --rounds.x;
+                dAngleX += 360f;
+            }
+        }
+
         if (angleRange.y < 180)
         {
             dAngleY = Clamp(dAngleY, -angleRange.y, angleRange.y);
+        }
+        else
+        {
+            dAngleY += rounds.y * 360f;
+            rounds.y = (int)(dAngleY / 360f);
+            dAngleY -= rounds.y * 360f;
+
+            if (dAngleY > 180f)
+            {
+                ++rounds.y;
+                dAngleY -= 360f;
+            }
+            else
+            if (dAngleY < -180f)
+            {
+                --rounds.y;
+                dAngleY += 360f;
+            }
         }
 
         dAngle = new Vector2(dAngleX, dAngleY);
