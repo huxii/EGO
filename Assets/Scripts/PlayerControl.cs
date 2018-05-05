@@ -80,7 +80,6 @@ public class PlayerControl : MonoBehaviour
         transform.forward += Time.deltaTime * 5 * (targetOrien - transform.forward);
 
         float cameraDis = (Camera.main.transform.position - transform.position).magnitude;
-        Debug.Log(cameraDis);
         if (cameraDis < lightFalloffDistance)
         {
             light.intensity = cameraDis / lightFalloffDistance;
@@ -173,8 +172,8 @@ public class PlayerControl : MonoBehaviour
                 triggerInteractable.GetComponent<InteractableControl>().BeginInteraction();
                 anime.SetTrigger("skill");
 
-                triggerInteractable.GetComponent<InteractableControl>().EndInteraction();
-                triggerInteractable = null;
+                //triggerInteractable.GetComponent<InteractableControl>().EndInteraction();
+                //triggerInteractable = null;
             }
         }
         else
