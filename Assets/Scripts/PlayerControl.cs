@@ -61,7 +61,7 @@ public class PlayerControl : MonoBehaviour
         }
 
         anime.SetFloat("speedH", Mathf.Abs(rb.velocity.x + rb.velocity.z) - 0.01f);
-        anime.SetFloat("speedV", Mathf.Abs(rb.velocity.y) - 0.1f);
+        anime.SetFloat("speedV", Mathf.Max(Mathf.Abs(rb.velocity.y) - 0.1f, 0) * Mathf.Sign(rb.velocity.y));
     }
 
     void FixedUpdate()
