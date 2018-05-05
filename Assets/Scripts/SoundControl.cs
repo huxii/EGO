@@ -121,7 +121,7 @@ public class SoundControl : MonoBehaviour
         }
 
     }
-    public void PlayMusic(BGM b, float fade_duration = 1f)
+    public void PlayMusic(BGM b, float fade_duration = 5f)
     {
         if (b == BGM.NONE)
         {

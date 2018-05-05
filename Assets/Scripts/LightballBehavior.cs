@@ -10,10 +10,12 @@ public class LightballBehavior : InteractableControl
     public float scale = 5.0f;
     public float lifespan = 1.0f;
     public float fleeForce = 4.0f;
+    public GameObject targetLocation;
     float xOrg, yOrg, zOrg;
     Vector3 position;
     Vector3 fleeDir;
     float timer;
+    float startTime= 0;
     float fadeOutSpeed;
     float opacity = 1.0f;
     bool fadeOutTrigger = false;
@@ -39,14 +41,15 @@ public class LightballBehavior : InteractableControl
         timer += Time.deltaTime;
         if(fadeOutTrigger){
             FadeOut();
-            float x = Mathf.PerlinNoise(xOrg + timer * freq*20, 0) - 0.5f;
-            float y = Mathf.PerlinNoise(yOrg + timer * freq*20, 0) - 0.5f;
-            float z = (-fleeDir.x * x  - fleeDir.y * y)/fleeDir.z;
+            //float x = Mathf.PerlinNoise(xOrg + timer * freq*20, 0) - 0.5f;
+            //float y = Mathf.PerlinNoise(yOrg + timer * freq*20, 0) - 0.5f;
+            //float z = (-fleeDir.x * x  - fleeDir.y * y)/fleeDir.z;
 
-            Vector3 velocity = new Vector3(x, y, z).normalized * 3;
+            startTime += Time.deltaTime;
+            Vector3 velocity = (Random.onUnitSphere-fleeDir)*amp;
 
             //Debug.Log(velocity.x*fleeDir.x + velocity.y*fleeDir.y + velocity.z * fleeDir.z);
-            rb.velocity = rb.velocity + velocity ;
+            if(startTime<0.4f) rb.velocity = rb.velocity + velocity ;
 
             //rb.velocity = velocity;
 
@@ -55,6 +58,7 @@ public class LightballBehavior : InteractableControl
             float x = Mathf.PerlinNoise(xOrg + timer * freq, 0) - 0.5f;
             float y = Mathf.PerlinNoise(yOrg + timer * freq, 0) - 0.5f;
             float z = Mathf.PerlinNoise(zOrg + timer * freq, 0) - 0.5f;
+            startTime = 0;
             Vector3 velocity = new Vector3(x, y, z) * amp;
             rb.velocity = velocity;
         }
@@ -72,7 +76,7 @@ public class LightballBehavior : InteractableControl
     }
 
     void Flee(){
-        Vector3 dir = transform.position - GameObject.FindWithTag("Player").transform.position;
+        Vector3 dir =  transform.position- targetLocation.transform.position;
         dir.Normalize();
         fleeDir = dir;
         Debug.Log(dir);
