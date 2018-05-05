@@ -743,6 +743,7 @@ GameObject:
   - component: {fileID: 4024171624270464}
   - component: {fileID: 33190809899118336}
   - component: {fileID: 23686656111906584}
+  - component: {fileID: 65422218109843588}
   m_Layer: 0
   m_Name: Box_Open
   m_TagString: Untagged
@@ -5272,6 +5273,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65422218109843588
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1542026387548572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8929753, y: 0.96309924, z: 1.3573802}
+  m_Center: {x: -0.012430042, y: 0.48154962, z: 0.17869079}
 --- !u!65 &65435613886748840
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -5489,7 +5502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 0}
   distance: 9
-  angleZero: {x: -90, y: 40}
+  angleZero: {x: -90, y: 23}
   angleRange: {x: 180, y: 50}
   angleSensitivity: {x: 40, y: 15}
   angleSmooth: {x: 3, y: 3}
