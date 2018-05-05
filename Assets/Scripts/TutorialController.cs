@@ -37,9 +37,6 @@ public class TutorialController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Time.timeSinceLevelLoad > 5 && Time.timeSinceLevelLoad<5.1f) {
-            ChangeState(State.WAITFLYUP);
-        }
 	}
 
     public void ChangeState(State s) {
@@ -70,7 +67,6 @@ public class TutorialController : MonoBehaviour {
         tutorialImage.sprite = icons[(int)s];
         tutorialImage.transform.position = targetPos[(int)s].position;
         tutorialImage.DOFade(1, fade_duration);
-        Debug.Log(tutorialImage.color);
         yield return new WaitForSeconds(fade_duration);
     }
 }
