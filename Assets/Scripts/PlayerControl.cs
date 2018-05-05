@@ -17,6 +17,10 @@ public class PlayerControl : MonoBehaviour
     public SoundControl.SFX skillSFX = SoundControl.SFX.NONE;
     public SoundControl.SFX failSFX = SoundControl.SFX.NONE;
 
+    [Header("Lights")]
+    public Light light;
+    public float lightFalloffDistance = 10f;
+
     [Header("Debug")]
     //MainControl gameController;
     Camera cam;
@@ -25,6 +29,7 @@ public class PlayerControl : MonoBehaviour
 
     [SerializeField]
     Vector3 targetPos;
+    Vector3 targetOrien;
     float heightAxis;
     private float heightCD = 0;
     private int heightState = 0;
@@ -56,7 +61,7 @@ public class PlayerControl : MonoBehaviour
         }
 
         anime.SetFloat("speedH", Mathf.Abs(rb.velocity.x + rb.velocity.z) - 0.01f);
-		anime.SetFloat("speedV", Mathf.Abs(rb.velocity.y) - 0.02f);
+        anime.SetFloat("speedV", Mathf.Abs(rb.velocity.y) - 0.1f);
     }
 
     void FixedUpdate()
@@ -66,7 +71,24 @@ public class PlayerControl : MonoBehaviour
             transform.position = targetPos;
         }
 
-        transform.forward = rb.velocity.normalized;
+        if (rb.velocity.magnitude > 0.1f)
+        {
+            Vector3 face = rb.velocity.normalized;
+            face.y = 0;
+            targetOrien = face;
+        }
+        transform.forward += Time.deltaTime * 5 * (targetOrien - transform.forward);
+
+        float cameraDis = (Camera.main.transform.position - transform.position).magnitude;
+        Debug.Log(cameraDis);
+        if (cameraDis < lightFalloffDistance)
+        {
+            light.intensity = cameraDis / lightFalloffDistance;
+        }
+        else
+        {
+            light.intensity = 1f;
+        }
     }
 
     void MovementUpdate()
@@ -87,7 +109,7 @@ public class PlayerControl : MonoBehaviour
         }
         else
         {
-            
+
         }
 
         Vector3 vertical = CameraForwardDirection() * Input.GetAxis("Vertical") * moveSpeed;
@@ -151,8 +173,8 @@ public class PlayerControl : MonoBehaviour
                 triggerInteractable.GetComponent<InteractableControl>().BeginInteraction();
                 anime.SetTrigger("skill");
 
-				triggerInteractable.GetComponent<InteractableControl>().EndInteraction();
-				triggerInteractable = null;
+                triggerInteractable.GetComponent<InteractableControl>().EndInteraction();
+                triggerInteractable = null;
             }
         }
         else
@@ -209,7 +231,7 @@ public class PlayerControl : MonoBehaviour
             {
                 triggerInteractable = null;
             }
-            
+
             other.gameObject.GetComponent<InteractableControl>().InteractionUnready();
             //if (!other.gameObject.GetComponent<InteractableControl>().endInteractionByButton)
             {

@@ -279,8 +279,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 4, z: 3}
-  m_Center: {x: 2.27, y: 0.04, z: -0.12}
+  m_Size: {x: 2.5, y: 4, z: 3}
+  m_Center: {x: 2.15, y: 0.04, z: -0.12}
 --- !u!65 &65276296228854150
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -356,6 +356,8 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerBGM: 0
+  triggerAmbience: 0
   targetCamera: {fileID: 1326627881061184}
   scannerTarget: {fileID: 0}
   scanRange: 15
@@ -378,7 +380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 1319484283922330}
   playerHeight: 1.5
-  player: {fileID: 0}
+  originCameraCon: {fileID: 0}
   nextPlays:
   - {fileID: 0}
   triggerTarget: {fileID: 1303370327676464}
@@ -420,7 +422,9 @@ MonoBehaviour:
   beginInteractionByButton: 1
   endInteractionByButton: 1
   triggerObject: {fileID: 0}
-  triggerOutlineWidth: 0.12
+  triggerOutlineWidth: 0.05
+  triggerBGM: 2
+  triggerAmbience: 0
   targetCamera: {fileID: 1326627881061184}
   scannerTarget: {fileID: 0}
   scanRange: 30

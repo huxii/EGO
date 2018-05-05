@@ -15,6 +15,11 @@ public class GameControl : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+
         playerController = player.GetComponent<PlayerControl>();
         soundController = soundManager.GetComponent<SoundControl>();
         videoController = videoManager.GetComponent<VideoControl>();
