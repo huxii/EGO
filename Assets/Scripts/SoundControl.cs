@@ -6,6 +6,27 @@ using System;
 
 public class SoundControl : MonoBehaviour
 {
+    [System.Serializable]
+    public class BGMSettings
+    {
+        public BGM id = BGM.NONE;
+        public float delay = 0f;
+    };
+    [System.Serializable]
+    public class SFXSettings
+    {
+        public SFX id = SFX.NONE;
+        public float delay = 0f;
+    };
+    [System.Serializable]
+    public class AmbienceSettings
+    {
+        public Ambience id = Ambience.NONE;
+        public float delay = 0f;
+        public bool isFalloff = false;
+        public bool isLooping = false;
+    };
+
     public AudioSource music_player;
     public AudioClip[] music_sources;
     public AudioClip[] effect_sources;

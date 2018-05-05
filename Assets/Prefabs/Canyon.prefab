@@ -15307,7 +15307,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 2
   fleeForce: 10
   targetLocation: {fileID: 1959287843667896}
 --- !u!114 &114015211578373364
@@ -15330,7 +15330,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 2
   fleeForce: 10
   targetLocation: {fileID: 1959287843667896}
 --- !u!114 &114018246072001196
@@ -15433,7 +15433,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 2
   fleeForce: 10
   targetLocation: {fileID: 1959287843667896}
 --- !u!114 &114153354352140978
@@ -15494,7 +15494,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 3
   fleeForce: 10
   targetLocation: {fileID: 1283891547153840}
 --- !u!114 &114208153002209328
@@ -15548,7 +15548,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 2
   fleeForce: 10
   targetLocation: {fileID: 1959287843667896}
 --- !u!114 &114285741376347222
@@ -15613,7 +15613,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 2.8
   fleeForce: 10
   targetLocation: {fileID: 1305658846137936}
 --- !u!114 &114367752755646194
@@ -15655,7 +15655,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 2
   fleeForce: 10
   targetLocation: {fileID: 1959287843667896}
 --- !u!114 &114391012694959914
@@ -15678,7 +15678,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 2
   fleeForce: 10
   targetLocation: {fileID: 1959287843667896}
 --- !u!114 &114420589823998276
@@ -15701,7 +15701,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 3
   fleeForce: 10
   targetLocation: {fileID: 1283891547153840}
 --- !u!114 &114468337591438854
@@ -15738,7 +15738,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 2.8
   fleeForce: 10
   targetLocation: {fileID: 1305658846137936}
 --- !u!114 &114483051552800612
@@ -15761,7 +15761,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 2.8
   fleeForce: 10
   targetLocation: {fileID: 1305658846137936}
 --- !u!114 &114489082297535494
@@ -15784,7 +15784,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 2.8
   fleeForce: 10
   targetLocation: {fileID: 1305658846137936}
 --- !u!114 &114493432334654648
@@ -15859,7 +15859,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 3
   fleeForce: 10
   targetLocation: {fileID: 1283891547153840}
 --- !u!114 &114530934243831178
@@ -16028,7 +16028,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 3
   fleeForce: 10
   targetLocation: {fileID: 1283891547153840}
 --- !u!114 &114689812966633206
@@ -16051,7 +16051,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 3
   fleeForce: 10
   targetLocation: {fileID: 1283891547153840}
 --- !u!114 &114724137866363578
@@ -16074,7 +16074,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 3
   fleeForce: 10
   targetLocation: {fileID: 1283891547153840}
 --- !u!114 &114764272421178874
@@ -16097,7 +16097,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 2.8
   fleeForce: 10
   targetLocation: {fileID: 1305658846137936}
 --- !u!114 &114787486918108018
@@ -16145,7 +16145,7 @@ MonoBehaviour:
   freq: 0.3
   amp: 3
   scale: 10
-  lifespan: 1
+  lifespan: 2.8
   fleeForce: 10
   targetLocation: {fileID: 1305658846137936}
 --- !u!114 &114835964190863422
