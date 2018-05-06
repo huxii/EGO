@@ -6,8 +6,6 @@ using DG.Tweening;
 
 public class TutorialControl : MonoBehaviour {
     public SpriteRenderer[] tutorialImages;
-    public Sprite[] icons;
-    public Transform[] targetPos;
     public GameObject obj;
     public enum State {
         WAITMOVE = 0,
