@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 
 public class TutorialController : MonoBehaviour {
-    public Image[] tutorialImages;
+    public SpriteRenderer[] tutorialImages;
     public Sprite[] icons;
     public Transform[] targetPos;
     public static TutorialController Instance;
@@ -34,7 +34,7 @@ public class TutorialController : MonoBehaviour {
     }
     void Start () {
         currentState = State.WAITMOVE;
-        foreach (Image i in tutorialImages) {
+        foreach (SpriteRenderer i in tutorialImages) {
             i.color = new Color(1,1,1,0);
         }
 
@@ -57,12 +57,14 @@ public class TutorialController : MonoBehaviour {
                 {
                     tutorialImages[6].DOFade(1, 0.5f);
                 }
-                if (Input.GetButton("low") && tutorialImages[6].color == Color.white) {
+                if (Input.GetButton("low") && tutorialImages[6].color != Color.white) {
                     tutorialImages[7].DOFade(1, 0.5f);
                 }
-                if (tutorialImages[6].color == Color.white &&
-                   tutorialImages[7].color == Color.white) {
+                if ((Input.GetButton("low") && tutorialImages[6].color == Color.white) ||
+                   (Input.GetButton("raise") && tutorialImages[7].color == Color.white)) {
                     tutorialImages[8].DOFade(1, 0.5f);
+                }
+                if(tutorialImages[8].color == Color.white){
                     currentState = State.WAITINTERACT;
                     ChangeIcon(currentState);
                 }
@@ -96,6 +98,9 @@ public class TutorialController : MonoBehaviour {
             case State.WAITINTERACT:
                 if (obj.activeInHierarchy) {
                     tutorialImages[10].DOFade(1, 0.5f);
+                }
+                if (tutorialImages[10].color == Color.white)
+                {
                     currentState = State.WAITMOVECAMERA;
                     ChangeIcon(currentState);
                 }
@@ -109,11 +114,19 @@ public class TutorialController : MonoBehaviour {
         StartCoroutine(ChangeIconRoutine(s));
     }
 
-    public IEnumerator ChangeIconRoutine(State s, float fade_duration = 1f) {
-        foreach (Image i in tutorialImages)
+    public IEnumerator ChangeIconRoutine(State s, float fade_duration = 1f, float pause_time = 1f) {
+        foreach (SpriteRenderer i in tutorialImages)
         { i.DOFade(0, fade_duration); }
-        yield return new WaitForSeconds(fade_duration*2);
+        yield return new WaitForSeconds(fade_duration);
+        yield return new WaitForSeconds(pause_time);
         tutorialImages[(int)s].DOFade(1, fade_duration);
         yield return new WaitForSeconds(fade_duration);
+    }
+
+    public IEnumerator Pause() {
+        yield return new WaitForSeconds(1);
+    }
+    public void PauseCor() {
+        StartCoroutine(Pause());
     }
 }
