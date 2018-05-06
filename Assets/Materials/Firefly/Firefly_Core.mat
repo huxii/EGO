@@ -82,4 +82,4 @@ Material:
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShadowColor: {r: 3, g: 2.793103, b: 0, a: 1}
     - _SilhouettedColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor: {r: 3, g: 2.7882352, b: 0.7058823, a: 1}
+    - _SpecColor: {r: 3, g: 2.788235, b: 0.7058823, a: 1}
