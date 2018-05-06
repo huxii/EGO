@@ -496,6 +496,11 @@ Prefab:
       propertyPath: triggerAmbience.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerAmbience.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4332545196942198, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -657,6 +662,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114986981667021372, guid: 026aa8183c5a10544a013db1b83b1564,
+        type: 2}
+      propertyPath: music_sources.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4708512079213212, guid: 026aa8183c5a10544a013db1b83b1564, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -689,16 +699,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 223756538759105286, guid: 026aa8183c5a10544a013db1b83b1564,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1152931544}
-    - target: {fileID: 114410416858385308, guid: 026aa8183c5a10544a013db1b83b1564,
-        type: 2}
-      propertyPath: obj
-      value: 
-      objectReference: {fileID: 656036353}
     - target: {fileID: 114603366134410934, guid: 026aa8183c5a10544a013db1b83b1564,
         type: 2}
       propertyPath: targetCamera
@@ -709,6 +709,21 @@ Prefab:
       propertyPath: blackImage
       value: 
       objectReference: {fileID: 1753398368}
+    - target: {fileID: 114410416858385308, guid: 026aa8183c5a10544a013db1b83b1564,
+        type: 2}
+      propertyPath: obj
+      value: 
+      objectReference: {fileID: 656036353}
+    - target: {fileID: 223756538759105286, guid: 026aa8183c5a10544a013db1b83b1564,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1152931544}
+    - target: {fileID: 114986981667021372, guid: 026aa8183c5a10544a013db1b83b1564,
+        type: 2}
+      propertyPath: music_sources.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: c9ba6175106714c85abf06b96cb76900, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 026aa8183c5a10544a013db1b83b1564, type: 2}
   m_IsPrefabParent: 0
@@ -838,6 +853,10 @@ Prefab:
       propertyPath: videoManager
       value: 
       objectReference: {fileID: 1624658672}
+    - target: {fileID: 1428406442437426, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
   m_IsPrefabParent: 0

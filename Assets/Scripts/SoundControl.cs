@@ -138,6 +138,7 @@ public class SoundControl : MonoBehaviour
         {
             source.clip = value;
             source.loop = false;
+            
             eff.SetActive(true);
             source.PlayDelayed(delay);
         }
@@ -180,7 +181,7 @@ public class SoundControl : MonoBehaviour
             ambience_player.Play();
             ambience_player.DOFade(fade_volume, fade_duration);
     }*/
-    public void PlayAmbience(Ambience a, Vector3 position, float delay = 0f, float fade_duration = 5f)
+    public void PlayAmbience(Ambience a, Vector3 position, bool looping = true, bool spread = true,float delay = 0f, float fade_duration = 5f)
     {
         if (a == Ambience.NONE)
         {
@@ -189,13 +190,14 @@ public class SoundControl : MonoBehaviour
 
         AudioClip value;
         GameObject eff = NewPooledObject.current.GetSoundEffect();
-
+        int i = spread ? 1 : 0;
         eff.transform.position = position;
         AudioSource source = eff.GetComponent<AudioSource>();
         if (ambiences.TryGetValue(a, out value))
         {
             source.clip = value;
-            source.loop = true;
+            source.loop = looping;
+            source.spread = 360 * i;
             eff.SetActive(true);
             source.volume = 0;
             source.PlayDelayed(delay);

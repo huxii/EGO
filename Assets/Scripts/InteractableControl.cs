@@ -35,7 +35,7 @@ public class InteractableControl : MonoBehaviour
         GameControl.soundController.ChangeMusic(triggerBGM.id);
         foreach (SoundControl.AmbienceSettings am in triggerAmbience)
         {
-            GameControl.soundController.PlayAmbience(am.id, transform.position);
+            GameControl.soundController.PlayAmbience(am.id, transform.position,am.isLooping, am.isFalloff);
         }
     }
 

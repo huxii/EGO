@@ -481,7 +481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1900643429628934
 GameObject:
   m_ObjectHideFlags: 1
@@ -1298,7 +1298,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1327,7 +1327,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 0.903
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1339,7 +1339,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1729,6 +1729,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e985dde3dd31e433b94ae7bd595bec9f, type: 3}
   - {fileID: 8300000, guid: ee57e89d769eb40aba4a0307d3b2cdc9, type: 3}
   - {fileID: 8300000, guid: 66d52678fa2dd4fdebf2be75c90883f2, type: 3}
+  - {fileID: 8300000, guid: c9ba6175106714c85abf06b96cb76900, type: 3}
   - {fileID: 8300000, guid: c9ba6175106714c85abf06b96cb76900, type: 3}
   effect_sources:
   - {fileID: 0}
