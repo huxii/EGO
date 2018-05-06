@@ -32,7 +32,7 @@ public class InteractableControl : MonoBehaviour
 
     protected void SoundUpdate()
     {
-        GameControl.soundController.PlayMusic(triggerBGM.id);
+        GameControl.soundController.ChangeMusic(triggerBGM.id);
         foreach (SoundControl.AmbienceSettings am in triggerAmbience)
         {
             GameControl.soundController.PlayAmbience(am.id, transform.position);

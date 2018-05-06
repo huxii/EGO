@@ -39,6 +39,7 @@ public class SoundControl : MonoBehaviour
         INVALLEY,
         AFTERFOG,
         EMPTYROOM,
+        ROOMAPART
     };
     public enum Ambience
     {
@@ -219,12 +220,12 @@ public class SoundControl : MonoBehaviour
         }
     }
 
-    public void ChangeMusic(BGM b, Vector3 position, float fade_duration = 1f)
+    public void ChangeMusic(BGM b, float fade_duration = 1f)
     {
-        StartCoroutine(ChangeMusicRoutine(b, position, fade_duration));
+        StartCoroutine(ChangeMusicRoutine(b, fade_duration));
     }
 
-    public IEnumerator ChangeMusicRoutine(BGM b, Vector3 position, float fade_duration = 2f)         // This will fade out whatever is currently playing, and fade in whatever string you pass it, if there's a music file with that file name in music_sources
+    public IEnumerator ChangeMusicRoutine(BGM b, float fade_duration = 3f)         // This will fade out whatever is currently playing, and fade in whatever string you pass it, if there's a music file with that file name in music_sources
     {
         music_player.DOFade(0, fade_duration);
         yield return new WaitForSeconds(fade_duration);

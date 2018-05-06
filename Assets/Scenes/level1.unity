@@ -646,6 +646,11 @@ Prefab:
       propertyPath: triggerAmbience.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerAmbience.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4332545196942198, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -782,6 +787,16 @@ Prefab:
       propertyPath: triggerAmbience.Array.data[0].isLooping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerBGM.id
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerAmbience.Array.data[0].id
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
   m_IsPrefabParent: 0
@@ -792,6 +807,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 733373159}
     m_Modifications:
+    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
+        type: 2}
+      propertyPath: music_sources.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4356229606547220, guid: 028093ce135b48c4eb9db5823480b5fb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -824,6 +844,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114251446838628454, guid: 028093ce135b48c4eb9db5823480b5fb,
+        type: 2}
+      propertyPath: music_sources.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: c9ba6175106714c85abf06b96cb76900, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028093ce135b48c4eb9db5823480b5fb, type: 2}
   m_IsPrefabParent: 0
@@ -1201,6 +1226,11 @@ Prefab:
         type: 2}
       propertyPath: triggerSFX
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114910957852637858, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerBGM.id
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acde680032adc094f8527375489cae94, type: 2}
