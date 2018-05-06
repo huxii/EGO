@@ -7,10 +7,12 @@ public class GameControl : MonoBehaviour
     public GameObject player;
     public GameObject soundManager;
     public GameObject videoManager;
+    public GameObject tutorialManager;
 
     public static PlayerControl playerController;
     public static SoundControl soundController;
     public static VideoControl videoController;
+    public static TutorialControl TutorialController;
 
     // Use this for initialization
     void Awake()
@@ -23,6 +25,7 @@ public class GameControl : MonoBehaviour
         playerController = player.GetComponent<PlayerControl>();
         soundController = soundManager.GetComponent<SoundControl>();
         videoController = videoManager.GetComponent<VideoControl>();
+        TutorialController = tutorialManager.GetComponent<TutorialControl>();
     }
 	
 	// Update is called once per frame
