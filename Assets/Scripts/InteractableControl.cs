@@ -35,8 +35,9 @@ public class InteractableControl : MonoBehaviour
         GameControl.soundController.ChangeMusic(triggerBGM.id, triggerBGM.delay);
         foreach (SoundControl.AmbienceSettings am in triggerAmbience)
         {
-            GameControl.soundController.PlayAmbience(am.id, am.position.position,am.isLooping, am.isFalloff,am.delay);
+            GameControl.soundController.PlayAmbience(am.id, am.targetTrans.position,am.isLooping, am.isFalloff,am.delay);
         }
+        
     }
 
     public void InteractionReady()
