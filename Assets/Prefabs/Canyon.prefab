@@ -1815,7 +1815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1431136913963180
 GameObject:
   m_ObjectHideFlags: 1
@@ -16116,7 +16116,7 @@ MonoBehaviour:
   triggerObject: {fileID: 1740945172279318}
   triggerOutlineWidth: 0.12
   triggerBGM: 0
-  triggerAmbience: 0
+  triggerAmbience: 6
   targetCamera: {fileID: 1280980238219588}
   scannerTarget: {fileID: 1283891547153840}
   scanRange: 20
