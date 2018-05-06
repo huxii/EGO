@@ -25,6 +25,7 @@ public class SoundControl : MonoBehaviour
         public float delay = 0f;
         public bool isFalloff = false;
         public bool isLooping = false;
+        public Transform position;
     };
 
     public AudioSource music_player;
