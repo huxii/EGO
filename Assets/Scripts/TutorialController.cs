@@ -5,15 +5,17 @@ using UnityEngine.UI;
 using DG.Tweening;
 
 public class TutorialController : MonoBehaviour {
-    public Image tutorialImage;
+    public Image[] tutorialImages;
     public Sprite[] icons;
     public Transform[] targetPos;
     public static TutorialController Instance;
+    public GameObject obj;
     public enum State {
-        NONE = 0,
-        WAITFLYUP,
-        WAITINTERACT,
-        WAITMOVECAMERA,
+        WAITMOVE = 0,
+        WAITFLY = 5,
+        WAITINTERACT = 9,
+        WAITMOVECAMERA = 11,
+        NONE = 100
     };
 
     State currentState;
@@ -31,28 +33,74 @@ public class TutorialController : MonoBehaviour {
         }
     }
     void Start () {
-        currentState = State.NONE;
-        tutorialImage.sprite = icons[(int)currentState];
+        currentState = State.WAITMOVE;
+        foreach (Image i in tutorialImages) {
+            i.color = new Color(1,1,1,0);
+        }
+
+        ChangeIcon(currentState);
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	}
+        ChangeState();
+        Debug.Log(currentState);
+    }
 
-    public void ChangeState(State s) {
-        currentState = s;
+    public void ChangeState() {
         switch (currentState) {
             case State.NONE:
-                ChangeIcon(currentState);
                 break;
-            case State.WAITFLYUP:
-                ChangeIcon(currentState);
+            case State.WAITFLY:
+                if (Input.GetButton("raise") && tutorialImages[7].color != Color.white)
+                {
+                    tutorialImages[6].DOFade(1, 0.5f);
+                }
+                if (Input.GetButton("low") && tutorialImages[6].color == Color.white) {
+                    tutorialImages[7].DOFade(1, 0.5f);
+                }
+                if (tutorialImages[6].color == Color.white &&
+                   tutorialImages[7].color == Color.white) {
+                    tutorialImages[8].DOFade(1, 0.5f);
+                    currentState = State.WAITINTERACT;
+                    ChangeIcon(currentState);
+                }
+                break;
+            case State.WAITMOVE:
+                if (tutorialImages[0].color == Color.white){ 
+                if (Input.GetAxis("Vertical") > 0) {
+                        tutorialImages[1].DOFade(1, 0.5f);
+                    }
+                if (Input.GetAxis("Vertical") < 0)
+                {
+                    tutorialImages[2].DOFade(1, 0.5f);
+                }
+                if (Input.GetAxis("Horizontal") < 0)
+                {
+                    tutorialImages[3].DOFade(1, 0.5f);
+                }
+                if (Input.GetAxis("Horizontal") > 0)
+                {
+                    tutorialImages[4].DOFade(1, 0.5f);
+                }
+                if (tutorialImages[1].color == Color.white &&
+                    tutorialImages[2].color == Color.white &&
+                    tutorialImages[3].color == Color.white &&
+                    tutorialImages[4].color == Color.white)
+                {
+                    currentState = State.WAITFLY;
+                    ChangeIcon(currentState);
+                } }
                 break;
             case State.WAITINTERACT:
-                ChangeIcon(currentState);
+                if (obj.activeInHierarchy) {
+                    tutorialImages[10].DOFade(1, 0.5f);
+                    currentState = State.WAITMOVECAMERA;
+                    ChangeIcon(currentState);
+                }
                 break;
             case State.WAITMOVECAMERA:
-                ChangeIcon(currentState);
                 break;
 
         }
@@ -62,11 +110,10 @@ public class TutorialController : MonoBehaviour {
     }
 
     public IEnumerator ChangeIconRoutine(State s, float fade_duration = 1f) {
-        tutorialImage.DOFade(0, fade_duration);
-        yield return new WaitForSeconds(fade_duration*3);
-        tutorialImage.sprite = icons[(int)s];
-        tutorialImage.transform.position = targetPos[(int)s].position;
-        tutorialImage.DOFade(1, fade_duration);
+        foreach (Image i in tutorialImages)
+        { i.DOFade(0, fade_duration); }
+        yield return new WaitForSeconds(fade_duration*2);
+        tutorialImages[(int)s].DOFade(1, fade_duration);
         yield return new WaitForSeconds(fade_duration);
     }
 }
