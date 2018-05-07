@@ -206,21 +206,23 @@ public class CameraControl : MonoBehaviour
         {
             if (d > distance)
             {
-                curTargetDistance = distance - 0.05f;
+                curTargetDistance = distance - 0.1f;
             }
             else
             {
-                curTargetDistance = d - 0.05f;
+                curTargetDistance = d - 0.1f;
             }
+
+            if (curTargetDistance < 0)
+            {
+                curTargetDistance = 0;
+            }
+
+            curDistance = curTargetDistance;
         }
         else
         {
-            curTargetDistance = distance - 0.05f;
-        }
-
-        if (curTargetDistance < 0)
-        {
-            curTargetDistance = 0;
+            curTargetDistance = distance - 0.1f;
         }
     }
 
