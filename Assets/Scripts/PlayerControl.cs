@@ -13,9 +13,10 @@ public class PlayerControl : MonoBehaviour
     public float heightStandard = 4f;
     public float heightRange = 2f;
 
-    [Header("Sounds")]
-    //public SoundControl.SFX skillSFX = SoundControl.SFX.NONE;
-    //public SoundControl.SFX failSFX = SoundControl.SFX.NONE;
+    [Header("Trigger Sound")]
+    public List<SoundSettings> triggerSoundList;
+    SoundSettings skillSFX;
+    SoundSettings failSFX;
 
     [Header("Lights")]
     public Light light;
@@ -45,6 +46,9 @@ public class PlayerControl : MonoBehaviour
         anime = GetComponentInChildren<Animator>();
         Vector3 pos = transform.position;
         transform.position = new Vector3(pos.x, heightAxis + GetHeightOnGround(), pos.z);
+        skillSFX = triggerSoundList[1];
+        failSFX = triggerSoundList[0];
+        ;
     }
 
     // Update is called once per frame
@@ -164,10 +168,12 @@ public class PlayerControl : MonoBehaviour
         {
             if (triggerInteractable == null)
             {
+                GameControl.soundController.Play(failSFX);
                 //GameControl.soundController.PlayEffect(failSFX, transform.position);
             }
             else
             {
+                GameControl.soundController.Play(skillSFX);
                 //GameControl.soundController.PlayEffect(skillSFX, transform.position);
                 triggerInteractable.GetComponent<InteractableControl>().BeginInteraction();
                 anime.SetTrigger("skill");

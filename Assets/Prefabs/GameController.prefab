@@ -481,7 +481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1900643429628934
 GameObject:
   m_ObjectHideFlags: 1
@@ -1625,6 +1625,27 @@ MonoBehaviour:
   rotationSpeed: 1
   heightStandard: 2
   heightRange: 2
+  triggerSoundList:
+  - id: 18
+    type: 3
+    pos: {fileID: 4541816999306474}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 0
+    isFalloff: 0
+    isDestroiedAfterFinish: 1
+    isStandOut: 0
+    spatialBlend: 0
+  - id: 17
+    type: 3
+    pos: {fileID: 4541816999306474}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 0
+    isFalloff: 0
+    isDestroiedAfterFinish: 1
+    isStandOut: 0
+    spatialBlend: 0
   light: {fileID: 108400156286701508}
   lightFalloffDistance: 10
   targetPos: {x: 0, y: 0, z: 0}

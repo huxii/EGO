@@ -34,6 +34,8 @@ public class Sounds
         AudioSource source = eff.GetComponent<AudioSource>();
         SoundEffectController sec = eff.GetComponent<SoundEffectController>();
         source.clip = audio;
+        Debug.Log(audio.name);
+        Debug.Log(source.clip.name);
         source.loop = settings.isLooping;
         source.volume = 0;
         source.spread = i * 360;
@@ -44,17 +46,19 @@ public class Sounds
         if (settings.isStandOut) {
             //fade other sounds
         }
+        eff.SetActive(true);
         source.PlayDelayed(settings.delay);
         source.DOFade(1, settings.fadeDuration);
     }
 
-    protected AudioClip audio;
-    protected AudioSource musicPlayer;
+    public AudioClip audio;
 }
 
 public class BGM : Sounds
 {
-    public BGM(AudioClip clip) { }
+    public BGM(AudioClip clip) {
+        audio = clip;
+    }
 
     public override void Play(SoundSettings settings)
     {
@@ -75,10 +79,14 @@ public class BGM : Sounds
 
 public class Ambience : Sounds
 {
-    public Ambience(AudioClip clip) { }
+    public Ambience(AudioClip clip) {
+        audio = clip;
+    }
 }
 
 public class SFX : Sounds
 {
-    public SFX(AudioClip clip) { }
+    public SFX(AudioClip clip) {
+        audio = clip;
+    }
 }

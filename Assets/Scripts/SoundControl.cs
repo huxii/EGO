@@ -52,8 +52,7 @@ public class ClipSetting
 public class SoundControl : MonoBehaviour
 {
     public List<ClipSetting> clipList;
-
-    Dictionary<SoundEnum, Sounds> soundsList;
+    Dictionary<SoundEnum, Sounds> soundsList = new Dictionary<SoundEnum, Sounds>();
 
     void Start()
     {
@@ -62,10 +61,6 @@ public class SoundControl : MonoBehaviour
             Sounds newSound;
             switch (c.type)
             {
-                case ClipType.NONE:
-                    continue;
-                default:
-                    break;
                 case ClipType.BGM:
                     newSound = new BGM(c.clip);
                     soundsList.Add(c.id, newSound);
@@ -77,6 +72,8 @@ public class SoundControl : MonoBehaviour
                 case ClipType.SFX:
                     newSound = new SFX(c.clip);
                     soundsList.Add(c.id, newSound);
+                    break;
+                case ClipType.NONE:
                     break;
             }            
         }
