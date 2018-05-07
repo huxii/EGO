@@ -14,8 +14,7 @@ public class InteractableControl : MonoBehaviour
     public float triggerOutlineWidth = 0.5f;
 
     [Header("Trigger Sound")]
-    public SoundControl.BGMSettings triggerBGM;
-    public List<SoundControl.AmbienceSettings> triggerAmbience;
+    public List<SoundSettings> triggerSoundList;
 
     List<Material> mats;
 
@@ -32,10 +31,9 @@ public class InteractableControl : MonoBehaviour
 
     protected void SoundUpdate()
     {
-        GameControl.soundController.ChangeMusic(triggerBGM.id, triggerBGM.delay);
-        foreach (SoundControl.AmbienceSettings am in triggerAmbience)
+        foreach (SoundSettings sound in triggerSoundList)
         {
-            GameControl.soundController.PlayAmbience(am.id, am.targetTrans.position,am.isLooping, am.isFalloff,am.delay);
+            GameControl.soundController.Play(sound);
         }
         
     }

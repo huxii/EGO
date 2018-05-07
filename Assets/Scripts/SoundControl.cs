@@ -4,35 +4,97 @@ using UnityEngine;
 using DG.Tweening;
 using System;
 
+
+public enum ClipType
+{
+    NONE,
+    BGM,
+    AMBIENCE,
+    SFX
+}
+
+// all the enums in one list
+public enum SoundEnum
+{
+    NONE,
+    // BGM
+
+    // Ambience
+
+    // SFX
+}
+
+[Serializable]
+public class ClipSetting
+{
+    public AudioClip clip = null;
+    public SoundEnum id = SoundEnum.NONE;
+    public ClipType type = ClipType.NONE;
+}
+
 public class SoundControl : MonoBehaviour
 {
-    [System.Serializable]
-    public class BGMSettings
-    {
-        public BGM id = BGM.NONE;
-        public float delay = 0f;
-    };
-    [System.Serializable]
-    public class SFXSettings
-    {
-        public SFX id = SFX.NONE;
-        public float delay = 0f;
-    };
-    [System.Serializable]
-    public class AmbienceSettings
-    {
-        public Ambience id = Ambience.NONE;
-        public float delay = 0f;
-        public bool isFalloff = false;
-        public bool isLooping = false;
-        public Transform targetTrans;
-    };
+    public List<ClipSetting> clipList;
 
-    public AudioSource music_player;
-    public AudioClip[] music_sources;
-    public AudioClip[] effect_sources;
-    public AudioClip[] ambience_sources;
+    Dictionary<SoundEnum, Sounds> soundsList;
 
+    public static SoundControl Instance;
+
+    // Use this for initialization
+    private void Awake()
+    {
+        
+        if (Instance)
+        {
+            DestroyImmediate(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(transform.gameObject);
+            Instance = this;
+        }
+
+
+    }
+    void Start()
+    {
+        foreach (ClipSetting c in clipList)
+        {
+            Sounds newSound;
+            switch (c.type)
+            {
+                case ClipType.NONE:
+                    continue;
+                default:
+                    break;
+                case ClipType.BGM:
+                    newSound = new BGM(c.clip);
+                    soundsList.Add(c.id, newSound);
+                    break;
+                case ClipType.AMBIENCE:
+                    newSound = new Ambience(c.clip);
+                    soundsList.Add(c.id, newSound);
+                    break;
+                case ClipType.SFX:
+                    newSound = new SFX(c.clip);
+                    soundsList.Add(c.id, newSound);
+                    break;
+            }            
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void Play(SoundSettings settings)
+    {
+        soundsList[settings.id].Play(settings);
+    }
+
+    /*
     public enum BGM
     {
         NONE = 0,
@@ -74,54 +136,6 @@ public class SoundControl : MonoBehaviour
     public float fade_duration = 10.0f;
     public float fade_volume = 0.5f;
 
-    public static SoundControl Instance;
-
-    // Use this for initialization
-    private void Awake()
-    {
-        
-        if (Instance)
-        {
-            DestroyImmediate(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(transform.gameObject);
-            Instance = this;
-        }
-
-
-    }
-    void Start()
-    {
-        foreach (BGM bgm in Enum.GetValues(typeof(BGM)))
-        {
-            musics.Add(bgm, music_sources[(int)bgm]);
-        }
-
-        foreach (Ambience amb in Enum.GetValues(typeof(Ambience)))
-        {
-            ambiences.Add(amb, ambience_sources[(int)amb]);
-        }
-
-        foreach (SFX sfx in Enum.GetValues(typeof(SFX)))
-        {
-            sfxs.Add(sfx, effect_sources[(int)sfx]);
-        }
-
-        transform.position = GameObject.Find("Player").transform.position;
-        music_player.clip = musics[startBGM];
-        music_player.loop = true;
-        music_player.Play();
-        music_player.DOFade(fade_volume, fade_duration);
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     //could be replaced by pooling
     public void PlayEffect(SFX s,Vector3 position,float delay = 0f)
     {
@@ -164,24 +178,6 @@ public class SoundControl : MonoBehaviour
         music_player.DOFade(fade_volume, fade_duration);
     }
 
-    /*public void PlayAmbience(Ambience a, Vector3 position, float fade_duration = 1f)
-    {
-        if (a == Ambience.NONE)
-        {
-            return;
-        }
-
-        AudioClip value;
-        if (ambiences.TryGetValue(a,out value))
-            {
-                ambience_player.gameObject.transform.position = position;
-                ambience_player.clip = value;
-                ambience_player.loop = true;
-                ambience_player.volume = 0;
-            }
-            ambience_player.Play();
-            ambience_player.DOFade(fade_volume, fade_duration);
-    }*/
     public void PlayAmbience(Ambience a, Vector3 position, bool looping = true, bool spread = true,float delay = 0f, float fade_duration = 5f)
     {
         if (a == Ambience.NONE)
@@ -206,14 +202,6 @@ public class SoundControl : MonoBehaviour
         }
 
     }
-
-    /*public void StopAmbience(float fade_duration = 1f)
-    {
-        if (ambience_player.isPlaying)
-        {
-            ambience_player.DOFade(0, fade_duration);
-        }
-    }*/
 
     public void StopMusic(float fade_duration = 1f)
     {
@@ -245,27 +233,5 @@ public class SoundControl : MonoBehaviour
         music_player.DOFade(1, fade_duration);
         yield return new WaitForSeconds(fade_duration);
     }
-
-    /*public void ChangeAmbience(Ambience a, Vector3 position, float fade_duration = 2f)
-    {
-        StartCoroutine(ChangeAmbienceRoutine(a, position, fade_duration));
-    }
-
-    public IEnumerator ChangeAmbienceRoutine(Ambience a, Vector3 position, float fade_duration = 2f)         // This will fade out whatever is currently playing, and fade in whatever string you pass it, if there's a music file with that file name in music_sources
-    {
-        ambience_player.DOFade(0, fade_duration);
-        yield return new WaitForSeconds(fade_duration);
-        foreach (AudioClip clip in ambience_sources)
-        {
-            AudioClip value;
-            if (ambiences.TryGetValue(a, out value))
-            {
-                ambience_player.clip = value;
-                ambience_player.loop = true;
-                ambience_player.Play();
-            }
-            music_player.DOFade(1, fade_duration);
-            yield return new WaitForSeconds(fade_duration);
-        }
-    }*/
+*/
 }
