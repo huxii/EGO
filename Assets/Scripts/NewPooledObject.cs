@@ -7,7 +7,8 @@ public class NewPooledObject : MonoBehaviour {
     public GameObject effect_player;
     public int pooledamount = 10;
     public bool WillGrow = true;
-    List<GameObject> Effects;
+    public List<GameObject> Effects;
+
 	// Use this for initialization
 	private void Awake()
 	{

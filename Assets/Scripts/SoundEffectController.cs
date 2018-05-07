@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class SoundEffectController : MonoBehaviour {
     bool played = false;
-	// Use this for initialization
-	void Start () {
+    public bool needTurnOff = false;
+    public ClipType c = ClipType.NONE;
+    public AudioSource source;
+    // Use this for initialization
+    void Start () {
+        source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if(GetComponent<AudioSource>().isPlaying){
-            played = true;
-        }
-        if(!GetComponent<AudioSource>().isPlaying && played){
-            Turnoff();
+        if (needTurnOff) {
+            if (played && !source.isPlaying)
+            {
+                gameObject.SetActive(false);
+            }
+            else if (source.isPlaying) {
+                played = true;
+            }
         }
 	}
-    void Turnoff(){
-        GetComponent<AudioSource>().clip = null;
+    public void TurnOff() {
         gameObject.SetActive(false);
     }
 }

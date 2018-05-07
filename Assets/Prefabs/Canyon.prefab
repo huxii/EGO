@@ -15302,8 +15302,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -15325,8 +15324,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -15377,8 +15375,7 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 1108130172163476}
   triggerOutlineWidth: 0.15
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   targetControl: {fileID: 1108130172163476}
 --- !u!114 &114069379997299218
 MonoBehaviour:
@@ -15428,8 +15425,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -15452,9 +15448,6 @@ MonoBehaviour:
   nextPlays: []
   hideTargets: []
   showTargets: []
-  endSFX: 0
-  afterBGM: 0
-  afterAmbience: 0
 --- !u!114 &114191856959253078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15471,9 +15464,6 @@ MonoBehaviour:
   nextPlays: []
   hideTargets: []
   showTargets: []
-  endSFX: 0
-  afterBGM: 0
-  afterAmbience: 0
 --- !u!114 &114196851537518796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15489,8 +15479,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -15513,9 +15502,6 @@ MonoBehaviour:
   nextPlays: []
   hideTargets: []
   showTargets: []
-  endSFX: 0
-  afterBGM: 0
-  afterAmbience: 0
 --- !u!114 &114228406039643064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15543,8 +15529,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -15567,9 +15552,6 @@ MonoBehaviour:
   nextPlays: []
   hideTargets: []
   showTargets: []
-  endSFX: 0
-  afterBGM: 0
-  afterAmbience: 0
 --- !u!114 &114312285707125712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15608,8 +15590,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -15632,9 +15613,6 @@ MonoBehaviour:
   nextPlays: []
   hideTargets: []
   showTargets: []
-  endSFX: 0
-  afterBGM: 0
-  afterAmbience: 0
 --- !u!114 &114379266842601842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15650,8 +15628,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -15673,8 +15650,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -15696,8 +15672,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -15733,8 +15708,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -15756,8 +15730,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -15779,8 +15752,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -15802,8 +15774,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   targetCamera: {fileID: 1103152321368382}
   scannerTarget: {fileID: 1959287843667896}
   scanRange: 15
@@ -15828,8 +15799,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   targetCamera: {fileID: 1280980238219588}
   scannerTarget: {fileID: 1283891547153840}
   scanRange: 15
@@ -15854,8 +15824,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -15908,9 +15877,6 @@ MonoBehaviour:
   nextPlays: []
   hideTargets: []
   showTargets: []
-  endSFX: 0
-  afterBGM: 0
-  afterAmbience: 0
 --- !u!114 &114553707684729826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16023,8 +15989,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -16046,8 +16011,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -16069,8 +16033,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -16092,8 +16055,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -16115,8 +16077,7 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 1740945172279318}
   triggerOutlineWidth: 0.12
-  triggerBGM: 0
-  triggerAmbience: 6
+  triggerSoundList: []
   targetCamera: {fileID: 1280980238219588}
   scannerTarget: {fileID: 1283891547153840}
   scanRange: 20
@@ -16140,8 +16101,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   freq: 0.3
   amp: 3
   scale: 10
@@ -16205,9 +16165,6 @@ MonoBehaviour:
   nextPlays: []
   hideTargets: []
   showTargets: []
-  endSFX: 0
-  afterBGM: 0
-  afterAmbience: 0
 --- !u!114 &114921567085739706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16223,8 +16180,7 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 1027314918145346}
   triggerOutlineWidth: 0.12
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   targetCamera: {fileID: 1103152321368382}
   scannerTarget: {fileID: 1959287843667896}
   scanRange: 10

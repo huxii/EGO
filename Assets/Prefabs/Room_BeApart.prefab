@@ -905,7 +905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1664695557348156
 GameObject:
   m_ObjectHideFlags: 1
@@ -5534,6 +5534,27 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  triggerSoundList:
+  - id: 2
+    type: 1
+    pos: {fileID: 4626266351829014}
+    delay: 0
+    fadeDuration: 3
+    isLooping: 1
+    isFalloff: 0
+    isDestroiedAfterFinish: 0
+    isStandOut: 0
+    spatialBlend: 0
+  - id: 9
+    type: 2
+    pos: {fileID: 0}
+    delay: 0
+    fadeDuration: 3
+    isLooping: 1
+    isFalloff: 1
+    isDestroiedAfterFinish: 0
+    isStandOut: 0
+    spatialBlend: 0.9
 --- !u!114 &114261356326435030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5587,9 +5608,6 @@ MonoBehaviour:
   nextPlays: []
   hideTargets: []
   showTargets: []
-  endSFX: 0
-  afterBGM: 0
-  afterAmbience: 0
   reverse: 0
 --- !u!114 &114477062625789770
 MonoBehaviour:
@@ -5616,9 +5634,6 @@ MonoBehaviour:
   - {fileID: 1217179046905448}
   - {fileID: 1266792417830528}
   - {fileID: 0}
-  endSFX: 0
-  afterBGM: 0
-  afterAmbience: 0
 --- !u!114 &114566874565235648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5663,8 +5678,7 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   targetCamera: {fileID: 1153229366255278}
   scannerTarget: {fileID: 1660363434718526}
   scanRange: 15
@@ -5700,8 +5714,27 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 1451729303010256}
   triggerOutlineWidth: 0.05
-  triggerBGM: 2
-  triggerAmbience: 0
+  triggerSoundList:
+  - id: 5
+    type: 1
+    pos: {fileID: 4717739986268070}
+    delay: 0
+    fadeDuration: 3
+    isLooping: 1
+    isFalloff: 0
+    isDestroiedAfterFinish: 0
+    isStandOut: 0
+    spatialBlend: 0
+  - id: 6
+    type: 2
+    pos: {fileID: 4717739986268070}
+    delay: 1
+    fadeDuration: 3
+    isLooping: 1
+    isFalloff: 1
+    isDestroiedAfterFinish: 0
+    isStandOut: 0
+    spatialBlend: 0.9
   targetCamera: {fileID: 1153229366255278}
   scannerTarget: {fileID: 1776324620099452}
   scanRange: 30
@@ -5726,9 +5759,6 @@ MonoBehaviour:
   nextPlays: []
   hideTargets: []
   showTargets: []
-  endSFX: 0
-  afterBGM: 0
-  afterAmbience: 0
 --- !u!124 &124245801980132318
 Behaviour:
   m_ObjectHideFlags: 1
