@@ -87,6 +87,17 @@ public class SoundControl : MonoBehaviour
 
     public void Play(SoundSettings settings)
     {
-        soundsList[settings.id].Play(settings);
+        Sounds sound = soundsList[settings.id];
+        if (sound.type == ClipType.BGM)
+        {
+            foreach (SoundEnum s in soundsList.Keys)
+            {
+                if (soundsList[s].type == ClipType.BGM)
+                {
+                    soundsList[s].Stop();
+                }
+            }
+        }
+        sound.Play(settings);
     }
 }

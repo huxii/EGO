@@ -9,6 +9,7 @@ public class SoundSettings
 {
     public SoundEnum id;
     public ClipType type = ClipType.NONE;
+    public bool isTurnOn = true;
     public Transform pos;
     public float delay = 0f;
     public float fadeDuration = 3f;
@@ -23,6 +24,12 @@ public class SoundSettings
 // Sounds doesnt inherent monobehavior, which means its more like a C++ class instead of the class we usually use in Unity
 public class Sounds
 {
+    public Sounds(AudioClip clip)
+    {
+        audio = clip;
+        curSound = null;
+    }
+
     public virtual void Play(SoundSettings settings)
     {
         if (settings.id == SoundEnum.NONE)
@@ -30,63 +37,60 @@ public class Sounds
             return;
         }
         int i = settings.isFalloff ? 1 : 0;
-        GameObject eff = NewPooledObject.current.GetSoundEffect();
-        AudioSource source = eff.GetComponent<AudioSource>();
-        SoundEffectController sec = eff.GetComponent<SoundEffectController>();
-        source.clip = audio;
-        Debug.Log(audio.name);
-        Debug.Log(source.clip.name);
-        source.loop = settings.isLooping;
-        source.volume = 0;
-        source.spread = i * 360;
-        source.spatialBlend = settings.spatialBlend;
-        eff.transform.position = settings.pos.position;
-        sec.c = settings.type;
-        sec.needTurnOff = settings.isDestroiedAfterFinish;
-        if (settings.isStandOut) {
+        GameObject newSound = NewPooledObject.current.GetSoundEffect();
+        AudioSource newSource = newSound.GetComponent<AudioSource>();
+        newSource.clip = audio;
+        newSource.loop = settings.isLooping;
+        newSource.volume = 0;
+        newSource.spread = i * 360;
+        newSource.spatialBlend = settings.spatialBlend;
+        newSound.transform.position = settings.pos.position;
+
+        if (settings.isStandOut)
+        {
             //fade other sounds
         }
-        eff.SetActive(true);
-        source.PlayDelayed(settings.delay);
-        source.DOFade(1, settings.fadeDuration);
+        newSound.SetActive(true);
+        newSource.PlayDelayed(settings.delay);
+        newSource.DOFade(1, settings.fadeDuration);
+        curSound = newSound;
     }
 
-    public AudioClip audio;
+    public virtual void Stop()
+    {
+        if (!curSound)
+        {
+            return;
+        }
+        curSound.GetComponent<AudioSource>().DOFade(0, 3f).OnComplete(() => { curSound.SetActive(false); });
+        curSound = null;
+    }
+
+    public ClipType type = ClipType.NONE;
+    public GameObject curSound;
+    protected AudioClip audio;
 }
 
 public class BGM : Sounds
 {
-    public BGM(AudioClip clip) {
-        audio = clip;
-    }
-
-    public override void Play(SoundSettings settings)
+    public BGM(AudioClip clip) : base(clip)
     {
-        foreach (GameObject i in NewPooledObject.current.Effects) {
-            if (i.activeInHierarchy && i.GetComponent<SoundEffectController>().c == ClipType.BGM)
-            {
-                i.GetComponent<AudioSource>().DOFade(0, 3f).OnComplete(() => { i.SetActive(false); });
-                //
-                i.GetComponent<SoundEffectController>().c = ClipType.NONE;
-
-            }
-        }
-        base.Play(settings);
-
+        type = ClipType.BGM;
     }
-
 }
 
 public class Ambience : Sounds
 {
-    public Ambience(AudioClip clip) {
-        audio = clip;
+    public Ambience(AudioClip clip) : base(clip)
+    {
+        type = ClipType.AMBIENCE;
     }
 }
 
 public class SFX : Sounds
 {
-    public SFX(AudioClip clip) {
-        audio = clip;
+    public SFX(AudioClip clip) : base(clip)
+    {
+        type = ClipType.SFX;
     }
 }
