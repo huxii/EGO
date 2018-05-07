@@ -14,8 +14,8 @@ public class PlayerControl : MonoBehaviour
     public float heightRange = 2f;
 
     [Header("Sounds")]
-    public SoundControl.SFX skillSFX = SoundControl.SFX.NONE;
-    public SoundControl.SFX failSFX = SoundControl.SFX.NONE;
+    //public SoundControl.SFX skillSFX = SoundControl.SFX.NONE;
+    //public SoundControl.SFX failSFX = SoundControl.SFX.NONE;
 
     [Header("Lights")]
     public Light light;
@@ -164,11 +164,11 @@ public class PlayerControl : MonoBehaviour
         {
             if (triggerInteractable == null)
             {
-                GameControl.soundController.PlayEffect(failSFX, transform.position);
+                //GameControl.soundController.PlayEffect(failSFX, transform.position);
             }
             else
             {
-                GameControl.soundController.PlayEffect(skillSFX, transform.position);
+                //GameControl.soundController.PlayEffect(skillSFX, transform.position);
                 triggerInteractable.GetComponent<InteractableControl>().BeginInteraction();
                 anime.SetTrigger("skill");
 

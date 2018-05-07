@@ -10,8 +10,7 @@ public class ViewportTransitionBehavior : ViewportControl
     public List<GameObject> showObjects;
 
     [Header("Trigger Sound")]
-    public SoundControl.BGMSettings triggerBGM;
-    public List<SoundControl.AmbienceSettings> triggerAmbience;
+    public List<SoundSettings> triggerSoundList;
 
     // Use this for initialization
     void Start()
@@ -51,10 +50,9 @@ public class ViewportTransitionBehavior : ViewportControl
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>().ResetHeight();
 
-        GameControl.soundController.PlayMusic(triggerBGM.id);
-        foreach (SoundControl.AmbienceSettings am in triggerAmbience)
+        foreach (SoundSettings sound in triggerSoundList)
         {
-            GameControl.soundController.PlayAmbience(am.id, transform.position);
+            GameControl.soundController.Play(sound);
         }
     }
 

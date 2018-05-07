@@ -52,18 +52,15 @@ public class TutorialControl : MonoBehaviour {
             case State.NONE:
                 break;
             case State.WAITFLY:
-                if (Input.GetButton("raise") && tutorialImages[7].color != Color.white)
+                if (Input.GetButton("raise"))
                 {
                     tutorialImages[6].DOFade(1, 0.5f);
                 }
-                if (Input.GetButton("low") && tutorialImages[6].color != Color.white) {
+                if (Input.GetButton("low")) {
                     tutorialImages[7].DOFade(1, 0.5f);
                 }
-                if ((Input.GetButton("low") && tutorialImages[6].color == Color.white) ||
-                   (Input.GetButton("raise") && tutorialImages[7].color == Color.white)) {
-                    tutorialImages[8].DOFade(1, 0.5f);
-                }
-                if(tutorialImages[8].color == Color.white){
+                if (tutorialImages[6].color == Color.white &&
+                   tutorialImages[7].color == Color.white) {
                     currentState = State.WAITINTERACT;
                     ChangeIcon(currentState);
                 }
