@@ -16,21 +16,7 @@ public class TutorialControl : MonoBehaviour {
     };
 
     State currentState;
-    // Use this for initialization
-    private void Awake()
-    {
-        /*
-        if (Instance)
-        {
-            DestroyImmediate(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(transform.gameObject);
-            Instance = this;
-        }
-        */
-    }
+
     void Start () {
         currentState = State.WAITMOVE;
         foreach (SpriteRenderer i in tutorialImages) {
