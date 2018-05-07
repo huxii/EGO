@@ -193,6 +193,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1409797186057992, guid: f2fe8e8175482f94bb87149657a65fa9,
     type: 2}
   m_PrefabInternal: {fileID: 1661714791}
+--- !u!4 &266209613 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4626266351829014, guid: dfc0668484aed3f4fa581ebb20e4c118,
+    type: 2}
+  m_PrefabInternal: {fileID: 907028084}
 --- !u!1 &326240377
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,6 +506,16 @@ Prefab:
       propertyPath: triggerAmbience.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4332545196942198, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -637,6 +652,171 @@ Prefab:
       propertyPath: triggerAmbience.Array.data[0].isLooping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].id
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].c
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].pos
+      value: 
+      objectReference: {fileID: 1384848428}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].fadeDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].fadeDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].isLooping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].id
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].pos
+      value: 
+      objectReference: {fileID: 1384848428}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].delay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].isLooping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].isFalloff
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].spatialBlend
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].pos
+      value: 
+      objectReference: {fileID: 266209613}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].fadeDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].isLooping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].id
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].pos
+      value: 
+      objectReference: {fileID: 1205120338}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].fadeDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].isLooping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].isFalloff
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].spatialBlend
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[2].id
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[2].type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[2].pos
+      value: 
+      objectReference: {fileID: 1205120338}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[2].fadeDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[2].isLooping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[2].isFalloff
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[2].spatialBlend
+      value: 0.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
   m_IsPrefabParent: 0
@@ -650,6 +830,11 @@ Camera:
   m_PrefabParentObject: {fileID: 20387287006275092, guid: a742912ef1455f04c9c385c80f8a0085,
     type: 2}
   m_PrefabInternal: {fileID: 1647967085}
+--- !u!4 &1205120338 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4714782870791520, guid: f2fe8e8175482f94bb87149657a65fa9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1661714791}
 --- !u!1 &1248275439 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1585213696608028, guid: f6bdf8f7937fc6c4f850f6cf1bcb7ed0,
@@ -727,6 +912,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4085486275496172, guid: f2fe8e8175482f94bb87149657a65fa9,
     type: 2}
   m_PrefabInternal: {fileID: 1661714791}
+--- !u!4 &1384848428 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4717739986268070, guid: dfc0668484aed3f4fa581ebb20e4c118,
+    type: 2}
+  m_PrefabInternal: {fileID: 907028084}
 --- !u!1 &1439504074 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1808714285736302, guid: a742912ef1455f04c9c385c80f8a0085,
@@ -924,6 +1114,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 326240378}
     m_Modifications:
+    - target: {fileID: 114910957852637858, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4920348398993432, guid: acde680032adc094f8527375489cae94, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -966,6 +1161,41 @@ Prefab:
       propertyPath: triggerSFX
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114910957852637858, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114910957852637858, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].c
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114910957852637858, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].pos
+      value: 
+      objectReference: {fileID: 2127316740}
+    - target: {fileID: 114910957852637858, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].duration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114910957852637858, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].isLooping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114910957852637858, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].fadeDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114910957852637858, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].spatialBlend
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acde680032adc094f8527375489cae94, type: 2}
   m_IsPrefabParent: 0
@@ -992,5 +1222,10 @@ GameObject:
 --- !u!1 &2076992194 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1032691762833556, guid: acde680032adc094f8527375489cae94,
+    type: 2}
+  m_PrefabInternal: {fileID: 1807722940}
+--- !u!4 &2127316740 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4926956262580350, guid: acde680032adc094f8527375489cae94,
     type: 2}
   m_PrefabInternal: {fileID: 1807722940}
