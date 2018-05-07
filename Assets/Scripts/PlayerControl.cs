@@ -30,6 +30,7 @@ public class PlayerControl : MonoBehaviour
 
     [SerializeField]
     Vector3 targetPos;
+    Vector3 prePos;
     Vector3 targetOrien;
     float heightAxis;
     private float heightCD = 0;
@@ -40,15 +41,16 @@ public class PlayerControl : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainControl>();
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody>();
         anime = GetComponentInChildren<Animator>();
+
         Vector3 pos = transform.position;
         transform.position = new Vector3(pos.x, heightAxis + GetHeightOnGround(), pos.z);
+        prePos = transform.position;
+
         skillSFX = triggerSoundList[1];
         failSFX = triggerSoundList[0];
-        ;
     }
 
     // Update is called once per frame
@@ -64,8 +66,12 @@ public class PlayerControl : MonoBehaviour
             rb.velocity = new Vector3(0, 0, 0);
         }
 
-        anime.SetFloat("speedH", Mathf.Abs(rb.velocity.x + rb.velocity.z) - 0.01f);
-        anime.SetFloat("speedV", Mathf.Max(Mathf.Abs(rb.velocity.y) - 0.1f, 0) * Mathf.Sign(rb.velocity.y));
+        Vector3 delta = transform.position - prePos;
+        prePos = transform.position;
+
+        Debug.Log(delta);
+        anime.SetFloat("speedH", Mathf.Abs(delta.x + delta.z) - 0.001f);
+        anime.SetFloat("speedV", Mathf.Max(Mathf.Abs(delta.y) - 0.001f, 0) * Mathf.Sign(delta.y));
     }
 
     void FixedUpdate()
