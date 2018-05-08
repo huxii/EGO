@@ -36,6 +36,10 @@ public class GameControl : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
+        if (mainCam == null)
+        {
+            mainCam = GameObject.FindGameObjectWithTag("MainCamera");
+        }
         cameraController = mainCam.GetComponent<CameraControl>();
         playerController = player.GetComponent<PlayerControl>();
         soundController = soundManager.GetComponent<SoundControl>();
