@@ -93,12 +93,12 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DiffuseColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _DiffuseColor: {r: 0.6397059, g: 0.6397059, b: 0.6397059, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReDiffuseColor: {r: 0.7352941, g: 0.70725447, b: 0.6920415, a: 1}
-    - _ReShadowColor: {r: 0.4980103, g: 0.44214967, b: 0.6397059, a: 1}
-    - _ReSpecColor: {r: 1, g: 0.846148, b: 0.72794116, a: 1}
-    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
+    - _ReDiffuseColor: {r: 0.6397059, g: 0.6397059, b: 0.6397059, a: 1}
+    - _ReShadowColor: {r: 0.4925986, g: 0.35472533, b: 0.5955882, a: 1}
+    - _ReSpecColor: {r: 1, g: 0.9002041, b: 0.8235294, a: 1}
+    - _ShadowColor: {r: 0.49259853, g: 0.3547253, b: 0.59558815, a: 1}
+    - _SpecColor: {r: 1, g: 0.90020406, b: 0.8235294, a: 1}
