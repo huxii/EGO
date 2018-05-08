@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Wood_Replace
+  m_Name: Toast_Appear
   m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
-  m_ShaderKeywords: _REPLACEMENTSTYLE_REPLACE _TEXTUREBLENDMODE_ALPHA
+  m_ShaderKeywords: _REPLACEMENTSTYLE_APPEAR _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -79,7 +79,7 @@ Material:
     - _OutlineThickness: 0
     - _Parallax: 0.02
     - _ReplacementInverted: 0
-    - _ReplacementStyle: 1
+    - _ReplacementStyle: 2
     - _ReplacementTimer: 0
     - _ShadowThreshold: 0.3
     - _SmoothnessTextureChannel: 0
@@ -93,12 +93,12 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DiffuseColor: {r: 0.33088237, g: 0.25517523, b: 0.21410036, a: 1}
+    - _DiffuseColor: {r: 0.6102941, g: 0.4241107, b: 0.32309684, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReDiffuseColor: {r: 0.35294116, g: 0.24526884, b: 0.18685119, a: 1}
-    - _ReShadowColor: {r: 0.20409244, g: 0.15700692, b: 0.32352942, a: 1}
-    - _ReSpecColor: {r: 1, g: 0.77261657, b: 0.5661764, a: 1}
-    - _ShadowColor: {r: 0.10850128, g: 0.07590831, b: 0.19117647, a: 1}
-    - _SpecColor: {r: 0.6838235, g: 0.56522936, b: 0.4575584, a: 1}
+    - _ReDiffuseColor: {r: 0.6102941, g: 0.42411074, b: 0.32309687, a: 1}
+    - _ReShadowColor: {r: 0.43382353, g: 0.35726643, b: 0.24243079, a: 1}
+    - _ReSpecColor: {r: 0.8308824, g: 0.7134143, b: 0.6231618, a: 1}
+    - _ShadowColor: {r: 0.4338235, g: 0.3572664, b: 0.24243075, a: 1}
+    - _SpecColor: {r: 0.8308824, g: 0.71341425, b: 0.6231618, a: 1}

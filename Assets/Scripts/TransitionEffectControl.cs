@@ -91,6 +91,7 @@ public class TransitionEffectControl : MonoBehaviour
         {
             foreach (GameObject transition in nextPlays)
             {
+                transition.SetActive(true);
                 transition.GetComponent<TransitionEffectControl>().Play();
             }
         }
@@ -108,14 +109,6 @@ public class TransitionEffectControl : MonoBehaviour
             foreach (GameObject target in showTargets)
             {
                 target.SetActive(true);
-            }
-        }
-
-        if (nextPlays != null)
-        {
-            foreach (GameObject transition in nextPlays)
-            {
-                transition.SetActive(true);
             }
         }
 
