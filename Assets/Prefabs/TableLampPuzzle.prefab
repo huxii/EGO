@@ -356,8 +356,7 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   targetCamera: {fileID: 1326627881061184}
   scannerTarget: {fileID: 0}
   scanRange: 15
@@ -423,8 +422,29 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.05
-  triggerBGM: 2
-  triggerAmbience: 0
+  triggerSoundList:
+  - id: 2
+    type: 1
+    isTurnOn: 1
+    trans: {fileID: 0}
+    delay: 8
+    fadeDuration: 18
+    isLooping: 1
+    isFalloff: 0
+    isStandOut: 0
+    spatialBlend: 0
+    pos: {x: 0, y: 0, z: 0}
+  - id: 6
+    type: 2
+    isTurnOn: 1
+    trans: {fileID: 4610129476328436}
+    delay: 0
+    fadeDuration: 15
+    isLooping: 1
+    isFalloff: 1
+    isStandOut: 0
+    spatialBlend: 0
+    pos: {x: 0, y: 0, z: 0}
   targetCamera: {fileID: 1326627881061184}
   scannerTarget: {fileID: 0}
   scanRange: 30
