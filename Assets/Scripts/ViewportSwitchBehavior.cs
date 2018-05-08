@@ -18,11 +18,21 @@ public class ViewportSwitchBehavior : ViewportControl
 
     public override void SwitchViewport()
     {
+        if (switched)
+        {
+            return;
+        }
+        switched = true;
         SwitchCamera();
     }
 
     public override void SwitchBackViewport()
     {
+        if (!switched)
+        {
+            return;
+        }
+        switched = false;
         SwitchBack();
     }
 

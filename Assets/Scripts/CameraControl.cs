@@ -23,6 +23,14 @@ public class CameraControl : MonoBehaviour
     float curDistance;
     float curTargetDistance;
 
+    GameObject targetObject0;
+    float distance0;
+    Vector2 angleZero0;
+    Vector2 angleRange0;
+    Vector2 angleSensitivity0;
+    Vector2 angleSmooth0;
+    Vector2 dAngle0;
+
     // Use this for initialization
     void Start ()
     {
@@ -206,21 +214,23 @@ public class CameraControl : MonoBehaviour
         {
             if (d > distance)
             {
-                curTargetDistance = distance - 0.05f;
+                curTargetDistance = distance - 0.1f;
             }
             else
             {
-                curTargetDistance = d - 0.05f;
+                curTargetDistance = d - 0.1f;
             }
+
+            if (curTargetDistance < 0)
+            {
+                curTargetDistance = 0;
+            }
+
+            //curDistance = curTargetDistance;
         }
         else
         {
-            curTargetDistance = distance - 0.05f;
-        }
-
-        if (curTargetDistance < 0)
-        {
-            curTargetDistance = 0;
+            curTargetDistance = distance - 0.1f;
         }
     }
 
@@ -237,5 +247,35 @@ public class CameraControl : MonoBehaviour
         }
 
         return value;
+    }
+
+    public void SwitchCamera(CameraControl targetController)
+    {
+        targetObject0 = targetObject;
+        distance0 = distance;
+        angleZero0 = angleZero;
+        angleRange0 = angleRange;
+        angleSensitivity0 = angleSensitivity;
+        angleSmooth0 = angleSmooth;
+        dAngle0 = dAngle;
+
+        targetObject = targetController.targetObject;
+        distance = targetController.distance;
+        angleZero = targetController.angleZero;
+        angleRange = targetController.angleRange;
+        angleSensitivity = targetController.angleSensitivity;
+        angleSmooth = targetController.angleSmooth;
+        dAngle = new Vector2(0, 0);
+    }
+
+    public void SwitchBack()
+    {
+        targetObject = targetObject0;
+        distance = distance0;
+        angleZero = angleZero0;
+        angleRange = angleRange0;
+        angleSensitivity = angleSensitivity0;
+        angleSmooth = angleSmooth0;
+        dAngle = dAngle0;
     }
 }

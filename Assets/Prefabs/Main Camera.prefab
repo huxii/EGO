@@ -520,9 +520,6 @@ MonoBehaviour:
   hideTargets:
   - {fileID: 0}
   showTargets: []
-  endSFX: 6
-  afterBGM: 3
-  afterAmbience: 0
 --- !u!114 &114246798688771728
 MonoBehaviour:
   m_ObjectHideFlags: 1

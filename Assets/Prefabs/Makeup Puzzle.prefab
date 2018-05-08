@@ -934,8 +934,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   targetCamera: {fileID: 1525820377686250}
   scannerTarget: {fileID: 1950523725785438}
   scanRange: 15
@@ -987,9 +986,6 @@ MonoBehaviour:
   nextPlays: []
   hideTargets: []
   showTargets: []
-  endSFX: 0
-  afterBGM: 0
-  afterAmbience: 0
 --- !u!114 &114916952268190994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1005,8 +1001,7 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 1104089041196970}
   triggerOutlineWidth: 0.12
-  triggerBGM: 0
-  triggerAmbience: 0
+  triggerSoundList: []
   targetCamera: {fileID: 1525820377686250}
   scannerTarget: {fileID: 1950523725785438}
   scanRange: 10
@@ -1031,9 +1026,6 @@ MonoBehaviour:
   nextPlays: []
   hideTargets: []
   showTargets: []
-  endSFX: 0
-  afterBGM: 0
-  afterAmbience: 0
 --- !u!124 &124702454295524352
 Behaviour:
   m_ObjectHideFlags: 1
