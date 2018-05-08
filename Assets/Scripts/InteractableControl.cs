@@ -34,8 +34,7 @@ public class InteractableControl : MonoBehaviour
         foreach (SoundSettings sound in triggerSoundList)
         {
             GameControl.soundController.Play(sound);
-        }
-        
+        }      
     }
 
     public void InteractionReady()

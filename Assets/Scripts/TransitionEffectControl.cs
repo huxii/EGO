@@ -29,6 +29,7 @@ public class TransitionEffectControl : MonoBehaviour
     public List<GameObject> nextPlays;
     public List<GameObject> hideTargets;
     public List<GameObject> showTargets;
+    public List<SoundSettings> triggerSoundList;
 
     protected List<Material> mats;
     protected bool start = false;
@@ -120,6 +121,11 @@ public class TransitionEffectControl : MonoBehaviour
 
         start = false;
         done = true;
+
+        foreach (SoundSettings sound in triggerSoundList)
+        {
+            GameControl.soundController.Play(sound);
+        }
     }
 
     public bool Done()
