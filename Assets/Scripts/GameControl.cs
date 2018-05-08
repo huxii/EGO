@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class GameControl : MonoBehaviour
 {
+    public GameObject mainCam;
     public GameObject player;
     public GameObject soundManager;
     public GameObject videoManager;
     public GameObject tutorialManager;
 
+    public static CameraControl cameraController;
     public static PlayerControl playerController;
     public static SoundControl soundController;
     public static VideoControl videoController;
@@ -21,7 +23,7 @@ public class GameControl : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-
+        cameraController = mainCam.GetComponent<CameraControl>();
         playerController = player.GetComponent<PlayerControl>();
         soundController = soundManager.GetComponent<SoundControl>();
         videoController = videoManager.GetComponent<VideoControl>();

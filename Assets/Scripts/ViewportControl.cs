@@ -14,13 +14,6 @@ public class ViewportControl : MonoBehaviour
     CameraControl targetCameraCon;
 
     float playerHeight0;
-    GameObject targetObject0;
-    float distance0;
-    Vector2 angleZero0;
-    Vector2 angleRange0;
-    Vector2 angleSensitivity0;
-    Vector2 angleSmooth0;
-    Vector2 dAngle0;
 
     // Use this for initialization
     void Start ()
@@ -41,6 +34,10 @@ public class ViewportControl : MonoBehaviour
 
     protected void SwitchCamera()
     {
+        GameControl.cameraController.SwitchCamera(targetCameraCon);
+        playerHeight0 = GameControl.playerController.heightStandard;
+        GameControl.playerController.heightStandard = playerHeight;
+        /*
         if (switched)
         {
             return;
@@ -65,12 +62,16 @@ public class ViewportControl : MonoBehaviour
         originCameraCon.dAngle = new Vector2(0, 0);
 
         GameControl.playerController.heightStandard = playerHeight;
-
+        */
 
     }
 
     protected void SwitchBack()
     {
+        GameControl.cameraController.SwitchBack();
+        GameControl.playerController.heightStandard = playerHeight0;
+
+        /*
         if (!switched)
         {
             return;
@@ -85,6 +86,7 @@ public class ViewportControl : MonoBehaviour
         originCameraCon.angleSmooth = angleSmooth0;
         originCameraCon.dAngle = dAngle0;
         GameControl.playerController.heightStandard = playerHeight0;
+        */
     }
 
     public virtual void SwitchViewport()
