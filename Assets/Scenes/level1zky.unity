@@ -38,8 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000024870144, g: 0.000040347397, b: 0.071356885,
-    a: 1}
+  m_IndirectSpecularColor: {r: 0.000026176896, g: 0.000040305964, b: 0.07133846, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -188,11 +187,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1642870698980008, guid: e1266f752a3d078418b4f72e63f43e38,
     type: 2}
   m_PrefabInternal: {fileID: 592075127}
---- !u!1 &178718794 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1409797186057992, guid: f2fe8e8175482f94bb87149657a65fa9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1661714791}
 --- !u!1 &326240377
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,11 +220,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &337310741 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1765518639794190, guid: f2fe8e8175482f94bb87149657a65fa9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1661714791}
 --- !u!1 &398006104 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1601803130344938, guid: e1266f752a3d078418b4f72e63f43e38,
@@ -597,17 +586,17 @@ Prefab:
         type: 2}
       propertyPath: showObjects.Array.data[1]
       value: 
-      objectReference: {fileID: 1045344521}
+      objectReference: {fileID: 0}
     - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
         type: 2}
       propertyPath: showObjects.Array.data[2]
       value: 
-      objectReference: {fileID: 178718794}
+      objectReference: {fileID: 0}
     - target: {fileID: 114249399918150692, guid: dfc0668484aed3f4fa581ebb20e4c118,
         type: 2}
       propertyPath: triggerSoundList.Array.data[1].pos
       value: 
-      objectReference: {fileID: 1205120338}
+      objectReference: {fileID: 0}
     - target: {fileID: 114821881058016338, guid: dfc0668484aed3f4fa581ebb20e4c118,
         type: 2}
       propertyPath: triggerSoundList.Array.data[0].id
@@ -616,21 +605,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1045344521 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1419166083738362, guid: f2fe8e8175482f94bb87149657a65fa9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1661714791}
 --- !u!20 &1152931544 stripped
 Camera:
   m_PrefabParentObject: {fileID: 20387287006275092, guid: a742912ef1455f04c9c385c80f8a0085,
     type: 2}
   m_PrefabInternal: {fileID: 1647967085}
---- !u!4 &1205120338 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4714782870791520, guid: f2fe8e8175482f94bb87149657a65fa9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1661714791}
 --- !u!1 &1248275439 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1585213696608028, guid: f6bdf8f7937fc6c4f850f6cf1bcb7ed0,
@@ -689,17 +668,21 @@ Prefab:
         type: 2}
       propertyPath: targetCamera
       value: 
-      objectReference: {fileID: 337310741}
+      objectReference: {fileID: 0}
     - target: {fileID: 114603366134410934, guid: 026aa8183c5a10544a013db1b83b1564,
         type: 2}
       propertyPath: blackImage
       value: 
-      objectReference: {fileID: 1753398368}
+      objectReference: {fileID: 0}
     - target: {fileID: 114986981667021372, guid: 026aa8183c5a10544a013db1b83b1564,
         type: 2}
       propertyPath: clipList.Array.data[17].clip
       value: 
       objectReference: {fileID: 8300000, guid: f74ae874fa4c42a439db1d0964883549, type: 3}
+    - target: {fileID: 1693470266501430, guid: 026aa8183c5a10544a013db1b83b1564, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 026aa8183c5a10544a013db1b83b1564, type: 2}
   m_IsPrefabParent: 0
@@ -723,11 +706,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4920348398993432, guid: acde680032adc094f8527375489cae94,
     type: 2}
   m_PrefabInternal: {fileID: 1807722940}
---- !u!1 &1624658672 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1622716024641512, guid: 026aa8183c5a10544a013db1b83b1564,
-    type: 2}
-  m_PrefabInternal: {fileID: 1289855416}
 --- !u!1001 &1647967085
 Prefab:
   m_ObjectHideFlags: 0
@@ -776,7 +754,11 @@ Prefab:
         type: 2}
       propertyPath: hideTargets.Array.data[0]
       value: 
-      objectReference: {fileID: 1844333790}
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070321503346120, guid: a742912ef1455f04c9c385c80f8a0085, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a742912ef1455f04c9c385c80f8a0085, type: 2}
   m_IsPrefabParent: 0
@@ -823,12 +805,16 @@ Prefab:
         type: 2}
       propertyPath: videoManager
       value: 
-      objectReference: {fileID: 1624658672}
+      objectReference: {fileID: 0}
     - target: {fileID: 114559490512057084, guid: f2fe8e8175482f94bb87149657a65fa9,
         type: 2}
       propertyPath: fogCam
       value: 
       objectReference: {fileID: 1439504074}
+    - target: {fileID: 1428406442437426, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
   m_IsPrefabParent: 0
@@ -894,11 +880,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1753398368 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1263029581882174, guid: f2fe8e8175482f94bb87149657a65fa9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1661714791}
 --- !u!1001 &1807722940
 Prefab:
   m_ObjectHideFlags: 0
@@ -943,14 +924,25 @@ Prefab:
       propertyPath: nextPlays.Array.data[0]
       value: 
       objectReference: {fileID: 478464290}
+    - target: {fileID: 4916348921665838, guid: acde680032adc094f8527375489cae94, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4916348921665838, guid: acde680032adc094f8527375489cae94, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384922416669684, guid: acde680032adc094f8527375489cae94, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384922416669684, guid: acde680032adc094f8527375489cae94, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acde680032adc094f8527375489cae94, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1844333790 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1991957883078510, guid: f2fe8e8175482f94bb87149657a65fa9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1661714791}
 --- !u!4 &1914922620 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4332545196942198, guid: dfc0668484aed3f4fa581ebb20e4c118,

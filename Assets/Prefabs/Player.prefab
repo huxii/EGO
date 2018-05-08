@@ -833,28 +833,39 @@ MonoBehaviour:
   heightStandard: 2
   heightRange: 2
   triggerSoundList:
-  - id: 18
+  - id: 19
     type: 3
     isTurnOn: 1
-    pos: {fileID: 4580633522715770}
+    trans: {fileID: 4580633522715770}
     delay: 0
     fadeDuration: 0
     isLooping: 0
     isFalloff: 0
-    isDestroiedAfterFinish: 1
     isStandOut: 0
     spatialBlend: 0
+    pos: {x: 0, y: 0, z: 0}
   - id: 17
     type: 3
     isTurnOn: 1
-    pos: {fileID: 4580633522715770}
+    trans: {fileID: 4580633522715770}
     delay: 0
     fadeDuration: 0
     isLooping: 0
     isFalloff: 0
-    isDestroiedAfterFinish: 1
     isStandOut: 0
     spatialBlend: 0
+    pos: {x: 0, y: 0, z: 0}
+  - id: 18
+    type: 3
+    isTurnOn: 1
+    trans: {fileID: 4580633522715770}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 1
+    isFalloff: 0
+    isStandOut: 0
+    spatialBlend: 0.95
+    pos: {x: 0, y: 0, z: 0}
   light: {fileID: 108825190161979882}
   lightFalloffDistance: 10
   targetPos: {x: 0, y: 0, z: 0}
