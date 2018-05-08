@@ -34,15 +34,10 @@ public class InteractableControl : MonoBehaviour
         foreach (SoundSettings sound in triggerSoundList)
         {
             GameControl.soundController.Play(sound);
-<<<<<<< HEAD
+
         }
 
-        
-=======
         }      
->>>>>>> master
-    }
-
     public void InteractionReady()
     {
         triggerObject.GetComponent<FeedbackTransitionControl>().Play(new TransitionData(triggerOutlineWidth));
