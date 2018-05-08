@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4261607576440294}
   - component: {fileID: 82607353599433838}
-  - component: {fileID: 114432983661838858}
+  - component: {fileID: 114332665642660300}
   m_Layer: 0
   m_Name: Effect
   m_TagString: Untagged
@@ -234,7 +234,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -263,7 +263,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 0.903
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -275,7 +275,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -386,35 +386,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5b5574eec6b4e5f97b19a3c16ccd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music_player: {fileID: 82417146751545144}
-  music_sources:
-  - {fileID: 0}
-  - {fileID: 8300000, guid: e985dde3dd31e433b94ae7bd595bec9f, type: 3}
-  - {fileID: 8300000, guid: ee57e89d769eb40aba4a0307d3b2cdc9, type: 3}
-  - {fileID: 8300000, guid: 66d52678fa2dd4fdebf2be75c90883f2, type: 3}
-  - {fileID: 8300000, guid: c9ba6175106714c85abf06b96cb76900, type: 3}
-  effect_sources:
-  - {fileID: 0}
-  - {fileID: 8300000, guid: f5208831217084efa87db63f4c827569, type: 3}
-  - {fileID: 8300000, guid: 7a2ad3c5dd48c4fd0b9be76c73b15f0a, type: 3}
-  - {fileID: 8300000, guid: 0f6e3b5d1834e4621adf027443703afc, type: 3}
-  - {fileID: 8300000, guid: f74ae874fa4c42a439db1d0964883549, type: 3}
-  - {fileID: 8300000, guid: 3d225b8aa686c4b2382db023803d91eb, type: 3}
-  - {fileID: 8300000, guid: 3d225b8aa686c4b2382db023803d91eb, type: 3}
-  ambience_sources:
-  - {fileID: 0}
-  - {fileID: 8300000, guid: c9ba6175106714c85abf06b96cb76900, type: 3}
-  - {fileID: 8300000, guid: 659c1eef76c42495a8bb08350026751e, type: 3}
-  - {fileID: 8300000, guid: b21e5595791ea164d97c4856360ff4ea, type: 3}
-  - {fileID: 8300000, guid: d7e4441c521f94f569c406bada916374, type: 3}
-  - {fileID: 8300000, guid: 1e8d4413a10f64400984383bec7383c1, type: 3}
-  - {fileID: 8300000, guid: 81755d9ec51a34eaab0a9a24fb881bb3, type: 3}
-  - {fileID: 8300000, guid: 4efac36cbf8be43b5aedc08c327b23c1, type: 3}
-  - {fileID: 8300000, guid: 8d9305af3a1ea4c3aa11c189c66ec7ef, type: 3}
-  startBGM: 4
-  fade_duration: 5
-  fade_volume: 100
---- !u!114 &114432983661838858
+  clipList:
+  - clip: {fileID: 0}
+    id: 0
+    type: 0
+  - clip: {fileID: 8300000, guid: e985dde3dd31e433b94ae7bd595bec9f, type: 3}
+    id: 1
+    type: 1
+  - clip: {fileID: 8300000, guid: ee57e89d769eb40aba4a0307d3b2cdc9, type: 3}
+    id: 2
+    type: 1
+  - clip: {fileID: 8300000, guid: 66d52678fa2dd4fdebf2be75c90883f2, type: 3}
+    id: 3
+    type: 1
+  - clip: {fileID: 8300000, guid: c9ba6175106714c85abf06b96cb76900, type: 3}
+    id: 4
+    type: 1
+  - clip: {fileID: 8300000, guid: 66d52678fa2dd4fdebf2be75c90883f2, type: 3}
+    id: 5
+    type: 1
+  - clip: {fileID: 8300000, guid: c9ba6175106714c85abf06b96cb76900, type: 3}
+    id: 6
+    type: 2
+  - clip: {fileID: 8300000, guid: 659c1eef76c42495a8bb08350026751e, type: 3}
+    id: 7
+    type: 2
+  - clip: {fileID: 8300000, guid: dced9462401e14f1781ed0fd4ee13531, type: 3}
+    id: 8
+    type: 2
+  - clip: {fileID: 8300000, guid: d7e4441c521f94f569c406bada916374, type: 3}
+    id: 9
+    type: 2
+  - clip: {fileID: 8300000, guid: 1e8d4413a10f64400984383bec7383c1, type: 3}
+    id: 10
+    type: 2
+  - clip: {fileID: 8300000, guid: 81755d9ec51a34eaab0a9a24fb881bb3, type: 3}
+    id: 11
+    type: 2
+  - clip: {fileID: 8300000, guid: 4efac36cbf8be43b5aedc08c327b23c1, type: 3}
+    id: 12
+    type: 2
+  - clip: {fileID: 8300000, guid: 8d9305af3a1ea4c3aa11c189c66ec7ef, type: 3}
+    id: 13
+    type: 2
+  - clip: {fileID: 8300000, guid: f5208831217084efa87db63f4c827569, type: 3}
+    id: 14
+    type: 3
+  - clip: {fileID: 8300000, guid: 7a2ad3c5dd48c4fd0b9be76c73b15f0a, type: 3}
+    id: 15
+    type: 3
+  - clip: {fileID: 8300000, guid: 0f6e3b5d1834e4621adf027443703afc, type: 3}
+    id: 16
+    type: 3
+  - clip: {fileID: 8300000, guid: f74ae874fa4c42a439db1d0964883549, type: 3}
+    id: 17
+    type: 3
+  - clip: {fileID: 8300000, guid: 3d225b8aa686c4b2382db023803d91eb, type: 3}
+    id: 18
+    type: 3
+  - clip: {fileID: 8300000, guid: f21ec6649a27efe48adbcf30b01f0220, type: 3}
+    id: 19
+    type: 3
+--- !u!114 &114332665642660300
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -422,7 +455,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1108906508197118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a0477bc0b3504f5aa81a86b28b6266f, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114452583465609870
@@ -437,5 +470,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect_player: {fileID: 1108906508197118}
-  pooledamount: 10
+  pooledamount: 20
   WillGrow: 1
+  Effects: []

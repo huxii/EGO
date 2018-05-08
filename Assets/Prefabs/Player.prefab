@@ -722,8 +722,29 @@ MonoBehaviour:
   rotationSpeed: 1
   heightStandard: 2
   heightRange: 2
-  skillSFX: 4
-  failSFX: 0
+  triggerSoundList:
+  - id: 18
+    type: 3
+    isTurnOn: 1
+    pos: {fileID: 4545287218258240}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 0
+    isFalloff: 0
+    isDestroiedAfterFinish: 1
+    isStandOut: 0
+    spatialBlend: 0
+  - id: 17
+    type: 3
+    isTurnOn: 1
+    pos: {fileID: 4545287218258240}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 0
+    isFalloff: 0
+    isDestroiedAfterFinish: 1
+    isStandOut: 0
+    spatialBlend: 0
   light: {fileID: 108979066491203670}
   lightFalloffDistance: 10
   targetPos: {x: 0, y: 0, z: 0}
