@@ -520,6 +520,7 @@ MonoBehaviour:
   hideTargets:
   - {fileID: 0}
   showTargets: []
+  triggerSoundList: []
 --- !u!114 &114246798688771728
 MonoBehaviour:
   m_ObjectHideFlags: 1

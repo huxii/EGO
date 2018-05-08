@@ -179,12 +179,14 @@ public class PlayerControl : MonoBehaviour
         {
             if (triggerInteractable == null)
             {
-                GameControl.soundController.Play(failSFX);
+				Debug.Log (failSFX.id);
+				GameControl.soundController.Play(failSFX);
                 //GameControl.soundController.PlayEffect(failSFX, transform.position);
             }
             else
             {
-                GameControl.soundController.Play(skill1SFX);
+				Debug.Log (failSFX.id);
+				GameControl.soundController.Play(skill1SFX);
                 //GameControl.soundController.PlayEffect(skillSFX, transform.position);
                 triggerInteractable.GetComponent<InteractableControl>().BeginInteraction();
                 anime.SetTrigger("skill");
