@@ -49,8 +49,11 @@ public class ClipSetting
     public ClipType type = ClipType.NONE;
 }
 
+
 public class SoundControl : MonoBehaviour
 {
+    public SoundSettings StartBGM;
+
     public List<ClipSetting> clipList;
     Dictionary<SoundEnum, Sounds> soundsList = new Dictionary<SoundEnum, Sounds>();
 
@@ -77,6 +80,8 @@ public class SoundControl : MonoBehaviour
                     break;
             }            
         }
+
+        Play(StartBGM);
     }
 
     // Update is called once per frame
