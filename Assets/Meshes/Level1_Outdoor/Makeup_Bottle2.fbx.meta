@@ -1,17 +1,18 @@
 fileFormatVersion: 2
-guid: 6a2c85c6dabbf47cab110e41f1f36c14
-timeCreated: 1522789060
+guid: 4e09eb8a1a304d7488613a5ad610bd7a
+timeCreated: 1525792914
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: lambert3
+    2100002: pasted__lambert6
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Makeup_Table
-    4300002: Makeup_Table3
+    4300000: Makeup_Bottle2
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 0
