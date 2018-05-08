@@ -385,6 +385,31 @@ Prefab:
       propertyPath: clipList.Array.data[4].clip
       value: 
       objectReference: {fileID: 8300000, guid: dd48521f58b34cc449e5140bd75dd763, type: 3}
+    - target: {fileID: 114750850088914118, guid: 026aa8183c5a10544a013db1b83b1564,
+        type: 2}
+      propertyPath: clipList.Array.data[6].id
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750850088914118, guid: 026aa8183c5a10544a013db1b83b1564,
+        type: 2}
+      propertyPath: clipList.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a935e025ee1d6348b2aa4f7b79bbdd5, type: 3}
+    - target: {fileID: 114750850088914118, guid: 026aa8183c5a10544a013db1b83b1564,
+        type: 2}
+      propertyPath: clipList.Array.data[6].type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114379528639242580, guid: 026aa8183c5a10544a013db1b83b1564,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].isFalloff
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114379528639242580, guid: 026aa8183c5a10544a013db1b83b1564,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].isFalloff
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 026aa8183c5a10544a013db1b83b1564, type: 2}
   m_IsPrefabParent: 0
