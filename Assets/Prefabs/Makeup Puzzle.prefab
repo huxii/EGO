@@ -1440,11 +1440,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322b2ece0f165a94cbf0c29cc84ac590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beginInteractionByButton: 0
+  beginInteractionByButton: 1
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerSoundList: []
+  triggerSoundList:
+  - id: 14
+    type: 3
+    isTurnOn: 1
+    trans: {fileID: 4346831132124818}
+    delay: 1
+    fadeDuration: 5
+    isLooping: 0
+    isFalloff: 0
+    isStandOut: 0
+    spatialBlend: 0
+    pos: {x: 0, y: 0, z: 0}
   targetCamera: {fileID: 1525820377686250}
   scannerTarget: {fileID: 1950523725785438}
   scanRange: 15
@@ -1512,7 +1523,18 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 1104089041196970}
   triggerOutlineWidth: 0.12
-  triggerSoundList: []
+  triggerSoundList:
+  - id: 14
+    type: 3
+    isTurnOn: 1
+    trans: {fileID: 4655188571004996}
+    delay: 1
+    fadeDuration: 5
+    isLooping: 0
+    isFalloff: 0
+    isStandOut: 0
+    spatialBlend: 0
+    pos: {x: 0, y: 0, z: 0}
   targetCamera: {fileID: 1525820377686250}
   scannerTarget: {fileID: 1950523725785438}
   scanRange: 10

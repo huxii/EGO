@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class CutSceneBehavior : MonoBehaviour
 {
-    public GameObject videoManager;
-    VideoControl videoController;
 
 	// Use this for initialization
 	void Start ()
     {
-        videoController = videoManager.GetComponent<VideoControl>();
-
     }
 	
 	// Update is called once per frame
@@ -24,7 +20,7 @@ public class CutSceneBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            videoController.Play(VideoControl.VideoListID.LEVEL1CUTSCENE);
+			GameControl.videoController.Play(VideoControl.VideoListID.LEVEL1CUTSCENE);
         }
     }
 }
