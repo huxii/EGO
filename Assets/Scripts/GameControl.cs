@@ -28,6 +28,7 @@ public class GameControl : MonoBehaviour
     };
 
     State currentState;
+    GameObject tmp;
 
     // Use this for initialization
     void Awake()
@@ -55,6 +56,8 @@ public class GameControl : MonoBehaviour
         }
 
         TutorialController.ChangeIcon(currentState);
+        tmp = GameObject.Find("FloorLampScannerTrigger");
+        tmp.SetActive(false);
 
     }
     // Update is called once per frame
@@ -83,8 +86,10 @@ public class GameControl : MonoBehaviour
                         TutorialController.tutorialImages[7].color == Color.white)
                     {
                         currentState = State.WAITINTERACT;
-                        GameObject.Find("Floor_Lamp").transform.DOScale(Vector3.one, 0.5f);
-                        GameObject.Find("FloorLampPuzzle").transform.DOScale(Vector3.one, 0.5f);
+                        tmp.SetActive(true);
+                        //GameObject.Find("FloorLampScannerTrigger").GetComponent<TransitionEffectControl>().Play();
+                        //GameObject.Find("Floor_Lamp").transform.DOScale(Vector3.one, 0.5f);
+                        //GameObject.Find("FloorLampPuzzle").transform.DOScale(Vector3.one, 0.5f);
                         TutorialController.ChangeIcon(currentState);
                     }
                 }
@@ -128,7 +133,7 @@ public class GameControl : MonoBehaviour
                     }
                     if (TutorialController.tutorialImages[10].color != new Color(1, 1, 1, 0))
                     {
-                        currentState = State.WAITMOVECAMERA;
+                        currentState = State.FINISHED;
                         TutorialController.ChangeIcon(currentState);
                         //need to add animation;
                     }
