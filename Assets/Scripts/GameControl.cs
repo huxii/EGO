@@ -23,6 +23,7 @@ public class GameControl : MonoBehaviour
         WAITFLY = 5,
         WAITINTERACT = 9,
         WAITMOVECAMERA = 11,
+        FINISHED,
         NONE = 100
     };
 
@@ -52,12 +53,13 @@ public class GameControl : MonoBehaviour
         TutorialController.ChangeIcon(currentState);
 
     }
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update()
     {
         ChangeState();
-	}
-    public void ChangeState() {
+    }
+    public void ChangeState()
+    {
         switch (currentState)
         {
             case State.NONE:
@@ -77,6 +79,8 @@ public class GameControl : MonoBehaviour
                         TutorialController.tutorialImages[7].color == Color.white)
                     {
                         currentState = State.WAITINTERACT;
+                        GameObject.Find("Floor_Lamp").transform.DOScale(Vector3.one, 0.5f);
+                        GameObject.Find("FloorLampPuzzle").transform.DOScale(Vector3.one, 0.5f);
                         TutorialController.ChangeIcon(currentState);
                     }
                 }
@@ -114,17 +118,40 @@ public class GameControl : MonoBehaviour
                 if (TutorialController.tutorialImages[9].color == Color.white)
                 {
                     if (GameObject.Find("Room_BeApart").activeInHierarchy)
+
                     {
                         TutorialController.tutorialImages[10].DOFade(1, 0.5f);
                     }
-                    if (TutorialController.tutorialImages[10].color != new Color (1,1,1,0))
+                    if (TutorialController.tutorialImages[10].color != new Color(1, 1, 1, 0))
                     {
                         currentState = State.WAITMOVECAMERA;
                         TutorialController.ChangeIcon(currentState);
+                        //need to add animation;
                     }
                 }
-                    break;
+                break;
             case State.WAITMOVECAMERA:
+                if (TutorialController.tutorialImages[11].color == Color.white)
+                {
+                    if (true)
+                    {//if players move around mouse
+                        currentState = State.FINISHED;
+                        TutorialController.ChangeIcon(currentState);
+                    }
+                }
+                break;
+            case State.FINISHED:
+                foreach(SpriteRenderer i in TutorialController.tutorialImages){
+
+                    i.DOFade(0, 0.5f);
+                }
+                if(TutorialController.tutorialImages[11].color == new Color(1,1,1,0)){
+                    foreach (SpriteRenderer i in TutorialController.tutorialImages)
+                    {
+
+                        i.gameObject.SetActive(false);
+                    }
+                }
                 break;
         }
     }
