@@ -23,9 +23,11 @@ public class TutorialControl : MonoBehaviour {
         foreach (SpriteRenderer i in tutorialImages)
         { i.DOFade(0, fade_duration); }
         yield return new WaitForSeconds(fade_duration);
-        yield return new WaitForSeconds(pause_time);
-        tutorialImages[(int)s].DOFade(1, fade_duration);
-        yield return new WaitForSeconds(fade_duration);
+        if (s != GameControl.State.FINISHED)
+        {
+            tutorialImages[(int)s].DOFade(1, fade_duration);
+            yield return new WaitForSeconds(fade_duration);
+        }
     }
 
     public IEnumerator Pause() {
