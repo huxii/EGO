@@ -110,15 +110,17 @@ public class PlayerControl : MonoBehaviour
         {
             heightState = Mathf.Min(++heightState, 1);
             heightCD = 0f;
+            anime.SetTrigger("Up");
         }
         else if (Input.GetButton("low") && heightState != -1 && heightCD > 0.5f)
         {
             heightState = Mathf.Max(--heightState, -1);
             heightCD = 0f;
+            anime.SetTrigger("Down");
         }
         else
         {
-
+            
         }
 
         Vector3 vertical = CameraForwardDirection() * Input.GetAxis("Vertical") * moveSpeed;
