@@ -17,7 +17,6 @@ public class GameControl : MonoBehaviour
     public static VideoControl videoController;
     public static TutorialControl TutorialController;
 
-    public static SpriteRenderer[] tutorialImages;
     public enum State
     {
         WAITMOVE = 0,
@@ -45,12 +44,12 @@ public class GameControl : MonoBehaviour
     void Start()
     {
         currentState = State.WAITMOVE;
-        foreach (SpriteRenderer i in tutorialImages)
+        foreach (SpriteRenderer i in TutorialController.tutorialImages)
         {
             i.color = new Color(1, 1, 1, 0);
         }
 
-        //TutorialController.ChangeIcon(currentState);
+        TutorialController.ChangeIcon(currentState);
 
     }
 	// Update is called once per frame
@@ -64,18 +63,18 @@ public class GameControl : MonoBehaviour
             case State.NONE:
                 break;
             case State.WAITFLY:
-                if (tutorialImages[5].color == Color.white)
+                if (TutorialController.tutorialImages[5].color == Color.white)
                 {
                     if (Input.GetButton("raise"))
                     {
-                        tutorialImages[6].DOFade(1, 0.5f);
+                        TutorialController.tutorialImages[6].DOFade(1, 0.5f);
                     }
                     if (Input.GetButton("low"))
                     {
-                        tutorialImages[7].DOFade(1, 0.5f);
+                        TutorialController.tutorialImages[7].DOFade(1, 0.5f);
                     }
-                    if (tutorialImages[6].color == Color.white &&
-                       tutorialImages[7].color == Color.white)
+                    if (TutorialController.tutorialImages[6].color == Color.white &&
+                        TutorialController.tutorialImages[7].color == Color.white)
                     {
                         currentState = State.WAITINTERACT;
                         TutorialController.ChangeIcon(currentState);
@@ -83,28 +82,28 @@ public class GameControl : MonoBehaviour
                 }
                 break;
             case State.WAITMOVE:
-                if (tutorialImages[0].color == Color.white)
+                if (TutorialController.tutorialImages[0].color == Color.white)
                 {
                     if (Input.GetAxis("Vertical") > 0)
                     {
-                        tutorialImages[1].DOFade(1, 0.5f);
+                        TutorialController.tutorialImages[1].DOFade(1, 0.5f);
                     }
                     if (Input.GetAxis("Vertical") < 0)
                     {
-                        tutorialImages[2].DOFade(1, 0.5f);
+                        TutorialController.tutorialImages[2].DOFade(1, 0.5f);
                     }
                     if (Input.GetAxis("Horizontal") < 0)
                     {
-                        tutorialImages[3].DOFade(1, 0.5f);
+                        TutorialController.tutorialImages[3].DOFade(1, 0.5f);
                     }
                     if (Input.GetAxis("Horizontal") > 0)
                     {
-                        tutorialImages[4].DOFade(1, 0.5f);
+                        TutorialController.tutorialImages[4].DOFade(1, 0.5f);
                     }
-                    if (tutorialImages[1].color == Color.white &&
-                        tutorialImages[2].color == Color.white &&
-                        tutorialImages[3].color == Color.white &&
-                        tutorialImages[4].color == Color.white)
+                    if (TutorialController.tutorialImages[1].color == Color.white &&
+                        TutorialController.tutorialImages[2].color == Color.white &&
+                        TutorialController.tutorialImages[3].color == Color.white &&
+                        TutorialController.tutorialImages[4].color == Color.white)
                     {
                         currentState = State.WAITFLY;
                         TutorialController.ChangeIcon(currentState);
@@ -112,13 +111,13 @@ public class GameControl : MonoBehaviour
                 }
                 break;
             case State.WAITINTERACT:
-                if (tutorialImages[9].color == Color.white)
+                if (TutorialController.tutorialImages[9].color == Color.white)
                 {
-                    if (true)
+                    if (GameObject.Find("Room_BeApart").activeInHierarchy)
                     {
-                        tutorialImages[10].DOFade(1, 0.5f);
+                        TutorialController.tutorialImages[10].DOFade(1, 0.5f);
                     }
-                    if (tutorialImages[10].color != new Color (1,1,1,0))
+                    if (TutorialController.tutorialImages[10].color != new Color (1,1,1,0))
                     {
                         currentState = State.WAITMOVECAMERA;
                         TutorialController.ChangeIcon(currentState);
