@@ -92,7 +92,7 @@ public class PlayerControl : MonoBehaviour
         }
         transform.forward += Time.deltaTime * 5 * (targetOrien - transform.forward);
 
-        float cameraDis = (Camera.main.transform.position - transform.position).magnitude;
+        float cameraDis = (GameControl.cameraController.gameObject.transform.position - transform.position).magnitude;
         if (cameraDis < lightFalloffDistance)
         {
             light.intensity = cameraDis / lightFalloffDistance;
