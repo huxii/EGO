@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Metal_Appear
+  m_Name: Metal_Replace
   m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
-  m_ShaderKeywords: _REPLACEMENTSTYLE_APPEAR _TEXTUREBLENDMODE_ALPHA
+  m_ShaderKeywords: _REPLACEMENTSTYLE_REPLACE _TEXTUREBLENDMODE_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -79,7 +79,7 @@ Material:
     - _OutlineThickness: 0
     - _Parallax: 0.02
     - _ReplacementInverted: 0
-    - _ReplacementStyle: 2
+    - _ReplacementStyle: 1
     - _ReplacementTimer: 0
     - _ShadowThreshold: 0.3
     - _SmoothnessTextureChannel: 0
