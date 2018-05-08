@@ -79,7 +79,7 @@ public class SoundControl : MonoBehaviour
                     break;
                 case ClipType.NONE:
                     break;
-            }            
+            }
         }
 
         Play(StartBGM);
@@ -93,20 +93,33 @@ public class SoundControl : MonoBehaviour
 
     public void Play(SoundSettings settings)
     {
-		Sounds sound;
-		if (soundsList.TryGetValue(settings.id, out sound))
-		{
-			if (sound.type == ClipType.BGM)
-			{
-				foreach (SoundEnum s in soundsList.Keys)
-				{
-					if (soundsList[s].type == ClipType.BGM)
-					{
-						soundsList[s].Stop();
-					}
-				}
-			}
-			sound.Play(settings);
-		}
+        Sounds sound;
+        if (soundsList.TryGetValue(settings.id, out sound))
+        {
+            sound = soundsList[settings.id];
+        }
+        else
+        {
+            return;
+        }
+
+        if (settings.isTurnOn)
+        {
+            if (sound.type == ClipType.BGM)
+            {
+                foreach (SoundEnum s in soundsList.Keys)
+                {
+                    if (soundsList[s].type == ClipType.BGM)
+                    {
+                        soundsList[s].Stop();
+                    }
+                }
+            }
+            sound.Play(settings);
+        }
+        else
+        {
+            sound.Stop();
+        }
     }
 }

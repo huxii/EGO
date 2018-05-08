@@ -17,6 +17,8 @@ public class SoundSettings
     public bool isFalloff = false;
     public bool isStandOut = false;
     public float spatialBlend = 0;
+
+
     public Vector3 pos;
 
     SoundSettings(Vector3 pos) {
@@ -41,6 +43,7 @@ public class Sounds
             return;
         }
         int i = settings.isFalloff ? 1 : 0;
+
         GameObject newSound = NewPooledObject.current.GetSoundEffect();
         AudioSource newSource = newSound.GetComponent<AudioSource>();
         newSource.clip = audio;
@@ -54,13 +57,10 @@ public class Sounds
         {
             //fade other sounds
         }
-        if(settings.isTurnOn){
-            Stop();
-        }
         newSound.SetActive(true);
         newSource.PlayDelayed(settings.delay);
         newSource.DOFade(1, settings.fadeDuration);
-        curSound = newSound;
+        curSound = newSound;    
     }
 
     public virtual void Stop()

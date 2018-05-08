@@ -19,9 +19,9 @@ public class LightballBehaviorTest : InteractableControl
     float fadeOutSpeed;
     float opacity = 1.0f;
     bool fadeOutTrigger = false;
-    Color[] color;
-    Transform[] children;
-    Rigidbody[] rb;
+    Color[] color = new Color[6];
+    Transform[] children = new Transform[6];
+    Rigidbody[] rb = new Rigidbody[6];
 	// Use this for initialization
 	void Start (){
         for (int i = 0; i< gameObject.transform.childCount;i++){
@@ -47,7 +47,7 @@ public class LightballBehaviorTest : InteractableControl
         {
             if (fadeOutTrigger)
             {
-                FadeOut(color[i]);
+                FadeOut(color[i],children[i]);
                 startTime += Time.deltaTime;
                 Vector3 velocity = (Random.onUnitSphere - fleeDir) * amp;
 
@@ -70,13 +70,13 @@ public class LightballBehaviorTest : InteractableControl
         }
 	}
 
-    void FadeOut(Color c){
+    void FadeOut(Color c,Transform child){
         c.a -= fadeOutSpeed * Time.deltaTime;
         if(c.a>0){
-            GetComponent<Renderer>().material.SetColor("_Color", c);
+            child.gameObject.GetComponent<Renderer>().material.SetColor("_Color", c);
         }else{
             c.a = 0;
-            GetComponent<Renderer>().material.SetColor("_Color", c);
+            child.gameObject.GetComponent<Renderer>().material.SetColor("_Color", c);
         }
        
     }
@@ -108,6 +108,9 @@ public class LightballBehaviorTest : InteractableControl
 
     IEnumerator Destory(){
         yield return new WaitForSeconds(3f);
-        Destroy(gameObject);
+        foreach(Transform t in children){
+            Destroy(t.gameObject);
+        }
+
     }
 }
