@@ -10,13 +10,18 @@ public class SoundSettings
     public SoundEnum id;
     public ClipType type = ClipType.NONE;
     public bool isTurnOn = true;
-    public Transform pos;
+    public Transform trans;
     public float delay = 0f;
     public float fadeDuration = 3f;
     public bool isLooping = false;
     public bool isFalloff = false;
     public bool isStandOut = false;
     public float spatialBlend = 0;
+    public Vector3 pos;
+
+    SoundSettings(Vector3 pos) {
+        pos = trans.position;
+    }
 }
 
 
@@ -43,7 +48,7 @@ public class Sounds
         newSource.volume = 0;
         newSource.spread = i * 360;
         newSource.spatialBlend = settings.spatialBlend;
-        newSound.transform.position = settings.pos.position;
+        newSound.transform.position = settings.pos;
 
         if (settings.isStandOut)
         {
