@@ -15,7 +15,6 @@ public class SoundSettings
     public float fadeDuration = 3f;
     public bool isLooping = false;
     public bool isFalloff = false;
-    public bool isDestroiedAfterFinish = false;
     public bool isStandOut = false;
     public float spatialBlend = 0;
 }
