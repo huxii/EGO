@@ -15,7 +15,8 @@ public class PlayerControl : MonoBehaviour
 
     [Header("Trigger Sound")]
     public List<SoundSettings> triggerSoundList;
-    SoundSettings skillSFX;
+    SoundSettings skill1SFX;
+    SoundSettings skill2SFX;
     SoundSettings failSFX;
 
     [Header("Lights")]
@@ -49,7 +50,9 @@ public class PlayerControl : MonoBehaviour
         transform.position = new Vector3(pos.x, heightAxis + GetHeightOnGround(), pos.z);
         prePos = transform.position;
 
-        skillSFX = triggerSoundList[1];
+
+        skill1SFX = triggerSoundList[1];
+        skill2SFX = triggerSoundList[2];
         failSFX = triggerSoundList[0];
     }
 
@@ -69,7 +72,7 @@ public class PlayerControl : MonoBehaviour
         Vector3 delta = transform.position - prePos;
         prePos = transform.position;
 
-        Debug.Log(delta);
+        //Debug.Log(delta);
         anime.SetFloat("speedH", Mathf.Abs(delta.x + delta.z) - 0.001f);
         anime.SetFloat("speedV", Mathf.Max(Mathf.Abs(delta.y) - 0.001f, 0) * Mathf.Sign(delta.y));
     }
@@ -181,7 +184,7 @@ public class PlayerControl : MonoBehaviour
             }
             else
             {
-                GameControl.soundController.Play(skillSFX);
+                GameControl.soundController.Play(skill1SFX);
                 //GameControl.soundController.PlayEffect(skillSFX, transform.position);
                 triggerInteractable.GetComponent<InteractableControl>().BeginInteraction();
                 anime.SetTrigger("skill");

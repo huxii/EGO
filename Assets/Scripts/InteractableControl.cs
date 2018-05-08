@@ -35,6 +35,7 @@ public class InteractableControl : MonoBehaviour
         {
             GameControl.soundController.Play(sound);
         }
+
         
     }
 

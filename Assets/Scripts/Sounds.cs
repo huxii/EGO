@@ -49,6 +49,9 @@ public class Sounds
         {
             //fade other sounds
         }
+        if(settings.isTurnOn){
+            Stop();
+        }
         newSound.SetActive(true);
         newSource.PlayDelayed(settings.delay);
         newSource.DOFade(1, settings.fadeDuration);
