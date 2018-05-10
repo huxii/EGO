@@ -48,8 +48,7 @@
 		GrabPass
 		{
 			"_BackgroundTexture"
-		}
-		
+		}		
 		// distortion
 		Pass
 		{
@@ -111,8 +110,8 @@
 			}
 
 			ENDCG
-		}
-		
+		}		
+
 		// wave & texture
 		Pass
 		{

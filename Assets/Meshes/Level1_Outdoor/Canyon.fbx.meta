@@ -10,27 +10,54 @@ ModelImporter:
     100004: Water
     100006: Land
     100008: Platform
+    100010: group
+    100012: pasted__Mountain
+    100014: Background
+    100016: Background1
+    100018: Background2
+    100020: Background3
     400000: //RootNode
     400002: Mountain
     400004: Water
     400006: Land
     400008: Platform
+    400010: group
+    400012: pasted__Mountain
+    400014: Background
+    400016: Background1
+    400018: Background2
+    400020: Background3
     2100000: lambert1
     2300000: //RootNode
     2300002: Mountain
     2300004: Water
     2300006: Land
     2300008: Platform
+    2300010: pasted__Mountain
+    2300012: Background
+    2300014: Background1
+    2300016: Background2
+    2300018: Background3
     3300000: //RootNode
     3300002: Mountain
     3300004: Water
     3300006: Land
     3300008: Platform
+    3300010: pasted__Mountain
+    3300012: Background
+    3300014: Background1
+    3300016: Background2
+    3300018: Background3
     4300000: planarTrimmedSurface1
     4300002: Mountain
     4300004: Water
     4300006: Land
     4300008: Platform
+    4300010: pasted__Mountain
+    4300012: Background
+    4300014: Background1
+    4300016: Background2
+    4300018: Background3
   externalObjects: {}
   materials:
     importMaterials: 0
