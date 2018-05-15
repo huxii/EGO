@@ -285,6 +285,10 @@ Prefab:
       propertyPath: nextPlays.Array.data[0]
       value: 
       objectReference: {fileID: 478464290}
+    - target: {fileID: 1032691762833556, guid: acde680032adc094f8527375489cae94, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acde680032adc094f8527375489cae94, type: 2}
   m_IsPrefabParent: 0

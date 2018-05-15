@@ -5,11 +5,11 @@
         [KeywordEnum(KEEP, REPLACE, APPEAR, DISAPPEAR, NEVER)] _ReplacementStyle("Replacement Style", Float) = 1
         _ReplacementTimer("Replacement Timer", Range(0, 30.0)) = 0
         [Toggle]_ReplacementInverted("Replacement Inverted", float) = 0
+		[KeywordEnum(ALPHA,MULTIPLY, ADD)] _TextureBlendMode("Texture Blend Mode", float) = 0
+		_TextureAlpha("Texture Alpha", Range(0,1)) = 0
 
         [Header(Style Light)]
         _ReplacementTex("Texture", 2D) = "white" {}
-        [KeywordEnum(ALPHA,MULTIPLY, ADD)] _TextureBlendMode("Texture Blend Mode", float) = 0
-        _TextureAlpha("Texture Alpha", Range(0,1)) = 0
         _ReSpecColor("Specular", Color) = (1.0, 1.0, 1.0, 1.0)
         _ReDiffuseColor("Diffuse", Color) = (0.5, 0.5, 0.5, 1.0)
         _ReShadowColor("Shadow", Color) = (0.0, 0.0, 0.0, 1.0)
@@ -154,6 +154,8 @@
 				float4 reSpecColor;
 				float4 reDiffuseColor;
 				float4 reShadowColor;
+				float4 tex;
+				float4 reTex;
 
 				if (!_ReplacementInverted)
 				{
@@ -163,6 +165,8 @@
 					reSpecColor = _ReSpecColor;
 					reDiffuseColor = _ReDiffuseColor;
 					reShadowColor = _ReShadowColor;
+					tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
+					reTex = tex2D(_ReplacementTex, i.tex.xy * _ReplacementTex_ST.xy + _ReplacementTex_ST.zw);
 				}
 				else
 				{					
@@ -172,6 +176,8 @@
 					reSpecColor = _SpecColor;
 					reDiffuseColor = _DiffuseColor;
 					reShadowColor = _ShadowColor;
+					reTex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
+					tex = tex2D(_ReplacementTex, i.tex.xy * _ReplacementTex_ST.xy + _ReplacementTex_ST.zw);
 				}
 
 				// tone lightings (diffuse only for now)
@@ -195,9 +201,6 @@
 
 				lightingColor *= atten * _LightColor0.w;
 				reLightingColor *= atten * _LightColor0.w;
-
-				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
-				float4 reTex = tex2D(_ReplacementTex, i.tex.xy * _ReplacementTex_ST.xy + _ReplacementTex_ST.zw);
 
 				// replacement
 				float4 col;
@@ -377,6 +380,8 @@
 				float4 reSpecColor;
 				float4 reDiffuseColor;
 				float4 reShadowColor;
+				float4 tex;
+				float4 reTex;
 
 				if (!_ReplacementInverted)
 				{
@@ -386,15 +391,19 @@
 					reSpecColor = _ReSpecColor;
 					reDiffuseColor = _ReDiffuseColor;
 					reShadowColor = _ReShadowColor;
+					tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
+					reTex = tex2D(_ReplacementTex, i.tex.xy * _ReplacementTex_ST.xy + _ReplacementTex_ST.zw);
 				}
 				else
-				{					
+				{
 					specColor = _ReSpecColor;
 					diffuseColor = _ReDiffuseColor;
 					shadowColor = _ReShadowColor;
 					reSpecColor = _SpecColor;
 					reDiffuseColor = _DiffuseColor;
 					reShadowColor = _ShadowColor;
+					reTex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
+					tex = tex2D(_ReplacementTex, i.tex.xy * _ReplacementTex_ST.xy + _ReplacementTex_ST.zw);
 				}
 
 				// tone lightings (diffuse only for now)
@@ -418,9 +427,6 @@
 
 				lightingColor *= atten * _LightColor0.w;
 				reLightingColor *= atten * _LightColor0.w;
-
-				float4 tex = tex2D(_MainTex, i.tex.xy * _MainTex_ST.xy + _MainTex_ST.zw);
-				float4 reTex = tex2D(_ReplacementTex, i.tex.xy * _ReplacementTex_ST.xy + _ReplacementTex_ST.zw);
 
 				// replacement
 				float4 col;
