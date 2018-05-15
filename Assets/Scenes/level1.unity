@@ -195,6 +195,10 @@ Prefab:
       propertyPath: nextPlays.Array.data[0]
       value: 
       objectReference: {fileID: 1165787472}
+    - target: {fileID: 1934727368837372, guid: f6bdf8f7937fc6c4f850f6cf1bcb7ed0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f6bdf8f7937fc6c4f850f6cf1bcb7ed0, type: 2}
   m_IsPrefabParent: 0
@@ -949,6 +953,14 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4433306981608246, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.377
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433306981608246, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.059
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
   m_IsPrefabParent: 0
@@ -1254,7 +1266,7 @@ Prefab:
         type: 2}
     - target: {fileID: 1693470266501430, guid: 026aa8183c5a10544a013db1b83b1564, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114153375235856538, guid: 026aa8183c5a10544a013db1b83b1564,
         type: 2}

@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Desk
   m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
-  m_ShaderKeywords: _REPLACEMENTSTYLE_APPEAR _TEXTUREBLENDMODE_ALPHA
+  m_ShaderKeywords: _REPLACEMENTSTYLE_APPEAR _TEXTUREBLENDMODE_MULTIPLY
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -43,7 +43,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: cb42cda81ca374e479700d9a29c7c64c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -71,7 +71,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ReplacementTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: dea63957a4e839b4d87d850825ed903e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -103,8 +103,8 @@ Material:
     - _SpecThreshold: 0.807
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TextureAlpha: 0
-    - _TextureBlendMode: 0
+    - _TextureAlpha: 1
+    - _TextureBlendMode: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
@@ -113,8 +113,8 @@ Material:
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReDiffuseColor: {r: 0.7205882, g: 0.6400519, b: 0.5669334, a: 1}
-    - _ReShadowColor: {r: 0.30147058, g: 0.19285251, b: 0.19285251, a: 1}
+    - _ReDiffuseColor: {r: 0.89705884, g: 0.6723394, b: 0.46831748, a: 1}
+    - _ReShadowColor: {r: 0.47794116, g: 0.3127703, b: 0.3127703, a: 1}
     - _ReSpecColor: {r: 1, g: 0.91764706, b: 0.7941176, a: 1}
     - _ShadowColor: {r: 0.21176472, g: 0.16078432, b: 0.14901961, a: 1}
     - _SpecColor: {r: 0.9960785, g: 0.76470596, b: 0.5921569, a: 1}
