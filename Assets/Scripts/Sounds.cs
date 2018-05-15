@@ -33,7 +33,7 @@ public class Sounds
     public Sounds(AudioClip clip)
     {
         audio = clip;
-        curSound = null;
+        //curSound = null;
     }
 
     public virtual void Play(SoundSettings settings)
@@ -46,35 +46,47 @@ public class Sounds
 
         GameObject newSound = NewPooledObject.current.GetSoundEffect();
         AudioSource newSource = newSound.GetComponent<AudioSource>();
+
         newSource.clip = audio;
         newSource.loop = settings.isLooping;
-        newSource.volume = 0;
         newSource.spread = i * 360;
         newSource.spatialBlend = settings.spatialBlend;
         newSound.transform.position = settings.pos;
-
-        if (settings.isStandOut)
-        {
-            //fade other sounds
-        }
+        newSource.volume = 0;
+        newSound.name = settings.id.ToString();
         newSound.SetActive(true);
-        newSource.PlayDelayed(settings.delay);
-        newSource.DOFade(1, settings.fadeDuration);
-        curSound = newSound;    
+
+        if (settings.type == ClipType.SFX)
+        {
+            newSource.volume = 1;
+            newSource.PlayOneShot(audio);
+        }
+        else{
+            if (settings.isStandOut)
+            {
+                //fade other sounds
+            }
+            newSource.PlayDelayed(settings.delay);
+            newSource.DOFade(1, settings.fadeDuration);
+        }
     }
 
-    public virtual void Stop()
+    public virtual void Stop(SoundSettings settings)
     {
-        if (!curSound)
-        {
-            return;
+        foreach (GameObject eff in NewPooledObject.current.Effects) {
+            if (eff.name == settings.id.ToString())
+            {
+                eff.GetComponent<AudioSource>().DOFade(0, 3f).OnComplete(() => { eff.SetActive(false); });
+            }
+            else if (!eff.GetComponent<AudioSource>().isPlaying)
+            {
+                eff.SetActive(false);
+            }
         }
-        curSound.GetComponent<AudioSource>().DOFade(0, 3f).OnComplete(() => { curSound.SetActive(false); });
-        curSound = null;
     }
 
     public ClipType type = ClipType.NONE;
-    public GameObject curSound;
+    ///public GameObject curSound;
     protected AudioClip audio;
 }
 

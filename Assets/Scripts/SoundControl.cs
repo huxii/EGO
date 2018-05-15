@@ -111,7 +111,7 @@ public class SoundControl : MonoBehaviour
                 {
                     if (soundsList[s].type == ClipType.BGM)
                     {
-                        soundsList[s].Stop();
+                        soundsList[s].Stop(settings);
                     }
                 }
             }
@@ -119,7 +119,7 @@ public class SoundControl : MonoBehaviour
         }
         else
         {
-            sound.Stop();
+            sound.Stop(settings);
         }
     }
 }
