@@ -252,6 +252,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 326240378}
     m_Modifications:
+    - target: {fileID: 114764705546183284, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4920348398993432, guid: acde680032adc094f8527375489cae94, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -308,6 +313,36 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cea8ec3955fb11b4dad935bd15a5580c, type: 2}
+    - target: {fileID: 114764705546183284, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].id
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764705546183284, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764705546183284, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].isTurnOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764705546183284, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].delay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764705546183284, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].fadeDuration
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764705546183284, guid: acde680032adc094f8527375489cae94,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].isLooping
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acde680032adc094f8527375489cae94, type: 2}
   m_IsPrefabParent: 0
@@ -832,6 +867,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 326240378}
     m_Modifications:
+    - target: {fileID: 114921283233779974, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4332545196942198, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -961,6 +1001,41 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -0.059
       objectReference: {fileID: 0}
+    - target: {fileID: 114921283233779974, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[2].id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114921283233779974, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[2].type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114921283233779974, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[2].isTurnOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114921283233779974, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[2].trans
+      value: 
+      objectReference: {fileID: 1291885523}
+    - target: {fileID: 114921283233779974, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[2].fadeDuration
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114921283233779974, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[2].isLooping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114921283233779974, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[2].isFalloff
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
   m_IsPrefabParent: 0
@@ -1059,6 +1134,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1585213696608028, guid: f6bdf8f7937fc6c4f850f6cf1bcb7ed0,
     type: 2}
   m_PrefabInternal: {fileID: 111923604}
+--- !u!4 &1291885523 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4011725734730400, guid: dfc0668484aed3f4fa581ebb20e4c118,
+    type: 2}
+  m_PrefabInternal: {fileID: 1051268781}
 --- !u!1 &1294465992 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1814515236489924, guid: f6bdf8f7937fc6c4f850f6cf1bcb7ed0,
@@ -1081,6 +1161,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 326240378}
     m_Modifications:
+    - target: {fileID: 114680705297141652, guid: f2fe8e8175482f94bb87149657a65fa9,
+        type: 2}
+      propertyPath: triggerSoundList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4085486275496172, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1121,6 +1206,16 @@ Prefab:
     - target: {fileID: 1428406442437426, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114680705297141652, guid: f2fe8e8175482f94bb87149657a65fa9,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].id
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114680705297141652, guid: f2fe8e8175482f94bb87149657a65fa9,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[0].type
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
