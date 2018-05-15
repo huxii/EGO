@@ -11,7 +11,9 @@ public class LightballBehaviorTest : InteractableControl
     public float lifespan = 1.0f;
     public float fleeForce = 4.0f;
     public GameObject targetLocation;
-    float xOrg, yOrg, zOrg;
+    float[] xOrg = new float[6];
+    float[] yOrg = new float[6];
+    float[] zOrg = new float[6];
     Vector3 position;
     Vector3 fleeDir;
     float timer;
@@ -26,17 +28,20 @@ public class LightballBehaviorTest : InteractableControl
 	void Start (){
         for (int i = 0; i< gameObject.transform.childCount;i++){
             children[i] = gameObject.transform.GetChild(i);
+            children[i].localScale *= Random.Range(0.7f, 1f);
+
             children[i].position = new Vector3(transform.position.x + Random.Range(-scale * 0.2f, scale * 0.2f),
-                                          transform.position.y + Random.Range(-scale * 0.2f, scale * 0.2f),
-                                          transform.position.z + Random.Range(-scale * 0.2f, scale * 0.2f));
+                                               transform.position.y + Random.Range(-scale * 0.2f, scale * 0.2f),
+                                               transform.position.z + Random.Range(-scale * 0.2f, scale * 0.2f));
             color[i] = children[i].gameObject.GetComponent<Renderer>().material.color;
             rb[i] = children[i].gameObject.GetComponent<Rigidbody>();
+            xOrg[i] = Random.Range(-1.0f, 1.0f);
+            yOrg[i] = Random.Range(-1.0f, 1.0f);
+            zOrg[i] = Random.Range(-1.0f, 1.0f);
         }
-        transform.localScale = transform.localScale * Random.Range(0.5f, 1f);
 
-        xOrg = Random.Range(-1.0f, 1.0f);
-        yOrg = Random.Range(-1.0f, 1.0f);
-        zOrg = Random.Range(-1.0f, 1.0f);
+
+
         fadeOutSpeed = 1.0f / lifespan;
 	}
 	
@@ -60,9 +65,9 @@ public class LightballBehaviorTest : InteractableControl
             }
             else
             {
-                float x = Mathf.PerlinNoise(xOrg + timer * freq, 0) - 0.5f;
-                float y = Mathf.PerlinNoise(yOrg + timer * freq, 0) - 0.5f;
-                float z = Mathf.PerlinNoise(zOrg + timer * freq, 0) - 0.5f;
+                float x = Mathf.PerlinNoise(xOrg[i] + timer * freq, 0) - 0.5f;
+                float y = Mathf.PerlinNoise(yOrg[i] + timer * freq, 0) - 0.5f;
+                float z = Mathf.PerlinNoise(zOrg[i] + timer * freq, 0) - 0.5f;
                 startTime = 0;
                 Vector3 velocity = new Vector3(x, y, z) * amp;
                 rb[i].velocity = velocity;
