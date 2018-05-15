@@ -95,11 +95,11 @@ public class PlayerControl : MonoBehaviour
         float cameraDis = (GameControl.cameraController.gameObject.transform.position - transform.position).magnitude;
         if (cameraDis < lightFalloffDistance)
         {
-            light.intensity = cameraDis / lightFalloffDistance;
+            light.intensity = 0.7f * cameraDis / lightFalloffDistance;
         }
         else
         {
-            light.intensity = 1f;
+            light.intensity = 0.7f;
         }
     }
 
