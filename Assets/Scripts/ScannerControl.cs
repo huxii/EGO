@@ -59,6 +59,7 @@ public class ScannerControl : InteractableControl
     {
         SoundUpdate();
 
+        bgCam = GameObject.FindGameObjectWithTag("ScannerBgCamera");
         bgCam.SetActive(false);
         targetCamera.SetActive(true);
 

@@ -68,8 +68,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1036303249889478}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.451252, y: 6.7800007, z: -2.503227}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4069526376967994}
@@ -97,11 +97,11 @@ Camera:
   field of view: 32
   orthographic: 0
   orthographic size: 5
-  m_Depth: 2
+  m_Depth: 3
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
-  m_RenderingPath: -1
+    m_Bits: 4294967295
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -122,8 +122,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 5, z: 2}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 8, y: 8, z: 8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114240424566542296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,6 +179,7 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
+  triggerSoundList: []
   targetCamera: {fileID: 1703272292802384}
   scannerTarget: {fileID: 0}
   scanRange: 15
@@ -186,9 +187,7 @@ MonoBehaviour:
   scanSpeed: 0.2
   scanInnerBlur: 4
   scanOutterBlur: 4
-  hideTargetAfterDestroyed: 0
-  nextTargets: []
-  ppObjs: []
+  bgCam: {fileID: 0}
   scanManualTimer: 0
 --- !u!114 &114857152431832940
 MonoBehaviour:
@@ -216,17 +215,49 @@ MonoBehaviour:
   beginInteractionByButton: 1
   endInteractionByButton: 1
   triggerObject: {fileID: 0}
-  triggerOutlineWidth: 0.5
+  triggerOutlineWidth: 0.12
+  triggerSoundList:
+  - id: 11
+    type: 2
+    isTurnOn: 1
+    trans: {fileID: 0}
+    delay: 2
+    fadeDuration: 1
+    isLooping: 0
+    isFalloff: 0
+    isStandOut: 0
+    spatialBlend: 0
+    pos: {x: 0, y: 0, z: 0}
+  - id: 10
+    type: 2
+    isTurnOn: 1
+    trans: {fileID: 0}
+    delay: 0
+    fadeDuration: 3
+    isLooping: 1
+    isFalloff: 1
+    isStandOut: 0
+    spatialBlend: 0.9
+    pos: {x: 0, y: 0, z: 0}
+  - id: 15
+    type: 3
+    isTurnOn: 1
+    trans: {fileID: 0}
+    delay: 6
+    fadeDuration: 4
+    isLooping: 0
+    isFalloff: 0
+    isStandOut: 0
+    spatialBlend: 0
+    pos: {x: 0, y: 0, z: 0}
   targetCamera: {fileID: 1703272292802384}
   scannerTarget: {fileID: 0}
-  scanRange: 10
+  scanRange: 20
   scanEdgeWidth: 1
   scanSpeed: 1
   scanInnerBlur: 4
   scanOutterBlur: 4
-  hideTargetAfterDestroyed: 0
-  nextTargets: []
-  ppObjs: []
+  bgCam: {fileID: 0}
 --- !u!124 &124789316073258310
 Behaviour:
   m_ObjectHideFlags: 1

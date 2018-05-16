@@ -1528,8 +1528,8 @@ MonoBehaviour:
     type: 3
     isTurnOn: 1
     trans: {fileID: 4655188571004996}
-    delay: 1
-    fadeDuration: 5
+    delay: 0
+    fadeDuration: 3
     isLooping: 0
     isFalloff: 0
     isStandOut: 0

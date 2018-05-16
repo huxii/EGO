@@ -26,6 +26,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1090613152956696
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4772424706125726}
+  m_Layer: 0
+  m_Name: CameraPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1116241106615492
 GameObject:
   m_ObjectHideFlags: 1
@@ -210,21 +225,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1516674727294306
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4218789022209884}
-  m_Layer: 0
-  m_Name: CameraPivot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1596879042897932
 GameObject:
   m_ObjectHideFlags: 1
@@ -321,19 +321,6 @@ Transform:
   m_Father: {fileID: 4660421425887842}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4218789022209884
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1516674727294306}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.9, y: -6, z: 14.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4911923110921604}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4239930879487286
 Transform:
   m_ObjectHideFlags: 1
@@ -408,10 +395,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1116241106615492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.44, y: 3.77, z: -0.2}
+  m_LocalPosition: {x: -21.9, y: -6, z: 14.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4751449176167038}
+  m_Father: {fileID: 4911923110921604}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4548277679984112
@@ -497,10 +484,23 @@ Transform:
   m_LocalScale: {x: 1.0998447, y: 1, z: 1}
   m_Children:
   - {fileID: 4239930879487286}
-  - {fileID: 4527768829509030}
+  - {fileID: 4772424706125726}
   m_Father: {fileID: 4940205643685264}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0.266, z: 0}
+--- !u!4 &4772424706125726
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1090613152956696}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.44, y: 3.77, z: -0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4751449176167038}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4911923110921604
 Transform:
   m_ObjectHideFlags: 1
@@ -512,7 +512,7 @@ Transform:
   m_LocalScale: {x: 1.0998496, y: 1, z: 1}
   m_Children:
   - {fileID: 4936431906890376}
-  - {fileID: 4218789022209884}
+  - {fileID: 4527768829509030}
   m_Father: {fileID: 4361510175732562}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0.266, z: 0}
@@ -973,7 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd0f18dcc5c3454d946e6dfc46fcdd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 1116241106615492}
+  targetObject: {fileID: 1090613152956696}
   distance: 25
   angleZero: {x: -100, y: 30}
   angleRange: {x: 5, y: 5}
@@ -996,7 +996,18 @@ MonoBehaviour:
   endInteractionByButton: 1
   triggerObject: {fileID: 1128199754015970}
   triggerOutlineWidth: 0.15
-  triggerSoundList: []
+  triggerSoundList:
+  - id: 11
+    type: 2
+    isTurnOn: 0
+    trans: {fileID: 0}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 0
+    isFalloff: 0
+    isStandOut: 0
+    spatialBlend: 0
+    pos: {x: 0, y: 0, z: 0}
   targetControl: {fileID: 1128199754015970}
   targetCamera: {fileID: 1186680855335832}
 --- !u!114 &114557077739255800
@@ -1015,6 +1026,7 @@ MonoBehaviour:
   nextPlays: []
   hideTargets: []
   showTargets: []
+  triggerSoundList: []
 --- !u!114 &114969783420616354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1026,7 +1038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd0f18dcc5c3454d946e6dfc46fcdd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 1516674727294306}
+  targetObject: {fileID: 1116241106615492}
   distance: 25
   angleZero: {x: -40, y: 20}
   angleRange: {x: 2, y: 0}
