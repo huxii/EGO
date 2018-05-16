@@ -15,12 +15,13 @@ public class LightballBehaviorTest : InteractableControl
     float[] yOrg = new float[6];
     float[] zOrg = new float[6];
     Vector3 position;
-    Vector3 fleeDir;
+    Vector3[] fleeDir = new Vector3[6];
     float timer;
     float startTime= 0;
     float fadeOutSpeed;
     float opacity = 1.0f;
     bool fadeOutTrigger = false;
+    Vector3[] dir = new Vector3[6];
     Color[] color = new Color[6];
     Transform[] children = new Transform[6];
     Rigidbody[] rb = new Rigidbody[6];
@@ -52,9 +53,9 @@ public class LightballBehaviorTest : InteractableControl
         {
             if (fadeOutTrigger)
             {
-                FadeOut(color[i],children[i]);
-                startTime += Time.deltaTime;
-                Vector3 velocity = (Random.onUnitSphere - fleeDir) * amp;
+                FadeOut();
+                startTime += Time.deltaTime / children.Length;
+                Vector3 velocity = (Random.onUnitSphere - fleeDir[i]) * amp;
 
                 //Debug.Log(velocity.x*fleeDir.x + velocity.y*fleeDir.y + velocity.z * fleeDir.z);
                 if (startTime < 0.4f) rb[i].velocity = rb[i].velocity + velocity;
@@ -75,24 +76,25 @@ public class LightballBehaviorTest : InteractableControl
         }
 	}
 
-    void FadeOut(Color c,Transform child){
-        c.a -= fadeOutSpeed * Time.deltaTime;
-        if(c.a>0){
-            child.gameObject.GetComponent<Renderer>().material.SetColor("_Color", c);
-        }else{
-            c.a = 0;
-            child.gameObject.GetComponent<Renderer>().material.SetColor("_Color", c);
+    void FadeOut(){
+        for (int i = 0; i < children.Length; i++) { 
+        color[i].a -= fadeOutSpeed * Time.deltaTime/children.Length;
+            if (color[i].a > 0) {
+                children[i].gameObject.GetComponent<Renderer>().material.SetColor("_Color", color[i]);
+            } else {
+                color[i].a = 0;
+                children[i].gameObject.GetComponent<Renderer>().material.SetColor("_Color", color[i]);
+            }
         }
-       
     }
 
     void Flee(){
         for (int i = 0; i < children.Length; i++)
         {
-            Vector3 dir = children[i].position - targetLocation.transform.position;
-            dir.Normalize();
-            fleeDir = dir;
-            rb[i].AddForce(dir * fleeForce, ForceMode.Impulse);
+            dir[i] = children[i].position - targetLocation.transform.position;
+            dir[i].Normalize();
+            fleeDir[i] = dir[i];
+            rb[i].AddForce(dir[i] * fleeForce, ForceMode.Impulse);
         }
         //transform.position = Vector3.Lerp(transform.position, fleePosition, 0.1f);
     }
@@ -111,11 +113,11 @@ public class LightballBehaviorTest : InteractableControl
         fadeOutTrigger = true;
     }
 
-    IEnumerator Destory(){
+    IEnumerator Destory() {
         yield return new WaitForSeconds(3f);
-        foreach(Transform t in children){
+        foreach (Transform t in children) {
             Destroy(t.gameObject);
         }
-
+        Destroy(gameObject);
     }
 }
