@@ -58,7 +58,7 @@ public class LightballBehaviorTest : InteractableControl
                 Vector3 velocity = (Random.onUnitSphere - fleeDir[i]) * amp;
 
                 //Debug.Log(velocity.x*fleeDir.x + velocity.y*fleeDir.y + velocity.z * fleeDir.z);
-                if (startTime < 0.4f) rb[i].velocity = rb[i].velocity + velocity;
+                if (startTime < 0.4f) rb[i].velocity += velocity;
 
                 //rb.velocity = velocity;
 
@@ -78,7 +78,7 @@ public class LightballBehaviorTest : InteractableControl
 
     void FadeOut(){
         for (int i = 0; i < children.Length; i++) { 
-        color[i].a -= fadeOutSpeed * Time.deltaTime/children.Length;
+            color[i].a -= fadeOutSpeed * Time.deltaTime/children.Length;
             if (color[i].a > 0) {
                 children[i].gameObject.GetComponent<Renderer>().material.SetColor("_Color", color[i]);
             } else {
@@ -92,9 +92,8 @@ public class LightballBehaviorTest : InteractableControl
         for (int i = 0; i < children.Length; i++)
         {
             dir[i] = children[i].position - targetLocation.transform.position;
-            dir[i].Normalize();
-            fleeDir[i] = dir[i];
-            rb[i].AddForce(dir[i] * fleeForce, ForceMode.Impulse);
+            fleeDir[i] = dir[i].normalized;
+            rb[i].AddForce(fleeDir[i] * fleeForce, ForceMode.Force);
         }
         //transform.position = Vector3.Lerp(transform.position, fleePosition, 0.1f);
     }
