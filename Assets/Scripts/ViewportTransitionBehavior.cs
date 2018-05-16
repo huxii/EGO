@@ -9,6 +9,9 @@ public class ViewportTransitionBehavior : ViewportControl
     public List<GameObject> hideObjects;
     public List<GameObject> showObjects;
 
+    [Header("Interactable Trigger")]
+    public List<GameObject> interactableTriggers;
+
     [Header("Trigger Sound")]
     public List<SoundSettings> triggerSoundList;
 
@@ -48,7 +51,18 @@ public class ViewportTransitionBehavior : ViewportControl
             }
         }
 
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>().ResetHeight();
+        if (interactableTriggers != null)
+        {
+            foreach (GameObject trigger in interactableTriggers)
+            {
+                trigger.GetComponent<InteractableControl>().BeginInteraction();
+            }
+        }
+
+        if (GameControl.playerController)
+        {
+            GameControl.playerController.ResetHeight();
+        }
 
         foreach (SoundSettings sound in triggerSoundList)
         {

@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 0}
   distance: 9
-  angleZero: {x: -90, y: 40}
+  angleZero: {x: -90, y: 23}
   angleRange: {x: 180, y: 50}
   angleSensitivity: {x: 40, y: 15}
   angleSmooth: {x: 3, y: 3}
@@ -166,6 +166,41 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  triggerSoundList:
+  - id: 8
+    type: 2
+    isTurnOn: 1
+    trans: {fileID: 0}
+    delay: 3
+    fadeDuration: 10
+    isLooping: 1
+    isFalloff: 0
+    isStandOut: 0
+    spatialBlend: 0
+    pos: {x: 0, y: 0, z: 0}
+  - id: 9
+    type: 2
+    isTurnOn: 1
+    trans: {fileID: 0}
+    delay: 0
+    fadeDuration: 3
+    isLooping: 1
+    isFalloff: 1
+    isStandOut: 0
+    spatialBlend: 0.95
+    pos: {x: 0, y: 0, z: 0}
+  - id: 6
+    type: 2
+    isTurnOn: 0
+    trans: {fileID: 4440127930140620}
+    delay: 0
+    fadeDuration: 3
+    isLooping: 0
+    isFalloff: 0
+    isStandOut: 0
+    spatialBlend: 0.95
+    pos: {x: 0, y: 0, z: 0}
 --- !u!124 &124301280975255918
 Behaviour:
   m_ObjectHideFlags: 1

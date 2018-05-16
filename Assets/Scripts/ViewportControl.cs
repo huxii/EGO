@@ -35,14 +35,20 @@ public class ViewportControl : MonoBehaviour
     protected void SwitchCamera()
     {
         GameControl.cameraController.SwitchCamera(targetCameraCon);
-        playerHeight0 = GameControl.playerController.heightStandard;
-        GameControl.playerController.heightStandard = playerHeight;
+        if (GameControl.playerController)
+        {
+            playerHeight0 = GameControl.playerController.heightStandard;
+            GameControl.playerController.heightStandard = playerHeight;
+        }
     }
 
     protected void SwitchBack()
     {
         GameControl.cameraController.SwitchBack();
-        GameControl.playerController.heightStandard = playerHeight0;
+        if (GameControl.playerController)
+        {
+            GameControl.playerController.heightStandard = playerHeight0;
+        }
     }
 
     public virtual void SwitchViewport()

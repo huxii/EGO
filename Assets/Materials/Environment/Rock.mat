@@ -8,7 +8,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Rock
   m_Shader: {fileID: 4800000, guid: 00221ecf29b0c384eb7d73e3fe3ca27a, type: 3}
-  m_ShaderKeywords: _OUTLINESTYLE_SOLID _REPLACEMENTSTYLE_KEEP _TEXTUREBLENDMODE_MULTIPLY
+  m_ShaderKeywords: _OUTLINESTYLE_SOLID _REPLACEMENTINVERTED_ON _REPLACEMENTSTYLE_DISAPPEAR
+    _TEXTUREBLENDMODE_MULTIPLY
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -81,8 +82,8 @@ Material:
     - _OutlineStyle: 0
     - _OutlineThickness: 0
     - _Parallax: 0.02
-    - _ReplacementInverted: 0
-    - _ReplacementStyle: 0
+    - _ReplacementInverted: 1
+    - _ReplacementStyle: 3
     - _ReplacementTimer: 0
     - _ShadowThreshold: 0.353
     - _SmoothnessTextureChannel: 0
@@ -100,8 +101,8 @@ Material:
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReDiffuseColor: {r: 0.31953216, g: 0.30363324, b: 0.7647059, a: 1}
-    - _ReShadowColor: {r: 0.24125999, g: 0.19723181, b: 0.35294116, a: 1}
-    - _ReSpecColor: {r: 0.5456628, g: 0.36007786, b: 0.8161765, a: 1}
+    - _ReDiffuseColor: {r: 0.35769, g: 0.30363318, b: 0.7647059, a: 1}
+    - _ReShadowColor: {r: 0.27347574, g: 0.19723178, b: 0.35294116, a: 1}
+    - _ReSpecColor: {r: 0.3600778, g: 0.49533466, b: 0.81617653, a: 1}
     - _ShadowColor: {r: 0.3118401, g: 0.2230212, b: 0.4044118, a: 1}
     - _SpecColor: {r: 0.39851856, g: 0.39987767, b: 0.59558815, a: 1}

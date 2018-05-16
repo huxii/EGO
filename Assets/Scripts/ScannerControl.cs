@@ -50,8 +50,11 @@ public class ScannerControl : InteractableControl
         if (scannerTarget)
         {
             transitionCon = scannerTarget.GetComponent<ScannerTransitionControl>();
-            transitionCon.SetScannerMat(scannerMat);
-            transitionCon.speed = scanSpeed;
+            if (transitionCon)
+            {
+                transitionCon.SetScannerMat(scannerMat);
+                transitionCon.speed = scanSpeed;
+            }
         }
     }
 

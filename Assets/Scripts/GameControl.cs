@@ -29,10 +29,22 @@ public class GameControl : MonoBehaviour
             mainCam = GameObject.FindGameObjectWithTag("MainCamera");
         }
         cameraController = mainCam.GetComponent<CameraControl>();
-        playerController = player.GetComponent<PlayerControl>();
-        soundController = soundManager.GetComponent<SoundControl>();
-        videoController = videoManager.GetComponent<VideoControl>();
-        TutorialController = tutorialManager.GetComponent<TutorialControl>();
+        if (player)
+        {
+            playerController = player.GetComponent<PlayerControl>();
+        }
+        if (soundManager)
+        {
+            soundController = soundManager.GetComponent<SoundControl>();
+        }
+        if (videoManager)
+        {
+            videoController = videoManager.GetComponent<VideoControl>();
+        }
+        if (tutorialManager)
+        {
+            TutorialController = tutorialManager.GetComponent<TutorialControl>();
+        }
     }
     void Start()
     {

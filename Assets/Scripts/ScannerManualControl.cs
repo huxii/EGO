@@ -12,11 +12,13 @@ public class ScannerManualControl : ScannerControl
     // Use this for initialization
     void Start()
     {
-        /*
         Init();
+    }
+
+    void Awake()
+    {
         bgCam.SetActive(false);
         targetCamera.SetActive(true);
-        */
     }
 
     // Update is called once per frame
@@ -24,8 +26,7 @@ public class ScannerManualControl : ScannerControl
     {
         scannerMat.SetFloat("_Timer", scanManualTimer);
         scannerMat.SetVector("_Center", transform.position);
-        /*
-        foreach (GameObject o in ppObjs)
+        foreach (Transform o in scannerTarget.transform)
         {
             if (Vector3.Distance(transform.position, o.transform.position) < scanRange)
             {
@@ -40,6 +41,5 @@ public class ScannerManualControl : ScannerControl
                 }
             }
         }
-        */
     }
 }
