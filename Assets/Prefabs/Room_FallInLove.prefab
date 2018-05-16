@@ -1897,7 +1897,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ef146771cd1fc4b9ba016bff7a6725f0, type: 2}
+  - {fileID: 2100000, guid: cea8ec3955fb11b4dad935bd15a5580c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3345,7 +3345,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ef146771cd1fc4b9ba016bff7a6725f0, type: 2}
+  - {fileID: 2100000, guid: cea8ec3955fb11b4dad935bd15a5580c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3553,7 +3553,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ef146771cd1fc4b9ba016bff7a6725f0, type: 2}
+  - {fileID: 2100000, guid: cea8ec3955fb11b4dad935bd15a5580c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4255,6 +4255,17 @@ MonoBehaviour:
     delay: 1
     fadeDuration: 6
     isLooping: 1
+    isFalloff: 0
+    isStandOut: 0
+    spatialBlend: 0
+    pos: {x: 0, y: 0, z: 0}
+  - id: 4
+    type: 1
+    isTurnOn: 0
+    trans: {fileID: 0}
+    delay: 1
+    fadeDuration: 6
+    isLooping: 0
     isFalloff: 0
     isStandOut: 0
     spatialBlend: 0
