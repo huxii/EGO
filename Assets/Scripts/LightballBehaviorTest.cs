@@ -110,6 +110,8 @@ public class LightballBehaviorTest : InteractableControl
             StartCoroutine(Destory());
         }
         fadeOutTrigger = true;
+        SoundUpdate();
+
     }
 
     IEnumerator Destory() {
