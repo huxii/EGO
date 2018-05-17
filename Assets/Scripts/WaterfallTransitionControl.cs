@@ -11,7 +11,6 @@ public class WaterfallTransitionControl : TransitionEffectControl
     // Use this for initialization
     void Start()
     {
-        mat = GetComponent<MeshRenderer>().material;
     }
 
     // Update is called once per frame
@@ -42,6 +41,7 @@ public class WaterfallTransitionControl : TransitionEffectControl
 
     public override void Play(TransitionData data = null)
     {
+        mat = GetComponent<MeshRenderer>().material;
         start = true;
         reverse = false;
         timer = mat.GetFloat("_Cutoff");
@@ -50,6 +50,7 @@ public class WaterfallTransitionControl : TransitionEffectControl
 
     public override void Reverse(TransitionData data = null)
     {
+        mat = GetComponent<MeshRenderer>().material;
         start = true;
         reverse = true;
         alphaCutoff = mat.GetFloat("_Cutoff");
