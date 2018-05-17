@@ -10,6 +10,7 @@ TagManager:
   - ScannerBgCamera
   - Background
   - ViewportSwitcher
+  - Audio
   layers:
   - Default
   - TransparentFX

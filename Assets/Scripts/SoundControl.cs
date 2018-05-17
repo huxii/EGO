@@ -134,7 +134,11 @@ public class SoundControl : MonoBehaviour
         }
     }
 
-    public void FadeOut()
+    public void FadeOut(float fade_duration = 3f)
     {
+        GameObject[] audios = GameObject.FindGameObjectsWithTag("Audio");
+        foreach (GameObject eff in audios){
+            eff.GetComponent<AudioSource>().DOFade(0, fade_duration);
+        }
     }
 }
