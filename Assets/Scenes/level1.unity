@@ -727,14 +727,6 @@ Prefab:
       propertyPath: fogCam
       value: 
       objectReference: {fileID: 440657630}
-    - target: {fileID: 1692283605214784, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1879865836198562, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
   m_IsPrefabParent: 0
@@ -1321,6 +1313,14 @@ Prefab:
       value: 
       objectReference: {fileID: 1246153118}
     - target: {fileID: 1450892114919394, guid: 123653b66ab2fd347a2b28b2299893df, type: 2}
+      propertyPath: m_TagString
+      value: Audio
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892394475975972, guid: 123653b66ab2fd347a2b28b2299893df, type: 2}
+      propertyPath: m_TagString
+      value: Audio
+      objectReference: {fileID: 0}
+    - target: {fileID: 1067952245712500, guid: 123653b66ab2fd347a2b28b2299893df, type: 2}
       propertyPath: m_TagString
       value: Audio
       objectReference: {fileID: 0}
