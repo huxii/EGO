@@ -65,7 +65,7 @@ public class GameControl : MonoBehaviour
     IEnumerator SwitchLevel(float time)
     {
         yield return new WaitForSeconds(time);
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Title");
     }
 
     public void RestartGame()
