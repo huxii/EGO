@@ -16203,10 +16203,32 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerSoundList: []
+  triggerSoundList:
+  - id: 13
+    type: 2
+    isTurnOn: 1
+    trans: {fileID: 4446095288214850}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 0
+    isFalloff: 1
+    isStandOut: 0
+    spatialBlend: 0.8
+    pos: {x: 0, y: 0, z: 0}
+  - id: 12
+    type: 2
+    isTurnOn: 0
+    trans: {fileID: 4446095288214850}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 0
+    isFalloff: 0
+    isStandOut: 0
+    spatialBlend: 0.8
+    pos: {x: 0, y: 0, z: 0}
   freq: 0.3
   amp: 3
-  scale: 10
+  scale: 4
   lifespan: 3
   fleeForce: 10
   targetLocation: {fileID: 1464723807156068}
@@ -16504,7 +16526,7 @@ MonoBehaviour:
     type: 2
     isTurnOn: 1
     trans: {fileID: 4138677531299296}
-    delay: 2
+    delay: 0
     fadeDuration: 1
     isLooping: 0
     isFalloff: 0
@@ -16526,8 +16548,8 @@ MonoBehaviour:
     type: 3
     isTurnOn: 1
     trans: {fileID: 4138677531299296}
-    delay: 6
-    fadeDuration: 4
+    delay: 4
+    fadeDuration: 3
     isLooping: 0
     isFalloff: 0
     isStandOut: 0
@@ -17085,10 +17107,32 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerSoundList: []
+  triggerSoundList:
+  - id: 13
+    type: 2
+    isTurnOn: 1
+    trans: {fileID: 4695825805661738}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 0
+    isFalloff: 1
+    isStandOut: 0
+    spatialBlend: 0.8
+    pos: {x: 0, y: 0, z: 0}
+  - id: 12
+    type: 2
+    isTurnOn: 0
+    trans: {fileID: 4695825805661738}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 0
+    isFalloff: 1
+    isStandOut: 0
+    spatialBlend: 0.8
+    pos: {x: 0, y: 0, z: 0}
   freq: 0.3
   amp: 3
-  scale: 10
+  scale: 4
   lifespan: 3
   fleeForce: 10
   targetLocation: {fileID: 1850372811583932}
@@ -17522,10 +17566,32 @@ MonoBehaviour:
   endInteractionByButton: 0
   triggerObject: {fileID: 0}
   triggerOutlineWidth: 0.5
-  triggerSoundList: []
+  triggerSoundList:
+  - id: 13
+    type: 2
+    isTurnOn: 1
+    trans: {fileID: 4636822251602434}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 0
+    isFalloff: 1
+    isStandOut: 0
+    spatialBlend: 0.8
+    pos: {x: 0, y: 0, z: 0}
+  - id: 12
+    type: 2
+    isTurnOn: 0
+    trans: {fileID: 4636822251602434}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 0
+    isFalloff: 1
+    isStandOut: 0
+    spatialBlend: 0.8
+    pos: {x: 0, y: 0, z: 0}
   freq: 0.3
   amp: 3
-  scale: 10
+  scale: 4
   lifespan: 3
   fleeForce: 10
   targetLocation: {fileID: 1884512843970798}
@@ -17584,7 +17650,7 @@ MonoBehaviour:
     isTurnOn: 1
     trans: {fileID: 4915317281758280}
     delay: 0
-    fadeDuration: 3
+    fadeDuration: 0
     isLooping: 0
     isFalloff: 0
     isStandOut: 0
@@ -17758,7 +17824,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135049684485337020
 SphereCollider:
@@ -17950,7 +18016,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135419009903461710
 SphereCollider:
@@ -17962,7 +18028,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135486701449368814
 SphereCollider:
