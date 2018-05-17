@@ -122,4 +122,15 @@ public class SoundControl : MonoBehaviour
             sound.Stop(settings);
         }
     }
+
+    public void FadeOut(SoundSettings settings){
+        foreach (GameObject eff in NewPooledObject.current.Effects){
+            if(eff.name != settings.id.ToString()){
+                eff.GetComponent<AudioSource>().DOFade(0, settings.delay).OnComplete(
+                    () => {eff.GetComponent<AudioSource>().DOFade(0, 7).OnComplete(
+                        () =>{ eff.GetComponent<AudioSource>().DOFade(1, 10);});
+                    });
+            }
+        }
+    }
 }

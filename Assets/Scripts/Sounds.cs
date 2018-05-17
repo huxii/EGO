@@ -55,17 +55,17 @@ public class Sounds
         newSource.volume = 0;
         newSound.name = settings.id.ToString();
         newSound.SetActive(true);
-
+        if (settings.isStandOut)
+        {
+            GameControl.soundController.FadeOut(settings);
+        }
         if (settings.type == ClipType.SFX)
         {
             newSource.volume = 1;
             newSource.PlayOneShot(audio);
         }
         else{
-            if (settings.isStandOut)
-            {
-                //fade other sounds
-            }
+
             newSource.PlayDelayed(settings.delay);
             newSource.DOFade(1, settings.fadeDuration);
         }

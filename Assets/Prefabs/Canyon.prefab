@@ -16523,7 +16523,7 @@ MonoBehaviour:
   triggerOutlineWidth: 0.12
   triggerSoundList:
   - id: 11
-    type: 2
+    type: 1
     isTurnOn: 1
     trans: {fileID: 4138677531299296}
     delay: 0
@@ -16552,7 +16552,7 @@ MonoBehaviour:
     fadeDuration: 3
     isLooping: 0
     isFalloff: 0
-    isStandOut: 0
+    isStandOut: 1
     spatialBlend: 0
     pos: {x: 0, y: 0, z: 0}
   targetCamera: {fileID: 1597709735067228}
@@ -17649,11 +17649,11 @@ MonoBehaviour:
     type: 3
     isTurnOn: 1
     trans: {fileID: 4915317281758280}
-    delay: 0
+    delay: 1.5
     fadeDuration: 0
     isLooping: 0
     isFalloff: 0
-    isStandOut: 0
+    isStandOut: 1
     spatialBlend: 0
     pos: {x: 0, y: 0, z: 0}
   targetCamera: {fileID: 1308218065592952}
