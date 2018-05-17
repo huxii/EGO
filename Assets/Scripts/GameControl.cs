@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
@@ -9,13 +10,15 @@ public class GameControl : MonoBehaviour
     public GameObject player;
     public GameObject soundManager;
     public GameObject videoManager;
-    public GameObject tutorialManager;
+    public GameObject HUDManager;
 
     public static CameraControl cameraController;
     public static PlayerControl playerController;
     public static SoundControl soundController;
     public static VideoControl videoController;
-    public static TutorialControl TutorialController;
+    public static HUDControl HUDController;
+
+    bool started = false;
 
     // Use this for initialization
     void Awake()
@@ -41,9 +44,9 @@ public class GameControl : MonoBehaviour
         {
             videoController = videoManager.GetComponent<VideoControl>();
         }
-        if (tutorialManager)
+        if (HUDManager)
         {
-            TutorialController = tutorialManager.GetComponent<TutorialControl>();
+            HUDController = HUDManager.GetComponent<HUDControl>();
         }
     }
     void Start()
@@ -55,6 +58,20 @@ public class GameControl : MonoBehaviour
     {
        
     }
-    
 
+    IEnumerator SwitchLevel(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void StartGame()
+    {
+        if (!started)
+        {
+            started = true;
+            HUDController.FadeIn();
+            StartCoroutine(SwitchLevel(2f));
+        }
+    }
 }

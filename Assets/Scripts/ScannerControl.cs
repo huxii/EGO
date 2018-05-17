@@ -62,8 +62,7 @@ public class ScannerControl : InteractableControl
     {
         SoundUpdate();
 
-        bgCam = GameObject.FindGameObjectWithTag("ScannerBgCamera");
-        bgCam.SetActive(false);
+        bgCam.GetComponent<Camera>().enabled = false;
         targetCamera.SetActive(true);
 
         scannerMat.SetFloat("_Timer", 0);
@@ -89,8 +88,7 @@ public class ScannerControl : InteractableControl
     public override void BeforeDestroyed()
     {
         scannerMat.SetFloat("_Timer", 0);
-
-        bgCam.SetActive(true);
+        bgCam.GetComponent<Camera>().enabled = true;
         InteractionUnready();
     }
 }

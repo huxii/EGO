@@ -37,6 +37,10 @@ public class ViewportTransitionBehavior : ViewportControl
                 {
                     hide.GetComponent<TransitionEffectControl>().Play();
                 }
+                else
+                {
+                    hide.SetActive(false);
+                }
             }
         }
         if (showObjects != null)

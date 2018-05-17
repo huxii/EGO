@@ -10,11 +10,13 @@ ModelImporter:
     100004: Mountain
     100006: Platform
     100008: Water
+    100010: Mountain_title
     400000: //RootNode
     400002: Land
     400004: Mountain
     400006: Platform
     400008: Water
+    400010: Mountain_title
     2100000: lambert2
     2100002: lambert1
     2300000: //RootNode

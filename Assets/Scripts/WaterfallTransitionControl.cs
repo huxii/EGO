@@ -12,8 +12,6 @@ public class WaterfallTransitionControl : TransitionEffectControl
     void Start()
     {
         mat = GetComponent<MeshRenderer>().material;
-        alphaCutoff = mat.GetFloat("_Cutoff");
-        timer = 1.0f;
     }
 
     // Update is called once per frame
@@ -46,11 +44,15 @@ public class WaterfallTransitionControl : TransitionEffectControl
     {
         start = true;
         reverse = false;
+        timer = mat.GetFloat("_Cutoff");
+        alphaCutoff = 1.0f;
     }
 
     public override void Reverse(TransitionData data = null)
     {
         start = true;
         reverse = true;
+        alphaCutoff = mat.GetFloat("_Cutoff");
+        timer = 1.0f;
     }
 }

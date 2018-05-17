@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Scanner_sphere
+  m_Name: Scanner_sphere_title
   m_Shader: {fileID: 4800000, guid: 489a05a3498ebb1419f3551e9df25971, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -77,16 +77,16 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Range: 30
+    - _Range: 50
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Timer: 0
+    - _Timer: 1.0022832
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Center: {r: -4.080002, g: 3.98, b: 3.7000027, a: 0}
+    - _Center: {r: 1.2, g: -18.1, b: 19.9, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeColor: {r: 1.1000001, g: 1.1000001, b: 1.1000001, a: 1}
+    - _EdgeColor: {r: 3, g: 3, b: 3, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HorizontalDir: {r: -0.9986401, g: 0, b: -0.05213205, a: 0}

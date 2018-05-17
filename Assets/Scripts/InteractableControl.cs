@@ -40,12 +40,18 @@ public class InteractableControl : MonoBehaviour
         }      
     public void InteractionReady()
     {
-        triggerObject.GetComponent<FeedbackTransitionControl>().Play(new TransitionData(triggerOutlineWidth));
+        if (triggerObject)
+        {
+            triggerObject.GetComponent<FeedbackTransitionControl>().Play(new TransitionData(triggerOutlineWidth));
+        }
     }
 
     public void InteractionUnready()
     {
-        triggerObject.GetComponent<FeedbackTransitionControl>().Reverse();
+        if (triggerObject)
+        {
+            triggerObject.GetComponent<FeedbackTransitionControl>().Reverse();
+        }
     }
 
     public virtual void BeginInteraction()
