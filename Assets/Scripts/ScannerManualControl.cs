@@ -17,7 +17,7 @@ public class ScannerManualControl : ScannerControl
 
     void Awake()
     {
-        bgCam.GetComponent<Camera>().enabled = false;
+        //bgCam.GetComponent<Camera>().enabled = false;
         targetCamera.SetActive(true);
     }
 
