@@ -57,7 +57,7 @@ public class Sounds
         newSound.SetActive(true);
         if (settings.isStandOut)
         {
-            GameControl.soundController.FadeOut(settings);
+            GameControl.soundController.StandOut(settings);
         }
         if (settings.type == ClipType.SFX)
         {
