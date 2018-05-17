@@ -941,7 +941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1662933457793196
 GameObject:
   m_ObjectHideFlags: 1
@@ -5849,6 +5849,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  interactableTriggers: []
   triggerSoundList:
   - id: 8
     type: 2
@@ -5882,6 +5883,39 @@ MonoBehaviour:
     isFalloff: 0
     isStandOut: 0
     spatialBlend: 0.95
+    pos: {x: 0, y: 0, z: 0}
+  - id: 12
+    type: 2
+    isTurnOn: 1
+    trans: {fileID: 0}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 1
+    isFalloff: 1
+    isStandOut: 0
+    spatialBlend: 1
+    pos: {x: 0, y: 0, z: 0}
+  - id: 12
+    type: 2
+    isTurnOn: 1
+    trans: {fileID: 0}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 1
+    isFalloff: 1
+    isStandOut: 0
+    spatialBlend: 1
+    pos: {x: 0, y: 0, z: 0}
+  - id: 12
+    type: 2
+    isTurnOn: 1
+    trans: {fileID: 0}
+    delay: 0
+    fadeDuration: 0
+    isLooping: 1
+    isFalloff: 1
+    isStandOut: 0
+    spatialBlend: 1
     pos: {x: 0, y: 0, z: 0}
 --- !u!114 &114921283233779974
 MonoBehaviour:
