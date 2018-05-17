@@ -76,10 +76,13 @@ public class Sounds
         foreach (GameObject eff in NewPooledObject.current.Effects) {
             if (eff.GetComponent<AudioSource>().isPlaying == false)
             {
+                eff.name = "Effect";
                 eff.SetActive(false);
+
             }
             if (eff.name == settings.id.ToString())
             {
+                eff.name = "Effect";
                 eff.GetComponent<AudioSource>().DOFade(0, 3f).OnComplete(() => { eff.SetActive(false); });
                 break;
             }

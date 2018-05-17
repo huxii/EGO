@@ -366,6 +366,11 @@ Prefab:
       propertyPath: triggerSoundList.Array.data[1].id
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 114273589962780226, guid: 5a51a1677ab0be14caef9d5226436f31,
+        type: 2}
+      propertyPath: triggerSoundList.Array.data[1].obj
+      value: 
+      objectReference: {fileID: 1246153118}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a51a1677ab0be14caef9d5226436f31, type: 2}
   m_IsPrefabParent: 0
@@ -728,21 +733,6 @@ Prefab:
       propertyPath: fogCam
       value: 
       objectReference: {fileID: 440657630}
-    - target: {fileID: 135405424514540316, guid: f2fe8e8175482f94bb87149657a65fa9,
-        type: 2}
-      propertyPath: m_Radius
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 135419009903461710, guid: f2fe8e8175482f94bb87149657a65fa9,
-        type: 2}
-      propertyPath: m_Radius
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 135023490753723462, guid: f2fe8e8175482f94bb87149657a65fa9,
-        type: 2}
-      propertyPath: m_Radius
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
   m_IsPrefabParent: 0
@@ -1367,7 +1357,26 @@ Prefab:
     - target: {fileID: 82008906768991614, guid: 026aa8183c5a10544a013db1b83b1564,
         type: 2}
       propertyPath: MaxDistance
-      value: 10
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 82008906768991614, guid: 026aa8183c5a10544a013db1b83b1564,
+        type: 2}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82008906768991614, guid: 026aa8183c5a10544a013db1b83b1564,
+        type: 2}
+      propertyPath: MinDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82008906768991614, guid: 026aa8183c5a10544a013db1b83b1564,
+        type: 2}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609852851199732, guid: 026aa8183c5a10544a013db1b83b1564, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 81211727771525942, guid: 026aa8183c5a10544a013db1b83b1564, type: 2}
