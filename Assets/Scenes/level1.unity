@@ -1167,6 +1167,14 @@ Prefab:
       propertyPath: fogCam
       value: 
       objectReference: {fileID: 440657630}
+    - target: {fileID: 1428406442437426, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094333403869086, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114576923394090468, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
     - {fileID: 114770943685536696, guid: f2fe8e8175482f94bb87149657a65fa9, type: 2}
@@ -2005,6 +2013,31 @@ Prefab:
     - target: {fileID: 4602260102329148, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
       propertyPath: m_LocalPosition.z
       value: 1.7910004
+      objectReference: {fileID: 0}
+    - target: {fileID: 114047680920666082, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: angleZero.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114047680920666082, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: angleZero.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114047680920666082, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: angleRange.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114047680920666082, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: angleRange.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114047680920666082, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: distance
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114703817606989802, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
