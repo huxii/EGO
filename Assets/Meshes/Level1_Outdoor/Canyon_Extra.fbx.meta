@@ -1,79 +1,14 @@
 fileFormatVersion: 2
-guid: 6e32e4f9314cb462b9ace8e7e311a27e
+guid: 5bdfa67ebba2a40f8acad5ea8f2d0e3f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Background
-    100002: Background1
-    100004: Background2
-    100006: canyan_side
-    100008: //RootNode
-    100010: Land
-    100012: Platform
-    100014: Water
-    100016: canyan_left
-    100018: canyan_right
-    100020: Canyan_left
-    100022: Canyan_Left
-    100024: Canyan_Right
-    400000: Background
-    400002: Background1
-    400004: Background2
-    400006: canyan_side
-    400008: //RootNode
-    400010: Land
-    400012: Platform
-    400014: Water
-    400016: canyan_left
-    400018: canyan_right
-    400020: Canyan_left
-    400022: Canyan_Left
-    400024: Canyan_Right
-    2100000: lambert2
-    2100002: lambert3
-    2100004: pasted__lambert3
-    2100006: lambert1
-    2100008: lambert4
-    2100010: lambert5
-    2100012: lambert6
-    2100014: pasted__lambert4
-    2100016: pasted__lambert2
-    2300000: Background
-    2300002: Background1
-    2300004: Background2
-    2300006: canyan_side
-    2300008: Land
-    2300010: Platform
-    2300012: Water
-    2300014: canyan_left
-    2300016: canyan_right
-    2300018: Canyan_left
-    2300020: Canyan_Left
-    2300022: Canyan_Right
-    3300000: Background
-    3300002: Background1
-    3300004: Background2
-    3300006: canyan_side
-    3300008: Land
-    3300010: Platform
-    3300012: Water
-    3300014: canyan_left
-    3300016: canyan_right
-    3300018: Canyan_left
-    3300020: Canyan_Left
-    3300022: Canyan_Right
-    4300000: Water
-    4300002: Land
-    4300004: Platform
-    4300006: Background
-    4300008: Background1
-    4300010: Background2
-    4300012: canyan_side
-    4300014: canyan_left
-    4300016: canyan_right
-    4300018: Canyan_left
-    4300020: Canyan_Left
-    4300022: Canyan_Right
+    100000: //RootNode
+    400000: //RootNode
+    2100000: lambert1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Canyan_Extra
   externalObjects: {}
   materials:
     importMaterials: 1
