@@ -45,15 +45,15 @@ public class PostViewportSwitchTransitionBehavior : ViewportSwitchBehavior
         }
     }
 
-    public override void SwitchViewport()
-    {
-        switched = true;
-        SwitchCamera();
-    }
+    //public override void SwitchViewport()
+    //{
+    //    switched = true;
+    //    SwitchCamera();
+    //}
 
-    public override void SwitchBackViewport()
-    {
-        switched = false;
-        SwitchBack();
-    }
+    //public override void SwitchBackViewport()
+    //{
+    //    switched = false;
+    //    SwitchBack();
+    //}
 }

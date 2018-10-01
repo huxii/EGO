@@ -175,6 +175,7 @@ public class PlayerControl : MonoBehaviour
         {
             return;
         }
+
         if (Input.GetButtonDown("Interact"))
         {
             triggerInteractable.GetComponent<InteractableControl>().BeginInteraction();
@@ -205,27 +206,25 @@ public class PlayerControl : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Interactable"))
+        if (other.gameObject.GetComponent<ActorControl>())
         {
-            triggerInteractable = other.gameObject;
-            other.gameObject.GetComponent<InteractableControl>().EnterCollider();
-        }
-        else
-        if (other.gameObject.CompareTag("ViewportSwitcher"))
-        {
-            other.gameObject.GetComponent<ViewportControl>().SwitchViewport();
+            if (other.gameObject.GetComponent<InteractableControl>())
+            {
+                triggerInteractable = other.gameObject;
+            }
+            other.gameObject.GetComponent<ActorControl>().EnterCollider();
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Interactable"))
+        if (other.gameObject.GetComponent<ActorControl>())
         {
             if (triggerInteractable == other.gameObject)
             {
                 triggerInteractable = null;
-                other.gameObject.GetComponent<InteractableControl>().ExitCollider();
-            }          
+            }
+            other.gameObject.GetComponent<ActorControl>().ExitCollider();
         }
 
         //if (other.gameObject.CompareTag("Interactable"))
@@ -241,11 +240,11 @@ public class PlayerControl : MonoBehaviour
         //        other.gameObject.GetComponent<InteractableControl>().EndInteraction();
         //    }
         //}
-        else
-        if (other.gameObject.CompareTag("ViewportSwitcher"))
-        {
-            other.gameObject.GetComponent<ViewportControl>().SwitchBackViewport();
-        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        
     }
 
     void OnCollisionExit(Collision other)

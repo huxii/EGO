@@ -16,8 +16,10 @@ public class ViewportSwitchBehavior : ViewportControl
     {
     }
 
-    public override void SwitchViewport()
+    public override void EnterCollider()
     {
+        base.EnterCollider();
+
         if (switched)
         {
             return;
@@ -26,8 +28,10 @@ public class ViewportSwitchBehavior : ViewportControl
         SwitchCamera();
     }
 
-    public override void SwitchBackViewport()
+    public override void ExitCollider()
     {
+        base.ExitCollider();
+
         if (!switched)
         {
             return;

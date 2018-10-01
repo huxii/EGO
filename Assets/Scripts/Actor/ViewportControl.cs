@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ViewportControl : InteractableControl
+public class ViewportControl : ActorControl
 {
     public GameObject targetCamera;
     public float playerHeight = 4f;
@@ -49,15 +49,5 @@ public class ViewportControl : InteractableControl
         {
             GameControl.playerController.heightStandard = playerHeight0;
         }
-    }
-
-    public virtual void SwitchViewport()
-    {
-
-    }
-
-    public virtual void SwitchBackViewport()
-    {
-
     }
 }

@@ -22,8 +22,10 @@ public class ViewportTransitionBehavior : ViewportControl
     {
     }
 
-    public override void SwitchViewport()
+    public override void EnterCollider()
     {
+        base.EnterCollider();
+
         SwitchCamera();
         //if (hideObjects != null)
         //{
@@ -70,7 +72,8 @@ public class ViewportTransitionBehavior : ViewportControl
         }
     }
 
-    public override void SwitchBackViewport()
+    public override void ExitCollider()
     {
+        base.ExitCollider();
     }
 }

@@ -3,41 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class InteractableControl : MonoBehaviour
+public class InteractableControl : ActorControl
 {
-    [Header("Interactable System")]
-    public UnityEvent onEnterCollider;
-    public UnityEvent onExitCollider;
     public UnityEvent onBeginInteraction;
     public UnityEvent onEndInteraction;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-    }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
-    public void EnterCollider()
-    {
-        onEnterCollider.Invoke();
     }
 
-    public void ExitCollider()
+    // Update is called once per frame
+    void Update()
     {
-        onExitCollider.Invoke();
+
     }
 
-    public void BeginInteraction()
+    public virtual void BeginInteraction()
     {
         onBeginInteraction.Invoke();
     }
 
-    public void EndInteraction()
+    public virtual void EndInteraction()
     {
         onEndInteraction.Invoke();
     }
