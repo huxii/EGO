@@ -67,8 +67,8 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EdgeInnerBlur: 4
-    - _EdgeOutterBlur: 4
+    - _EdgeInnerBlur: 1
+    - _EdgeOutterBlur: 1
     - _EdgeWidth: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -81,7 +81,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Timer: 0
+    - _Timer: 1.0136098
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
