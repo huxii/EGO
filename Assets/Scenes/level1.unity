@@ -781,6 +781,11 @@ Transform:
   m_Father: {fileID: 1886127356}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
+--- !u!1 &829576150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1578536479225434, guid: fd02aa8ea29d34404a0d1e3c0edbca2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1123810453}
 --- !u!1 &899489217
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,6 +935,14 @@ Prefab:
     - target: {fileID: 1578536479225434, guid: fd02aa8ea29d34404a0d1e3c0edbca2b, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956800159939144, guid: fd02aa8ea29d34404a0d1e3c0edbca2b, type: 2}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776844477484426, guid: fd02aa8ea29d34404a0d1e3c0edbca2b, type: 2}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd02aa8ea29d34404a0d1e3c0edbca2b, type: 2}
@@ -1123,19 +1136,19 @@ Prefab:
         type: 2}
       propertyPath: onBeginInteraction.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1698436794}
+      objectReference: {fileID: 829576150}
     - target: {fileID: 1660363434718526, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114337541524181488, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: onBeginInteraction.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1698436794 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1428406442437426, guid: f2fe8e8175482f94bb87149657a65fa9,
-    type: 2}
-  m_PrefabInternal: {fileID: 782791872}
 --- !u!1 &1750491031
 GameObject:
   m_ObjectHideFlags: 0
