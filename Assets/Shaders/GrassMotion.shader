@@ -20,6 +20,7 @@ Shader "Custom/GrassMotion" {
             "IgnoreProjector"="True"
             "Queue"="Transparent"
             "RenderType"="Transparent"
+            "DisableBatching" = "true"
         }
         Pass {
             Name "FORWARD"
