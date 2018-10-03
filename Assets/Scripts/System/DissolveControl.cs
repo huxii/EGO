@@ -33,12 +33,7 @@ public class DissolveControl : TransitionEffectControl
 
                 if (timer >= 1f)
                 {
-                    if (destroyWhenDone)
-                    {
-                        Destroy(gameObject);                       
-                    }
-
-                    isPlaying = false;
+                    Done();
                 }
             }
             else
@@ -51,12 +46,7 @@ public class DissolveControl : TransitionEffectControl
 
                 if (timer <= 0f)
                 {
-                    if (destroyWhenDone)
-                    {
-                        Destroy(gameObject);                       
-                    }
-
-                    isPlaying = false;
+                    Done();
                 }
             }
         }

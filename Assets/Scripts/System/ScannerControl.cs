@@ -65,20 +65,8 @@ public class ScannerControl : TransitionEffectControl
 
             if (timer >= 1f)
             {
-                if (destroyWhenDone)
-                {
-                    Destroy(gameObject);
-                    
-                }
-                isPlaying = false;
+                Done();
                 bgCam.SetActive(true);
-
-                nextTransition.Invoke();
-
-                if (gameObject.GetComponent<InteractableControl>())
-                {
-                    gameObject.GetComponent<InteractableControl>().EndInteraction();
-                }
             }
         }
     }

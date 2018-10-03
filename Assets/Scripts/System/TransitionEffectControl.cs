@@ -18,16 +18,16 @@ public class TransitionEffectControl : MonoBehaviour
     protected bool isPlaying = false;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-		
-	}
+
+    }
 
     protected void Init()
     {
@@ -40,5 +40,21 @@ public class TransitionEffectControl : MonoBehaviour
         }
 
         mats = tmpMats.Distinct().ToList();
+    }
+
+    protected void Done()
+    {
+        isPlaying = false;
+        if (destroyWhenDone)
+        {
+            Destroy(gameObject);
+        }
+
+        nextTransition.Invoke();
+
+        if (gameObject.GetComponent<InteractableControl>())
+        {
+            gameObject.GetComponent<InteractableControl>().EndInteraction();
+        }
     }
 }
