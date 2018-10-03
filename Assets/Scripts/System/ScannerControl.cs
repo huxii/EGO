@@ -21,9 +21,10 @@ public class ScannerControl : TransitionEffectControl
         Init();
     }
 
-    public void Play(GameObject camera)
+    public override void Play(GameObject camera)
     {
-        isPlaying = true;
+        base.Play(camera);
+
         timer = 0;
 
         CameraRenderImage camRender = camera.GetComponent<CameraRenderImage>();

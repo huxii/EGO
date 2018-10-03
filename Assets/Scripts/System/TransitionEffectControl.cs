@@ -57,4 +57,16 @@ public class TransitionEffectControl : MonoBehaviour
             gameObject.GetComponent<InteractableControl>().EndInteraction();
         }
     }
+
+    public virtual void Play()
+    {
+        isPlaying = true;
+        gameObject.SetActive(true);
+    }
+
+    public virtual void Play(GameObject camera)
+    {
+        isPlaying = true;
+        gameObject.SetActive(true);
+    }
 }

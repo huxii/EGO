@@ -5,12 +5,6 @@ using DG.Tweening;
 
 public class ViewportTransitionBehavior : ViewportControl
 {
-    [Header("Interactable Trigger")]
-    public List<GameObject> interactableTriggers;
-
-    [Header("Trigger Sound")]
-    public List<SoundSettings> triggerSoundList;
-
     // Use this for initialization
     void Start()
     {
@@ -53,22 +47,9 @@ public class ViewportTransitionBehavior : ViewportControl
         //    }
         //}
 
-        if (interactableTriggers != null)
-        {
-            foreach (GameObject trigger in interactableTriggers)
-            {
-                trigger.GetComponent<InteractableControl>().BeginInteraction();
-            }
-        }
-
         if (GameControl.playerController)
         {
             GameControl.playerController.ResetHeight();
-        }
-
-        foreach (SoundSettings sound in triggerSoundList)
-        {
-            GameControl.soundController.Play(sound);
         }
     }
 
