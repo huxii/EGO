@@ -1452,6 +1452,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1379652334943154
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4671033329038336}
+  - component: {fileID: 33148888350027376}
+  - component: {fileID: 23176798353756332}
+  m_Layer: 0
+  m_Name: Rock5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1389293062989154
 GameObject:
   m_ObjectHideFlags: 1
@@ -3276,7 +3293,7 @@ GameObject:
   - component: {fileID: 64031358868447482}
   m_Layer: 0
   m_Name: Land
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4084,7 +4101,7 @@ GameObject:
   - component: {fileID: 64530895664301082}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4305,7 +4322,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1290052963855306}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.33, y: -0.89, z: 0.76}
+  m_LocalPosition: {x: 0.33, y: 0.15, z: 0.76}
   m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_Children: []
   m_Father: {fileID: 4957176443039930}
@@ -4567,8 +4584,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1324740433939030}
-  m_LocalRotation: {x: -0, y: 0.88357216, z: -0, w: 0.46829504}
-  m_LocalPosition: {x: -22.57, y: -12.04, z: 54.9}
+  m_LocalRotation: {x: -0, y: 0.8376593, z: -0, w: 0.5461932}
+  m_LocalPosition: {x: -22.61, y: -12.04, z: 54.48}
   m_LocalScale: {x: 0.60000074, y: 0.6, z: 0.60000074}
   m_Children:
   - {fileID: 4904892527321112}
@@ -4576,7 +4593,7 @@ Transform:
   - {fileID: 4140966753877176}
   m_Father: {fileID: 4110797963937860}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 124.15301, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 113.788, z: 0}
 --- !u!4 &4114579248480452
 Transform:
   m_ObjectHideFlags: 1
@@ -4861,7 +4878,7 @@ Transform:
   - {fileID: 4099380896545328}
   - {fileID: 4322173182161668}
   m_Father: {fileID: 4343419152814966}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4164649560468304
 Transform:
@@ -4918,7 +4935,7 @@ Transform:
   - {fileID: 4676136146191862}
   - {fileID: 4477609972555004}
   m_Father: {fileID: 4343419152814966}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4175414246755042
 Transform:
@@ -5250,7 +5267,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1629115097619646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.77, y: 0, z: -0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4393606389106930}
@@ -5361,16 +5378,17 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4543434988232334}
+  - {fileID: 4671033329038336}
   - {fileID: 4100002580737352}
+  - {fileID: 4543434988232334}
   - {fileID: 4162433221727010}
-  - {fileID: 4886685698999634}
   - {fileID: 4530233850267202}
+  - {fileID: 4886685698999634}
   - {fileID: 4172719290670780}
   - {fileID: 4600288718580172}
   - {fileID: 4449318481741878}
-  - {fileID: 4957176443039930}
   - {fileID: 4557363308671164}
+  - {fileID: 4957176443039930}
   - {fileID: 4880352698332400}
   m_Father: {fileID: 4812461155070116}
   m_RootOrder: 1
@@ -5650,7 +5668,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1319532195713512}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.24, y: -0.86, z: 0.92}
+  m_LocalPosition: {x: 0.24, y: 0.18, z: 0.92}
   m_LocalScale: {x: 1.0067549, y: 1.0067544, z: 1.0067544}
   m_Children: []
   m_Father: {fileID: 4957176443039930}
@@ -5713,7 +5731,7 @@ Transform:
   - {fileID: 4593900912360416}
   - {fileID: 4128108268769680}
   m_Father: {fileID: 4343419152814966}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4451543382918672
 Transform:
@@ -6040,7 +6058,7 @@ Transform:
   - {fileID: 4426271591088942}
   - {fileID: 4726188343467296}
   m_Father: {fileID: 4343419152814966}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4546780826361772
 Transform:
@@ -6311,7 +6329,7 @@ Transform:
   - {fileID: 4773187097062504}
   - {fileID: 4576736386694924}
   m_Father: {fileID: 4343419152814966}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4603894839146650
 Transform:
@@ -6510,6 +6528,19 @@ Transform:
   m_Father: {fileID: 4162433221727010}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 7.9760003, y: -25.287, z: -73.149}
+--- !u!4 &4671033329038336
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1379652334943154}
+  m_LocalRotation: {x: 0.613149, y: -0.28710938, z: -0.4228777, w: 0.6023213}
+  m_LocalPosition: {x: 29, y: -13.256174, z: 156.65189}
+  m_LocalScale: {x: 5.121611, y: 7.362833, z: 6.379472}
+  m_Children: []
+  m_Father: {fileID: 4343419152814966}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 29.723001, y: -84.50001, z: -97.247}
 --- !u!4 &4671176421934774
 Transform:
   m_ObjectHideFlags: 1
@@ -6599,7 +6630,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1066494211726724}
   m_LocalRotation: {x: 0.11666659, y: 0.6974159, z: -0.11666659, w: 0.6974159}
-  m_LocalPosition: {x: -3.77, y: 2.63, z: 0.56}
+  m_LocalPosition: {x: -3.77, y: 4.91, z: 0.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4194836702379868}
@@ -7225,7 +7256,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4343419152814966}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4886685698999634
 Transform:
@@ -7259,7 +7290,7 @@ Transform:
   - {fileID: 4756320466715664}
   - {fileID: 4003925759377080}
   m_Father: {fileID: 4343419152814966}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4893968498885388
 Transform:
@@ -7472,7 +7503,7 @@ Transform:
   - {fileID: 4240137997058640}
   - {fileID: 4436607747326288}
   m_Father: {fileID: 4343419152814966}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!4 &4960494040983230
 Transform:
@@ -8754,6 +8785,41 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 5c578d00a731e954a9a11ff56b5584b3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23176798353756332
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1379652334943154}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 967292cbb00d43c49b415bd5ea5d80c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14414,6 +14480,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638892652858856}
   m_Mesh: {fileID: 4300000, guid: e2a75b5f58e6040c4a940c172a425a8f, type: 3}
+--- !u!33 &33148888350027376
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1379652334943154}
+  m_Mesh: {fileID: 4300000, guid: c05eb5ac043ee43348f7d153475cf9ef, type: 3}
 --- !u!33 &33150048500599016
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -17497,9 +17570,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1416463810887140}
-  distance: 25
-  angleZero: {x: -100, y: 30}
-  angleRange: {x: 5, y: 5}
+  distance: 13.5
+  angleZero: {x: -144, y: 31.8}
+  angleRange: {x: 0, y: 0}
   angleSensitivity: {x: 1000, y: 100}
   angleSmooth: {x: 1, y: 1}
   dAngle: {x: 0, y: 0}
@@ -17521,16 +17594,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onExitCollider:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onBeginInteraction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onEndInteraction:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -17592,16 +17655,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onExitCollider:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onBeginInteraction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onEndInteraction:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -17699,11 +17752,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  targetObj: {fileID: 0}
+  targetObj: {fileID: 1977876772799270}
   speed: 0.7
   destroyWhenDone: 0
   timer: 0
   isPlaying: 0
+  reverse: 1
 --- !u!114 &114323072857644510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17716,9 +17770,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1823114144833728}
-  distance: 12
-  angleZero: {x: -10, y: 40}
-  angleRange: {x: 5, y: 5}
+  distance: 15
+  angleZero: {x: -18.7, y: 38.7}
+  angleRange: {x: 0, y: 0}
   angleSensitivity: {x: 1000, y: 100}
   angleSmooth: {x: 1, y: 1}
   dAngle: {x: 0, y: 0}
@@ -17953,9 +18007,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1472448150750848}
-  distance: 5
-  angleZero: {x: -115, y: 30}
-  angleRange: {x: 5, y: 5}
+  distance: 10
+  angleZero: {x: -22.5, y: 25}
+  angleRange: {x: 0, y: 0}
   angleSensitivity: {x: 1000, y: 100}
   angleSmooth: {x: 1, y: 1}
   dAngle: {x: 0, y: 0}
@@ -18530,16 +18584,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  onBeginInteraction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onEndInteraction:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   targetCamera: {fileID: 1508068031220372}
   playerHeight: 4
   originCameraCon: {fileID: 0}
@@ -18611,11 +18655,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  targetObj: {fileID: 0}
+  targetObj: {fileID: 1120711543808362}
   speed: 0.7
   destroyWhenDone: 0
   timer: 0
   isPlaying: 0
+  reverse: 1
 --- !u!124 &124231934924376436
 Behaviour:
   m_ObjectHideFlags: 1

@@ -523,11 +523,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a742912ef1455f04c9c385c80f8a0085, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &662620016 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1977876772799270, guid: fd02aa8ea29d34404a0d1e3c0edbca2b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1123810453}
 --- !u!114 &662620018 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114315462190999140, guid: fd02aa8ea29d34404a0d1e3c0edbca2b,
@@ -898,60 +893,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1578536479225434, guid: fd02aa8ea29d34404a0d1e3c0edbca2b, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1956800159939144, guid: fd02aa8ea29d34404a0d1e3c0edbca2b, type: 2}
-      propertyPath: m_TagString
-      value: Terrain
-      objectReference: {fileID: 0}
-    - target: {fileID: 1776844477484426, guid: fd02aa8ea29d34404a0d1e3c0edbca2b, type: 2}
-      propertyPath: m_TagString
-      value: Terrain
-      objectReference: {fileID: 0}
-    - target: {fileID: 1790605121044124, guid: fd02aa8ea29d34404a0d1e3c0edbca2b, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114315462190999140, guid: fd02aa8ea29d34404a0d1e3c0edbca2b,
-        type: 2}
-      propertyPath: targetObj
-      value: 
-      objectReference: {fileID: 662620016}
-    - target: {fileID: 114985568693490540, guid: fd02aa8ea29d34404a0d1e3c0edbca2b,
-        type: 2}
-      propertyPath: targetObj
-      value: 
-      objectReference: {fileID: 1246386762}
-    - target: {fileID: 4436607747326288, guid: fd02aa8ea29d34404a0d1e3c0edbca2b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4036089796874734, guid: fd02aa8ea29d34404a0d1e3c0edbca2b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114315462190999140, guid: fd02aa8ea29d34404a0d1e3c0edbca2b,
-        type: 2}
-      propertyPath: speed
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114985568693490540, guid: fd02aa8ea29d34404a0d1e3c0edbca2b,
-        type: 2}
-      propertyPath: speed
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114315462190999140, guid: fd02aa8ea29d34404a0d1e3c0edbca2b,
-        type: 2}
-      propertyPath: reverse
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114985568693490540, guid: fd02aa8ea29d34404a0d1e3c0edbca2b,
-        type: 2}
-      propertyPath: reverse
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd02aa8ea29d34404a0d1e3c0edbca2b, type: 2}
   m_IsPrefabAsset: 0
@@ -1060,17 +1001,53 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!1 &1246386762 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1120711543808362, guid: fd02aa8ea29d34404a0d1e3c0edbca2b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1123810453}
 --- !u!114 &1246386764 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114985568693490540, guid: fd02aa8ea29d34404a0d1e3c0edbca2b,
     type: 2}
   m_PrefabInternal: {fileID: 1123810453}
   m_Script: {fileID: 11500000, guid: d1a3d43a409088740bdf15899e7daf2e, type: 3}
+--- !u!1 &1264793846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1264793847}
+  - component: {fileID: 1264793848}
+  m_Layer: 0
+  m_Name: AirWall (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1264793847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1264793846}
+  m_LocalRotation: {x: -0, y: 0.12344491, z: -0, w: 0.9923515}
+  m_LocalPosition: {x: 21.56, y: 34.32, z: 40.7}
+  m_LocalScale: {x: 1, y: 1.250477, z: 0.3616239}
+  m_Children: []
+  m_Father: {fileID: 1509185324}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 14.182001, z: 0}
+--- !u!65 &1264793848
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1264793846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 10, z: 120}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1398737847 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1958595589885930, guid: 123653b66ab2fd347a2b28b2299893df,
@@ -1087,11 +1064,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6565a2595a8829b4fb2fa1a34b89d954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1399084793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1399084794}
+  - component: {fileID: 1399084795}
+  m_Layer: 0
+  m_Name: AirWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1399084794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1399084793}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 16.511005, y: 36.47064, z: -29.58722}
+  m_LocalScale: {x: 1, y: 1, z: 0.81518}
+  m_Children: []
+  m_Father: {fileID: 1509185324}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1399084795
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1399084793}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 10, z: 120}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1471443975 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1070321503346120, guid: a742912ef1455f04c9c385c80f8a0085,
     type: 2}
   m_PrefabInternal: {fileID: 658891779}
+--- !u!1 &1509185323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1509185324}
+  m_Layer: 0
+  m_Name: AirWalls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1509185324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1509185323}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.351006, y: -47.47064, z: 74.68722}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1399084794}
+  - {fileID: 1264793847}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1530118520 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1698796461567458, guid: dfc0668484aed3f4fa581ebb20e4c118,
@@ -1274,6 +1322,16 @@ Prefab:
         type: 2}
       propertyPath: onEnterCollider.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114047680920666082, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: angleRange.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114047680920666082, guid: dfc0668484aed3f4fa581ebb20e4c118,
+        type: 2}
+      propertyPath: angleRange.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfc0668484aed3f4fa581ebb20e4c118, type: 2}
