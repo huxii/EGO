@@ -24,7 +24,7 @@ public class ViewportSwitchBehavior : ViewportControl
         {
             return;
         }
-        switched = true;
+
         SwitchCamera();
     }
 
@@ -36,7 +36,7 @@ public class ViewportSwitchBehavior : ViewportControl
         {
             return;
         }
-        switched = false;
+
         SwitchBack();
     }
 

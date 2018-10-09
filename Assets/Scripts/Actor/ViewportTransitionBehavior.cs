@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class ViewportTransitionBehavior : ViewportControl
 {
+
     // Use this for initialization
     void Start()
     {
@@ -21,31 +22,6 @@ public class ViewportTransitionBehavior : ViewportControl
         base.EnterCollider();
 
         SwitchCamera();
-        //if (hideObjects != null)
-        //{
-        //    foreach (GameObject hide in hideObjects)
-        //    {
-        //        if (hide.GetComponent<TransitionEffectControl>())
-        //        {
-        //            //hide.GetComponent<TransitionEffectControl>().Play();
-        //        }
-        //        else
-        //        {
-        //            hide.SetActive(false);
-        //        }
-        //    }
-        //}
-        //if (showObjects != null)
-        //{
-        //    foreach (GameObject show in showObjects)
-        //    {
-        //        show.SetActive(true);
-        //        //if (show.GetComponent<TransitionEffectControl>())
-        //        //{
-        //        //    show.GetComponent<TransitionEffectControl>().Reverse();
-        //        //}
-        //    }
-        //}
 
         if (GameControl.playerController)
         {
