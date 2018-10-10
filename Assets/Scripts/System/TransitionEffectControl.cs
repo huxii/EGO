@@ -58,6 +58,11 @@ public class TransitionEffectControl : MonoBehaviour
         }
     }
 
+    public void Pause()
+    {
+        isPlaying = false;
+    }
+
     public virtual void Play()
     {
         isPlaying = true;

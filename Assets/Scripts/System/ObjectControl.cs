@@ -76,11 +76,11 @@ public class ObjectControl : MonoBehaviour
         {
             if (y >= solvedAngelRange.x && y <= solvedAngelRange.y && !frozen)
             {
-                //fogCam.GetComponent<FogTransitionControl>().Play();
+                fogCam.GetComponent<FogControl>().Play();
             }
             else
             {
-                //fogCam.GetComponent<FogTransitionControl>().Pause();
+                fogCam.GetComponent<FogControl>().Pause();
             }
         }
     }
