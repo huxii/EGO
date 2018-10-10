@@ -34,6 +34,7 @@ public class ViewportControl : ActorControl
 
     protected void SwitchCamera()
     {
+        switched = true;
         GameControl.cameraController.SwitchCamera(targetCameraCon);
         if (GameControl.playerController)
         {
@@ -44,6 +45,7 @@ public class ViewportControl : ActorControl
 
     protected void SwitchBack()
     {
+        switched = false;
         GameControl.cameraController.SwitchBack();
         if (GameControl.playerController)
         {

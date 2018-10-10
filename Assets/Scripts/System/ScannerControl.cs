@@ -41,6 +41,10 @@ public class ScannerControl : TransitionEffectControl
             mat.SetVector("_Center", camera.transform.position);
         }
 
+        if (bgCam == null)
+        {
+            bgCam = GameObject.FindGameObjectWithTag("ScannerBgCamera");
+        }
         bgCam.SetActive(false);
         camera.SetActive(true);
 
