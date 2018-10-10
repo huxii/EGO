@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000026176896, g: 0.000040305964, b: 0.07133846, a: 1}
+  m_IndirectSpecularColor: {r: 0.000024870144, g: 0.000040347397, b: 0.071356885,
+    a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6351,7 +6352,6 @@ GameObject:
   - component: {fileID: 613393582}
   - component: {fileID: 613393584}
   - component: {fileID: 613393583}
-  - component: {fileID: 613393585}
   m_Layer: 0
   m_Name: Canyan_Right
   m_TagString: Untagged
@@ -6417,20 +6417,6 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 613393581}
-  m_Mesh: {fileID: 4300022, guid: 6e32e4f9314cb462b9ace8e7e311a27e, type: 3}
---- !u!64 &613393585
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 613393581}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300022, guid: 6e32e4f9314cb462b9ace8e7e311a27e, type: 3}
 --- !u!1 &613544240
 GameObject:
@@ -15104,6 +15090,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1331eb6cc2cea44993d7826e3c744f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextTransition:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  targetObj: {fileID: 0}
+  speed: 1
+  destroyWhenDone: 0
+  timer: 0
+  isPlaying: 0
 --- !u!1 &1571712476
 GameObject:
   m_ObjectHideFlags: 0
