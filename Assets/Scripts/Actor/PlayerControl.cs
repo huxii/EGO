@@ -13,11 +13,11 @@ public class PlayerControl : MonoBehaviour
     public float heightStandard = 4f;
     public float heightRange = 2f;
 
-    [Header("Trigger Sound")]
-    public List<SoundSettings> triggerSoundList;
-    SoundSettings skill1SFX;
-    SoundSettings skill2SFX;
-    SoundSettings failSFX;
+    //[Header("Trigger Sound")]
+    //public List<SoundSettings> triggerSoundList;
+    //SoundSettings skill1SFX;
+    //SoundSettings skill2SFX;
+    //SoundSettings failSFX;
 
     [Header("Lights")]
     public Light light;
@@ -51,9 +51,9 @@ public class PlayerControl : MonoBehaviour
         prePos = transform.position;
 
 
-        skill1SFX = triggerSoundList[1];
-        skill2SFX = triggerSoundList[2];
-        failSFX = triggerSoundList[0];
+        //skill1SFX = triggerSoundList[1];
+        //skill2SFX = triggerSoundList[2];
+        //failSFX = triggerSoundList[0];
     }
 
     // Update is called once per frame

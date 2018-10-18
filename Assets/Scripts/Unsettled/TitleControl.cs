@@ -54,7 +54,7 @@ public class TitleControl : MonoBehaviour
         {
             started = true;
             HUDController.FadeIn();
-            soundController.FadeOut(2f);
+            //soundController.FadeOut(2f);  KZ: I don't fucking understand, let me go back to this later
             StartCoroutine(SwitchLevel(2f));
         }
     }

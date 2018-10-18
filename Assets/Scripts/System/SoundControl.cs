@@ -2,143 +2,181 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using System;
 
-
-public enum ClipType
+[System.Serializable]
+public class SoundClip
 {
-    NONE,
-    BGM,
-    AMBIENCE,
-    SFX
-}
+    public string id = null;
+    public AudioClip audioClip = null;
+    public int loop = 1; // -1: infinite
+    public float startDelay = 0;
+    public float fadeInDuration = 0;
+    public float fadeOutDuration = 0;
+    public float spatialBlend = 0;
+    public Vector3 pos = Vector3.zero;
+    public enum DuplicatePolicy
+    {
+        NOTREPLACE,
+        REPLACE,
+        MULTIPLE,
+    };
+    public DuplicatePolicy duplicatePolicy = DuplicatePolicy.NOTREPLACE;
 
-// all the enums in one list
-public enum SoundEnum
-{
-    NONE,
-    // BGM
-    BGM_INROOM,
-    BGM_INVALLEY,
-    BGM_AFTERFOG,
-    BGM_EMPTYROOM,
-    BGM_ROOMAPART,
-    // Ambience
-    AMB_AFTERTABLE,
-    AMB_BEFORELEAVE,
-    AMB_AFTERLEAVE,
-    AMB_WATER,
-    AMB_STREETLIGHTBUZZ,
-    AMB_LAUGHAT,
-    AMB_LIGHTBALLNORMAL,
-    AMB_LIGHtBALLRUNAWAY,
-    //SFX
-    SFX_MAKEUP,
-    SFX_PICNICNIGHT,
-    SFX_SPOTLIGHT,
-    SFX_FIREFLYSKILL1,
-    SFX_FIREFLYSKILL2,
-    SFX_FIREFLYFAILSKILL,
-    SFX_FOGCLEAR
+    public SoundClip() { }
 }
-
-[Serializable]
-public class ClipSetting
-{
-    public AudioClip clip = null;
-    public SoundEnum id = SoundEnum.NONE;
-    public ClipType type = ClipType.NONE;
-}
-
 
 public class SoundControl : MonoBehaviour
 {
-    public SoundSettings StartBGM;
+    public GameObject audioSourcePrefab;
 
-    public List<ClipSetting> clipList;
-    Dictionary<SoundEnum, Sounds> soundsList = new Dictionary<SoundEnum, Sounds>();
+    [SerializeField]
+    private List<SoundClip> clips;
+    private int pooledAudioAmount = 10; 
 
-    void Start()
+    List<GameObject> audioSources = new List<GameObject>();
+    Dictionary<string, SoundClip> soundList = new Dictionary<string, SoundClip>();
+
+    char[] splitter = { ' ', ',' };
+
+    private void Awake()
     {
-        foreach (ClipSetting c in clipList)
+        for (int i = 0; i < pooledAudioAmount; i++)
         {
-            Sounds newSound;
-            switch (c.type)
+            GameObject audio = (GameObject)Instantiate(audioSourcePrefab);
+            audio.SetActive(false);
+            audioSources.Add(audio);
+        }
+
+        string[] lines = System.IO.File.ReadAllLines(Application.dataPath + "//Resources//Audios//AudioList.csv");
+        for (int i = 1; i < lines.Length; i++)
+        {
+            SoundClip clip = new SoundClip();
+            if (lines[i][0] == '1')
             {
-                case ClipType.BGM:
-                    newSound = new BGM(c.clip);
-                    soundsList.Add(c.id, newSound);
-                    break;
-                case ClipType.AMBIENCE:
-                    newSound = new Ambience(c.clip);
-                    soundsList.Add(c.id, newSound);
-                    break;
-                case ClipType.SFX:
-                    newSound = new SFX(c.clip);
-                    soundsList.Add(c.id, newSound);
-                    break;
-                case ClipType.NONE:
-                    break;
+                string[] row = lines[i].Split(splitter);
+                clip.id = row[1];
+                clip.audioClip = Resources.Load<AudioClip>("Audios/" + row[2]);
+                int.TryParse(row[3], out clip.loop);
+                float.TryParse(row[4], out clip.startDelay);
+                float.TryParse(row[5], out clip.fadeInDuration);
+                float.TryParse(row[6], out clip.fadeOutDuration);
+                float.TryParse(row[7], out clip.spatialBlend);
+                switch (row[8])
+                {
+                    case "NOTREPLACE":
+                        clip.duplicatePolicy = SoundClip.DuplicatePolicy.NOTREPLACE;
+                        break;
+                    case "REPLACE":
+                        clip.duplicatePolicy = SoundClip.DuplicatePolicy.REPLACE;
+                        break;
+                    case "MULTIPLE":
+                        clip.duplicatePolicy = SoundClip.DuplicatePolicy.MULTIPLE;
+                        break;
+                }
+                if (row[9] != null)
+                {
+                    string[] pos = row[9].Split(';');
+                    clip.pos = new Vector3(float.Parse(pos[0]), float.Parse(pos[1]), float.Parse(pos[2]));
+                }
+
+                clips.Add(clip);
             }
         }
 
-        Play(StartBGM);
+        foreach (SoundClip s in clips)
+        {
+            soundList.Add(s.id, s);
+        }
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 
-    public void Play(SoundSettings settings)
+    // the way to judge if an audio source has been taken:
+    // source.clip != null
+    public void Play(string id)
     {
-        Sounds sound;
-        if (soundsList.TryGetValue(settings.id, out sound))
+        for (int i = 0; i < audioSources.Count; i++)
         {
-            sound = soundsList[settings.id];
-        }
-        else
-        {
-            return;
-        }
-
-        if (settings.isTurnOn)
-        {
-            if (sound.type == ClipType.BGM)
+            AudioSource source = audioSources[i].GetComponent<AudioSource>();
+            if (source.clip != null)
             {
-                foreach (SoundEnum s in soundsList.Keys)
+                if (!source.isPlaying)
                 {
-                    if (soundsList[s].type == ClipType.BGM)
+                    source.clip = null;
+                }
+                else
+                if (source.clip.name == soundList[id].audioClip.name)
+                {
+                    if (soundList[id].duplicatePolicy == SoundClip.DuplicatePolicy.NOTREPLACE)
                     {
-                        soundsList[s].Stop(settings);
+                        return;
+                    }
+                    else
+                    if (soundList[id].duplicatePolicy == SoundClip.DuplicatePolicy.REPLACE)
+                    {
+                        audioSources[i].SetActive(false);
+                        break;
+                    }
+                    else
+                    if (soundList[id].duplicatePolicy == SoundClip.DuplicatePolicy.MULTIPLE)
+                    {
                     }
                 }
             }
-            sound.Play(settings);
         }
-        else
-        {
-            sound.Stop(settings);
-        }
-    }
 
-    public void StandOut(SoundSettings settings) {
-        foreach (GameObject eff in NewPooledObject.current.Effects) {
-            if (eff.name != settings.id.ToString()) {
-                eff.GetComponent<AudioSource>().DOFade(0.1f, settings.delay).OnComplete(
-                    () => { eff.GetComponent<AudioSource>().DOFade(0.1f, 7).OnComplete(
-                         () => { eff.GetComponent<AudioSource>().DOFade(1, 10); });
-                    });
+        for (int i = 0; i < audioSources.Count; i++)
+        {
+            AudioSource source = audioSources[i].GetComponent<AudioSource>();
+            if (source.clip == null)
+            {
+                source.playOnAwake = false;
+                source.loop = (soundList[id].loop == -1);
+                source.clip = soundList[id].audioClip;
+                source.spatialBlend = soundList[id].spatialBlend;
+                audioSources[i].transform.position = soundList[id].pos;
+                audioSources[i].SetActive(true);
+                source.DOFade(1, soundList[id].fadeInDuration);
+                source.PlayDelayed(soundList[id].startDelay);
+
+                break;
             }
         }
     }
 
-    public void FadeOut(float fade_duration = 3f)
+    public void Stop(string id, bool all = false)
     {
-        GameObject[] audios = GameObject.FindGameObjectsWithTag("Audio");
-        foreach (GameObject eff in audios){
-            eff.GetComponent<AudioSource>().DOFade(0, fade_duration);
+        foreach (GameObject source in audioSources)
+        {
+            Debug.Log(source.GetComponent<AudioSource>());
+            if (source.GetComponent<AudioSource>().clip != null && source.GetComponent<AudioSource>().clip.name == soundList[id].audioClip.name)
+            {
+                source.GetComponent<AudioSource>().DOFade(0, soundList[id].fadeOutDuration).OnComplete(() => { source.SetActive(false); });
+            }
+            if (!all)
+            {
+                break;
+            }
+
+        }
+    }
+    public void SetVolume(string id, float volume = 0)
+    {
+        foreach (GameObject source in audioSources)
+        {
+            if (source.GetComponent<AudioSource>().clip != null && source.GetComponent<AudioSource>().clip.name == soundList[id].audioClip.name)
+            {
+                source.GetComponent<AudioSource>().DOFade(volume, soundList[id].fadeOutDuration);
+            }
         }
     }
 }
