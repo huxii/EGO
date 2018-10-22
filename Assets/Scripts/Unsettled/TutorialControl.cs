@@ -108,7 +108,7 @@ public class TutorialControl : MonoBehaviour {
                     {
                         currentState = State.WAITMOVECAMERA;
                         ChangeIcon(currentState);
-                        initialCameraPos = GameControl.cameraController.gameObject.transform.position;
+                        initialCameraPos = Services.cameraController.gameObject.transform.position;
                         
                     }
                 }
@@ -116,7 +116,7 @@ public class TutorialControl : MonoBehaviour {
             case State.WAITMOVECAMERA:
                 if (tutorialImages[11].color == Color.white)
                 {
-                    if ((GameControl.cameraController.gameObject.transform.position - initialCameraPos).magnitude > 1f)
+                    if ((Services.cameraController.gameObject.transform.position - initialCameraPos).magnitude > 1f)
                     {//if players move around mouse
                         currentState = State.FINISHED;
                         ChangeIcon(currentState);

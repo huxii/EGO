@@ -24,9 +24,9 @@ public class ChangeControlControl : InteractableControl
     {
         base.BeginInteraction();
 
-        GameControl.cameraController.SwitchBack();
-        GameControl.cameraController.SwitchCamera(targetCamera.GetComponent<CameraControl>());
-        GameControl.cameraController.frozen = true;
+        Services.cameraController.SwitchBack();
+        Services.cameraController.SwitchCamera(targetCamera.GetComponent<CameraControl>());
+        Services.cameraController.frozen = true;
         if (targetControl)
         {
             targetControl.GetComponent<ObjectControl>().frozen = false;
@@ -37,8 +37,8 @@ public class ChangeControlControl : InteractableControl
     {
         base.EndInteraction();
 
-        GameControl.cameraController.SwitchBack();
-        GameControl.cameraController.frozen = false;
+        Services.cameraController.SwitchBack();
+        Services.cameraController.frozen = false;
         if (targetControl)
         {
             targetControl.GetComponent<ObjectControl>().frozen = true;

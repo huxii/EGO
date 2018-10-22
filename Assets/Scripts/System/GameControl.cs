@@ -6,48 +6,24 @@ using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
-    public GameObject mainCam;
-    public GameObject player;
-    public GameObject soundManager;
-    public GameObject videoManager;
-    public GameObject HUDManager;
+    //public GameObject mainCam;
+    //public GameObject player;
+    //public GameObject soundManager;
+    //public GameObject videoManager;
+    //public GameObject HUDManager;
 
-    public static CameraControl cameraController;
-    public static PlayerControl playerController;
-    public static SoundControl soundController;
-    public static VideoControl videoController;
-    public static HUDControl HUDController;
+    //public static CameraControl cameraController;
+    //public static PlayerControl playerController;
+    //public static SoundControl soundController;
+    //public static VideoControl videoController;
+    //public static HUDControl HUDController;
 
     bool started = false;
 
     // Use this for initialization
     void Awake()
     {
-        if (player == null)
-        {
-            player = GameObject.FindGameObjectWithTag("Player");
-        }
-        if (mainCam == null)
-        {
-            mainCam = GameObject.FindGameObjectWithTag("MainCamera");
-        }
-        cameraController = mainCam.GetComponent<CameraControl>();
-        if (player)
-        {
-            playerController = player.GetComponent<PlayerControl>();
-        }
-        if (soundManager)
-        {
-            soundController = soundManager.GetComponent<SoundControl>();
-        }
-        if (videoManager)
-        {
-            videoController = videoManager.GetComponent<VideoControl>();
-        }
-        if (HUDManager)
-        {
-            HUDController = HUDManager.GetComponent<HUDControl>();
-        }
+        Services.Init();
     }
     void Start()
     {
@@ -73,7 +49,7 @@ public class GameControl : MonoBehaviour
         if (!started)
         {
             started = true;
-            HUDController.FadeIn();
+            Services.HUDController.FadeIn();
             StartCoroutine(SwitchLevel(2f));
         }
     }

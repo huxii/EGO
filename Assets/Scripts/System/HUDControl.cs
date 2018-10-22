@@ -9,7 +9,7 @@ public class HUDControl : MonoBehaviour
 {
     public GameObject canvas;
     public GameObject blank;
-    public List<UnityEvent> levelUIEvents;
+    //public List<UnityEvent> levelUIEvents;
     private int curId = 0;
 
     [SerializeField]
@@ -22,8 +22,9 @@ public class HUDControl : MonoBehaviour
 
     void Start()
     {
-        PlayNextUIEvent();
-        PlayNextUIEvent();
+        ShowPhoto("Anchor0,WASD_normal4, 2");
+        //PlayNextUIEvent();
+        //PlayNextUIEvent();
     }
 
     private void Update()
@@ -47,16 +48,16 @@ public class HUDControl : MonoBehaviour
         }
     }
 
-    public void PlayNextUIEvent()
-    {
-        if (curId < levelUIEvents.Count)
-        {
-            levelUIEvents[curId].Invoke();
-            ++curId;
-        }
-    }
+    //public void PlayNextUIEvent()
+    //{
+    //    if (curId < levelUIEvents.Count)
+    //    {
+    //        levelUIEvents[curId].Invoke();
+    //        ++curId;
+    //    }
+    //}
 
-    public void DisplayImage(string anchorImage)
+    private GameObject DisplayImage(string anchorImage)
     {
         string[] info = anchorImage.Split(',');
         foreach (GameObject anch in anchors)
@@ -69,18 +70,24 @@ public class HUDControl : MonoBehaviour
                 image.AddComponent<Image>();
                 Sprite outsideImage = Resources.Load<Sprite>("Sprites/" + info[1]);
                 image.GetComponent<Image>().sprite = outsideImage;
-                image.transform.localScale = Vector3.zero;
-                image.transform.DOScale(Vector3.one, float.Parse(info[2]));
-                break;
+                return image;
             }
         }
+
+        return null;
     }
 
-    public void CloseImage(string targetImage)
+    public void ShowPhoto(string anchorImage)
     {
-        string[] info = targetImage.Split(',');
-        GameObject image = GameObject.Find(info[0]);
-        image.transform.DOScale(Vector3.zero, float.Parse(info[1])).OnComplete(() => { Destroy(image); });
+        GameObject photo = DisplayImage(anchorImage);
+        photo.AddComponent<PhotoControl>();
+        photo.transform.localScale = Vector3.zero;
+        photo.transform.DOScale(Vector3.one, 1f);
+    }
+
+    public void ClosePhoto(GameObject obj)
+    {
+        obj.transform.DOScale(Vector3.zero, 1f).OnComplete(() => { Destroy(obj); });
     }
 
     public void AddAnchor()

@@ -20,7 +20,7 @@ public class CutSceneBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-			GameControl.videoController.Play(VideoControl.VideoListID.LEVEL1CUTSCENE);
+            Services.videoController.Play(VideoControl.VideoListID.LEVEL1CUTSCENE);
         }
     }
 }
