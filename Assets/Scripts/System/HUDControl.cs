@@ -20,9 +20,11 @@ public class HUDControl : MonoBehaviour
     [SerializeField]
     private int anchorCounter = 0;
 
+    private char[] splitters = { ',', ' ' };
+
     void Start()
     {
-        ShowPhoto("Anchor0,WASD_normal4, 2");
+        //ShowPhoto("Anchor0,WASD_normal4, 2");
         //PlayNextUIEvent();
         //PlayNextUIEvent();
     }
@@ -59,7 +61,7 @@ public class HUDControl : MonoBehaviour
 
     private GameObject DisplayImage(string anchorImage)
     {
-        string[] info = anchorImage.Split(',');
+        string[] info = anchorImage.Split(splitters, System.StringSplitOptions.RemoveEmptyEntries);
         foreach (GameObject anch in anchors)
         {
             if (anch.name == info[0])
@@ -70,6 +72,11 @@ public class HUDControl : MonoBehaviour
                 image.AddComponent<Image>();
                 Sprite outsideImage = Resources.Load<Sprite>("Sprites/" + info[1]);
                 image.GetComponent<Image>().sprite = outsideImage;
+                image.GetComponent<Image>().preserveAspect = true;
+
+                RectTransform rt = image.GetComponent<RectTransform>();
+                rt.sizeDelta = new Vector2(200, 600);
+
                 return image;
             }
         }
