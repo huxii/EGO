@@ -20,7 +20,7 @@ public class ViewportTwoWayTransitionBehavior : ViewportControl
     {
         base.EnterCollider();
 
-        float deltaZ = GameControl.playerController.transform.position.z - transform.position.z;
+        float deltaZ = Services.playerController.transform.position.z - transform.position.z;
         Debug.Log("Switch camera");
         Debug.Log(deltaZ);
         if (deltaZ < 0)
@@ -36,7 +36,7 @@ public class ViewportTwoWayTransitionBehavior : ViewportControl
     {
         base.ExitCollider();
 
-        float deltaZ = GameControl.playerController.transform.position.z - transform.position.z;
+        float deltaZ = Services.playerController.transform.position.z - transform.position.z;
         Debug.Log("Switch back");
         Debug.Log(deltaZ);
         if (deltaZ < 0)

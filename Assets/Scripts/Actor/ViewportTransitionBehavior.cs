@@ -23,9 +23,9 @@ public class ViewportTransitionBehavior : ViewportControl
 
         SwitchCamera();
 
-        if (GameControl.playerController)
+        if (Services.playerController)
         {
-            GameControl.playerController.ResetHeight();
+            Services.playerController.ResetHeight();
         }
     }
 

@@ -35,21 +35,21 @@ public class ViewportControl : ActorControl
     protected void SwitchCamera()
     {
         switched = true;
-        GameControl.cameraController.SwitchCamera(targetCameraCon);
-        if (GameControl.playerController)
+        Services.cameraController.SwitchCamera(targetCameraCon);
+        if (Services.playerController)
         {
-            playerHeight0 = GameControl.playerController.heightStandard;
-            GameControl.playerController.heightStandard = playerHeight;
+            playerHeight0 = Services.playerController.heightStandard;
+            Services.playerController.heightStandard = playerHeight;
         }
     }
 
     protected void SwitchBack()
     {
         switched = false;
-        GameControl.cameraController.SwitchBack();
-        if (GameControl.playerController)
+        Services.cameraController.SwitchBack();
+        if (Services.playerController)
         {
-            GameControl.playerController.heightStandard = playerHeight0;
+            Services.playerController.heightStandard = playerHeight0;
         }
     }
 }
