@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: 7e17f9e0105fe3b4ebfec33fbfb5acdb
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bed
+    100002: Bed_Sheet
+    100004: branch
+    100006: bridge
+    100008: fence
+    100010: ground
+    100012: leaves
+    100014: Pillow
+    100016: Pillow1
+    100018: plants
+    100020: rocks
+    100022: rope
+    100024: //RootNode
+    400000: Bed
+    400002: Bed_Sheet
+    400004: branch
+    400006: bridge
+    400008: fence
+    400010: ground
+    400012: leaves
+    400014: Pillow
+    400016: Pillow1
+    400018: plants
+    400020: rocks
+    400022: rope
+    400024: //RootNode
+    2100000: lambert1
+    2100002: Vegetation_Texture_Atlas4
+    2100004: Vegetation_Texture_Atlas5
+    2100006: Vegetation_Texture_Atlas7
+    2100008: lambert3
+    2100010: pasted__lambert15
+    2100012: lambert5
+    2100014: lambert6
+    2100016: lambert16
+    2100018: lambert15
+    2100020: lambert17
+    2100022: lambert18
+    2100024: lambert19
+    2300000: Bed
+    2300002: Bed_Sheet
+    2300004: branch
+    2300006: bridge
+    2300008: fence
+    2300010: ground
+    2300012: leaves
+    2300014: Pillow
+    2300016: Pillow1
+    2300018: plants
+    2300020: rocks
+    2300022: rope
+    3300000: Bed
+    3300002: Bed_Sheet
+    3300004: branch
+    3300006: bridge
+    3300008: fence
+    3300010: ground
+    3300012: leaves
+    3300014: Pillow
+    3300016: Pillow1
+    3300018: plants
+    3300020: rocks
+    3300022: rope
+    4300000: branch
+    4300002: leaves
+    4300004: ground
+    4300006: bridge
+    4300008: fence
+    4300010: plants
+    4300012: rocks
+    4300014: rope
+    4300016: Bed_Sheet
+    4300018: Bed
+    4300020: Pillow
+    4300022: Pillow1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

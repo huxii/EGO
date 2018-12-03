@@ -29,9 +29,17 @@ public class GameControl : MonoBehaviour
     {
 
     }
+
+    void OnDestroy()
+    {
+        Services.Destroy();
+    }
+
     // Update is called once per frame
     void Update()
     {
+        Services.Update();
+
         if (Input.GetButton("Exit"))
         {
             RestartGame();
