@@ -40,10 +40,10 @@ public class GameControl : MonoBehaviour
     {
         Services.Update();
 
-        if (Input.GetButton("Exit"))
-        {
-            RestartGame();
-        }
+        //if (Input.GetButton("Exit"))
+        //{
+        //    RestartGame();
+        //}
     }
 
     IEnumerator SwitchLevel(float time)

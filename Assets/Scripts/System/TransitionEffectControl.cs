@@ -31,6 +31,11 @@ public class TransitionEffectControl : MonoBehaviour
 
     protected void Init()
     {
+        if (targetObj == null)
+        {
+            Destroy(gameObject);
+        }
+
         MeshRenderer[] renderers = targetObj.GetComponentsInChildren<MeshRenderer>();
         List<Material> tmpMats = new List<Material>();
         foreach (MeshRenderer mr in renderers)
