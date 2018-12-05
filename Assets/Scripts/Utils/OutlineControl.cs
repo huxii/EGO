@@ -14,6 +14,11 @@ public class OutlineControl : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        if (targetObj == null)
+        {
+            Destroy(this);
+        }
+
         MeshRenderer[] renderers = targetObj.GetComponentsInChildren<MeshRenderer>();
         List<Material> tmpMats = new List<Material>();
         foreach (MeshRenderer mr in renderers)
