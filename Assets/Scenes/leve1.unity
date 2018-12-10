@@ -38,8 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000024870144, g: 0.000040347397, b: 0.071356885,
-    a: 1}
+  m_IndirectSpecularColor: {r: 0.000026176896, g: 0.000040305964, b: 0.07133846, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10377,7 +10376,7 @@ Prefab:
     - target: {fileID: 114273589962780226, guid: 5a51a1677ab0be14caef9d5226436f31,
         type: 2}
       propertyPath: moveSpeed
-      value: 20
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a51a1677ab0be14caef9d5226436f31, type: 2}
@@ -10783,7 +10782,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   onEndInteraction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1452305708}
+        m_MethodName: ShowPhoto
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Anchor0, Photos/photo5, 1
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   targetControl: {fileID: 1722834526}
@@ -18917,7 +18927,7 @@ Prefab:
     - target: {fileID: 114916952268190994, guid: 172431302ca7e4180bea8d59d795ccfa,
         type: 2}
       propertyPath: onEndInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Anchor0, Photos/photodemo, 1
+      value: Anchor0, Photos/photo3, 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 172431302ca7e4180bea8d59d795ccfa, type: 2}
@@ -25518,7 +25528,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   onEndInteraction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1452305708}
+        m_MethodName: ShowPhoto
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Anchor0, Photos/photo4, 1
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!65 &1631762577
@@ -28408,6 +28429,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Room_FallInLove, Prefabs/Room_BeApart
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1452305708}
+        m_MethodName: ShowPhoto
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Anchor0, Photos/photo2.1, 1
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -31361,7 +31393,7 @@ Prefab:
     - target: {fileID: 114405779468869564, guid: acde680032adc094f8527375489cae94,
         type: 2}
       propertyPath: onEndInteraction.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4920348398993432, guid: acde680032adc094f8527375489cae94, type: 2}
       propertyPath: m_LocalPosition.x
@@ -31438,7 +31470,7 @@ Prefab:
     - target: {fileID: 114405779468869564, guid: acde680032adc094f8527375489cae94,
         type: 2}
       propertyPath: onEndInteraction.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
-      value: Anchor0, Photos/photodemo, 1
+      value: Anchor0, Photos/photo1, 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acde680032adc094f8527375489cae94, type: 2}

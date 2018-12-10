@@ -88,7 +88,9 @@ public class HUDControl : MonoBehaviour
     {
         GameObject photo = DisplayImage(anchorImage);
         photo.AddComponent<PhotoControl>();
-        photo.transform.localScale = Vector3.zero;
+        photo.transform.localScale = Vector3.one * 0.4f;
+        photo.transform.GetComponent<Image>().color = Color.clear;
+        photo.GetComponent<Image>().DOColor(Color.white,1); 
         photo.transform.DOScale(Vector3.one, 1f);
     }
 
