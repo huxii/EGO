@@ -96,6 +96,7 @@ public class HUDControl : MonoBehaviour
 
     public void ClosePhoto(GameObject obj)
     {
+        obj.GetComponent<Image>().DOColor(Color.clear, 0.6f);
         obj.transform.DOScale(Vector3.zero, 1f).OnComplete(() => { Destroy(obj); });
     }
 
